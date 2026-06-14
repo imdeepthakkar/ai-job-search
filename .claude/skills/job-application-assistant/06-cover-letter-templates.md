@@ -4,17 +4,20 @@
 
 Cover letters use a custom LaTeX document class (`cover.cls`) with Lato/Raleway fonts.
 
-**Output file:** `cover_letters/cover_<company>_<role>.tex`
+**Output file Naming Convention:** 
+- For multi-word companies (e.g., "Andel Holding"): `cover_letters/CL_Deep_Thakkar_AH.tex` (Use 1st character of each word)
+- For single-word companies (e.g., "Capgemini"): `cover_letters/CL_Deep_Thakkar_Capgemini.tex`
+
 **Compile with:** XeLaTeX (cover.cls requires fontspec)
 **Font directory:** `cover_letters/OpenFonts/fonts/`
 
 ### Compile command
 
 ```bash
-cd cover_letters && xelatex -interaction=nonstopmode cover_<company>_<role>.tex
+cd cover_letters && xelatex -interaction=nonstopmode CL_Deep_Thakkar_<Company>.tex
 ```
 
-Expected output: `Output written on cover_<company>_<role>.pdf (1 page, ...)`. Any page count other than 1 is a failure that must be fixed before presenting to the user.
+Expected output: `Output written on CL_Deep_Thakkar_<Company>.pdf (1 page, ...)`. Any page count other than 1 is a failure that must be fixed before presenting to the user.
 
 ## Compile-and-Inspect Loop (MANDATORY)
 
