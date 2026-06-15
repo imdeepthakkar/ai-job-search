@@ -36,7 +36,7 @@ jobs:
       pull-requests: 'read'
     outputs:
       available_labels: '${{ steps.get_labels.outputs.available_labels }}'
-      triaged_issues: '${{ env.TRIAGED_ISSUES }}'
+      triaged_issues: '${{ steps.export_results.outputs.triaged_issues }}'
     steps:
       - name: 'Get repository labels'
         id: 'get_labels'
@@ -71,16 +71,20 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN || github.token }}'
         run: |-
           echo '🔍 Finding unlabeled issues and issues marked for triage...'
-          ISSUES="$(gh issue list \
-            --state 'open' \
-            --search 'no:label label:"status/needs-triage"' \
-            --json number,title,body \
-            --limit '100' \
-            --repo "${GITHUB_REPOSITORY}"
-          )"
+          # We search for issues that have NO labels OR are marked with 'status/needs-triage'
+          # Note: gh search query ANDs labels, so we fetch unlabeled issues first
+          ISSUES_UNLABELED="$(gh issue list --state 'open' --search 'no:label' --json number,title,body --limit '100' --repo "${GITHUB_REPOSITORY}")"
+          ISSUES_NEEDS_TRIAGE="$(gh issue list --state 'open' --label 'status/needs-triage' --json number,title,body --limit '100' --repo "${GITHUB_REPOSITORY}")"
+
+          # Merge and deduplicate issues by number using jq
+          ISSUES="$(echo "${ISSUES_UNLABELED}${ISSUES_NEEDS_TRIAGE}" | jq -s 'add | unique_by(.number)')"
 
           echo '📝 Setting output for GitHub Actions...'
-          echo "issues_to_triage=${ISSUES}" >> "${GITHUB_OUTPUT}"
+          {
+            echo "issues_to_triage<<EOF"
+            echo "${ISSUES}"
+            echo "EOF"
+          } >> "${GITHUB_OUTPUT}"
 
           ISSUE_NUMBERS="$(echo "${ISSUES}" | jq -r '.[].number | tostring' | paste -sd, -)"
           echo "issue_numbers=${ISSUE_NUMBERS}" >> "${GITHUB_OUTPUT}"
@@ -91,7 +95,7 @@ jobs:
       - name: 'Run Gemini Issue Analysis'
         id: 'gemini_issue_analysis'
         if: |-
-          ${{ steps.find_issues.outputs.issues_to_triage != '[]' }}
+          ${{ steps.find_issues.outputs.issues_to_triage != '' && steps.find_issues.outputs.issues_to_triage != '[]' }}
         uses: 'google-github-actions/run-gemini-cli@v0' # ratchet:exclude
         env:
           GITHUB_TOKEN: '' # Do not pass any auth token here since this runs on untrusted inputs
@@ -135,6 +139,17 @@ jobs:
             }
           prompt: '/gemini-scheduled-triage'
 
+      - name: 'Export Triage Results'
+        id: 'export_results'
+        if: always()
+        run: |-
+          echo '📝 Exporting triaged issues to job outputs...'
+          {
+            echo "triaged_issues<<EOF"
+            echo "${TRIAGED_ISSUES:-[]}"
+            echo "EOF"
+          } >> "${GITHUB_OUTPUT}"
+
   label:
     runs-on: 'ubuntu-latest'
     needs:
@@ -177,8 +192,9 @@ jobs:
               .sort()
 
             // Parse out the triaged issues
-            const triagedIssues = (JSON.parse(process.env.TRIAGED_ISSUES || '{}'))
-              .sort((a, b) => a.issue_number - b.issue_number)
+            let triagedIssuesRaw = JSON.parse(process.env.TRIAGED_ISSUES || '[]');
+            const triagedIssues = Array.isArray(triagedIssuesRaw) ? triagedIssuesRaw : [];
+            triagedIssues.sort((a, b) => a.issue_number - b.issue_number);
 
             core.debug(`Triaged issues: ${JSON.stringify(triagedIssues)}`);
 
