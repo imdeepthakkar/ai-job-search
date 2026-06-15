@@ -41,6 +41,8 @@ jobs:
         uses: 'google-github-actions/run-gemini-cli@v0'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}'
+          GOOGLE_API_KEY: '${{ secrets.GOOGLE_API_KEY }}'
         with:
           gcp_location: '${{ vars.GOOGLE_CLOUD_LOCATION }}'
           gcp_project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
