@@ -37,7 +37,7 @@ jobs:
 
       - name: 'Install scraper dependencies'
         run: |-
-          cd .agents/skills/jobindex-search/cli && bun install
+          cd .agents/skills/jobbank-search/cli && bun install
 
       - name: 'Execute Job Searches'
         id: 'run_searches'
@@ -47,8 +47,8 @@ jobs:
           mkdir -p "$TEMP_DIR"
           
           # Clean extraction of keywords and titles from search-queries.md
-          # It now properly strips the markdown bullet points and labels
-          QUERIES=$(grep -E "^\s*-\s*\*\*(Titles|Keywords):\*\*" .claude/skills/job-scraper/search-queries.md | sed -E 's/^\s*-\s*\*\*(Titles|Keywords):\*\*\s*(.*)/\2/' | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v "^$" | sort -u | head -n 10)
+          # It now properly strips the markdown bullet points and labels, and splits by comma
+          QUERIES=$(grep -E "^\s*-\s*\*\*(Titles|Keywords):\*\*" .claude/skills/job-scraper/search-queries.md | sed -E 's/^\s*-\s*\*\*(Titles|Keywords):\*\*\s*(.*)/\2/' | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v "^$" | sort -u | head -n 15)
           
           echo "Found queries:"
           echo "$QUERIES"
@@ -56,15 +56,15 @@ jobs:
           RESULTS_FILE="$TEMP_DIR/all_results.json"
           echo "[]" > "$RESULTS_FILE"
           
-          SCRAPER_DIR="${{ github.workspace }}/.agents/skills/jobindex-search/cli"
+          SCRAPER_DIR="${{ github.workspace }}/.agents/skills/jobbank-search/cli"
           cd "$SCRAPER_DIR"
           
           while IFS= read -r query; do
             [ -z "$query" ] && continue
             echo "Searching for: $query"
             
-            # Search for jobs from last 7 days. Output to a temp file in absolute path.
-            bun run src/cli.ts search --query "$query Copenhagen" --jobage 7 --format json > "$TEMP_DIR/tmp_res.json" 2> "$TEMP_DIR/scraper_err.log" || {
+            # Search in Storkøbenhavn (location 2) via jobbank-cli
+            bun run src/cli.ts search --key "$query" --location 2 --format json > "$TEMP_DIR/tmp_res.json" 2> "$TEMP_DIR/scraper_err.log" || {
               echo "Error searching for $query. Check scraper_err.log"
               continue
             }
