@@ -65,8 +65,10 @@ jobs:
             echo "Searching for: $query"
             
             # Search in Storkøbenhavn (location 2) via jobbank-cli
+            # We use --format json and pipe to a temp file.
             bun run src/cli.ts search --key "$query" --location 2 --format json > "$TEMP_DIR/tmp_res.json" 2> "$TEMP_DIR/scraper_err.log" || {
-              echo "Error searching for $query. Check scraper_err.log"
+              echo "❌ Error searching for $query. Log content:"
+              cat "$TEMP_DIR/scraper_err.log"
               continue
             }
             
