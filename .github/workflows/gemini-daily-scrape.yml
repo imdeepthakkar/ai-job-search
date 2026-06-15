@@ -9,6 +9,9 @@ concurrency:
   group: '${{ github.workflow }}'
   cancel-in-progress: true
 
+env:
+  GEMINI_CLI_TRUST_WORKSPACE: 'true'
+
 defaults:
   run:
     shell: 'bash'
@@ -21,8 +24,6 @@ jobs:
       contents: 'write'
       id-token: 'write'
       issues: 'write'
-    env:
-      GEMINI_CLI_TRUST_WORKSPACE: 'true'
     steps:
       - name: 'Checkout repository'
         uses: 'actions/checkout@v4'
@@ -38,14 +39,49 @@ jobs:
         run: |-
           cd .agents/skills/jobindex-search/cli && bun install
 
-      - name: 'Run Gemini Job Scrape'
-        id: 'gemini_scrape'
+      - name: 'Execute Job Searches'
+        id: 'run_searches'
+        run: |-
+          echo "🔍 Running job searches..."
+          mkdir -p .temp
+          
+          # Simple extraction of keywords from search-queries.md
+          # We look for lines starting with "- **Keywords:**" or "- **Titles:**"
+          QUERIES=$(grep -E "Titles:|Keywords:" .claude/skills/job-scraper/search-queries.md | sed -E 's/.*: (.*)/\1/' | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v "^$" | sort -u | head -n 10)
+          
+          echo "Found queries: $QUERIES"
+          
+          RESULTS_FILE=".temp/all_results.json"
+          echo "[]" > "$RESULTS_FILE"
+          
+          cd .agents/skills/jobindex-search/cli
+          while IFS= read -r query; do
+            if [ -n "$query" ]; then
+              echo "Searching for: $query"
+              # Search for jobs from last 7 days
+              bun run src/cli.ts search --query "$query Copenhagen" --jobage 7 --format json > "../../.temp/tmp_res.json" || continue
+              
+              # Merge results using jq
+              jq -s '.[0] + .[1].results' "../../../../$RESULTS_FILE" "../../.temp/tmp_res.json" > "../../../../.temp/merged.json"
+              mv "../../../../.temp/merged.json" "../../../../$RESULTS_FILE"
+            fi
+          done <<< "$QUERIES"
+          
+          cd ../../../..
+          # Deduplicate results by ID
+          jq 'unique_by(.id)' "$RESULTS_FILE" > ".temp/unique_results.json"
+          
+          COUNT=$(jq 'length' ".temp/unique_results.json")
+          echo "✅ Found $COUNT total unique jobs."
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: 'Run Gemini Analysis'
+        if: steps.run_searches.outputs.count != '0'
         uses: 'google-github-actions/run-gemini-cli@v0'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}'
           GOOGLE_API_KEY: '${{ secrets.GOOGLE_API_KEY }}'
-          GEMINI_CLI_TRUST_WORKSPACE: 'true'
         with:
           gcp_location: '${{ vars.GOOGLE_CLOUD_LOCATION }}'
           gcp_project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
@@ -56,19 +92,38 @@ jobs:
           gemini_model: '${{ vars.GEMINI_MODEL }}'
           google_api_key: '${{ secrets.GOOGLE_API_KEY }}'
           workflow_name: 'gemini-scrape'
+          prompt: |-
+            Analyze these job postings against the candidate profile in `CLAUDE.md`.
+            Deduplicate against `job_scraper/seen_jobs.json` and `job_search_tracker.csv`.
+            
+            **Profile:**
+            !{cat CLAUDE.md}
+            
+            **Seen Jobs:**
+            !{cat job_scraper/seen_jobs.json || echo '{"seen": {}}'}
+            
+            **Tracker:**
+            !{cat job_search_tracker.csv || echo "id,company,role,status"}
+            
+            **New Scraped Jobs:**
+            !{cat .temp/unique_results.json}
+            
+            **Task:**
+            1. Filter out jobs already in Seen Jobs or Tracker.
+            2. For the remaining jobs, perform a quick fit assessment (High/Medium/Low).
+            3. Generate a Markdown report saved to `scrape_report.md`.
+            4. Update `job_scraper/seen_jobs.json` with all new jobs and save it.
+            5. Use a single turn. Do not ask for more info.
           settings: |-
             {
               "tools": {
                 "core": [
-                  "run_shell_command(bun)",
-                  "run_shell_command(cd)",
-                  "run_shell_command(ls)",
                   "run_shell_command(cat)",
-                  "run_shell_command(echo)"
+                  "run_shell_command(echo)",
+                  "run_shell_command(ls)"
                 ]
               }
             }
-          prompt: '/gemini-scrape'
 
       - name: 'Check for report and create issue'
         id: 'notify'
@@ -77,10 +132,8 @@ jobs:
         run: |-
           if [ -f "scrape_report.md" ]; then
             REPORT_TITLE="💼 New Job Matches - $(date +'%Y-%m-%d')"
-            echo "Creating issue: $REPORT_TITLE"
             gh issue create --title "$REPORT_TITLE" --body-file "scrape_report.md" --repo "${{ github.repository }}"
             
-            # Commit updated seen_jobs.json if it exists
             if [ -f "job_scraper/seen_jobs.json" ]; then
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -88,6 +141,4 @@ jobs:
               git commit -m "chore: update seen_jobs.json [skip ci]" || echo "No changes to commit"
               git push
             fi
-          else
-            echo "No new jobs found or report not generated."
           fi
