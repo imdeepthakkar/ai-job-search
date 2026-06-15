@@ -11,6 +11,7 @@ concurrency:
 
 env:
   GEMINI_CLI_TRUST_WORKSPACE: 'true'
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 defaults:
   run:
