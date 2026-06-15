@@ -38,7 +38,7 @@ jobs:
 
       - name: 'Install scraper dependencies'
         run: |-
-          cd .agents/skills/jobbank-search/cli && bun install
+          cd .agents/skills/jobindex-search/cli && bun install
 
       - name: 'Execute Job Searches'
         id: 'run_searches'
@@ -48,7 +48,6 @@ jobs:
           mkdir -p "$TEMP_DIR"
           
           # Clean extraction of keywords and titles from search-queries.md
-          # It now properly strips the markdown bullet points and labels, and splits by comma
           QUERIES=$(grep -E "^\s*-\s*\*\*(Titles|Keywords):\*\*" .claude/skills/job-scraper/search-queries.md | sed -E 's/^\s*-\s*\*\*(Titles|Keywords):\*\*\s*(.*)/\2/' | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v "^$" | sort -u | head -n 15)
           
           echo "Found queries:"
@@ -57,15 +56,15 @@ jobs:
           RESULTS_FILE="$TEMP_DIR/all_results.json"
           echo "[]" > "$RESULTS_FILE"
           
-          SCRAPER_DIR="${{ github.workspace }}/.agents/skills/jobbank-search/cli"
+          SCRAPER_DIR="${{ github.workspace }}/.agents/skills/jobindex-search/cli"
           cd "$SCRAPER_DIR"
           
           while IFS= read -r query; do
             [ -z "$query" ] && continue
             echo "Searching for: $query"
             
-            # Search in Storkøbenhavn (location 2) via jobbank-cli
-            bun run src/cli.ts search --key "$query" --location 2 --format json > "$TEMP_DIR/tmp_res.json" 2> "$TEMP_DIR/scraper_err.log" || {
+            # Search via jobindex-cli
+            bun run src/cli.ts search --query "$query" --jobage 7 --limit 20 > "$TEMP_DIR/tmp_res.json" 2> "$TEMP_DIR/scraper_err.log" || {
               echo "❌ Error searching for $query. Log content:"
               cat "$TEMP_DIR/scraper_err.log"
               continue
@@ -77,7 +76,7 @@ jobs:
               mv "$TEMP_DIR/merged.json" "$RESULTS_FILE"
             fi
 
-            # Add a small delay to avoid 403/rate-limiting
+            # Add a small delay
             sleep 2
           done <<< "$QUERIES"
           

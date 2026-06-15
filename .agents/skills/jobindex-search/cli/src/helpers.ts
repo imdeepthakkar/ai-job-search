@@ -36,18 +36,25 @@ export async function apiFetch<T>(path: string, params?: Record<string, string>)
   throw new Error("API request failed after max retries")
 }
 
-export async function htmlFetch(url: string): Promise<string> {
+export async function htmlFetch(url: string): Promise<string> { 
+  const USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
   const maxRetries = 6
-  let delay = 500
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+  let delay = 1000
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {     
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; jobindex-cli/1.0)",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
         "Accept-Language": "da,en;q=0.9",
+        "Cache-Control": "no-cache",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Upgrade-Insecure-Requests": "1"
       },
       redirect: "follow",
     })
+
     if (response.status === 429 || response.status >= 500) {
       if (attempt === maxRetries) {
         throw new Error(`API request failed: ${response.status} ${response.statusText}`)
