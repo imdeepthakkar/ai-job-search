@@ -1,50 +1,25 @@
-# Behavioral Profile
+# Behavioral Profile - Deep Thakkar
 
-<!-- SETUP: This file is populated by running /setup -->
-<!-- You can use results from PI, DISC, Myers-Briggs, StrengthsFinder, or a self-assessment -->
+## Summary
+Deep is a senior technical leader who thrives as a "Trusted Advisor," bridging the gap between complex engineering requirements and business outcomes. His experience at Mastercard and Tata Consultancy Services highlights a profile characterized by architectural leadership, mentorship, and high-stakes stakeholder management in regulated environments.
 
-## Overview
-[YOUR_NAME]'s behavioral assessment identifies them as a **[PROFILE_TYPE]** pattern. [1-2 SENTENCE_SUMMARY].
+## Strongest Behavioral Traits
+- **Strategic Advisor:** Comfortable engaging with C-level stakeholders and translating business needs into technical roadmaps.
+- **Mentor & Leader:** Dedicated to fostering innovation and elevating team technical maturity (mentored 15+ engineers).
+- **Customer Advocate:** Focuses on customer pain points and ensuring technical solutions deliver real business value.
+- **Resilient & Reliable:** Experienced in managing mission-critical, 24/7 operations in the financial sector.
+- **Collaborative:** Works effectively across engineering, product, and leadership teams.
 
-## Core Behavioral Drives
+## Work Environment Preferences
+- **Innovation-Driven:** Enjoys environments that value continuous improvement and modernized architectures.
+- **Regulated & Complex:** Thrives in navigating the complexities of finance, security compliance, and large-scale enterprise systems.
+- **High-Impact:** Prefers roles where architectural decisions directly influence long-term business strategy.
 
-| Drive | Level | Meaning |
-|-------|-------|---------|
-| [DRIVE_1] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_2] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_3] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_4] | [LEVEL] | [DESCRIPTION] |
+## Communication Style
+- **Expert Communicator:** Capable of white-boarding, technical writing, and conducting workshops for both technical and non-technical audiences.
+- **Direct & Analytical:** Likely approaches decision-making with a focus on data, scalability, and security guardrails.
 
-## Strongest Behaviors
-- **[BEHAVIOR_1]:** [DESCRIPTION]
-- **[BEHAVIOR_2]:** [DESCRIPTION]
-- **[BEHAVIOR_3]:** [DESCRIPTION]
-
-## How You Work Best
-- [ENVIRONMENT_PREFERENCE_1]
-- [ENVIRONMENT_PREFERENCE_2]
-- [ENVIRONMENT_PREFERENCE_3]
-
-## Growth Areas (frame positively in applications)
-- **[AREA_1]:** [HOW_TO_FRAME_IT_POSITIVELY]
-- **[AREA_2]:** [HOW_TO_FRAME_IT_POSITIVELY]
-
-## Mapping to Job Posting Language
-
-When a job posting mentions these keywords, it's a **strong behavioral fit**:
-- [KEYWORD_OR_PHRASE_THAT_MATCHES_YOUR_STYLE]
-- [ANOTHER_KEYWORD]
-
-When a job posting mentions these, flag as **potential friction** (not deal-breaker):
-- [KEYWORD_OR_PHRASE_THAT_MIGHT_CLASH]
-- [ANOTHER_KEYWORD]
-
-## Management Style Preferences
-- [WHAT_MANAGEMENT_STYLE_WORKS_FOR_YOU]
-- [WHAT_DOESN'T_WORK]
-
-## Using This in Applications
-- **Cover letters:** [HOW_TO_WEAVE_IN_BEHAVIORAL_STRENGTHS]
-- **CV:** [WHAT_TO_EMPHASIZE]
-- **Interviews:** [WHAT_STAR_EXAMPLES_TO_USE]
-- **Don't overstate:** [WHAT_NOT_TO_CLAIM]
+## Inferred Traits
+*[Inferred from CV - Senior Solutions Architect role at Mastercard]*
+- **Risk-Aware:** High focus on security, compliance, and governance due to extensive work in the payment industry.
+- **Process-Oriented:** Lean Six Sigma Green Belt and PSM I certifications suggest a preference for structured, efficient workflows.

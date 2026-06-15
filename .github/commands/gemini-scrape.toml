@@ -17,7 +17,11 @@ You have access to the shell. Use it to run the scraper CLI tools in `.agents/sk
 
 ### Jobindex Scraper
 Location: `.agents/skills/jobindex-search/cli`
-Command: `bun run src/cli.ts search --query "<query>" --jobage 1 --sort date` (use `--jobage 7` for broader search)
+Command: `bun run src/cli.ts search --query "<query>" --jobage 1 --sort date`
+
+### Jobbank Scraper (Recommended)
+Location: `.agents/skills/jobbank-search/cli`
+Command: `bun run src/cli.ts search --key "<query>" --location 2 --format json` (location 2 = Storkøbenhavn)
 
 ## Instructions
 
@@ -27,8 +31,8 @@ Command: `bun run src/cli.ts search --query "<query>" --jobage 1 --sort date` (u
 
 2. **Execute Searches:**
    - Extract search queries from `.claude/skills/job-scraper/search-queries.md`.
-   - For each priority category, run the `jobindex` search tool.
-   - Example: `cd .agents/skills/jobindex-search/cli && bun run src/cli.ts search --query "Azure Architect Copenhagen" --jobage 1`
+   - For each priority category, run the `jobbank` search tool (and `jobindex` if needed).
+   - Example: `cd .agents/skills/jobbank-search/cli && bun run src/cli.ts search --key "Solution Architect" --location 2 --format json`
 
 3. **Deduplicate & Evaluate:**
    - Filter out jobs already in `seen_jobs.json` (by URL or ID).
