@@ -1,0 +1,88 @@
+name: '🕵️ Daily Job Scrape'
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Runs every day at 08:00 UTC
+  workflow_dispatch: # Allows manual triggering
+
+concurrency:
+  group: '${{ github.workflow }}'
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: 'bash'
+
+jobs:
+  scrape:
+    runs-on: 'ubuntu-latest'
+    timeout-minutes: 15
+    permissions:
+      contents: 'write'
+      id-token: 'write'
+      issues: 'write'
+    steps:
+      - name: 'Checkout repository'
+        uses: 'actions/checkout@v4'
+        with:
+          fetch-depth: 0
+
+      - name: 'Setup Bun'
+        uses: 'oven-sh/setup-bun@v1'
+        with:
+          bun-version: 'latest'
+
+      - name: 'Install scraper dependencies'
+        run: |-
+          cd .agents/skills/jobindex-search/cli && bun install
+
+      - name: 'Run Gemini Job Scrape'
+        id: 'gemini_scrape'
+        uses: 'google-github-actions/run-gemini-cli@v0'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        with:
+          gcp_location: '${{ vars.GOOGLE_CLOUD_LOCATION }}'
+          gcp_project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
+          gcp_service_account: '${{ vars.SERVICE_ACCOUNT_EMAIL }}'
+          gcp_workload_identity_provider: '${{ vars.GCP_WIF_PROVIDER }}'
+          gemini_api_key: '${{ secrets.GEMINI_API_KEY }}'
+          gemini_cli_version: '${{ vars.GEMINI_CLI_VERSION }}'
+          gemini_model: '${{ vars.GEMINI_MODEL }}'
+          google_api_key: '${{ secrets.GOOGLE_API_KEY }}'
+          workflow_name: 'gemini-scrape'
+          settings: |-
+            {
+              "tools": {
+                "core": [
+                  "run_shell_command(bun)",
+                  "run_shell_command(cd)",
+                  "run_shell_command(ls)",
+                  "run_shell_command(cat)",
+                  "run_shell_command(echo)"
+                ]
+              }
+            }
+          prompt: '/gemini-scrape'
+
+      - name: 'Check for report and create issue'
+        id: 'notify'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        run: |-
+          if [ -f "scrape_report.md" ]; then
+            REPORT_TITLE="💼 New Job Matches - $(date +'%Y-%m-%d')"
+            echo "Creating issue: $REPORT_TITLE"
+            gh issue create --title "$REPORT_TITLE" --body-file "scrape_report.md" --repo "${{ github.repository }}"
+            
+            # Commit updated seen_jobs.json if it exists
+            if [ -f "job_scraper/seen_jobs.json" ]; then
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "github-actions[bot]@users.noreply.github.com"
+              git add job_scraper/seen_jobs.json
+              git commit -m "chore: update seen_jobs.json [skip ci]" || echo "No changes to commit"
+              git push
+            fi
+          else
+            echo "No new jobs found or report not generated."
+          fi
