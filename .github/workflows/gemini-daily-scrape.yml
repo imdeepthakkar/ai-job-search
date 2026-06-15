@@ -21,6 +21,8 @@ jobs:
       contents: 'write'
       id-token: 'write'
       issues: 'write'
+    env:
+      GEMINI_CLI_TRUST_WORKSPACE: 'true'
     steps:
       - name: 'Checkout repository'
         uses: 'actions/checkout@v4'
