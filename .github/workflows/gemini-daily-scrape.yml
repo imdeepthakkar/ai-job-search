@@ -43,35 +43,44 @@ jobs:
         id: 'run_searches'
         run: |-
           echo "🔍 Running job searches..."
-          mkdir -p .temp
+          TEMP_DIR="${{ github.workspace }}/.temp"
+          mkdir -p "$TEMP_DIR"
           
-          # Simple extraction of keywords from search-queries.md
-          # We look for lines starting with "- **Keywords:**" or "- **Titles:**"
-          QUERIES=$(grep -E "Titles:|Keywords:" .claude/skills/job-scraper/search-queries.md | sed -E 's/.*: (.*)/\1/' | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v "^$" | sort -u | head -n 10)
+          # Clean extraction of keywords and titles from search-queries.md
+          # It now properly strips the markdown bullet points and labels
+          QUERIES=$(grep -E "^\s*-\s*\*\*(Titles|Keywords):\*\*" .claude/skills/job-scraper/search-queries.md | sed -E 's/^\s*-\s*\*\*(Titles|Keywords):\*\*\s*(.*)/\2/' | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v "^$" | sort -u | head -n 10)
           
-          echo "Found queries: $QUERIES"
+          echo "Found queries:"
+          echo "$QUERIES"
           
-          RESULTS_FILE=".temp/all_results.json"
+          RESULTS_FILE="$TEMP_DIR/all_results.json"
           echo "[]" > "$RESULTS_FILE"
           
-          cd .agents/skills/jobindex-search/cli
+          SCRAPER_DIR="${{ github.workspace }}/.agents/skills/jobindex-search/cli"
+          cd "$SCRAPER_DIR"
+          
           while IFS= read -r query; do
-            if [ -n "$query" ]; then
-              echo "Searching for: $query"
-              # Search for jobs from last 7 days
-              bun run src/cli.ts search --query "$query Copenhagen" --jobage 7 --format json > "../../.temp/tmp_res.json" || continue
-              
-              # Merge results using jq
-              jq -s '.[0] + .[1].results' "../../../../$RESULTS_FILE" "../../.temp/tmp_res.json" > "../../../../.temp/merged.json"
-              mv "../../../../.temp/merged.json" "../../../../$RESULTS_FILE"
+            [ -z "$query" ] && continue
+            echo "Searching for: $query"
+            
+            # Search for jobs from last 7 days. Output to a temp file in absolute path.
+            bun run src/cli.ts search --query "$query Copenhagen" --jobage 7 --format json > "$TEMP_DIR/tmp_res.json" 2> "$TEMP_DIR/scraper_err.log" || {
+              echo "Error searching for $query. Check scraper_err.log"
+              continue
+            }
+            
+            # Merge results into the main results file
+            if [ -s "$TEMP_DIR/tmp_res.json" ]; then
+              jq -s '.[0] + .[1].results' "$RESULTS_FILE" "$TEMP_DIR/tmp_res.json" > "$TEMP_DIR/merged.json"
+              mv "$TEMP_DIR/merged.json" "$RESULTS_FILE"
             fi
           done <<< "$QUERIES"
           
-          cd ../../../..
+          cd "${{ github.workspace }}"
           # Deduplicate results by ID
-          jq 'unique_by(.id)' "$RESULTS_FILE" > ".temp/unique_results.json"
+          jq 'unique_by(.id)' "$RESULTS_FILE" > "$TEMP_DIR/unique_results.json"
           
-          COUNT=$(jq 'length' ".temp/unique_results.json")
+          COUNT=$(jq 'length' "$TEMP_DIR/unique_results.json")
           echo "✅ Found $COUNT total unique jobs."
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
 
