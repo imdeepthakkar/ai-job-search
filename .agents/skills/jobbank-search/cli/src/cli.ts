@@ -1,6 +1,6 @@
 import { createCLI } from "@bunli/core"
-import { search } from "./commands/search.js"
-import { detail } from "./commands/detail.js"
+import { search } from "./commands/search"
+import { detail } from "./commands/detail"
 
 const cli = await createCLI({
   name: "jobbank-cli",
