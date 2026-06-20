@@ -39,6 +39,7 @@ jobs:
       - name: 'Install scraper dependencies'
         run: |-
           cd .agents/skills/jobindex-search/cli && bun install
+          cd ../../jobbank-search/cli && bun install
 
       - name: 'Execute Job Searches'
         id: 'run_searches'
@@ -146,12 +147,18 @@ jobs:
           if [ -f "scrape_report.md" ]; then
             REPORT_TITLE="💼 New Job Matches - $(date +'%Y-%m-%d')"
             gh issue create --title "$REPORT_TITLE" --body-file "scrape_report.md" --repo "${{ github.repository }}"
-            
-            if [ -f "job_scraper/seen_jobs.json" ]; then
-              git config --global user.name "github-actions[bot]"
-              git config --global user.email "github-actions[bot]@users.noreply.github.com"
-              git add job_scraper/seen_jobs.json
-              git commit -m "chore: update seen_jobs.json [skip ci]" || echo "No changes to commit"
-              git push
-            fi
           fi
+
+      - name: 'Compile Dashboard Data'
+        run: |-
+          python job_scraper/export_all_jobs.py
+
+      - name: 'Commit and Push Scrape Data'
+        run: |-
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add job_scraper/seen_jobs.json
+          git add job_scraper/data/*
+          git add job_scraper/index.html job_scraper/dashboard.html
+          git commit -m "chore: update scrape database [skip ci]" || echo "No changes to commit"
+          git push
