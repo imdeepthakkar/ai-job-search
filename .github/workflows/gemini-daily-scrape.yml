@@ -91,6 +91,7 @@ jobs:
 
       - name: 'Run Gemini Analysis'
         if: steps.run_searches.outputs.count != '0'
+        continue-on-error: true
         uses: 'google-github-actions/run-gemini-cli@v0'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
