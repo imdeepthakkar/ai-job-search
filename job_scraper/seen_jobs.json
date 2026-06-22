@@ -1,1 +1,1004 @@
-{"seen": {}}
+{
+  "seen": {
+    "jn-data-as-service-architect-azure-cloud": {
+      "title": "Service Architect - Azure Cloud",
+      "company": "JN Data A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1665056",
+      "first_seen": "2026-06-22",
+      "fit": "high",
+      "status": "new"
+    },
+    "novo-nordisk-technical-lead": {
+      "title": "Technical Lead",
+      "company": "Novo Nordisk",
+      "url": "https://www.jobindex.dk/jobannonce/r13851941/technical-lead",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "gml-as-chora-chief-architect": {
+      "title": "Chora, Chief Architect",
+      "company": "GML A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1673541",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "jn-data-as-ai-domain-architect": {
+      "title": "AI Domain Architect",
+      "company": "JN Data A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1673173",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "jn-data-as-service-architect-cloud-enablement": {
+      "title": "Service Architect - Cloud Enablement",
+      "company": "JN Data A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1665084",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "twoday-as-domain-architect": {
+      "title": "Domain Architect",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1674289",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "dsv-enterprise-business-architect": {
+      "title": "Enterprise Business Architect",
+      "company": "DSV",
+      "url": "https://www.jobindex.dk/jobannonce/h1673987/enterprise-business-architect",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "velux-as-cybersecurity-architect": {
+      "title": "Cybersecurity Architect",
+      "company": "VELUX A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13860566",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "systematic-as-experienced-it-solution-architect-with-m365-ex": {
+      "title": "Experienced IT solution architect with M365 experience for a complex and evolving enterprise setup",
+      "company": "Systematic A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1657114",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "forsvaret-senior-ai-architect-til-forsvarets-ai-center": {
+      "title": "Senior AI Architect til Forsvarets AI Center",
+      "company": "Forsvaret",
+      "url": "https://www.jobindex.dk/jobannonce/h1674476",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "novo-nordisk-senior-itot-solution-architect-api-expansion": {
+      "title": "Senior IT/OT Solution Architect - API Expansion",
+      "company": "Novo Nordisk",
+      "url": "https://www.jobindex.dk/jobannonce/r13863292/senior-it-ot-solution-architect-api-expansion",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "telenor-business-solution-architect-mobile-security-device-m": {
+      "title": "Business Solution Architect - Mobile Security & Device Management",
+      "company": "Telenor",
+      "url": "https://www.jobindex.dk/jobannonce/h1675028",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "ewii-solution-architect-architecture-strategy": {
+      "title": "Solution Architect – Architecture & Strategy",
+      "company": "EWII",
+      "url": "https://www.jobindex.dk/jobannonce/h1675339/solution-architect-architecture-strategy",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "gibotech-as-technical-lead-til-dynamisk-softwareafdeling": {
+      "title": "Technical Lead til dynamisk softwareafdeling",
+      "company": "GIBOTECH A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675265/technical-lead-til-dynamisk-softwareafdeling",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "grundfos-as-chief-digital-architect": {
+      "title": "Chief Digital Architect",
+      "company": "Grundfos A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1659040",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "norlys-aws-cloud-architect-lead-the-design-of-norlys-enterpr": {
+      "title": "AWS Cloud Architect - Lead the design of Norlys' enterprise cloud platform",
+      "company": "Norlys",
+      "url": "https://www.jobindex.dk/jobannonce/h1675797",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "jysk-release-train-architect": {
+      "title": "Release Train Architect",
+      "company": "JYSK",
+      "url": "https://www.jobindex.dk/jobannonce/h1676397",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "kmd-as-senior-solution-architect": {
+      "title": "Senior Solution Architect",
+      "company": "KMD A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13876891",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "capgemini-danmark-as-ai-data-architect": {
+      "title": "AI Data Architect",
+      "company": "Capgemini Danmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13876886",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "capgemini-danmark-as-microsoft-ai-solution-architect": {
+      "title": "Microsoft AI Solution Architect",
+      "company": "Capgemini Danmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13876892",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "kmd-as-senior-sap-architect": {
+      "title": "Senior SAP Architect",
+      "company": "KMD A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13876890",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "laegemiddelstyrelsen-tech-lead-ledende-arkitekt-vaer-med-til": {
+      "title": "Tech Lead /​ Ledende Arkitekt – vær med til at forme fremtidens lægemiddelstyrelse",
+      "company": "Lægemiddelstyrelsen",
+      "url": "https://www.jobindex.dk/jobannonce/h1676163",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "unknown-senior-cloud-infrastructure-engineer-aws-gcp-azure": {
+      "title": "(Senior) Cloud Infrastructure Engineer - AWS · GCP · Azure",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13876504",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "twoday-as-senior-full-stack-developer-net-azure": {
+      "title": "Senior Full Stack Developer (.NET /​ Azure)",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676393",
+      "first_seen": "2026-06-22",
+      "fit": "medium",
+      "status": "new"
+    },
+    "jppolitikens-hus-udvikler-til-integrationsteam-i-jppolitiken": {
+      "title": "Udvikler til integrationsteam i JP/Politikens Hus",
+      "company": "JP/Politikens Hus",
+      "url": "https://www.jobindex.dk/jobannonce/r13853260",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "telecom-infrastructure-partners-tip-business-development-exe": {
+      "title": "Business Development Executive",
+      "company": "Telecom Infrastructure Partners (TIP)",
+      "url": "https://www.jobindex.dk/jobannonce/h1673357/business-development-executive",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "lidl-danmark-ks-consultant-til-it-infrastructure-management": {
+      "title": "Consultant til IT Infrastructure Management",
+      "company": "Lidl Danmark K/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1673137",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "peoplelink-senior-hydraulic-engineer-team-lead": {
+      "title": "Senior Hydraulic Engineer, Team Lead",
+      "company": "PeopleLink",
+      "url": "https://www.jobindex.dk/jobannonce/h1665221",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "gml-as-chora-technical-program-lead": {
+      "title": "Chora, Technical Program Lead",
+      "company": "GML A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1673551",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "monta-student-devops-engineer": {
+      "title": "Student DevOps Engineer",
+      "company": "Monta",
+      "url": "https://www.jobindex.dk/jobannonce/r13858006",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "rdt-ingenioerer-aps-devops-engineer-linux-ansible": {
+      "title": "DevOps Engineer (Linux & Ansible)",
+      "company": "RDT Ingeniører ApS",
+      "url": "https://www.jobindex.dk/jobannonce/r13858686",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "evida-cyber-security-specialist": {
+      "title": "Cyber Security Specialist",
+      "company": "Evida",
+      "url": "https://www.jobindex.dk/jobannonce/h1673633",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "everllence-software-engineer": {
+      "title": "Software Engineer",
+      "company": "Everllence",
+      "url": "https://www.jobindex.dk/jobannonce/h1673823",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "qarma-senior-operations-engineer": {
+      "title": "Senior Operations Engineer",
+      "company": "Qarma",
+      "url": "https://www.jobindex.dk/jobannonce/r13858012",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "tv2-software-engineer-observability-tech-enabling": {
+      "title": "Software Engineer Observability, Tech Enabling",
+      "company": "TV2",
+      "url": "https://www.jobindex.dk/jobannonce/r13858470",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "philip-morris-process-lead": {
+      "title": "Process Lead",
+      "company": "Philip Morris",
+      "url": "https://www.jobindex.dk/jobannonce/h1674200",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "everllence-student-assistant-devops-engineer": {
+      "title": "Student Assistant – DevOps Engineer",
+      "company": "Everllence",
+      "url": "https://www.jobindex.dk/jobannonce/h1674223",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-subsea-flexible-system-design-": {
+      "title": "Subsea Flexible System Design Engineer",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1674229",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "ey-cyber-security-director": {
+      "title": "Cyber Security Director",
+      "company": "EY",
+      "url": "https://www.jobindex.dk/jobannonce/h1674127/cyber-security-director",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "maersk-container-industry-mci-embedded-software-engineer": {
+      "title": "Embedded Software Engineer",
+      "company": "Maersk Container Industry (MCI)",
+      "url": "https://www.jobindex.dk/jobannonce/h1674005",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "everllence-student-assistant-cloud-administration": {
+      "title": "Student Assistant – Cloud Administration",
+      "company": "Everllence",
+      "url": "https://www.jobindex.dk/jobannonce/h1674192",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "humain-aps-finance-lead": {
+      "title": "Finance Lead",
+      "company": "Humain ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1657340",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "forsvaret-senior-devsecops-lead-til-forsvarets-ai-center": {
+      "title": "Senior DevSecOps Lead til Forsvarets AI Center",
+      "company": "Forsvaret",
+      "url": "https://www.jobindex.dk/jobannonce/h1674495",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-lead-net-developer": {
+      "title": "Lead .NET Developer",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1674711",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "simcorp-as-lead-software-engineer": {
+      "title": "Lead Software Engineer",
+      "company": "SimCorp A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13863685",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "terma-as-field-service-engineer-security": {
+      "title": "Field Service Engineer - Security",
+      "company": "Terma A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1666389/field-service-engineer-security",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "udviklings-og-forenklingsstyrelsen-platform-engineers-til-ud": {
+      "title": "Platform Engineers til udvikling og drift af Kubernetes-løsning",
+      "company": "Udviklings- og Forenklingsstyrelsen",
+      "url": "https://www.jobindex.dk/jobannonce/h1674444",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "forsvaret-mlops-engineer-til-opbygning-af-forsvarets-nye-ai-": {
+      "title": "MLOps Engineer til opbygning af Forsvarets nye AI-platform",
+      "company": "Forsvaret",
+      "url": "https://www.jobindex.dk/jobannonce/r13862898",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "hi-fi-klubben-as-finance-manager": {
+      "title": "Finance Manager",
+      "company": "Hi-Fi Klubben A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1674740",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "momentum-energy-group-as-studentermedhjaelper-til-group-fina": {
+      "title": "Studentermedhjælper til Group Finance",
+      "company": "Momentum Energy Group A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1666793",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "career-team-leader-environmental-cleanup": {
+      "title": "Team Leader – Environmental Cleanup",
+      "company": "Career",
+      "url": "https://www.jobindex.dk/jobannonce/h1665046",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "dansk-flygtningehjaelp-senior-portfolio-lead-spa-iii-framewo": {
+      "title": "Senior Portfolio Lead – SPA III /​ Frameworks",
+      "company": "Dansk Flygtningehjælp",
+      "url": "https://www.jobindex.dk/jobannonce/h1674790",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "trendhim-aps-digital-content-creative-lead": {
+      "title": "Digital Content & Creative Lead",
+      "company": "Trendhim ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1674893",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "grundfos-as-system-consultant-plm-3dx": {
+      "title": "System Consultant, PLM 3Dx",
+      "company": "Grundfos A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1674872",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "forsvaret-senior-platform-engineer-forsvarets-ai-center": {
+      "title": "Senior Platform Engineer, Forsvarets AI Center",
+      "company": "Forsvaret",
+      "url": "https://www.jobindex.dk/jobannonce/h1674888",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "jbt-marel-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "JBT Marel",
+      "url": "https://www.jobindex.dk/jobannonce/h1674964",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "grundfos-as-senior-quality-engineer": {
+      "title": "Senior Quality Engineer",
+      "company": "Grundfos A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1674902",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-senior-ai-agent-engineer-agent-wrangler": {
+      "title": "Senior AI Agent Engineer /​ Agent Wrangler",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1674871",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-senior-embedded-software-engineer": {
+      "title": "Senior embedded software engineer",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13863994",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-data-engineer": {
+      "title": "data engineer",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13863996",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-integration-engineer": {
+      "title": "Integration Engineer",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13866165",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "compass-human-resources-group-as-head-of-finance": {
+      "title": "Head of Finance",
+      "company": "Compass Human Resources Group A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675230",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "esmark-feriehusudlejning-as-customer-data-personalisation-le": {
+      "title": "Customer Data & Personalisation Lead",
+      "company": "Esmark Feriehusudlejning A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675258",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "udviklings-og-forenklingsstyrelsen-azure-platforms-udvikler-": {
+      "title": "Azure platforms-udvikler til drift af Skatteforvaltningens fremtidige Analytics platform",
+      "company": "Udviklings- og Forenklingsstyrelsen",
+      "url": "https://www.jobindex.dk/jobannonce/h1675163",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "schneider-electric-it-denmark-senior-software-developer": {
+      "title": "Senior Software Developer",
+      "company": "Schneider Electric IT Denmark",
+      "url": "https://www.jobindex.dk/jobannonce/h1675089/senior-software-developer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "schneider-electric-it-denmark-senior-data-engineer": {
+      "title": "Senior Data Engineer",
+      "company": "Schneider Electric IT Denmark",
+      "url": "https://www.jobindex.dk/jobannonce/h1653340/senior-data-engineer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "grundfos-as-senior-technology-development-engineer": {
+      "title": "Senior Technology Development Engineer",
+      "company": "Grundfos A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1658254",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "nkt-photonics-as-senior-optical-engineer": {
+      "title": "Senior Optical Engineer",
+      "company": "NKT Photonics A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1667057",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "circle-consult-aps-embedded-software-engineer": {
+      "title": "Embedded Software Engineer",
+      "company": "Circle Consult ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1669471/embedded-software-engineer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "pno-technical-agent": {
+      "title": "Technical Agent",
+      "company": "PNO",
+      "url": "https://www.jobindex.dk/jobannonce/h1674722/technical-agent",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "tec-technical-education-copenhagen-vil-du-uddanne-fremtidens": {
+      "title": "Vil du uddanne fremtidens elektrikere? Faglig instruktør søges!",
+      "company": "TEC – Technical Education Copenhagen",
+      "url": "https://www.jobindex.dk/jobannonce/h1666951/vil-du-uddanne-fremtidens-elektrikere-faglig-instruktoer-soeges",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "bestseller-finance-business-partner": {
+      "title": "Finance Business Partner",
+      "company": "BESTSELLER",
+      "url": "https://www.jobindex.dk/jobannonce/h1675675",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "grundfos-as-dei-lead-specialist": {
+      "title": "DE&I Lead Specialist",
+      "company": "Grundfos A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1667525",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "envidan-as-lead-ai-developer": {
+      "title": "Lead AI Developer",
+      "company": "EnviDan A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1667728/lead-ai-developer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "bankdata-engineering-manager-policy-as-code-platform-governa": {
+      "title": "Engineering Manager – Policy-as-Code & Platform Governance – gør compliance til kode – og kode til konkurrencefordel",
+      "company": "Bankdata",
+      "url": "https://www.jobindex.dk/jobannonce/h1675413/engineering-manager-policy-as-code-platform-governance-goer-compliance-til-kode-og-kode-til-konkurrencefordel",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "energinet-erfaren-platform-engineer": {
+      "title": "Erfaren Platform Engineer",
+      "company": "Energinet",
+      "url": "https://www.jobindex.dk/jobannonce/h1667798",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "foss-qa-test-automation-engineer-cloud-platform": {
+      "title": "QA Test Automation Engineer - Cloud Platform",
+      "company": "FOSS",
+      "url": "https://www.jobindex.dk/jobannonce/h1667713/qa-test-automation-engineer-cloud-platform",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "continia-software-as-hubspot-platform-manager": {
+      "title": "HubSpot Platform Manager",
+      "company": "Continia Software A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1667394",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "beumer-group-as-senior-automation-engineer-project-engineeri": {
+      "title": "Senior Automation Engineer, Project Engineering",
+      "company": "BEUMER Group A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675432/senior-automation-engineer-project-engineering",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "cim-as-software-engineer-pharma-production-systems": {
+      "title": "Software Engineer – Pharma Production Systems",
+      "company": "CIM A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675507/software-engineer-pharma-production-systems",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "simcorp-as-senior-software-engineer-private-debt": {
+      "title": "Senior Software Engineer - Private Debt",
+      "company": "SimCorp A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13871804",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "vexve-denmark-frese-as-technical-product-manager-vexve-denma": {
+      "title": "Technical Product Manager – Vexve Denmark and Subsidiaries (Former Frese A/​S)",
+      "company": "Vexve Denmark – Frese A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675452/technical-product-manager-vexve-denmark-and-subsidiaries-former-frese-a-s",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "tec-technical-education-copenhagen-uddannelsesleder-til-tec-": {
+      "title": "Uddannelsesleder til TEC Gladsaxe",
+      "company": "TEC – Technical Education Copenhagen",
+      "url": "https://www.jobindex.dk/jobannonce/h1675427/uddannelsesleder-til-tec-gladsaxe",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "everllence-product-manager-for-technical-service-department": {
+      "title": "Product Manager for Technical Service Department",
+      "company": "Everllence",
+      "url": "https://www.jobindex.dk/jobannonce/h1675672",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "humac-as-kreditorbogholder-til-finance": {
+      "title": "Kreditorbogholder til Finance",
+      "company": "Humac A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675828",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "tivoli-as-commercial-finance-business-partner": {
+      "title": "Commercial Finance Business Partner",
+      "company": "Tivoli A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676000",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "dsi-dantech-studentermedhjaelper-til-international-finance-a": {
+      "title": "Studentermedhjælper til international Finance afdeling",
+      "company": "DSI Dantech",
+      "url": "https://www.jobindex.dk/jobannonce/h1675704",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "convatec-senior-labelling-and-packaging-project-lead": {
+      "title": "Senior Labelling and Packaging Project Lead",
+      "company": "Convatec",
+      "url": "https://www.jobindex.dk/jobannonce/h1675904",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-head-of-core-tech-infrastructure": {
+      "title": "head of core tech & infrastructure",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13873008",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "tv-2-danmark-as-product-leader-tech-enabling-data-foundation": {
+      "title": "Product Leader – Tech Enabling & Data Foundation",
+      "company": "TV 2 Danmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676031",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "itm8-network-engineer": {
+      "title": "Network Engineer",
+      "company": "Itm8",
+      "url": "https://www.jobindex.dk/jobannonce/h1658876",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "eltwin-as-compliance-engineer": {
+      "title": "Compliance Engineer",
+      "company": "Eltwin A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675857",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "textilia-group-as-bliv-platform-engineer-hos-textilia-group-": {
+      "title": "Bliv Platform Engineer hos Textilia Group A/​S – Form fremtidens digitale fundament",
+      "company": "Textilia Group A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675731",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-senior-project-manager-data-platform-transformatio": {
+      "title": "Senior Project Manager – Data Platform Transformation",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676011",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "european-lifecare-group-as-senior-it-operations-engineer-clo": {
+      "title": "Senior IT Operations Engineer (Cloud & Security)",
+      "company": "European LifeCare Group A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676028",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-associate-director-it-security": {
+      "title": "Associate Director, IT Security",
+      "company": "Novo Nordisk",
+      "url": "https://www.jobindex.dk/jobannonce/r13873081/associate-director-it-security",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "everllence-senior-embedded-software-engineer": {
+      "title": "Senior Embedded Software Engineer",
+      "company": "Everllence",
+      "url": "https://www.jobindex.dk/jobannonce/h1675811",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "everllence-embedded-software-engineer": {
+      "title": "Embedded Software Engineer",
+      "company": "Everllence",
+      "url": "https://www.jobindex.dk/jobannonce/h1675807",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-senior-software-developer": {
+      "title": "Senior Software Developer",
+      "company": "Novo Nordisk",
+      "url": "https://www.jobindex.dk/jobannonce/r13873080/senior-software-developer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "lego-system-as-senior-software-engineer-packing-technology-1": {
+      "title": "Senior Software Engineer - Packing Technology (1 year parental cover)",
+      "company": "LEGO System A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13873317",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "marpro-group-aps-technical-product-compliance-specialist": {
+      "title": "Technical Product Compliance Specialist",
+      "company": "MARPRO Group ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1675899",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "alumichem-as-technical-sales-specialist-in-uk-water-treatmen": {
+      "title": "Technical Sales Specialist in UK (water treatment)",
+      "company": "Alumichem A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1668127/technical-sales-specialist-in-uk-water-treatment",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "arla-foods-amba-entry-it-developer-it-product-for-marketing": {
+      "title": "Entry IT Developer - IT Product for Marketing",
+      "company": "Arla Foods amba",
+      "url": "https://www.jobindex.dk/jobannonce/h1676014/entry-it-developer-it-product-for-marketing",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-finance-business-partner": {
+      "title": "Finance Business Partner",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1676178",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "dovista-as-finance-project-manager-interim": {
+      "title": "Finance Project Manager (interim)",
+      "company": "DOVISTA A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676006",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-finance-manager": {
+      "title": "Finance Manager",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13876496",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "konsulenthuset-ballisager-as-lead-digital-product-owner": {
+      "title": "Lead Digital Product Owner",
+      "company": "Konsulenthuset ballisager A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676066",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "flgger-as-analyst-team-lead-inventory-data-management": {
+      "title": "Analyst Team Lead - Inventory & Data Management",
+      "company": "Flügger A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676364",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "jysk-product-owner-and-people-lead-hcm": {
+      "title": "Product Owner and People Lead, HCM",
+      "company": "JYSK",
+      "url": "https://www.jobindex.dk/jobannonce/h1676398",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-lead-net-developer-public-sector-solutions": {
+      "title": "Lead .NET Developer - Public Sector Solutions",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676394",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "framna-technical-project-lead": {
+      "title": "Technical Project Lead",
+      "company": "Framna",
+      "url": "https://www.jobindex.dk/jobannonce/r13876497",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-founding-customer-lead": {
+      "title": "Founding Customer Lead",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13876491",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "nkt-photonics-as-optical-engineer-for-quantum-laser-systems": {
+      "title": "Optical Engineer for Quantum Laser Systems",
+      "company": "NKT Photonics A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1659313",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "smc-danmark-as-sales-engineer-distribution": {
+      "title": "Sales engineer Distribution",
+      "company": "SMC Danmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1675994/sales-engineer-distribution",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "syntegon-technology-as-sales-application-engineer-pharmamedt": {
+      "title": "Sales & Application Engineer (Pharma/​MedTech)",
+      "company": "Syntegon Technology A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1659340/sales-application-engineer-pharma-medtech",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "fibertex-personal-care-erfaren-automation-engineer-til-avanc": {
+      "title": "Erfaren Automation Engineer til avanceret procesindustri",
+      "company": "Fibertex Personal Care",
+      "url": "https://www.jobindex.dk/jobannonce/h1676198",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "jobindex-applikationsspecialist-tag-ansvar-for-vores-kerneap": {
+      "title": "Applikationsspecialist – tag ansvar for vores kerneapplikationer i samfundskritiske systemer",
+      "company": "Jobindex",
+      "url": "https://www.jobindex.dk/jobannonce/h1671680/applikationsspecialist-tag-ansvar-for-vores-kerneapplikationer-i-samfundskritiske-systemer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-it-system-manager": {
+      "title": "IT System Manager",
+      "company": "Novo Nordisk",
+      "url": "https://www.jobindex.dk/jobannonce/r13876384/it-system-manager",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "csis-security-group-as-security-analyst-in-cutting-edge-mana": {
+      "title": "Security Analyst in cutting-edge Managed Detection and Response (MDR) Team",
+      "company": "CSIS SECURITY GROUP A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13875533/security-analyst-in-cutting-edge-managed-detection-and-response-mdr-team",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "kk-group-senior-specialist-bionic-solutions-mf": {
+      "title": "Senior Specialist, Bionic Solutions M/​F",
+      "company": "KK Group",
+      "url": "https://www.jobindex.dk/jobannonce/h1676309/senior-specialist-bionic-solutions-m-f",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "lang-partners-rekruttering-consulting-aps-sales-manager-solu": {
+      "title": "Sales Manager Solutions til international miljøteknologisk virksomhed",
+      "company": "Lang Partners rekruttering & consulting ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1676084",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-driftskoordinator-administrativ-leder-til-vejgodstra": {
+      "title": "Driftskoordinator / Administrativ leder til vejgodstransport",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13875669/driftskoordinator-administrativ-leder-til-vejgodstransport",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "konsulenthuset-ballisager-as-technical-service-supporter": {
+      "title": "Technical Service Supporter",
+      "company": "Konsulenthuset ballisager A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676068",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "q8-danmark-as-e-mobility-projektleder-technical-project-mana": {
+      "title": "E-Mobility Projektleder /​ Technical Project Manager til Q8 Danmark",
+      "company": "Q8 Danmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676267",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-technical-writer": {
+      "title": "Technical Writer",
+      "company": "Novo Nordisk",
+      "url": "https://www.jobindex.dk/jobannonce/r13876380/technical-writer",
+      "first_seen": "2026-06-22",
+      "fit": "low",
+      "status": "new"
+    }
+  }
+}
