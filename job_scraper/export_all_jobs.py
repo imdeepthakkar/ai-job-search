@@ -7,7 +7,7 @@ import re
 import subprocess
 from datetime import datetime, timedelta
 
-WORKSPACE_DIR = r"C:\Users\deept\ai-job-search"
+WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUERIES_PATH = os.path.join(WORKSPACE_DIR, ".claude", "skills", "job-scraper", "search-queries.md")
 TRACKER_PATH = os.path.join(WORKSPACE_DIR, "job_search_tracker.csv")
 SEEN_JOBS_PATH = os.path.join(WORKSPACE_DIR, "job_scraper", "seen_jobs.json")
