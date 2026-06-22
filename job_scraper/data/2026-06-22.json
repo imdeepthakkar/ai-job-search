@@ -48,18 +48,6 @@
     "status": "new"
   },
   {
-    "key": "jn-data-as-domain-architect-datacenter-connectivity",
-    "title": "Domain Architect - Datacenter Connectivity",
-    "company": "JN Data A/S",
-    "location": "Silkeborg, Roskilde og mulighed for hjemmearbejde",
-    "url": "https://www.jobindex.dk/jobannonce/h1673246",
-    "fit": "medium",
-    "date": "2026-06-10",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "jn-data-as-service-architect-cloud-enablement",
     "title": "Service Architect - Cloud Enablement",
     "company": "JN Data A/S",
@@ -68,18 +56,6 @@
     "fit": "medium",
     "date": "2026-06-10",
     "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "unknown-architect-denmark",
-    "title": "Architect Denmark",
-    "company": "Unknown Company",
-    "location": "København",
-    "url": "https://www.jobindex.dk/jobannonce/r13855648",
-    "fit": "medium",
-    "date": "2026-06-10",
-    "description": "Would you like to actively contribute to a greener future?",
     "source": "jobindex.dk",
     "status": "new"
   },
@@ -228,6 +204,54 @@
     "status": "new"
   },
   {
+    "key": "kmd-as-senior-solution-architect",
+    "title": "Senior Solution Architect",
+    "company": "KMD A/S",
+    "location": "Ballerup",
+    "url": "https://www.jobindex.dk/jobannonce/r13876891",
+    "fit": "medium",
+    "date": "2026-06-22",
+    "description": "Senior Solution Architect At KMD, we build digital solutions used by millions of people around the world.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "capgemini-danmark-as-ai-data-architect",
+    "title": "AI Data Architect",
+    "company": "Capgemini Danmark A/S",
+    "location": "Vallensbæk Strand",
+    "url": "https://www.jobindex.dk/jobannonce/r13876886",
+    "fit": "medium",
+    "date": "2026-06-22",
+    "description": "As a Data Architect, you will work with leading organizations to design and govern enterprise-grade data architectures that enable analytics,...",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "capgemini-danmark-as-microsoft-ai-solution-architect",
+    "title": "Microsoft AI Solution Architect",
+    "company": "Capgemini Danmark A/S",
+    "location": "Vallensbæk Strand",
+    "url": "https://www.jobindex.dk/jobannonce/r13876892",
+    "fit": "medium",
+    "date": "2026-06-22",
+    "description": "As a Microsoft AI Solution Architect at Capgemini, you will be at the absolute forefront of enterprise AI transformation.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "kmd-as-senior-sap-architect",
+    "title": "Senior SAP Architect",
+    "company": "KMD A/S",
+    "location": "Ballerup",
+    "url": "https://www.jobindex.dk/jobannonce/r13876890",
+    "fit": "medium",
+    "date": "2026-06-22",
+    "description": "Er du en erfaren SAP Applikationsarkitekt og klar til nye udfordringer?",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "laegemiddelstyrelsen-tech-lead-ledende-arkitekt-vaer-med-til",
     "title": "Tech Lead /​ Ledende Arkitekt – vær med til at forme fremtidens lægemiddelstyrelse",
     "company": "Lægemiddelstyrelsen",
@@ -240,6 +264,18 @@
     "status": "new"
   },
   {
+    "key": "unknown-senior-cloud-infrastructure-engineer-aws-gcp-azure",
+    "title": "(Senior) Cloud Infrastructure Engineer - AWS · GCP · Azure",
+    "company": "Unknown Company",
+    "location": "København",
+    "url": "https://www.jobindex.dk/jobannonce/r13876504",
+    "fit": "medium",
+    "date": "2026-06-22",
+    "description": "Shine is the financial copilot for entrepreneurs and small business owners.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "twoday-as-senior-full-stack-developer-net-azure",
     "title": "Senior Full Stack Developer (.NET /​ Azure)",
     "company": "twoday A/S",
@@ -248,18 +284,6 @@
     "fit": "medium",
     "date": "2026-06-22",
     "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "init-group-junior-devops-engineer",
-    "title": "Junior DevOps Engineer",
-    "company": "Init Group",
-    "location": "Makedonien",
-    "url": "https://www.jobindex.dk/jobannonce/r13852506",
-    "fit": "low",
-    "date": "2026-06-09",
-    "description": "Init is seeking a motivated Junior DevOps Engineer to join our DevOps team.",
     "source": "jobindex.dk",
     "status": "new"
   },
@@ -305,18 +329,6 @@
     "company": "PeopleLink",
     "location": "Vejstrup",
     "url": "https://www.jobindex.dk/jobannonce/h1665221",
-    "fit": "low",
-    "date": "2026-06-10",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "nordic-rcc-industrial-phd-in-coordinated-security-analysis",
-    "title": "Industrial PhD in Coordinated Security Analysis",
-    "company": "Nordic RCC",
-    "location": "Copenhagen",
-    "url": "https://www.jobindex.dk/jobannonce/h1665114",
     "fit": "low",
     "date": "2026-06-10",
     "description": "No description available.",
@@ -384,18 +396,6 @@
     "status": "new"
   },
   {
-    "key": "everllence-head-of-digital-solutions",
-    "title": "Head of Digital Solutions",
-    "company": "Everllence",
-    "location": "Copenhagen",
-    "url": "https://www.jobindex.dk/jobannonce/h1673714",
-    "fit": "low",
-    "date": "2026-06-11",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "qarma-senior-operations-engineer",
     "title": "Senior Operations Engineer",
     "company": "Qarma",
@@ -449,18 +449,6 @@
     "company": "NOV Subsea Production Systems",
     "location": "Brøndby",
     "url": "https://www.jobindex.dk/jobannonce/h1674229",
-    "fit": "low",
-    "date": "2026-06-12",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "nov-subsea-production-systems-senior-subsea-flexible-system-",
-    "title": "Senior Subsea Flexible System Design Engineer",
-    "company": "NOV Subsea Production Systems",
-    "location": "Brøndby",
-    "url": "https://www.jobindex.dk/jobannonce/h1674228",
     "fit": "low",
     "date": "2026-06-12",
     "description": "No description available.",
@@ -540,30 +528,6 @@
     "status": "new"
   },
   {
-    "key": "jysk-sales-leader-til-jysk-frederikssund",
-    "title": "Sales leader til JYSK Frederikssund",
-    "company": "JYSK",
-    "location": "Frederikssund",
-    "url": "https://www.jobindex.dk/jobannonce/h1674541",
-    "fit": "low",
-    "date": "2026-06-15",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "udviklings-og-forenklingsstyrelsen-platform-engineers-til-ud",
-    "title": "Platform Engineers til udvikling og drift af Kubernetes-løsning",
-    "company": "Udviklings- og Forenklingsstyrelsen",
-    "location": "Frederiksberg",
-    "url": "https://www.jobindex.dk/jobannonce/h1674444",
-    "fit": "low",
-    "date": "2026-06-15",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "simcorp-as-lead-software-engineer",
     "title": "Lead Software Engineer",
     "company": "SimCorp A/S",
@@ -588,11 +552,11 @@
     "status": "new"
   },
   {
-    "key": "hm-hennes-mauritz-as-sales-market-security-manager-sales-mar",
-    "title": "Sales Market Security Manager - Sales Market Denmark/​Norway/​Iceland",
-    "company": "H&M HENNES & MAURITZ A/S",
-    "location": "København K",
-    "url": "https://www.jobindex.dk/jobannonce/h1674572",
+    "key": "udviklings-og-forenklingsstyrelsen-platform-engineers-til-ud",
+    "title": "Platform Engineers til udvikling og drift af Kubernetes-løsning",
+    "company": "Udviklings- og Forenklingsstyrelsen",
+    "location": "Frederiksberg",
+    "url": "https://www.jobindex.dk/jobannonce/h1674444",
     "fit": "low",
     "date": "2026-06-15",
     "description": "No description available.",
@@ -629,18 +593,6 @@
     "company": "Momentum Energy Group A/S",
     "location": "Roskilde",
     "url": "https://www.jobindex.dk/jobannonce/h1666793",
-    "fit": "low",
-    "date": "2026-06-16",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "found-search-selection-aps-finance-manager",
-    "title": "Finance Manager",
-    "company": "Found Search & Selection ApS",
-    "location": "Nørresundby",
-    "url": "https://www.jobindex.dk/jobannonce/h1674779",
     "fit": "low",
     "date": "2026-06-16",
     "description": "No description available.",
@@ -701,18 +653,6 @@
     "company": "Forsvaret",
     "location": "København K",
     "url": "https://www.jobindex.dk/jobannonce/h1674888",
-    "fit": "low",
-    "date": "2026-06-16",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "databi-aps-it-konsulent-microsoft-power-platform",
-    "title": "IT-konsulent - Microsoft Power Platform",
-    "company": "DataBi ApS",
-    "location": "København K",
-    "url": "https://www.jobindex.dk/jobannonce/h1671075/it-konsulent-microsoft-power-platform",
     "fit": "low",
     "date": "2026-06-16",
     "description": "No description available.",
@@ -809,42 +749,6 @@
     "company": "Esmark Feriehusudlejning A/S",
     "location": "Aarhus C",
     "url": "https://www.jobindex.dk/jobannonce/h1675258",
-    "fit": "low",
-    "date": "2026-06-17",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "wrth-danmark-as-head-of-commercial-systems-concepts",
-    "title": "Head of Commercial Systems & Concepts",
-    "company": "Würth Danmark A/S",
-    "location": "Kolding",
-    "url": "https://www.jobindex.dk/jobannonce/h1675203",
-    "fit": "low",
-    "date": "2026-06-17",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "deif-as-embedded-systems-test-engineer-student-job",
-    "title": "Embedded Systems Test Engineer (Student Job)",
-    "company": "DEIF A/S",
-    "location": "Skive and home office days",
-    "url": "https://www.jobindex.dk/jobannonce/h1675113/embedded-systems-test-engineer-student-job",
-    "fit": "low",
-    "date": "2026-06-17",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "daarbak-group-softwareudvikler-til-ai-understoettede-interne",
-    "title": "Softwareudvikler til AI-understøttede interne systemer",
-    "company": "Daarbak Group",
-    "location": "Vejle",
-    "url": "https://www.jobindex.dk/jobannonce/h1670919/softwareudvikler-til-ai-understoettede-interne-systemer",
     "fit": "low",
     "date": "2026-06-17",
     "description": "No description available.",
@@ -953,18 +857,6 @@
     "company": "BESTSELLER",
     "location": "Aarhus C",
     "url": "https://www.jobindex.dk/jobannonce/h1675675",
-    "fit": "low",
-    "date": "2026-06-18",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "continia-software-as-product-director-banking-finance",
-    "title": "Product Director – Banking & Finance",
-    "company": "Continia Software A/S",
-    "location": "Nørresundby or Copenhagen",
-    "url": "https://www.jobindex.dk/jobannonce/h1667401",
     "fit": "low",
     "date": "2026-06-18",
     "description": "No description available.",
@@ -1092,11 +984,11 @@
     "status": "new"
   },
   {
-    "key": "everllence-product-manager-for-technical-service-department",
-    "title": "Product Manager for Technical Service Department",
-    "company": "Everllence",
-    "location": "Frederikshavn",
-    "url": "https://www.jobindex.dk/jobannonce/h1675672",
+    "key": "tec-technical-education-copenhagen-uddannelsesleder-til-tec-",
+    "title": "Uddannelsesleder til TEC Gladsaxe",
+    "company": "TEC – Technical Education Copenhagen",
+    "location": "Søborg",
+    "url": "https://www.jobindex.dk/jobannonce/h1675427/uddannelsesleder-til-tec-gladsaxe",
     "fit": "low",
     "date": "2026-06-18",
     "description": "No description available.",
@@ -1104,11 +996,11 @@
     "status": "new"
   },
   {
-    "key": "tec-technical-education-copenhagen-uddannelsesleder-til-tec-",
-    "title": "Uddannelsesleder til TEC Gladsaxe",
-    "company": "TEC – Technical Education Copenhagen",
-    "location": "Søborg",
-    "url": "https://www.jobindex.dk/jobannonce/h1675427/uddannelsesleder-til-tec-gladsaxe",
+    "key": "everllence-product-manager-for-technical-service-department",
+    "title": "Product Manager for Technical Service Department",
+    "company": "Everllence",
+    "location": "Frederikshavn",
+    "url": "https://www.jobindex.dk/jobannonce/h1675672",
     "fit": "low",
     "date": "2026-06-18",
     "description": "No description available.",
@@ -1152,35 +1044,11 @@
     "status": "new"
   },
   {
-    "key": "dsv-group-finance-business-partnering-road-division",
-    "title": "Group Finance Business Partnering, Road Division",
-    "company": "DSV",
-    "location": "Hedehusene",
-    "url": "https://www.jobindex.dk/jobannonce/h1675964/group-finance-business-partnering-road-division",
-    "fit": "low",
-    "date": "2026-06-19",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "convatec-senior-labelling-and-packaging-project-lead",
     "title": "Senior Labelling and Packaging Project Lead",
     "company": "Convatec",
     "location": "Lejre or Søborg (Hybrid)",
     "url": "https://www.jobindex.dk/jobannonce/h1675904",
-    "fit": "low",
-    "date": "2026-06-19",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "tv-2-danmark-as-product-leader-tech-enabling-data-foundation",
-    "title": "Product Leader – Tech Enabling & Data Foundation",
-    "company": "TV 2 Danmark A/S",
-    "location": "København eller Odense C",
-    "url": "https://www.jobindex.dk/jobannonce/h1676031",
     "fit": "low",
     "date": "2026-06-19",
     "description": "No description available.",
@@ -1200,14 +1068,14 @@
     "status": "new"
   },
   {
-    "key": "devoteam-senior-ai-engineer-role-senior-to-principal-fixed-t",
-    "title": "Senior AI Engineer role (Senior to Principal), Fixed-term contract",
-    "company": "Devoteam",
-    "location": "København V",
-    "url": "https://www.jobindex.dk/jobannonce/r13873970",
+    "key": "tv-2-danmark-as-product-leader-tech-enabling-data-foundation",
+    "title": "Product Leader – Tech Enabling & Data Foundation",
+    "company": "TV 2 Danmark A/S",
+    "location": "København eller Odense C",
+    "url": "https://www.jobindex.dk/jobannonce/h1676031",
     "fit": "low",
     "date": "2026-06-19",
-    "description": "As tech architects, we build your AI-driven transformation for sustainable value.",
+    "description": "No description available.",
     "source": "jobindex.dk",
     "status": "new"
   },
@@ -1392,6 +1260,18 @@
     "status": "new"
   },
   {
+    "key": "unknown-finance-manager",
+    "title": "Finance Manager",
+    "company": "Unknown Company",
+    "location": "København",
+    "url": "https://www.jobindex.dk/jobannonce/r13876496",
+    "fit": "low",
+    "date": "2026-06-22",
+    "description": "Teton is building the foundational data layer for the point of care, using real-time, multimodal AI to generate a digital twin of the patient and care environment.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "konsulenthuset-ballisager-as-lead-digital-product-owner",
     "title": "Lead Digital Product Owner",
     "company": "Konsulenthuset ballisager A/S",
@@ -1436,6 +1316,30 @@
     "fit": "low",
     "date": "2026-06-22",
     "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "framna-technical-project-lead",
+    "title": "Technical Project Lead",
+    "company": "Framna",
+    "location": "København",
+    "url": "https://www.jobindex.dk/jobannonce/r13876497",
+    "fit": "low",
+    "date": "2026-06-22",
+    "description": "As a Technical Project Lead, you play a key role in shaping and delivering digital products.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "unknown-founding-customer-lead",
+    "title": "Founding Customer Lead",
+    "company": "Unknown Company",
+    "location": "København",
+    "url": "https://www.jobindex.dk/jobannonce/r13876491",
+    "fit": "low",
+    "date": "2026-06-22",
+    "description": "For the last decade, knowledge work drifted away from its original promise.",
     "source": "jobindex.dk",
     "status": "new"
   },
@@ -1500,6 +1404,18 @@
     "status": "new"
   },
   {
+    "key": "novo-nordisk-it-system-manager",
+    "title": "IT System Manager",
+    "company": "Novo Nordisk",
+    "location": "Kalundborg",
+    "url": "https://www.jobindex.dk/jobannonce/r13876384/it-system-manager",
+    "fit": "low",
+    "date": "2026-06-22",
+    "description": "Are you passionate about managing IT systems in a highly regulated environment?",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "csis-security-group-as-security-analyst-in-cutting-edge-mana",
     "title": "Security Analyst in cutting-edge Managed Detection and Response (MDR) Team",
     "company": "CSIS SECURITY GROUP A/S",
@@ -1529,18 +1445,6 @@
     "company": "Lang Partners rekruttering & consulting ApS",
     "location": "Ribe",
     "url": "https://www.jobindex.dk/jobannonce/h1676084",
-    "fit": "low",
-    "date": "2026-06-22",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "specsavers-martech-product-specialist",
-    "title": "Martech Product Specialist",
-    "company": "Specsavers",
-    "location": "Nordhavn",
-    "url": "https://www.jobindex.dk/jobannonce/h1676064",
     "fit": "low",
     "date": "2026-06-22",
     "description": "No description available.",
@@ -1580,6 +1484,18 @@
     "fit": "low",
     "date": "2026-06-22",
     "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "novo-nordisk-technical-writer",
+    "title": "Technical Writer",
+    "company": "Novo Nordisk",
+    "location": "Hjørring",
+    "url": "https://www.jobindex.dk/jobannonce/r13876380/technical-writer",
+    "fit": "low",
+    "date": "2026-06-22",
+    "description": "Turn complex science into clear, compelling documentation – and help bring life-changing pen needles to patients around the world.",
     "source": "jobindex.dk",
     "status": "new"
   }
