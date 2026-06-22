@@ -96,8 +96,17 @@ jobs:
           echo "✅ Found $COUNT total unique jobs."
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
 
-      - name: 'Run Gemini Analysis'
+      - name: 'Filter New Jobs'
+        id: 'filter_jobs'
         if: steps.run_searches.outputs.count != '0'
+        run: |-
+          python job_scraper/filter_new_jobs.py
+          COUNT=$(jq 'length' "${{ github.workspace }}/.temp/unique_results.json")
+          echo "✅ Found $COUNT new unseen jobs."
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: 'Run Gemini Analysis'
+        if: steps.run_searches.outputs.count != '0' && steps.filter_jobs.outputs.count != '0'
         continue-on-error: true
         uses: 'google-github-actions/run-gemini-cli@v0'
         env:

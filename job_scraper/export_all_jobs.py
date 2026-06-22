@@ -260,6 +260,37 @@ def main():
     with open(dates_js_path, "w", encoding="utf-8") as f:
         f.write(f"window.availableDates = {json.dumps(available_dates, indent=2, ensure_ascii=False)};")
         
+    # Update seen_jobs.json with all processed jobs as a fallback database update
+    try:
+        seen_data = {"seen": {}}
+        if os.path.exists(SEEN_JOBS_PATH):
+            with open(SEEN_JOBS_PATH, "r", encoding="utf-8") as f:
+                seen_data = json.load(f)
+                if "seen" not in seen_data:
+                    seen_data["seen"] = {}
+        
+        for job in jobs_list:
+            key = job["key"]
+            if key not in seen_data["seen"]:
+                seen_data["seen"][key] = {
+                    "title": job["title"],
+                    "company": job["company"],
+                    "url": job["url"],
+                    "first_seen": date_str,
+                    "fit": job["fit"],
+                    "status": job["status"]
+                }
+            else:
+                # Update status and fit
+                seen_data["seen"][key]["status"] = job["status"]
+                seen_data["seen"][key]["fit"] = job["fit"]
+                
+        with open(SEEN_JOBS_PATH, "w", encoding="utf-8") as f:
+            json.dump(seen_data, f, indent=2, ensure_ascii=False)
+        print(f"Updated seen database at {SEEN_JOBS_PATH}")
+    except Exception as e:
+        print(f"Warning: Failed to update seen_jobs.json: {e}")
+        
     print(f"Successfully exported {len(jobs_list)} unique jobs for {date_str}")
     print(f"Updated dates registry at {dates_js_path}")
 
