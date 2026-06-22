@@ -31,6 +31,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: 'Initialize Scraper Files'
+        run: |-
+          mkdir -p job_scraper
+          if [ ! -f job_scraper/seen_jobs.json ]; then
+            echo '{"seen": {}}' > job_scraper/seen_jobs.json
+          fi
+
       - name: 'Setup Bun'
         uses: 'oven-sh/setup-bun@v1'
         with:
@@ -158,8 +165,12 @@ jobs:
         run: |-
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f job_scraper/seen_jobs.json
-          git add job_scraper/data/*
-          git add job_scraper/index.html job_scraper/dashboard.html
+          if [ -f job_scraper/seen_jobs.json ]; then
+            git add -f job_scraper/seen_jobs.json
+          fi
+          if [ -d job_scraper/data ] && [ "$(ls -A job_scraper/data)" ]; then
+            git add job_scraper/data/*
+          fi
+          git add job_scraper/index.html job_scraper/dashboard.html || true
           git commit -m "chore: update scrape database [skip ci]" || echo "No changes to commit"
           git push
