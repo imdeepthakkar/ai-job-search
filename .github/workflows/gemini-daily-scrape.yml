@@ -191,4 +191,5 @@ jobs:
           VERCEL_PROJECT_ID: 'prj_r3TQqoyxRCzN2OZyFp0agbgjIEL7'
         run: |-
           cd job_scraper
-          npx vercel deploy --prod --yes --token "$VERCEL_TOKEN"
+          rm -rf .vercel
+          npx vercel deploy --prod --yes --token "$VERCEL_TOKEN" --debug
