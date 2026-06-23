@@ -999,6 +999,118 @@
       "first_seen": "2026-06-22",
       "fit": "low",
       "status": "new"
+    },
+    "unknown-architect-denmark": {
+      "title": "Architect Denmark",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13855648",
+      "first_seen": "2026-06-23",
+      "fit": "medium",
+      "status": "new"
+    },
+    "jn-data-as-domain-architect-mainframe": {
+      "title": "Domain Architect - Mainframe",
+      "company": "JN Data A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676496",
+      "first_seen": "2026-06-23",
+      "fit": "medium",
+      "status": "new"
+    },
+    "jn-data-as-domain-architect-data": {
+      "title": "Domain Architect - Data",
+      "company": "JN Data A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676499",
+      "first_seen": "2026-06-23",
+      "fit": "medium",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-senior-subsea-flexible-system-": {
+      "title": "Senior Subsea Flexible System Design Engineer",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1674228",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "dansk-flygtningehjaelp-technical-advisor-multi-country-proje": {
+      "title": "Technical Advisor - Multi Country Project",
+      "company": "Dansk Flygtningehjælp",
+      "url": "https://www.jobindex.dk/jobannonce/r13876947",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "dansk-flygtningehjaelp-economic-recovery-coordinator-technic": {
+      "title": "Economic Recovery Coordinator – Technical Advisory Role",
+      "company": "Dansk Flygtningehjælp",
+      "url": "https://www.jobindex.dk/jobannonce/r13876946",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "hybrid-greentech-energy-intelligence-aps-finance-settlement-": {
+      "title": "Finance & Settlement Data Analyst",
+      "company": "Hybrid Greentech Energy Intelligence ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1676372/finance-settlement-data-analyst",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "aon-denmark-as-client-leader-mnc": {
+      "title": "Client Leader, MNC",
+      "company": "Aon Denmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1659607/client-leader-mnc",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "powercon-as-software-development-engineer": {
+      "title": "Software Development Engineer",
+      "company": "PowerCon A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676429/software-development-engineer",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "peoplelink-equipment-engineer": {
+      "title": "Equipment Engineer",
+      "company": "PeopleLink",
+      "url": "https://www.jobindex.dk/jobannonce/h1668506",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "verisure-business-security-consultant-soeges-til-erhvervstea": {
+      "title": "Business Security Consultant søges til Erhvervsteam på Sjælland",
+      "company": "Verisure",
+      "url": "https://www.jobindex.dk/jobannonce/h1659724",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "actulux-as-technical-support-manager": {
+      "title": "Technical Support Manager",
+      "company": "Actulux A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1676225/technical-support-manager",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "rigspolitiet-loesningsarkitekter-til-rigspolitiets-center-fo": {
+      "title": "Løsningsarkitekter til Rigspolitiets Center for International Digitalisering",
+      "company": "Rigspolitiet",
+      "url": "https://www.jobindex.dk/jobannonce/h1676423/loesningsarkitekter-til-rigspolitiets-center-for-international-digitalisering",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
+    },
+    "rigspolitiet-full-stack-udvikler-til-fremtidens-ai-loesninge": {
+      "title": "Full-stack udvikler til fremtidens AI-løsninger i politiet",
+      "company": "Rigspolitiet",
+      "url": "https://www.jobindex.dk/jobannonce/h1676437/full-stack-udvikler-til-fremtidens-ai-loesninger-i-politiet",
+      "first_seen": "2026-06-23",
+      "fit": "low",
+      "status": "new"
     }
   }
 }
