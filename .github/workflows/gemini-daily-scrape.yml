@@ -182,6 +182,7 @@ jobs:
           fi
           git add job_scraper/index.html job_scraper/dashboard.html || true
           git commit -m "chore: update scrape database [skip ci]" || echo "No changes to commit"
+          git pull --rebase origin master
           git push
 
       - name: 'Deploy to Vercel'
@@ -191,5 +192,7 @@ jobs:
           VERCEL_PROJECT_ID: 'prj_r3TQqoyxRCzN2OZyFp0agbgjIEL7'
         run: |-
           cd job_scraper
-          rm -rf .vercel
-          npx vercel deploy --prod --yes --token "$VERCEL_TOKEN" --debug
+          npm install -g vercel
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
