@@ -108,18 +108,6 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "grundfos-as-chief-digital-architect",
-    "title": "Chief Digital Architect",
-    "company": "Grundfos A/S",
-    "location": "Bjerringbro, Hybrid position",
-    "url": "https://www.jobindex.dk/jobannonce/h1659040",
-    "fit": "medium",
-    "date": "2026-06-19",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "norlys-aws-cloud-architect-lead-the-design-of-norlys-enterpr",
     "title": "AWS Cloud Architect - Lead the design of Norlys' enterprise cloud platform",
     "company": "Norlys",
@@ -264,6 +252,18 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
+    "key": "karsberg-rekruttering-og-headhunting-tech-lead-i-et-staerkt-",
+    "title": "Tech Lead i et stærkt R&D-miljø",
+    "company": "KARSBERG – rekruttering og headhunting",
+    "location": "Risskov",
+    "url": "https://www.jobindex.dk/jobannonce/h1677018",
+    "fit": "medium",
+    "date": "2026-06-24",
+    "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "monta-student-devops-engineer",
     "title": "Student DevOps Engineer",
     "company": "Monta",
@@ -300,23 +300,23 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "philip-morris-process-lead",
-    "title": "Process Lead",
-    "company": "Philip Morris",
-    "location": "Greater Copenhagen",
-    "url": "https://www.jobindex.dk/jobannonce/h1674200",
-    "fit": "low",
-    "date": "2026-06-12",
-    "description": "Vær med til at optimere fremtidens produktion.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "everllence-student-assistant-devops-engineer",
     "title": "Student Assistant – DevOps Engineer",
     "company": "Everllence",
     "location": "Copenhagen",
     "url": "https://www.jobindex.dk/jobannonce/h1674223",
+    "fit": "low",
+    "date": "2026-06-12",
+    "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "ey-cyber-security-director",
+    "title": "Cyber Security Director",
+    "company": "EY",
+    "location": "Frederiksberg",
+    "url": "https://www.jobindex.dk/jobannonce/h1674127/cyber-security-director",
     "fit": "low",
     "date": "2026-06-12",
     "description": "No description available.",
@@ -432,11 +432,11 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "career-team-leader-environmental-cleanup",
-    "title": "Team Leader – Environmental Cleanup",
-    "company": "Career",
-    "location": "Odense SØ",
-    "url": "https://www.jobindex.dk/jobannonce/h1665046",
+    "key": "forsvaret-senior-platform-engineer-forsvarets-ai-center",
+    "title": "Senior Platform Engineer, Forsvarets AI Center",
+    "company": "Forsvaret",
+    "location": "København K",
+    "url": "https://www.jobindex.dk/jobannonce/h1674888",
     "fit": "low",
     "date": "2026-06-16",
     "description": "No description available.",
@@ -545,18 +545,6 @@ window.scrapedJobs = [
     "company": "Grundfos A/S",
     "location": "Bjerringbro, hybrid position",
     "url": "https://www.jobindex.dk/jobannonce/h1658254",
-    "fit": "low",
-    "date": "2026-06-17",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "nkt-photonics-as-senior-optical-engineer",
-    "title": "Senior Optical Engineer",
-    "company": "NKT Photonics A/S",
-    "location": "Birkerød",
-    "url": "https://www.jobindex.dk/jobannonce/h1667057",
     "fit": "low",
     "date": "2026-06-17",
     "description": "No description available.",
@@ -804,30 +792,6 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "marpro-group-aps-technical-product-compliance-specialist",
-    "title": "Technical Product Compliance Specialist",
-    "company": "MARPRO Group ApS",
-    "location": "Brønderslev",
-    "url": "https://www.jobindex.dk/jobannonce/h1675899",
-    "fit": "low",
-    "date": "2026-06-19",
-    "description": "No description available.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "alumichem-as-technical-sales-specialist-in-uk-water-treatmen",
-    "title": "Technical Sales Specialist in UK (water treatment)",
-    "company": "Alumichem A/S",
-    "location": "Greater Copenhagen",
-    "url": "https://www.jobindex.dk/jobannonce/h1668127/technical-sales-specialist-in-uk-water-treatment",
-    "fit": "low",
-    "date": "2026-06-19",
-    "description": "This is a varied and hands-on role combining technical understanding, customer dialogue, sales activities, and project management responsibilities.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "textilia-group-as-bliv-platform-engineer-hos-textilia-group-",
     "title": "Bliv Platform Engineer hos Textilia Group A/​S – Form fremtidens digitale fundament",
     "company": "Textilia Group A/S",
@@ -948,11 +912,11 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "jobindex-applikationsspecialist-tag-ansvar-for-vores-kerneap",
-    "title": "Applikationsspecialist – tag ansvar for vores kerneapplikationer i samfundskritiske systemer",
-    "company": "Jobindex",
-    "location": "Taastrup",
-    "url": "https://www.jobindex.dk/jobannonce/h1671680/applikationsspecialist-tag-ansvar-for-vores-kerneapplikationer-i-samfundskritiske-systemer",
+    "key": "kk-group-senior-specialist-bionic-solutions-mf",
+    "title": "Senior Specialist, Bionic Solutions M/​F",
+    "company": "KK Group",
+    "location": "Ikast",
+    "url": "https://www.jobindex.dk/jobannonce/h1676309/senior-specialist-bionic-solutions-m-f",
     "fit": "low",
     "date": "2026-06-22",
     "description": "No description available.",
@@ -960,11 +924,11 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "kk-group-senior-specialist-bionic-solutions-mf",
-    "title": "Senior Specialist, Bionic Solutions M/​F",
-    "company": "KK Group",
-    "location": "Ikast",
-    "url": "https://www.jobindex.dk/jobannonce/h1676309/senior-specialist-bionic-solutions-m-f",
+    "key": "lang-partners-rekruttering-consulting-aps-sales-manager-solu",
+    "title": "Sales Manager Solutions til international miljøteknologisk virksomhed",
+    "company": "Lang Partners rekruttering & consulting ApS",
+    "location": "Ribe",
+    "url": "https://www.jobindex.dk/jobannonce/h1676084",
     "fit": "low",
     "date": "2026-06-22",
     "description": "No description available.",
@@ -992,18 +956,6 @@ window.scrapedJobs = [
     "fit": "low",
     "date": "2026-06-22",
     "description": "The Danish Refugee Council (DRC) is a humanitarian, non-governmental and non-profit organization, founded in 1956, that works in more than 35 countries around the world.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
-    "key": "dansk-flygtningehjaelp-economic-recovery-coordinator-technic",
-    "title": "Economic Recovery Coordinator – Technical Advisory Role",
-    "company": "Dansk Flygtningehjælp",
-    "location": "Yemen",
-    "url": "https://www.jobindex.dk/jobannonce/r13876946",
-    "fit": "low",
-    "date": "2026-06-22",
-    "description": "The Danish Refugee Council assists refugees and internally displaced persons across the globe: we provide emergency aid, fight for their...",
     "source": "jobindex.dk",
     "status": "new"
   },
@@ -1164,18 +1116,6 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "too-good-to-go-software-engineer-l-backend",
-    "title": "Software Engineer l (Backend)",
-    "company": "Too Good To Go",
-    "location": "København",
-    "url": "https://www.jobindex.dk/jobannonce/r13879114",
-    "fit": "low",
-    "date": "2026-06-23",
-    "description": "At Too Good To Go, we have an ambitious goal: to inspire and empower everyone to fight food waste together.",
-    "source": "jobindex.dk",
-    "status": "new"
-  },
-  {
     "key": "actulux-as-technical-support-manager",
     "title": "Technical Support Manager",
     "company": "Actulux A/S",
@@ -1248,6 +1188,18 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
+    "key": "visiosign-marketing-lead",
+    "title": "Marketing Lead",
+    "company": "Visiosign",
+    "location": "Karlslunde, possibility to work from home",
+    "url": "https://www.jobindex.dk/jobannonce/h1676872/marketing-lead",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "jyske-bank-lead-projektleder-til-program-projektledelse",
     "title": "Lead Projektleder til Program- & Projektledelse",
     "company": "Jyske Bank",
@@ -1289,6 +1241,18 @@ window.scrapedJobs = [
     "company": "NOV Subsea Production Systems",
     "location": "Brøndby or Kalundborg",
     "url": "https://www.jobindex.dk/jobannonce/h1676796",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "vitrolife-as-senior-software-engineer",
+    "title": "Senior Software Engineer",
+    "company": "Vitrolife A/S",
+    "location": "Viby J",
+    "url": "https://www.jobindex.dk/jobannonce/h1677067",
     "fit": "low",
     "date": "2026-06-24",
     "description": "No description available.",
@@ -1356,6 +1320,18 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
+    "key": "nov-subsea-production-systems-quality-documentation-speciali",
+    "title": "Quality Documentation Specialist",
+    "company": "NOV Subsea Production Systems",
+    "location": "Brøndby",
+    "url": "https://www.jobindex.dk/jobannonce/h1677040",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "agramkow-fluid-systems-as-mechanical-engineer-build-the-futu",
     "title": "Mechanical Engineer – Build the Future of Sustainable Manufacturing",
     "company": "AGRAMKOW Fluid Systems A/S",
@@ -1364,6 +1340,18 @@ window.scrapedJobs = [
     "fit": "low",
     "date": "2026-06-24",
     "description": "No description available.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "gn-group-plm-system-specialist",
+    "title": "PLM System Specialist",
+    "company": "GN Group",
+    "location": "Ballerup",
+    "url": "https://www.jobindex.dk/jobannonce/r13881269",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "Are you motivated by managing R&D systems and platforms that enable agile and scalable development?",
     "source": "jobindex.dk",
     "status": "new"
   },
@@ -1380,6 +1368,18 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
+    "key": "unknown-c-software-engineer-sy-epc-ccs-2026-115-grap",
+    "title": "C++ Software Engineer (SY-EPC-CCS-2026-115-GRAP)",
+    "company": "Unknown Company",
+    "location": "Greater Copenhagen",
+    "url": "https://www.jobindex.dk/jobannonce/r13880941",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "Employment Type: Full-timeAs a Software Engineer, you will engage in the development, evolution, and long-term maintenance of C++ software solutions running in Linux environments.",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
     "key": "aak-denmark-as-erp-specialist",
     "title": "ERP Specialist",
     "company": "AAK Denmark A/S",
@@ -1392,11 +1392,11 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "oj-electronics-as-hardware-development-manager",
-    "title": "Hardware development manager",
-    "company": "OJ Electronics A/S",
-    "location": "Sønderborg",
-    "url": "https://www.jobindex.dk/jobannonce/h1669062",
+    "key": "unknown-technical-shift-leader-til-rush-aarhus",
+    "title": "Technical Shift Leader til Rush Aarhus",
+    "company": "Unknown Company",
+    "location": "Højbjerg",
+    "url": "https://www.jobindex.dk/jobannonce/r13879642/technical-shift-leader-til-rush-aarhus",
     "fit": "low",
     "date": "2026-06-24",
     "description": "No description available.",
@@ -1404,11 +1404,35 @@ window.scrapedJobs = [
     "status": "new"
   },
   {
-    "key": "unknown-technical-shift-leader-til-rush-aarhus",
-    "title": "Technical Shift Leader til Rush Aarhus",
+    "key": "too-good-to-go-technical-crm-manager",
+    "title": "Technical CRM Manager",
+    "company": "Too Good To Go",
+    "location": "København",
+    "url": "https://www.jobindex.dk/jobannonce/r13881522",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "We’re looking for a Technical CRM Manager with a focus on B2B to lead the technical development of the Salesforce marketing stack (SFMC, Data 360, and Sales Cloud connectors).",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "collectia-as-technical-team-lead-with-a-focus-on-development",
+    "title": "Technical Team Lead with a Focus on Development, AI and Team Performance",
+    "company": "Collectia A/S",
+    "location": "Brøndby",
+    "url": "https://www.jobindex.dk/jobannonce/r13881467",
+    "fit": "low",
+    "date": "2026-06-24",
+    "description": "Do you want to combine hands-on development with responsibility for ensuring efficient development and high team performance?",
+    "source": "jobindex.dk",
+    "status": "new"
+  },
+  {
+    "key": "unknown-team-leader-for-composite-department",
+    "title": "TEAM LEADER FOR COMPOSITE DEPARTMENT",
     "company": "Unknown Company",
-    "location": "Højbjerg",
-    "url": "https://www.jobindex.dk/jobannonce/r13879642/technical-shift-leader-til-rush-aarhus",
+    "location": "Faaborg",
+    "url": "https://www.jobindex.dk/jobannonce/r13880382/team-leader-for-composite-department",
     "fit": "low",
     "date": "2026-06-24",
     "description": "No description available.",

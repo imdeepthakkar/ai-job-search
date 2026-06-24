@@ -1327,6 +1327,78 @@
       "first_seen": "2026-06-24",
       "fit": "low",
       "status": "new"
+    },
+    "karsberg-rekruttering-og-headhunting-tech-lead-i-et-staerkt-": {
+      "title": "Tech Lead i et stærkt R&D-miljø",
+      "company": "KARSBERG – rekruttering og headhunting",
+      "url": "https://www.jobindex.dk/jobannonce/h1677018",
+      "first_seen": "2026-06-24",
+      "fit": "medium",
+      "status": "new"
+    },
+    "visiosign-marketing-lead": {
+      "title": "Marketing Lead",
+      "company": "Visiosign",
+      "url": "https://www.jobindex.dk/jobannonce/h1676872/marketing-lead",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "vitrolife-as-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Vitrolife A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1677067",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-quality-documentation-speciali": {
+      "title": "Quality Documentation Specialist",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1677040",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "gn-group-plm-system-specialist": {
+      "title": "PLM System Specialist",
+      "company": "GN Group",
+      "url": "https://www.jobindex.dk/jobannonce/r13881269",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-c-software-engineer-sy-epc-ccs-2026-115-grap": {
+      "title": "C++ Software Engineer (SY-EPC-CCS-2026-115-GRAP)",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13880941",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "too-good-to-go-technical-crm-manager": {
+      "title": "Technical CRM Manager",
+      "company": "Too Good To Go",
+      "url": "https://www.jobindex.dk/jobannonce/r13881522",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "collectia-as-technical-team-lead-with-a-focus-on-development": {
+      "title": "Technical Team Lead with a Focus on Development, AI and Team Performance",
+      "company": "Collectia A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r13881467",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-team-leader-for-composite-department": {
+      "title": "TEAM LEADER FOR COMPOSITE DEPARTMENT",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13880382/team-leader-for-composite-department",
+      "first_seen": "2026-06-24",
+      "fit": "low",
+      "status": "new"
     }
   }
 }
