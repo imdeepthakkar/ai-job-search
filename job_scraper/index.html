@@ -24,15 +24,14 @@
                 <div class="input-field">
                     <label for="emailInput">User Account</label>
                     <div class="input-wrapper">
-                        <input type="email" id="emailInput" required placeholder="deep@jobsearch.ai">
+                        <input type="email" id="emailInput" required placeholder="">
                     </div>
                 </div>
                 
                 <div class="input-field">
                     <label for="passwordInput">Secret Key</label>
                     <div class="input-wrapper">
-                        <input type="password" id="passwordInput" required placeholder="••••••••">
-                        <button type="button" id="togglePasswordBtn" class="toggle-password">Show</button>
+                        <input type="password" id="passwordInput" required placeholder="">
                     </div>
                 </div>
                 
@@ -40,13 +39,6 @@
                     <span>Unlock Portal</span>
                 </button>
             </form>
-            
-            <div class="demo-account-box">
-                <p>Quick Access Developer Preset:</p>
-                <button type="button" id="demoAccountBtn" class="demo-btn">
-                    Auto-Fill Credentials (deep@jobsearch.ai)
-                </button>
-            </div>
         </div>
     </div>
 
@@ -260,8 +252,6 @@
         const authForm = document.getElementById('authForm');
         const emailInput = document.getElementById('emailInput');
         const passwordInput = document.getElementById('passwordInput');
-        const togglePasswordBtn = document.getElementById('togglePasswordBtn');
-        const demoAccountBtn = document.getElementById('demoAccountBtn');
         const logoutBtn = document.getElementById('logoutBtn');
         const loginSubmitBtn = document.getElementById('loginSubmitBtn');
 
@@ -301,25 +291,7 @@
                     }, 500);
                 }, 1000);
             } else {
-                showToast("Access Denied. Check credentials or use Developer Preset.");
-            }
-        });
-
-        // Auto-fill demo account details
-        demoAccountBtn.addEventListener('click', () => {
-            emailInput.value = 'deep@jobsearch.ai';
-            passwordInput.value = 'Password123';
-            showToast("Credentials loaded.");
-        });
-
-        // Toggle password show/hide
-        togglePasswordBtn.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                togglePasswordBtn.textContent = 'Hide';
-            } else {
-                passwordInput.type = 'password';
-                togglePasswordBtn.textContent = 'Show';
+                showToast("Access Denied. Please verify account credentials.");
             }
         });
 
