@@ -2,827 +2,176 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Job Search Dashboard - Deep Thakkar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #080b11;
-            --sidebar-bg: rgba(13, 18, 30, 0.8);
-            --card-bg: rgba(20, 27, 45, 0.65);
-            --card-hover: rgba(28, 38, 62, 0.85);
-            --border-color: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.12);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            
-            --accent-high: #10b981;
-            --accent-high-glow: rgba(16, 185, 129, 0.2);
-            --accent-medium: #3b82f6;
-            --accent-medium-glow: rgba(59, 130, 246, 0.2);
-            --accent-low: #64748b;
-            --accent-low-glow: rgba(100, 116, 139, 0.1);
-            
-            --primary-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            overflow-x: hidden;
-        }
-
-        /* Layout Structure */
-        .app-container {
-            display: flex;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        /* Sidebar Styling */
-        .sidebar {
-            width: 320px;
-            background: var(--sidebar-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-right: 1px solid var(--border-color);
-            padding: 2.5rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            height: 100vh;
-            position: fixed;
-            overflow-y: auto;
-            z-index: 10;
-        }
-
-        .logo-section h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.25rem;
-        }
-
-        .logo-section p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .filter-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
-
-        .search-input-wrapper {
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 0.8rem 1rem 0.8rem 2.5rem;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: #38bdf8;
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 0.9rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            pointer-events: none;
-        }
-
-        /* Pill Toggles */
-        .pill-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .pill-checkbox {
-            display: none;
-        }
-
-        .pill-label {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-
-        .pill-label:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--border-hover);
-        }
-
-        .pill-checkbox:checked + .pill-label {
-            background: var(--primary-gradient);
-            border-color: transparent;
-            color: #080b11;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-        }
-
-        /* Fit Pill Styling */
-        .pill-checkbox[value="high"] + .pill-label:hover { border-color: var(--accent-high); }
-        .pill-checkbox[value="high"]:checked + .pill-label { background: var(--accent-high); color: var(--bg-dark); box-shadow: 0 4px 12px var(--accent-high-glow); }
-
-        .pill-checkbox[value="medium"] + .pill-label:hover { border-color: var(--accent-medium); }
-        .pill-checkbox[value="medium"]:checked + .pill-label { background: var(--accent-medium); color: white; box-shadow: 0 4px 12px var(--accent-medium-glow); }
-
-        .select-input {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 0.8rem 1rem;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.9rem;
-            appearance: none;
-            -webkit-appearance: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .select-input:focus {
-            outline: none;
-            border-color: #38bdf8;
-        }
-
-        .select-wrapper {
-            position: relative;
-        }
-
-        .select-wrapper::after {
-            content: "▼";
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-
-        /* Main Content Panel */
-        .main-content {
-            margin-left: 320px;
-            flex: 1;
-            padding: 2.5rem 3rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            min-height: 100vh;
-        }
-
-        /* Stats Panel */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--border-hover);
-        }
-
-        .stat-card .value {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .stat-card .label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .stat-card.high-stat { border-left: 4px solid var(--accent-high); }
-        .stat-card.med-stat { border-left: 4px solid var(--accent-medium); }
-        .stat-card.applied-stat { border-left: 4px solid #a855f7; }
-
-        /* Dashboard Actions & Header */
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-title h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .header-title p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-        }
-
-        /* Sort Controls */
-        .controls-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 0.75rem 1.25rem;
-        }
-
-        .sort-info {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .sort-options {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .sort-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            cursor: pointer;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .sort-btn.active {
-            color: #38bdf8;
-            font-weight: 600;
-            background: rgba(56, 189, 248, 0.08);
-        }
-
-        /* Jobs Grid List */
-        .jobs-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        /* Job Card Styling */
-        .job-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .job-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent-low);
-        }
-
-        .job-card.fit-high::before { background: var(--accent-high); }
-        .job-card.fit-medium::before { background: var(--accent-medium); }
-
-        .job-card.fit-high { box-shadow: 0 4px 20px rgba(16, 185, 129, 0.05); }
-        .job-card.fit-medium { box-shadow: 0 4px 20px rgba(59, 130, 246, 0.05); }
-
-        .job-card:hover {
-            background: var(--card-hover);
-            transform: translateY(-2px);
-            border-color: var(--border-hover);
-        }
-
-        /* Card Header */
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .title-area {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .job-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        .job-title:hover {
-            color: #38bdf8;
-        }
-
-        .company-name {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Badges */
-        .badge-container {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-        }
-
-        .badge-high {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent-high);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-
-        .badge-med {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent-medium);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .badge-low {
-            background: rgba(100, 116, 139, 0.1);
-            color: var(--text-secondary);
-            border: 1px solid rgba(100, 116, 139, 0.2);
-        }
-
-        .badge-source {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        .badge-applied {
-            background: rgba(168, 85, 247, 0.1);
-            color: #a855f7;
-            border: 1px solid rgba(168, 85, 247, 0.2);
-        }
-
-        /* Card Meta */
-        .card-meta {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        /* Accordion Description */
-        .card-description-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            border-top: 1px solid transparent;
-            padding-top: 0;
-        }
-
-        .job-card.expanded .card-description-wrapper {
-            max-height: 500px;
-            border-top-color: var(--border-color);
-            padding-top: 1rem;
-            overflow-y: auto;
-        }
-
-        .description-header {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Card Actions */
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1rem;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .action-group {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .btn {
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            border: 1px solid transparent;
-            font-family: inherit;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: var(--primary-gradient);
-            color: #080b11;
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: var(--border-color);
-            color: var(--text-primary);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--border-hover);
-        }
-
-        .btn-success {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent-high);
-            border-color: rgba(16, 185, 129, 0.2);
-        }
-
-        .btn-success:hover {
-            background: var(--accent-high);
-            color: var(--bg-dark);
-        }
-
-        .btn-danger {
-            background: rgba(239, 68, 68, 0.08);
-            color: #ef4444;
-            border-color: rgba(239, 68, 68, 0.15);
-        }
-
-        .btn-danger:hover {
-            background: #ef4444;
-            color: white;
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: var(--card-bg);
-            border: 1px dashed var(--border-color);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .empty-state h3 {
-            font-size: 1.25rem;
-        }
-
-        .empty-state p {
-            color: var(--text-muted);
-            max-width: 320px;
-            font-size: 0.85rem;
-        }
-
-        /* Modal Overlay */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(5, 7, 12, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .modal {
-            background: #111827;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            width: 90%;
-            max-width: 550px;
-            padding: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .modal-overlay.active .modal {
-            transform: scale(1);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .close-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .code-box {
-            background: #030712;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            color: #38bdf8;
-            overflow-x: auto;
-            position: relative;
-        }
-
-        .copy-code-btn {
-            position: absolute;
-            right: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--border-color);
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            cursor: pointer;
-        }
-
-        .copy-code-btn:hover {
-            background: #38bdf8;
-            color: #030712;
-            font-weight: bold;
-        }
-
-        .modal-help-text {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #10b981;
-            color: #080b11;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 1000;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* SVG icons */
-        .icon {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            stroke-width: 0;
-            stroke: currentColor;
-            fill: currentColor;
-        }
-
-        @media (max-width: 768px) {
-            .app-container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .main-content {
-                margin-left: 0;
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Sidebar controls -->
+
+    <!-- Authentication Overlay Screen -->
+    <div id="authOverlay" class="auth-wrapper" style="display: flex;">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">AGY Job Search</div>
+                <h2>Security Portal</h2>
+                <p>Please authenticate to access your job recommendations and tailoring workspace.</p>
+            </div>
+            
+            <form id="authForm" class="auth-form">
+                <div class="input-field">
+                    <label for="emailInput">User Account</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="emailInput" required placeholder="deep@jobsearch.ai">
+                    </div>
+                </div>
+                
+                <div class="input-field">
+                    <label for="passwordInput">Secret Key</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="passwordInput" required placeholder="••••••••">
+                        <button type="button" id="togglePasswordBtn" class="toggle-password">Show</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="auth-btn" id="loginSubmitBtn">
+                    <span>Unlock Portal</span>
+                </button>
+            </form>
+            
+            <div class="demo-account-box">
+                <p>Quick Access Developer Preset:</p>
+                <button type="button" id="demoAccountBtn" class="demo-btn">
+                    Auto-Fill Credentials (deep@jobsearch.ai)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <div id="appContainer" class="app-container" style="display: none;">
+        
+        <!-- Sidebar Navigation & Filters -->
         <aside class="sidebar">
             <div class="logo-section">
-                <h1>AI Job Search</h1>
-                <p>Dashboard & Application Assistant</p>
+                <h1>AGY Job Search</h1>
+                <p>Technical Lead & Architect Hub</p>
             </div>
 
-            <!-- Scrape Date Group -->
+            <!-- Date Select -->
             <div class="filter-group">
-                <label class="filter-label">Scrape History Date</label>
+                <label class="filter-label" for="dateSelect">Select Scrape Batch</label>
                 <div class="select-wrapper">
                     <select id="dateSelect" class="select-input">
-                        <!-- Populated by JavaScript -->
-                        <option value="none">Loading dates...</option>
+                        <!-- Dates loaded dynamically -->
+                        <option value="2026-06-24">2026-06-24 (Today)</option>
+                        <option value="2026-06-23">2026-06-23</option>
+                        <option value="2026-06-22">2026-06-22</option>
+                        <option value="2026-06-21">2026-06-21</option>
+                        <option value="2026-06-20">2026-06-20</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Search Group -->
+            <!-- Search -->
             <div class="filter-group">
-                <label class="filter-label">Search Positions</label>
+                <label class="filter-label" for="searchBar">Search Keywords</label>
                 <div class="search-input-wrapper">
                     <span class="search-icon">🔍</span>
-                    <input type="text" id="searchBar" class="search-input" placeholder="Title, Company, Tech...">
+                    <input type="text" id="searchBar" class="search-input" placeholder="Role, company, tech...">
                 </div>
             </div>
 
-            <!-- Fit Group -->
+            <!-- Fit Filter -->
             <div class="filter-group">
-                <label class="filter-label">Profile Fit Match</label>
+                <label class="filter-label">Profile Fit Level</label>
                 <div class="pill-group">
-                    <input type="checkbox" id="fitHigh" class="pill-checkbox fit-filter" value="high" checked>
-                    <label for="fitHigh" class="pill-label">High</label>
-                    
-                    <input type="checkbox" id="fitMedium" class="pill-checkbox fit-filter" value="medium" checked>
-                    <label for="fitMedium" class="pill-label">Medium</label>
-                    
-                    <input type="checkbox" id="fitLow" class="pill-checkbox fit-filter" value="low" checked>
-                    <label for="fitLow" class="pill-label">Low</label>
+                    <input type="checkbox" id="fitHigh" class="fit-filter" value="high" checked>
+                    <label for="fitHigh" class="pill-label">High Match</label>
+
+                    <input type="checkbox" id="fitMed" class="fit-filter" value="medium" checked>
+                    <label for="fitMed" class="pill-label">Medium Match</label>
+
+                    <input type="checkbox" id="fitLow" class="fit-filter" value="low" checked>
+                    <label for="fitLow" class="pill-label">Low Match</label>
                 </div>
             </div>
 
-            <!-- Status Group -->
+            <!-- Location Filter -->
             <div class="filter-group">
-                <label class="filter-label">Listing Status</label>
+                <label class="filter-label" for="locationSelect">Location Region</label>
+                <div class="select-wrapper">
+                    <select id="locationSelect" class="select-input">
+                        <option value="all">All Locations</option>
+                        <!-- Regions populated dynamically -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Status Filter -->
+            <div class="filter-group">
+                <label class="filter-label">Application Status</label>
                 <div class="pill-group">
-                    <input type="checkbox" id="statusNew" class="pill-checkbox status-filter" value="new" checked>
+                    <input type="checkbox" id="statusNew" class="status-filter" value="new" checked>
                     <label for="statusNew" class="pill-label">New</label>
-                    
-                    <input type="checkbox" id="statusApplied" class="pill-checkbox status-filter" value="applied" checked>
+
+                    <input type="checkbox" id="statusApplied" class="status-filter" value="applied" checked>
                     <label for="statusApplied" class="pill-label">Applied</label>
                 </div>
             </div>
 
-            <!-- Source Group -->
+            <!-- Source Portal Filter -->
             <div class="filter-group">
-                <label class="filter-label">Job Source Portal</label>
+                <label class="filter-label">Source Channels</label>
                 <div class="pill-group">
-                    <input type="checkbox" id="sourceJobindex" class="pill-checkbox source-filter" value="jobindex.dk" checked>
-                    <label for="sourceJobindex" class="pill-label">Jobindex</label>
-                    
-                    <input type="checkbox" id="sourceJobbank" class="pill-checkbox source-filter" value="jobbank.dk" checked>
-                    <label for="sourceJobbank" class="pill-label">Jobbank</label>
+                    <input type="checkbox" id="srcJobindex" class="source-filter" value="jobindex.dk" checked>
+                    <label for="srcJobindex" class="pill-label">jobindex.dk</label>
+
+                    <input type="checkbox" id="srcJobbank" class="source-filter" value="jobbank.dk" checked>
+                    <label for="srcJobbank" class="pill-label">jobbank.dk</label>
+
+                    <input type="checkbox" id="srcJobnet" class="source-filter" value="jobnet.dk" checked>
+                    <label for="srcJobnet" class="pill-label">jobnet.dk</label>
+
+                    <input type="checkbox" id="srcJobdanmark" class="source-filter" value="jobdanmark.dk" checked>
+                    <label for="srcJobdanmark" class="pill-label">jobdanmark.dk</label>
                 </div>
             </div>
 
-            <!-- Location dropdown -->
-            <div class="filter-group">
-                <label class="filter-label">Regional Location</label>
-                <div class="select-wrapper">
-                    <select id="locationSelect" class="select-input">
-                        <option value="all">All Locations</option>
-                    </select>
-                </div>
-            </div>
+            <!-- Active Dashboard Action Reset -->
+            <button id="resetFiltersBtn" class="btn btn-secondary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                Reset All Filters
+            </button>
 
-            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                <button id="resetFiltersBtn" class="btn btn-secondary" style="width: 100%; justify-content: center;">
-                    Reset Filters
+            <!-- User Session Details (Bottom of Sidebar) -->
+            <div class="user-profile-section">
+                <div class="avatar">DT</div>
+                <div class="user-info">
+                    <span class="user-name">Deep Thakkar</span>
+                    <span class="user-role">Solutions Architect</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn" title="Lock Dashboard Session">
+                    🚪
                 </button>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- Main Dashboard View Panel -->
         <main class="main-content">
-            <!-- Stats overview card -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h2>Job Opportunities Portal</h2>
+                    <p id="showingCountLabel">Showing 0 of 0 active listings</p>
+                </div>
+            </header>
+
+            <!-- Analytics Cards Panel -->
             <section class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card total-stat">
                     <span class="value" id="statsTotal">0</span>
-                    <span class="label">Total Positions</span>
+                    <span class="label">Active Scraped</span>
                 </div>
                 <div class="stat-card high-stat">
                     <span class="value" id="statsHigh">0</span>
@@ -834,67 +183,59 @@
                 </div>
                 <div class="stat-card applied-stat">
                     <span class="value" id="statsApplied">0</span>
-                    <span class="label">Applied Roles</span>
+                    <span class="label">Jobs Applied</span>
                 </div>
             </section>
 
-            <!-- Content Header & Summary -->
-            <section class="content-header">
-                <div class="header-title">
-                    <h2>Scraped Job Openings</h2>
-                    <p id="showingCountLabel">Showing 0 of 0 jobs</p>
-                </div>
-                
-                <!-- Sort Actions -->
+            <!-- Sort Controls Row -->
+            <div class="controls-row">
+                <div class="sort-info">Sort listings dynamically:</div>
                 <div class="sort-options">
-                    <span class="sort-info">Sort by:</span>
-                    <button class="sort-btn active" data-sort="fit">Best Fit</button>
-                    <button class="sort-btn" data-sort="date">Newest</button>
-                    <button class="sort-btn" data-sort="company">Company</button>
+                    <button class="sort-btn active" data-sort="fit">Match Priority</button>
+                    <button class="sort-btn" data-sort="date">Date Scraped</button>
+                    <button class="sort-btn" data-sort="company">Company A-Z</button>
                 </div>
-            </section>
+            </div>
 
-            <!-- Main list output -->
+            <!-- Jobs List Container -->
             <section class="jobs-list" id="jobsListContainer">
-                <!-- rendered cards -->
+                <div class="empty-state">
+                    <h3>Loading application dashboard...</h3>
+                    <p>Connecting data feeds and security parameters.</p>
+                </div>
             </section>
         </main>
     </div>
 
-    <!-- Modal for Tailor instructions -->
-    <div class="modal-overlay" id="applyModalOverlay">
-        <div class="modal">
+    <!-- Tailoring Action Code Overlay Modal -->
+    <div id="applyModalOverlay" class="modal-overlay">
+        <div class="modal-card">
             <div class="modal-header">
-                <h3 class="modal-title">Tailor Application with Claude Code</h3>
-                <button class="close-btn" id="closeModalBtn">✕</button>
+                <h3>Tailor Application with Claude Code</h3>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
             </div>
-            <p class="modal-help-text">
-                To evaluate this position in detail and generate tailored CV and cover letter drafts, copy this command and paste it directly into your <strong>Claude Code</strong> terminal:
-            </p>
-            <div class="code-box">
-                <span id="modalCommandText">/apply [URL]</span>
-                <button class="copy-code-btn" id="copyCodeBtn">Copy</button>
+            <p>Run the following CLI command in your project terminal to initiate fit evaluation, CV customization, and cover letter tailoring:</p>
+            <div class="command-box">
+                <code id="modalCommandText">/apply [url]</code>
             </div>
-            <p class="modal-help-text">
-                Claude Code will perform a full alignment check against your profile, then draft modern, professional LaTeX files ready for compiling in your workspace.
-            </p>
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem;">
+                <button class="btn btn-secondary" id="closeModalBtn2">Close</button>
+                <button class="btn btn-primary" id="copyCodeBtn">Copy CLI Command</button>
+            </div>
         </div>
     </div>
 
-    <!-- Toast message -->
-    <div class="toast" id="toastNotification">Action completed!</div>
+    <!-- Active Popup Toast Notifications -->
+    <div id="toastNotification" class="toast-notification">Notification message</div>
 
-    <!-- Dynamic Loader JavaScript -->
-    <script src="data/dates.js"></script>
+    <!-- Core App Logic & Auth Functions -->
     <script>
         // State variables
         let jobs = [];
-        let activeSort = 'fit';
-        let dismissedKeys = new Set();
         let customAppliedKeys = new Set();
+        let dismissedKeys = new Set();
+        let activeSort = 'fit';
 
-        // DOM elements
-        const jobsListContainer = document.getElementById('jobsListContainer');
         const searchBar = document.getElementById('searchBar');
         const locationSelect = document.getElementById('locationSelect');
         const dateSelect = document.getElementById('dateSelect');
@@ -906,13 +247,122 @@
         const statsMed = document.getElementById('statsMed');
         const statsApplied = document.getElementById('statsApplied');
 
+        const jobsListContainer = document.getElementById('jobsListContainer');
         const applyModalOverlay = document.getElementById('applyModalOverlay');
         const modalCommandText = document.getElementById('modalCommandText');
         const closeModalBtn = document.getElementById('closeModalBtn');
+        const closeModalBtn2 = document.getElementById('closeModalBtn2');
         const copyCodeBtn = document.getElementById('copyCodeBtn');
         const toastNotification = document.getElementById('toastNotification');
 
-        // Dynamic script loading
+        const authOverlay = document.getElementById('authOverlay');
+        const appContainer = document.getElementById('appContainer');
+        const authForm = document.getElementById('authForm');
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+        const demoAccountBtn = document.getElementById('demoAccountBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+
+        // Security check
+        function checkAuth() {
+            const session = localStorage.getItem('deep_job_session');
+            if (session) {
+                authOverlay.style.display = 'none';
+                appContainer.style.display = 'flex';
+                initApp();
+            } else {
+                authOverlay.style.display = 'flex';
+                appContainer.style.display = 'none';
+            }
+        }
+
+        // Handle submission of Auth Form
+        authForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+
+            // Simple developer credentials authentication
+            if (email === 'deep@jobsearch.ai' && password === 'Password123') {
+                loginSubmitBtn.disabled = true;
+                loginSubmitBtn.querySelector('span').textContent = 'Decrypting Database...';
+                
+                setTimeout(() => {
+                    const mockToken = 'session_' + Math.random().toString(36).substr(2);
+                    localStorage.setItem('deep_job_session', mockToken);
+                    showToast("Portal Unlocked. Welcome, Deep.");
+                    
+                    setTimeout(() => {
+                        loginSubmitBtn.disabled = false;
+                        loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
+                        checkAuth();
+                    }, 500);
+                }, 1000);
+            } else {
+                showToast("Access Denied. Check credentials or use Developer Preset.");
+            }
+        });
+
+        // Auto-fill demo account details
+        demoAccountBtn.addEventListener('click', () => {
+            emailInput.value = 'deep@jobsearch.ai';
+            passwordInput.value = 'Password123';
+            showToast("Credentials loaded.");
+        });
+
+        // Toggle password show/hide
+        togglePasswordBtn.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePasswordBtn.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                togglePasswordBtn.textContent = 'Show';
+            }
+        });
+
+        // Session logout
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('deep_job_session');
+            showToast("Session secured and logged out.");
+            setTimeout(() => {
+                checkAuth();
+            }, 600);
+        });
+
+        // Initialize dashboard app
+        function initApp() {
+            // Load LocalStorage states
+            try {
+                const storedApplied = localStorage.getItem('deep_applied_jobs');
+                if (storedApplied) {
+                    customAppliedKeys = new Set(JSON.parse(storedApplied));
+                }
+                const storedDismissed = localStorage.getItem('deep_dismissed_jobs');
+                if (storedDismissed) {
+                    dismissedKeys = new Set(JSON.parse(storedDismissed));
+                }
+            } catch (e) {
+                console.error("Failed to load local storage lists", e);
+            }
+
+            // Sync dropdown and fetch initial data
+            const date = dateSelect.value || '2026-06-24';
+            loadJobData(date).then(() => {
+                syncStatusAndFilters();
+                setupEventListeners();
+                showToast("Connected to live job feeds.");
+            }).catch(err => {
+                jobs = getMockJobs();
+                syncStatusAndFilters();
+                setupEventListeners();
+                showToast("Fallback: Loaded cached offline jobs.");
+            });
+        }
+
+        // Dynamic script loading for scrape batches
         function loadJobData(date) {
             return new Promise((resolve, reject) => {
                 const existingScript = document.getElementById('dynamic-job-data');
@@ -936,68 +386,25 @@
             });
         }
 
-        // Initialize App
-        function init() {
-            // Load LocalStorage states
-            try {
-                const storedApplied = localStorage.getItem('deep_applied_jobs');
-                if (storedApplied) {
-                    customAppliedKeys = new Set(JSON.parse(storedApplied));
-                }
-                const storedDismissed = localStorage.getItem('deep_dismissed_jobs');
-                if (storedDismissed) {
-                    dismissedKeys = new Set(JSON.parse(storedDismissed));
-                }
-            } catch (e) {
-                console.error("Local storage error:", e);
-            }
-
-            // Populate Dates registry Select
-            const dates = window.availableDates || [new Date().toISOString().split('T')[0]];
-            dateSelect.innerHTML = '';
-            dates.forEach(d => {
-                const opt = document.createElement('option');
-                opt.value = d;
-                opt.textContent = d;
-                dateSelect.appendChild(opt);
-            });
-
-            // Set up all controls
-            setupEventListeners();
-
-            // Load initial date data
-            const initialDate = dates[0];
-            loadJobData(initialDate).then(() => {
-                syncStatusAndFilters();
-            }).catch(err => {
-                console.warn(err);
-                jobs = getMockJobs();
-                syncStatusAndFilters();
-            });
-        }
-
         function syncStatusAndFilters() {
+            // Restore status based on cached applied lists
             jobs.forEach(job => {
                 if (customAppliedKeys.has(job.key)) {
                     job.status = 'applied';
                 }
             });
-            populateLocationFilter();
-            render();
-        }
 
-        function populateLocationFilter() {
-            // Keep "All Locations" option
-            locationSelect.innerHTML = '<option value="all">All Locations</option>';
-            
+            // Populate location dropdown
             const locationsSet = new Set();
             jobs.forEach(job => {
                 if (job.location) {
-                    let city = job.location.split(',')[0].trim();
-                    if (city) locationsSet.add(city);
+                    const primaryLocation = job.location.split(',')[0].trim();
+                    if (primaryLocation) locationsSet.add(primaryLocation);
                 }
             });
 
+            // Clear previous except "All"
+            locationSelect.innerHTML = '<option value="all">All Locations</option>';
             const sortedLocations = Array.from(locationsSet).sort();
             sortedLocations.forEach(loc => {
                 const opt = document.createElement('option');
@@ -1005,10 +412,12 @@
                 opt.textContent = loc;
                 locationSelect.appendChild(opt);
             });
+
+            render();
         }
 
         function setupEventListeners() {
-            // Input filters
+            // Real-time filters inputs
             searchBar.addEventListener('input', render);
             locationSelect.addEventListener('change', render);
             
@@ -1016,17 +425,17 @@
             document.querySelectorAll('.status-filter').forEach(cb => cb.addEventListener('change', render));
             document.querySelectorAll('.source-filter').forEach(cb => cb.addEventListener('change', render));
 
-            // Date selector change
+            // Scrape date select change
             dateSelect.addEventListener('change', (e) => {
                 loadJobData(e.target.value).then(() => {
                     syncStatusAndFilters();
-                    showToast(`Loaded listings for ${e.target.value}`);
+                    showToast(`Switched batch to ${e.target.value}`);
                 }).catch(err => {
-                    showToast(`Error: ${err.message}`);
+                    showToast(`Error: Scrape batch ${e.target.value} unavailable`);
                 });
             });
 
-            // Sorting buttons
+            // Re-render based on sort options
             document.querySelectorAll('.sort-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
@@ -1036,24 +445,30 @@
                 });
             });
 
-            // Reset
+            // Reset filters
             resetFiltersBtn.addEventListener('click', () => {
                 searchBar.value = '';
                 locationSelect.value = 'all';
                 document.querySelectorAll('.fit-filter, .status-filter, .source-filter').forEach(cb => cb.checked = true);
                 render();
+                showToast("Cleared active search criteria.");
             });
 
-            // Modal actions
+            // Modal overlay exits
             closeModalBtn.addEventListener('click', () => applyModalOverlay.classList.remove('active'));
+            closeModalBtn2.addEventListener('click', () => applyModalOverlay.classList.remove('active'));
             applyModalOverlay.addEventListener('click', (e) => {
                 if (e.target === applyModalOverlay) applyModalOverlay.classList.remove('active');
             });
 
+            // Copy to clipboard function
             copyCodeBtn.addEventListener('click', () => {
                 const text = modalCommandText.textContent;
                 navigator.clipboard.writeText(text).then(() => {
                     showToast("Command copied to clipboard!");
+                    applyModalOverlay.classList.remove('active');
+                }).catch(e => {
+                    showToast("Failed to auto-copy. Copy manually.");
                 });
             });
         }
@@ -1066,7 +481,7 @@
             }, 3000);
         }
 
-        function toggleApplied(key) {
+        window.toggleApplied = function(key) {
             const job = jobs.find(j => j.key === key);
             if (!job) return;
 
@@ -1084,7 +499,7 @@
             render();
         }
 
-        function dismissJob(key) {
+        window.dismissJob = function(key) {
             const job = jobs.find(j => j.key === key);
             dismissedKeys.add(key);
             localStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
@@ -1092,13 +507,13 @@
             render();
         }
 
-        function showApplyModal(url) {
+        window.showApplyModal = function(url) {
             const cmd = `/apply ${url}`;
             modalCommandText.textContent = cmd;
             applyModalOverlay.classList.add('active');
         }
 
-        // Render Cards List
+        // Render card layouts
         function render() {
             const searchVal = searchBar.value.toLowerCase();
             const locationVal = locationSelect.value;
@@ -1125,7 +540,7 @@
                 return matchesSearch && matchesFit && matchesStatus && matchesSource && matchesLocation;
             });
 
-            // Sorting
+            // Sorting sequences
             const fitPriority = {"high": 0, "medium": 1, "low": 2};
             if (activeSort === 'fit') {
                 filteredJobs.sort((a, b) => {
@@ -1186,7 +601,7 @@
                             <span>📍</span> ${escapeHtml(job.location || 'Storkøbenhavn')}
                         </div>
                         <div class="meta-item">
-                            <span>📅</span> Posted: ${escapeHtml(job.date)}
+                            <span>📅</span> Scraped: ${escapeHtml(job.date)}
                         </div>
                     </div>
                     
@@ -1246,14 +661,15 @@
                     "url": "https://jobbank.dk/job/2989475/",
                     "fit": "high",
                     "date": "2026-06-18",
-                    "description": "Mock Data: This is a fallback mock record because the scraped data file was missing.",
+                    "description": "Fallback mock record: Active job listings offline. Verify network sync.",
                     "source": "jobbank.dk",
                     "status": "new"
                 }
             ];
         }
 
-        window.addEventListener('DOMContentLoaded', init);
+        // Check authentication state on page load
+        window.addEventListener('DOMContentLoaded', checkAuth);
     </script>
 </body>
 </html>
