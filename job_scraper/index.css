@@ -903,7 +903,7 @@ body {
 /* Toast Popups Layout */
 .toast-notification {
     position: fixed;
-    bottom: 2.5rem;
+    top: 2.5rem;
     right: 2.5rem;
     background: rgba(10, 16, 32, 0.95);
     backdrop-filter: blur(10px);
@@ -915,7 +915,7 @@ body {
     font-weight: 700;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
     z-index: 10000;
-    transform: translateY(120px);
+    transform: translateY(-120px);
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
@@ -980,7 +980,7 @@ body {
 .shortcuts-help-btn {
     position: fixed;
     bottom: 2rem;
-    left: 2rem;
+    right: 2rem;
     background: rgba(8, 12, 24, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1009,7 +1009,7 @@ body {
 .shortcuts-panel {
     position: fixed;
     bottom: 5.5rem;
-    left: 2rem;
+    right: 2rem;
     background: rgba(6, 9, 18, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
