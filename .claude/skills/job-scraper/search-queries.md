@@ -1,8 +1,8 @@
 # Job Search Queries - Deep Thakkar
 
 ## Priority 1: Cloud & Solutions Architecture (Copenhagen)
-- **Titles:** Senior Software Engineer, Technical Lead, Lead, Solution Architect
-- **Keywords:** Azure, AWS, Terraform, Cloud-Native, Modernization, Microservices
+- **Titles:** Senior Software Engineer, Technical Lead, Lead, Solution Architect, Java Developer, Lead Java Developer, Lead Java Software Development Engineer, Mastercard
+- **Keywords:** Azure, AWS, Terraform, Cloud-Native, Modernization, Microservices, Java, Fitnesse
 - **Location:** Copenhagen, København, Greater Copenhagen, Frederiksberg, Hellerup, Glostrup, Ballerup, Kastrup
 
 ## Priority 2: Infrastructure & DevOps Leadership
