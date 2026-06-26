@@ -341,7 +341,7 @@
       "company": "Forsvaret",
       "url": "https://jobbank.dk/job/3063472/forsvaret/senior-devsecops-lead-til-fors",
       "first_seen": "2026-06-25",
-      "fit": "medium",
+      "fit": "low",
       "status": "new"
     },
     "twoday-as-lead-net-developer": {
@@ -2245,7 +2245,7 @@
       "company": "twoday A/S",
       "url": "https://www.jobindex.dk/jobannonce/h1676649",
       "first_seen": "2026-06-25",
-      "fit": "medium",
+      "fit": "low",
       "status": "new"
     },
     "jysk-student-software-engineer-java-backend-development": {
@@ -3645,6 +3645,270 @@
       "company": "NOV Subsea Production Systems",
       "url": "https://www.jobindex.dk/jobannonce/h1677335",
       "first_seen": "2026-06-25",
+      "fit": "low",
+      "status": "new"
+    },
+    "cercare-medical-aps-senior-software-architect": {
+      "title": "Senior Software Architect",
+      "company": "Cercare Medical ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1677456/senior-software-architect",
+      "first_seen": "2026-06-26",
+      "fit": "medium",
+      "status": "new"
+    },
+    "unknown-senior-devops-engineer": {
+      "title": "Senior DevOps Engineer",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13884298",
+      "first_seen": "2026-06-26",
+      "fit": "medium",
+      "status": "new"
+    },
+    "faerdselsstyrelsen-data-lead": {
+      "title": "Data Lead",
+      "company": "Færdselsstyrelsen",
+      "url": "https://www.jobindex.dk/jobannonce/h1677437",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "cytiva-resin-modality-leader-emea-mfd": {
+      "title": "Resin Modality Leader EMEA (m/​f/​d)",
+      "company": "Cytiva",
+      "url": "https://www.jobindex.dk/jobannonce/h1677367",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "tv2-senior-security-advisor-til-tv-2-sikker-softwareudviklin": {
+      "title": "Senior Security Advisor til TV 2 – Sikker Softwareudvikling (DevSecOps)",
+      "company": "TV2",
+      "url": "https://www.jobindex.dk/jobannonce/r13883752",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "dansk-flygtningehjaelp-protection-team-leader": {
+      "title": "Protection Team Leader",
+      "company": "Dansk Flygtningehjælp",
+      "url": "https://www.jobindex.dk/jobannonce/r13883887",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "gn-group-embedded-software-developer-headsets": {
+      "title": "Embedded Software Developer, Headsets",
+      "company": "GN Group",
+      "url": "https://www.jobindex.dk/jobannonce/r13883736",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "go-nordic-cruiseline-ai-engineer": {
+      "title": "AI Engineer",
+      "company": "Go Nordic Cruiseline",
+      "url": "https://www.jobindex.dk/jobannonce/h1677359",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "syddansk-universitet-software-engineer": {
+      "title": "Software Engineer",
+      "company": "Syddansk Universitet",
+      "url": "https://www.jobindex.dk/jobannonce/r13882866/software-engineer",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "deif-as-technical-engineer-power-electronics-energy-control": {
+      "title": "Technical Engineer – Power Electronics & Energy Control",
+      "company": "DEIF A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1677425/technical-engineer-power-electronics-energy-control",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "r82-as-finance-manager-operations-controlling": {
+      "title": "Finance Manager - Operations & Controlling",
+      "company": "R82 A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1677604",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "3-studentermedhjaelper-til-commercial-finance": {
+      "title": "Studentermedhjælper til Commercial Finance",
+      "company": "3",
+      "url": "https://www.jobindex.dk/jobannonce/h1677493",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "ahlsell-head-of-finance-til-ahlsell-danmark-as": {
+      "title": "Head of Finance til Ahlsell Danmark A/​S",
+      "company": "Ahlsell",
+      "url": "https://www.jobindex.dk/jobannonce/h1669766/head-of-finance-til-ahlsell-danmark-a-s",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "wefri-as-finance-assistant-med-lyst-til-faglig-udvikling": {
+      "title": "Finance Assistant med lyst til faglig udvikling",
+      "company": "Wefri A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1658683/finance-assistant-med-lyst-til-faglig-udvikling",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "arla-foods-amba-experienced-it-delivery-lead-farmers": {
+      "title": "Experienced IT Delivery Lead, Farmers",
+      "company": "Arla Foods amba",
+      "url": "https://www.jobindex.dk/jobannonce/h1677536/experienced-it-delivery-lead-farmers",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "arla-foods-amba-operations-team-leader-arla": {
+      "title": "Operations Team Leader, Arla",
+      "company": "Arla Foods amba",
+      "url": "https://www.jobindex.dk/jobannonce/h1677655/operations-team-leader-arla",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "inussuk-as-inussuk-as-soeger-program-financial-lead-til-pitu": {
+      "title": "Inussuk A/​S søger Program Financial Lead til Pituffik Space Base",
+      "company": "Inussuk A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1660906/inussuk-a-s-soeger-program-financial-lead-til-pituffik-space-base",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "unknown-process-operator-lead": {
+      "title": "Process Operator Lead",
+      "company": "Unknown Company",
+      "url": "https://www.jobindex.dk/jobannonce/r13884126/process-operator-lead",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "jn-data-as-cloud-platform-developer": {
+      "title": "Cloud Platform Developer",
+      "company": "JN Data A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1660960",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "hummel-product-developer-footwear": {
+      "title": "Product Developer, Footwear",
+      "company": "hummel",
+      "url": "https://www.jobindex.dk/jobannonce/h1677520/product-developer-footwear",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "convatec-remediation-capa-engineer": {
+      "title": "Remediation CAPA Engineer",
+      "company": "Convatec",
+      "url": "https://www.jobindex.dk/jobannonce/h1677570",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "peoplelink-technical-engineer": {
+      "title": "Technical Engineer",
+      "company": "PeopleLink",
+      "url": "https://www.jobindex.dk/jobannonce/h1661040",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "cercare-medical-aps-senior-software-engineer-image-processin": {
+      "title": "Senior Software Engineer - Image Processing",
+      "company": "Cercare Medical ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1677457/senior-software-engineer-image-processing",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-laboratory-technician": {
+      "title": "Laboratory Technician",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1670063",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-warehouse-assistant": {
+      "title": "Warehouse Assistant",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1669740",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "nov-subsea-production-systems-procestekniker-til-carcass-pro": {
+      "title": "Procestekniker til carcass-produktion",
+      "company": "NOV Subsea Production Systems",
+      "url": "https://www.jobindex.dk/jobannonce/h1669734",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "itm8-solution-sales-specialist-collaboration": {
+      "title": "Solution Sales Specialist, Collaboration",
+      "company": "Itm8",
+      "url": "https://www.jobindex.dk/jobannonce/h1677557",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "itm8-solution-sales-specialist-customer-engagement": {
+      "title": "Solution Sales Specialist, Customer Engagement",
+      "company": "Itm8",
+      "url": "https://www.jobindex.dk/jobannonce/h1677497",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "itm8-solution-sales-specialist-erp": {
+      "title": "Solution Sales Specialist, ERP",
+      "company": "Itm8",
+      "url": "https://www.jobindex.dk/jobannonce/h1677512",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "eurowind-energy-as-scada-specialist-innovative-solutions": {
+      "title": "SCADA Specialist - Innovative Solutions",
+      "company": "Eurowind Energy A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1670009",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "grundfos-as-technical-drawing-designer": {
+      "title": "Technical Drawing Designer",
+      "company": "Grundfos A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1677595",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "danish-crown-as-it-technical-consultant": {
+      "title": "IT Technical Consultant",
+      "company": "DANISH CROWN A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1669767",
+      "first_seen": "2026-06-26",
+      "fit": "low",
+      "status": "new"
+    },
+    "forsvarets-efterretningstjeneste-operations-engeneer-til-big": {
+      "title": "Operations Engeneer til Big Data og high Performance-computing",
+      "company": "Forsvarets Efterretningstjeneste",
+      "url": "https://www.jobindex.dk/jobannonce/r13884052/operations-engeneer-til-big-data-og-high-performance-computing",
+      "first_seen": "2026-06-26",
       "fit": "low",
       "status": "new"
     }
