@@ -5,17 +5,79 @@ import json
 import csv
 import re
 import subprocess
+import yaml
+import concurrent.futures
 from datetime import datetime, timedelta
 
 # Constants
 WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SEEN_JOBS_PATH = os.path.join(WORKSPACE_DIR, "job_scraper", "seen_jobs.json")
 TRACKER_PATH = os.path.join(WORKSPACE_DIR, "job_search_tracker.csv")
-QUERIES_PATH = os.path.join(WORKSPACE_DIR, ".claude", "skills", "job-scraper", "search-queries.md")
+CONFIG_PATH = os.path.join(WORKSPACE_DIR, "job_scraper", "config.yaml")
 REPORT_PATH = os.path.join(WORKSPACE_DIR, "scrape_report.md")
 
 JOBINDEX_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobindex-search", "cli")
 JOBBANK_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobbank-search", "cli")
+
+CONFIG = {}
+
+def load_config():
+    global CONFIG
+    if os.path.exists(CONFIG_PATH):
+        try:
+            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                CONFIG = yaml.safe_load(f)
+        except Exception as e:
+            print(f"Warning: Failed to load config.yaml: {e}")
+    else:
+        print(f"Warning: config.yaml not found at {CONFIG_PATH}")
+
+# Initialize config
+load_config()
+
+# Legal suffixes and noise to strip when matching company names
+STRIP_PATTERNS = [
+    r"\ba/s\b", r"\baps\b", r"\bi/s\b", r"\bp/s\b", r"\bk/s\b",
+    r"\bivs\b", r"\bamba\b", r"\ba\.m\.b\.a\.\b",
+    r"\(vg\)", r"\(.*?\)",  # (VG) and other parentheticals
+    r"\bdanmark\b", r"\bdenmark\b", r"\bscandinavia\b", r"\bnordic\b",
+    r"\bgroup\b", r"\bholding\b",
+    r",\s*.*$",  # everything after comma (sub-entities)
+]
+
+def normalize(s):
+    """Normalize string for robust fuzzy matching."""
+    if not s:
+        return ""
+    s = s.lower().strip()
+    for pat in STRIP_PATTERNS:
+        s = re.sub(pat, "", s)
+    s = re.sub(r"[^a-zæøåöäü0-9]", "", s)
+    return s.strip()
+
+def clean_url(url):
+    """Normalize URLs by stripping query parameters."""
+    if not url:
+        return ""
+    return url.split("?")[0].strip()
+
+def get_words(text):
+    """Tokenize text into lowercase words."""
+    if not text:
+        return set()
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9æøåöäü\s]", " ", text)
+    return set(text.split())
+
+def jaccard_similarity(str1, str2):
+    """Compute Jaccard similarity coefficient between two strings."""
+    words1 = get_words(str1)
+    words2 = get_words(str2)
+    if not words1 or not words2:
+        return 0.0
+    intersection = len(words1 & words2)
+    union = len(words1 | words2)
+    return intersection / union
 
 def load_seen_jobs():
     if os.path.exists(SEEN_JOBS_PATH):
@@ -53,29 +115,26 @@ def load_applied_jobs():
 def parse_search_queries():
     default_titles = ["Solution Architect", "Technical Lead", "Senior Software Engineer", "DevOps Engineer"]
     
-    if not os.path.exists(QUERIES_PATH):
-        print(f"Warning: search-queries.md not found at {QUERIES_PATH}, using defaults.")
+    if not CONFIG:
         return default_titles
 
     try:
-        with open(QUERIES_PATH, "r", encoding="utf-8") as f:
-            content = f.read()
-        
         titles = set()
-        title_matches = re.findall(r"-\s*\*\*Titles:\*\*\s*(.*)", content)
-        for tm in title_matches:
-            for title in tm.split(","):
-                t = title.strip()
-                if t:
-                    titles.add(t)
-        
-        keyword_matches = re.findall(r"-\s*\*\*Keywords:\*\*\s*(.*)", content)
         keywords = set()
-        for km in keyword_matches:
-            for kw in km.split(","):
-                k = kw.strip()
-                if k:
-                    keywords.add(k)
+        
+        categories = CONFIG.get("categories", [])
+        for cat in categories:
+            cat_titles = cat.get("titles", [])
+            for t in cat_titles:
+                t_strip = t.strip()
+                if t_strip:
+                    titles.add(t_strip)
+            
+            cat_keywords = cat.get("keywords", [])
+            for k in cat_keywords:
+                k_strip = k.strip()
+                if k_strip:
+                    keywords.add(k_strip)
                     
         search_terms = list(titles)
         if "Terraform" in keywords:
@@ -88,7 +147,7 @@ def parse_search_queries():
             
         return sorted(list(set(search_terms)))
     except Exception as e:
-        print(f"Error parsing search queries: {e}")
+        print(f"Error parsing search queries from config: {e}")
         return default_titles
 
 def run_jobindex_search(query):
@@ -148,9 +207,14 @@ def is_location_ok(location):
     if "remote" in loc_lower or "hjemmearbejde" in loc_lower or "hybrid" in loc_lower:
         return True
         
-    ideal_locs = ["copenhagen", "københavn", "storkøbenhavn", "greater copenhagen", "frederiksberg", "hellerup", "glostrup", "ballerup", "kastrup", "herlev", "lyngby", "søborg", "brøndby", "hvidovre", "rødovre", "taastrup", "høje taastrup", "tåstrup"]
-    acceptable_locs = ["roskilde", "hillerød", "køge"]
-    forbidden_locs = ["jylland", "fyn", "aarhus", "odense", "aalborg", "kolding", "esbjerg", "randers", "horsens", "vejle", "herning", "silkeborg", "svendborg", "sønderborg", "hjørring", "fredericia", "holstebro", "viborg", "skive", "struer"]
+    location_tiers = CONFIG.get("location_tiers", {})
+    ideal_locs = location_tiers.get("ideal", ["copenhagen", "københavn", "storkøbenhavn", "greater copenhagen", "frederiksberg", "hellerup", "glostrup", "ballerup", "kastrup", "herlev", "lyngby", "søborg", "brøndby", "hvidovre", "rødovre", "taastrup", "høje taastrup", "tåstrup"])
+    acceptable_locs = location_tiers.get("acceptable", ["roskilde", "hillerød", "køge", "remote", "hybrid", "hjemmearbejde"])
+    forbidden_locs = location_tiers.get("too_far", ["jylland", "fyn", "aarhus", "odense", "aalborg", "kolding", "esbjerg", "randers", "horsens", "vejle", "herning", "silkeborg", "svendborg", "sønderborg", "hjørring", "fredericia", "holstebro", "viborg", "skive", "struer"])
+    
+    ideal_locs = [i.lower() for i in ideal_locs]
+    acceptable_locs = [a.lower() for a in acceptable_locs]
+    forbidden_locs = [f.lower() for f in forbidden_locs]
     
     has_forbidden = any(f in loc_lower for f in forbidden_locs)
     has_ideal = any(i in loc_lower for i in ideal_locs)
@@ -219,19 +283,33 @@ def main():
     
     raw_results = []
     
-    # 2. Run Searches
-    for query in search_queries:
-        # Run Jobindex
-        jobindex_res = run_jobindex_search(query)
-        for r in jobindex_res:
-            r['source_site'] = 'jobindex.dk'
-            raw_results.append(r)
-            
-        # Run Jobbank
-        jobbank_res = run_jobbank_search(query)
-        for r in jobbank_res:
-            r['source_site'] = 'jobbank.dk'
-            raw_results.append(r)
+    # 2. Run Parallel Searches
+    print(f"Running searches in parallel across portals...")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        jobindex_futures = {executor.submit(run_jobindex_search, q): q for q in search_queries}
+        jobbank_futures = {executor.submit(run_jobbank_search, q): q for q in search_queries}
+        
+        # Gather Jobindex results
+        for future in concurrent.futures.as_completed(jobindex_futures):
+            q = jobindex_futures[future]
+            try:
+                res = future.result()
+                for r in res:
+                    r['source_site'] = 'jobindex.dk'
+                    raw_results.append(r)
+            except Exception as e:
+                print(f"Error gathering Jobindex search results for '{q}': {e}")
+                
+        # Gather Jobbank results
+        for future in concurrent.futures.as_completed(jobbank_futures):
+            q = jobbank_futures[future]
+            try:
+                res = future.result()
+                for r in res:
+                    r['source_site'] = 'jobbank.dk'
+                    raw_results.append(r)
+            except Exception as e:
+                print(f"Error gathering Jobbank search results for '{q}': {e}")
             
     print(f"\nFetched {len(raw_results)} raw postings before filtering.")
     
@@ -242,19 +320,32 @@ def main():
     for job in raw_results:
         title = job.get('title')
         company = job.get('company')
-        url = job.get('url')
+        url = clean_url(job.get('url'))
         
         if not title or not url:
             continue
             
-        # Normalize and slugify key
         key = make_key(company, title)
         
-        # Deduplicate
-        if key in unique_jobs:
-            # Prefer the one with more info or shorter URL
-            if len(unique_jobs[key].get('description') or '') < len(job.get('description') or ''):
-                unique_jobs[key] = job
+        # Check for URL or similarity-based duplicates in unique_jobs
+        is_dup = False
+        dup_key = None
+        for u_key, u_job in unique_jobs.items():
+            # Check URL match
+            if clean_url(u_job.get('url')) == url:
+                is_dup = True
+                dup_key = u_key
+                break
+            # Check title-similarity match for the same company
+            if normalize(u_job.get('company', '')) == normalize(company) and jaccard_similarity(u_job.get('title', ''), title) >= 0.75:
+                is_dup = True
+                dup_key = u_key
+                break
+                
+        if is_dup:
+            if len(unique_jobs[dup_key].get('description') or '') < len(job.get('description') or ''):
+                # Replace with the richer version of the job details
+                unique_jobs[dup_key] = job
             continue
             
         unique_jobs[key] = job
@@ -268,7 +359,7 @@ def main():
     for key, job in unique_jobs.items():
         title = job.get('title')
         company = job.get('company', 'Unknown Company') or 'Unknown Company'
-        url = job.get('url')
+        url = clean_url(job.get('url'))
         location = job.get('location', '')
         date_str = job.get('date') or job.get('posted')
         description = job.get('description', '')
@@ -277,13 +368,22 @@ def main():
         tracker_key = f"{company.strip().lower()}|{title.strip().lower()}"
         if tracker_key in applied_jobs:
             skipped_count += 1
-            # Update seen status in seen_jobs if it exists
             if key in seen_jobs['seen']:
                 seen_jobs['seen'][key]['status'] = 'applied'
             continue
             
-        # Check if already seen
-        is_already_seen = key in seen_jobs['seen']
+        # Check if already seen (via exact key, URL, or similarity)
+        is_already_seen = False
+        seen_key = None
+        for s_key, s_job in seen_jobs['seen'].items():
+            if s_key == key or clean_url(s_job.get('url')) == url:
+                is_already_seen = True
+                seen_key = s_key
+                break
+            if normalize(s_job.get('company', '')) == normalize(company) and jaccard_similarity(s_job.get('title', ''), title) >= 0.75:
+                is_already_seen = True
+                seen_key = s_key
+                break
         
         # Parse date and filter by last 14 days
         job_date = parse_date(date_str)
@@ -302,9 +402,9 @@ def main():
             "title": title,
             "company": company,
             "url": url,
-            "first_seen": datetime.now().strftime("%Y-%m-%d"),
+            "first_seen": seen_jobs['seen'][seen_key].get('first_seen', datetime.now().strftime("%Y-%m-%d")) if is_already_seen else datetime.now().strftime("%Y-%m-%d"),
             "fit": fit,
-            "status": "applied" if tracker_key in applied_jobs else ("new" if not is_already_seen else seen_jobs['seen'][key].get('status', 'new'))
+            "status": "applied" if tracker_key in applied_jobs else ("new" if not is_already_seen else seen_jobs['seen'][seen_key].get('status', 'new'))
         }
         
         # Add to seen_jobs
@@ -322,7 +422,7 @@ def main():
             })
         else:
             # Just update the record in state without reporting it as a *new* match to user
-            seen_jobs['seen'][key] = seen_metadata
+            seen_jobs['seen'][seen_key] = seen_metadata
             
     # Save the updated seen jobs list
     save_seen_jobs(seen_data=seen_jobs)
