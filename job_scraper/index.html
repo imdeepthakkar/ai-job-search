@@ -382,6 +382,13 @@
             SUPABASE_ANON_KEY !== 'your-anon-key'
         );
 
+        console.log("Supabase Init Diagnostic:", {
+            hasWindowSupabase: !!window.supabase,
+            credentialsFound: credentialsFound,
+            url: SUPABASE_URL,
+            key: SUPABASE_ANON_KEY ? (SUPABASE_ANON_KEY.substring(0, 10) + "...") : null
+        });
+
         let sbClient = null;
         try {
             if (window.supabase && credentialsFound) {
