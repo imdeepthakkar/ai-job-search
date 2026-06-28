@@ -22,3 +22,7 @@ CREATE TABLE IF NOT EXISTS jobs (
 -- Index for fast status/fit querying and date filtering
 CREATE INDEX IF NOT EXISTS idx_jobs_status_fit ON jobs(status, fit);
 CREATE INDEX IF NOT EXISTS idx_jobs_last_seen ON jobs(last_seen);
+
+-- Disable Row Level Security (RLS) so frontend client-side SELECT/UPDATE operations are not blocked by default
+ALTER TABLE jobs DISABLE ROW LEVEL SECURITY;
+

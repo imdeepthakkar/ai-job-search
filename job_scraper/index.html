@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <!-- Load scraper batch dates -->
-    <script src="data/dates.js"></script>
     <!-- Supabase CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -39,6 +37,23 @@
                         <button type="button" class="password-toggle-btn" id="passwordToggleBtn" aria-label="Toggle Password Visibility">
                             👁️
                         </button>
+                    </div>
+                </div>
+
+                <!-- Supabase URL and Anon Key inputs for new projects -->
+                <div id="supabaseCredentialsFields" style="display: none;">
+                    <div class="input-field">
+                        <label for="supabaseUrlInput">Supabase Project URL</label>
+                        <div class="input-wrapper">
+                            <input type="url" id="supabaseUrlInput" placeholder="https://your-project.supabase.co">
+                        </div>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="supabaseKeyInput">Supabase Anon Key</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="supabaseKeyInput" placeholder="your-anon-key">
+                        </div>
                     </div>
                 </div>
                 
@@ -113,6 +128,18 @@
 
                     <input type="checkbox" id="statusApplied" class="status-filter pill-checkbox" value="applied" checked>
                     <label for="statusApplied" class="pill-label">Applied</label>
+                </div>
+            </div>
+
+            <!-- Seen / Unseen Filter -->
+            <div class="filter-group">
+                <label class="filter-label">Seen / Unseen Status</label>
+                <div class="pill-group">
+                    <input type="checkbox" id="readFilterUnread" class="read-filter pill-checkbox" value="unread" checked>
+                    <label for="readFilterUnread" class="pill-label">Unread</label>
+
+                    <input type="checkbox" id="readFilterRead" class="read-filter pill-checkbox" value="read" checked>
+                    <label for="readFilterRead" class="pill-label">Read</label>
                 </div>
             </div>
 
@@ -309,11 +336,23 @@
     <!-- Core App Logic & Auth Functions -->
     <script>
         // Supabase client initialization
-        const SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co'; // Fallback or injected
-        const SUPABASE_ANON_KEY = 'your-anon-key'; // Replace with public anon key
+        let SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co';
+        let SUPABASE_ANON_KEY = 'your-anon-key';
         
+        const isUrlPlaceholder = SUPABASE_URL === 'https://your-project.supabase.co';
+        const isKeyPlaceholder = SUPABASE_ANON_KEY === 'your-anon-key';
+        
+        if (isUrlPlaceholder || isKeyPlaceholder) {
+            const storedUrl = localStorage.getItem('supabase_url');
+            const storedKey = localStorage.getItem('supabase_anon_key');
+            if (storedUrl) SUPABASE_URL = storedUrl;
+            if (storedKey) SUPABASE_ANON_KEY = storedKey;
+        }
+
+        const credentialsFound = (SUPABASE_URL !== 'https://your-project.supabase.co' && SUPABASE_ANON_KEY !== 'your-anon-key');
+
         let supabase = null;
-        if (window.supabase) {
+        if (window.supabase && credentialsFound) {
             supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         }
 
@@ -322,6 +361,7 @@
         let allJobs = []; // Cache for all fetched active jobs
         let customAppliedKeys = new Set();
         let dismissedKeys = new Set();
+        let expandedKeys = new Set(); // Track expanded state across renders
         let activeSort = 'fit';
         let keyboardFocusedIndex = -1;
         let visibleJobs = [];
@@ -360,6 +400,24 @@
 
         // Security check
         function checkAuth() {
+            const supabaseFields = document.getElementById('supabaseCredentialsFields');
+            const urlInput = document.getElementById('supabaseUrlInput');
+            const keyInput = document.getElementById('supabaseKeyInput');
+            
+            if (!credentialsFound) {
+                if (supabaseFields) {
+                    supabaseFields.style.display = 'block';
+                    if (urlInput) urlInput.required = true;
+                    if (keyInput) keyInput.required = true;
+                }
+            } else {
+                if (supabaseFields) {
+                    supabaseFields.style.display = 'none';
+                    if (urlInput) urlInput.required = false;
+                    if (keyInput) keyInput.required = false;
+                }
+            }
+
             const session = localStorage.getItem('deep_job_session');
             if (session) {
                 authOverlay.style.display = 'none';
@@ -402,6 +460,14 @@
                 loginSubmitBtn.querySelector('span').textContent = 'Decrypting Database...';
                 
                 setTimeout(() => {
+                    if (!credentialsFound) {
+                        const urlInputVal = document.getElementById('supabaseUrlInput');
+                        const keyInputVal = document.getElementById('supabaseKeyInput');
+                        if (urlInputVal && keyInputVal) {
+                            localStorage.setItem('supabase_url', urlInputVal.value.trim());
+                            localStorage.setItem('supabase_anon_key', keyInputVal.value.trim());
+                        }
+                    }
                     const mockToken = 'session_' + Math.random().toString(36).substr(2);
                     localStorage.setItem('deep_job_session', mockToken);
                     showToast("Portal Unlocked. Welcome, Deep.");
@@ -409,7 +475,7 @@
                     setTimeout(() => {
                         loginSubmitBtn.disabled = false;
                         loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
-                        checkAuth();
+                        window.location.reload();
                     }, 500);
                 }, 1000);
             } else {
@@ -587,6 +653,7 @@
             document.querySelectorAll('.fit-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
             document.querySelectorAll('.status-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
             document.querySelectorAll('.source-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
+            document.querySelectorAll('.read-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
 
             // Scrape date select change
             dateSelect.addEventListener('change', (e) => {
@@ -614,7 +681,7 @@
             resetFiltersBtn.addEventListener('click', () => {
                 searchBar.value = '';
                 locationSelect.value = 'all';
-                document.querySelectorAll('.fit-filter, .status-filter, .source-filter').forEach(cb => cb.checked = true);
+                document.querySelectorAll('.fit-filter, .status-filter, .source-filter, .read-filter').forEach(cb => cb.checked = true);
                 keyboardFocusedIndex = -1;
                 render();
                 showToast("Cleared active search criteria.");
@@ -727,6 +794,7 @@
             const allowedFits = Array.from(document.querySelectorAll('.fit-filter:checked')).map(cb => cb.value);
             const allowedStatuses = Array.from(document.querySelectorAll('.status-filter:checked')).map(cb => cb.value);
             const allowedSources = Array.from(document.querySelectorAll('.source-filter:checked')).map(cb => cb.value);
+            const allowedReads = Array.from(document.querySelectorAll('.read-filter:checked')).map(cb => cb.value);
 
             let filteredJobs = jobs.filter(job => {
                 if (dismissedKeys.has(job.key)) return false;
@@ -743,7 +811,10 @@
                 const matchesLocation = locationVal === 'all' || 
                     (job.location && job.location.split(',')[0].trim() === locationVal);
 
-                return matchesSearch && matchesFit && matchesStatus && matchesSource && matchesLocation;
+                const matchesRead = (job.is_read && allowedReads.includes('read')) || 
+                                    (!job.is_read && allowedReads.includes('unread'));
+
+                return matchesSearch && matchesFit && matchesStatus && matchesSource && matchesLocation && matchesRead;
             });
 
             // Sorting sequences
@@ -823,6 +894,9 @@
                 if (idx === keyboardFocusedIndex) {
                     card.classList.add('keyboard-focus');
                 }
+                if (expandedKeys.has(job.key)) {
+                    card.classList.add('expanded');
+                }
                 card.id = `card-${job.key}`;
 
                 const fitBadgeClass = job.fit === 'high' ? 'badge-high' : (job.fit === 'medium' ? 'badge-med' : 'badge-low');
@@ -838,6 +912,9 @@
 
                 const matchPct = job.fit === 'high' ? '92%' : (job.fit === 'medium' ? '78%' : '45%');
                 const fitScoreClass = job.fit === 'high' ? '' : (job.fit === 'medium' ? 'med-match' : 'low-match');
+                
+                // Unread dot indicator
+                const unreadDot = !job.is_read ? '<span class="unread-dot"></span>' : '';
 
                 card.innerHTML = `
                     <div class="job-card-row">
@@ -846,7 +923,7 @@
                         </div>
                         <div class="job-card-main-info">
                             <span class="company-name">${escapeHtml(job.company)}</span>
-                            <h3 class="job-title" onclick="toggleCardExpand('${job.key}')">${escapeHtml(job.title)}</h3>
+                            <h3 class="job-title" onclick="toggleCardExpand('${job.key}')">${unreadDot}${escapeHtml(job.title)}</h3>
                             <div class="badge-container" style="margin-top: 0.35rem;">
                                 ${isApplied ? '<span class="badge badge-applied">Applied</span>' : ''}
                                 <span class="badge ${fitBadgeClass}">${job.fit} Fit</span>
@@ -893,10 +970,33 @@
             });
         }
 
-        window.toggleCardExpand = function(key) {
-            const card = document.getElementById(`card-${key}`);
-            if (card) {
-                card.classList.toggle('expanded');
+        window.toggleCardExpand = async function(key) {
+            const job = jobs.find(j => j.key === key);
+            if (!job) return;
+
+            if (expandedKeys.has(key)) {
+                expandedKeys.delete(key);
+            } else {
+                expandedKeys.add(key);
+            }
+
+            const wasUnread = !job.is_read;
+            if (expandedKeys.has(key) && wasUnread) {
+                job.is_read = true;
+            }
+
+            render();
+
+            if (expandedKeys.has(key) && wasUnread) {
+                if (supabase) {
+                    const { error } = await supabase
+                        .from('jobs')
+                        .update({ is_read: true })
+                        .eq('id', key);
+                    if (error) {
+                        console.error("Error updating is_read state:", error);
+                    }
+                }
             }
         }
 

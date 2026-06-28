@@ -16,7 +16,33 @@ SEEN_JOBS_PATH = os.path.join(WORKSPACE_DIR, "job_scraper", "seen_jobs.json")
 JOBINDEX_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobindex-search", "cli")
 JOBBANK_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobbank-search", "cli")
 
+def fetch_existing_jobs_from_supabase(supabase_url, supabase_key):
+    url = f"{supabase_url}/rest/v1/jobs?select=id,status,fit"
+    headers = {
+        "apikey": supabase_key,
+        "Authorization": f"Bearer {supabase_key}"
+    }
+    try:
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            existing = {}
+            for item in response.json():
+                job_id = item.get("id")
+                if job_id:
+                    existing[job_id] = {
+                        "status": item.get("status"),
+                        "fit": item.get("fit")
+                    }
+            return existing
+        else:
+            print(f"Warning: Failed to fetch existing jobs from Supabase: {response.status_code} - {response.text}")
+            return {}
+    except Exception as e:
+        print(f"Warning: Error fetching existing jobs from Supabase: {e}")
+        return {}
+
 def load_applied_jobs():
+
     applied = set()
     if os.path.exists(TRACKER_PATH):
         try:
@@ -302,16 +328,25 @@ def main():
         print(f"Updated dates registry at {dates_js_path}")
         return
         
+    existing_supabase_jobs = fetch_existing_jobs_from_supabase(supabase_url, supabase_key)
+
     payload = []
     for job in jobs_list:
+        job_id = job["key"]
+        status = job["status"]
+        fit = job["fit"]
+        if job_id in existing_supabase_jobs:
+            status = existing_supabase_jobs[job_id].get("status") or status
+            fit = existing_supabase_jobs[job_id].get("fit") or fit
+
         payload.append({
-            "id": job["key"],
+            "id": job_id,
             "title": job["title"],
             "company": job["company"],
             "location": job["location"],
             "url": job["url"],
-            "fit": job["fit"],
-            "status": job["status"],
+            "fit": fit,
+            "status": status,
             "last_seen": date_str,
             "posted_date": job["date"] if job["date"] != "Recent" else None,
             "description": job["description"],
@@ -332,8 +367,11 @@ def main():
             print(f"Successfully upserted {len(payload)} active jobs to Supabase.")
         else:
             print(f"Error publishing to Supabase: {response.status_code} - {response.text}")
+            sys.exit(1)
     except requests.exceptions.RequestException as e:
         print(f"Network error publishing to Supabase: {e}")
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
