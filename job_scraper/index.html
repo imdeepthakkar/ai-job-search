@@ -335,6 +335,32 @@
 
     <!-- Core App Logic & Auth Functions -->
     <script>
+        // Safe localStorage wrapper to prevent crashes in sandboxed or local file:/// contexts
+        const safeStorage = {
+            _fallback: {},
+            getItem(key) {
+                try {
+                    return localStorage.getItem(key);
+                } catch (e) {
+                    return this._fallback[key] || null;
+                }
+            },
+            setItem(key, value) {
+                try {
+                    localStorage.setItem(key, value);
+                } catch (e) {
+                    this._fallback[key] = value;
+                }
+            },
+            removeItem(key) {
+                try {
+                    localStorage.removeItem(key);
+                } catch (e) {
+                    delete this._fallback[key];
+                }
+            }
+        };
+
         // Supabase client initialization
         let SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co';
         let SUPABASE_ANON_KEY = 'your-anon-key';
@@ -343,8 +369,8 @@
         const isKeyPlaceholder = !SUPABASE_ANON_KEY || SUPABASE_ANON_KEY === 'your-anon-key';
         
         if (isUrlPlaceholder || isKeyPlaceholder) {
-            const storedUrl = localStorage.getItem('supabase_url');
-            const storedKey = localStorage.getItem('supabase_anon_key');
+            const storedUrl = safeStorage.getItem('supabase_url');
+            const storedKey = safeStorage.getItem('supabase_anon_key');
             if (storedUrl) SUPABASE_URL = storedUrl;
             if (storedKey) SUPABASE_ANON_KEY = storedKey;
         }
@@ -423,7 +449,7 @@
                 }
             }
 
-            const session = localStorage.getItem('deep_job_session');
+            const session = safeStorage.getItem('deep_job_session');
             if (session) {
                 authOverlay.style.display = 'none';
                 appContainer.style.display = 'flex';
@@ -469,12 +495,12 @@
                         const urlInputVal = document.getElementById('supabaseUrlInput');
                         const keyInputVal = document.getElementById('supabaseKeyInput');
                         if (urlInputVal && keyInputVal) {
-                            localStorage.setItem('supabase_url', urlInputVal.value.trim());
-                            localStorage.setItem('supabase_anon_key', keyInputVal.value.trim());
+                            safeStorage.setItem('supabase_url', urlInputVal.value.trim());
+                            safeStorage.setItem('supabase_anon_key', keyInputVal.value.trim());
                         }
                     }
                     const mockToken = 'session_' + Math.random().toString(36).substr(2);
-                    localStorage.setItem('deep_job_session', mockToken);
+                    safeStorage.setItem('deep_job_session', mockToken);
                     showToast("Portal Unlocked. Welcome, Deep.");
                     
                     setTimeout(() => {
@@ -490,7 +516,7 @@
 
         // Session logout
         logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('deep_job_session');
+            safeStorage.removeItem('deep_job_session');
             showToast("Session secured and logged out.");
             setTimeout(() => {
                 checkAuth();
@@ -541,11 +567,11 @@
         function initApp() {
             // Load LocalStorage states (only used as fallback if Supabase is offline)
             try {
-                const storedApplied = localStorage.getItem('deep_applied_jobs');
+                const storedApplied = safeStorage.getItem('deep_applied_jobs');
                 if (storedApplied) {
                     customAppliedKeys = new Set(JSON.parse(storedApplied));
                 }
-                const storedDismissed = localStorage.getItem('deep_dismissed_jobs');
+                const storedDismissed = safeStorage.getItem('deep_dismissed_jobs');
                 if (storedDismissed) {
                     dismissedKeys = new Set(JSON.parse(storedDismissed));
                 }
@@ -734,7 +760,7 @@
                     customAppliedKeys.add(key);
                     showToast(`Marked "${job.title}" as applied.`);
                 }
-                localStorage.setItem('deep_applied_jobs', JSON.stringify(Array.from(customAppliedKeys)));
+                safeStorage.setItem('deep_applied_jobs', JSON.stringify(Array.from(customAppliedKeys)));
                 render();
                 return;
             }
@@ -761,7 +787,7 @@
             if (!supabase) {
                 // Offline fallback
                 dismissedKeys.add(key);
-                localStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
+                safeStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
                 showToast(`Dismissed "${job ? job.title : 'job listing'}".`);
                 render();
                 return;
