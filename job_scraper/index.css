@@ -1,35 +1,51 @@
-/* Principal Software Engineer Grade Design Tokens & Variables */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@800&display=swap');
+
 :root {
-    --bg-base: #030408;
-    --bg-surface: rgba(10, 15, 30, 0.35);
-    --bg-surface-hover: rgba(18, 28, 56, 0.55);
-    --bg-sidebar: rgba(6, 9, 18, 0.8);
-    --bg-glass: rgba(8, 12, 24, 0.7);
-    --bg-input: rgba(3, 5, 10, 0.6);
+    /* glaforge.dev Color Palette */
+    --bordeaux: #817;
+    --red: #a35;
+    --pink: #c66;
+    --orange: #e94;
+    --yellow: #ed0;
+    --applegreen: #9d5;
+    --emeraldgreen: #4d8;
+    --cyan: #0bc;
+    --lightblue: #09c;
+    --darkblue: #36b;
+    --violet: #639;
+    --lightgray: #EEE;
+
+    /* Semantic Mappings */
+    --bg-base: #fafafa;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #fcfcfc;
+    --bg-sidebar: #EEEEEE;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+    --bg-input: #ffffff;
     
-    --border-light: rgba(255, 255, 255, 0.03);
-    --border-medium: rgba(255, 255, 255, 0.07);
-    --border-hover: rgba(56, 189, 248, 0.3);
-    --border-focus: #0ea5e9;
+    --border-light: #e5e7eb;
+    --border-medium: #d1d5db;
+    --border-hover: var(--darkblue);
+    --border-focus: var(--red);
     
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #475569;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
     
-    --accent-high: #10b981;
-    --accent-high-glow: rgba(16, 185, 129, 0.2);
-    --accent-medium: #0ea5e9;
-    --accent-medium-glow: rgba(14, 165, 233, 0.2);
-    --accent-low: #64748b;
-    --accent-low-glow: rgba(100, 116, 139, 0.08);
-    --accent-applied: #8b5cf6;
-    --accent-applied-glow: rgba(139, 92, 246, 0.2);
-    --accent-danger: #f43f5e;
+    --accent-high: var(--red);
+    --accent-high-glow: rgba(163, 53, 85, 0.08);
+    --accent-medium: var(--darkblue);
+    --accent-medium-glow: rgba(51, 102, 187, 0.08);
+    --accent-low: var(--violet);
+    --accent-low-glow: rgba(99, 57, 153, 0.08);
+    --accent-applied: var(--bordeaux);
+    --accent-applied-glow: rgba(129, 17, 119, 0.08);
+    --accent-danger: var(--red);
     
-    --gradient-primary: linear-gradient(135deg, #0ea5e9, #6366f1);
-    --gradient-glow: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-    --card-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --gradient-primary: linear-gradient(90deg, var(--red), var(--darkblue));
+    --gradient-glow: radial-gradient(circle, rgba(163, 53, 85, 0.05) 0%, transparent 70%);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --transition-smooth: all 0.25s ease-in-out;
 }
 
 /* Base Styles & System Optimization */
@@ -57,20 +73,25 @@
     background: var(--text-muted);
 }
 
+html {
+    border-top: var(--violet) 1rem solid;
+    border-image: linear-gradient(90deg, var(--red), var(--darkblue)) 1;
+    border-bottom: var(--violet) 1rem solid;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     background-color: var(--bg-base);
     color: var(--text-primary);
     min-height: 100vh;
-    overflow-x: hidden;
-    letter-spacing: -0.1px;
-    background-image: 
-        radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 15% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px), 
-        linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
-    background-attachment: fixed;
+    line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 800;
+    color: var(--text-primary);
 }
 
 /* Authentication Portal Design */
@@ -207,8 +228,6 @@ body {
 .sidebar {
     width: 320px;
     background: var(--bg-sidebar);
-    backdrop-filter: blur(35px);
-    -webkit-backdrop-filter: blur(35px);
     border-right: 1px solid var(--border-light);
     padding: 2.5rem 1.75rem;
     display: flex;
@@ -563,9 +582,9 @@ body {
 .job-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-light);
-    border-radius: 24px;
-    padding: 2rem;
+    border-radius: 12px;
     box-shadow: var(--card-shadow);
+    padding: 2rem;
     transition: var(--transition-smooth);
     position: relative;
     display: flex;
@@ -574,25 +593,20 @@ body {
 }
 
 .job-card:hover {
-    background: var(--bg-surface-hover);
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--border-hover);
     transform: translateY(-2px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
-.job-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    border-radius: 24px 0 0 24px;
-    background: var(--text-muted);
+/* Dynamic fit highlights */
+.job-card.fit-high {
+    border-left: 6px solid var(--red);
 }
-
-.job-card.fit-high::before { background: var(--accent-high); }
-.job-card.fit-medium::before { background: var(--accent-medium); }
+.job-card.fit-medium {
+    border-left: 6px solid var(--darkblue);
+}
+.job-card.fit-low {
+    border-left: 6px solid var(--violet);
+}
 
 /* Card Header Section */
 .card-header {
@@ -750,14 +764,13 @@ body {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background-color: var(--red);
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+    border: none;
 }
 
 .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+    background-color: var(--bordeaux);
 }
 
 .btn-secondary {
@@ -772,14 +785,13 @@ body {
 }
 
 .btn-success {
-    background: rgba(16, 185, 129, 0.05);
-    border: 1px solid rgba(16, 185, 129, 0.15);
-    color: var(--accent-high);
+    background-color: var(--darkblue);
+    color: #ffffff;
+    border: none;
 }
 
 .btn-success:hover {
-    background: rgba(16, 185, 129, 0.15);
-    border-color: rgba(16, 185, 129, 0.3);
+    background-color: #248;
 }
 
 .btn-danger {
@@ -1277,5 +1289,11 @@ body {
     margin-right: 8px;
     vertical-align: middle;
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+hr, .divider {
+    border: 0;
+    border-top: var(--violet) 3px dashed;
+    margin: 1.5rem 0;
 }
 
