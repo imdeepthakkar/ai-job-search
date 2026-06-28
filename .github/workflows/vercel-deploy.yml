@@ -1,0 +1,34 @@
+name: '🚀 Deploy to Vercel'
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'job_scraper/index.html'
+      - 'job_scraper/index.css'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Inject Supabase Credentials
+        run: |-
+          sed -i "s|https://your-project.supabase.co|${{ secrets.SUPABASE_URL }}|g" job_scraper/index.html
+          sed -i "s|your-anon-key|${{ secrets.SUPABASE_ANON_KEY }}|g" job_scraper/index.html
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: '${{ secrets.VERCEL_TOKEN }}'
+          VERCEL_ORG_ID: 'team_8MsHpgWHhC0zsZt1uxS26SBo'
+          VERCEL_PROJECT_ID: 'prj_r3TQqoyxRCzN2OZyFp0agbgjIEL7'
+        run: |-
+          cd job_scraper
+          npm install -g vercel
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
