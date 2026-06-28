@@ -6,6 +6,7 @@ import csv
 import re
 import subprocess
 from datetime import datetime, timedelta
+import requests
 
 WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUERIES_PATH = os.path.join(WORKSPACE_DIR, ".claude", "skills", "job-scraper", "search-queries.md")
@@ -228,71 +229,111 @@ def main():
         
     jobs_list.sort(key=lambda x: ({"high": 0, "medium": 1, "low": 2}.get(x['fit'], 2), x['date']), reverse=False)
     
-    # 4. Save date-specific files
     date_str = datetime.now().strftime("%Y-%m-%d")
     data_dir = os.path.join(WORKSPACE_DIR, "job_scraper", "data")
     os.makedirs(data_dir, exist_ok=True)
+
+    # 4. Upload to Supabase instead of saving files
+    supabase_url = os.environ.get("SUPABASE_URL")
+    supabase_key = os.environ.get("SUPABASE_SERVICE_KEY")
     
-    today_json_path = os.path.join(data_dir, f"{date_str}.json")
-    today_js_path = os.path.join(data_dir, f"{date_str}.js")
-    
-    with open(today_json_path, "w", encoding="utf-8") as f:
-        json.dump(jobs_list, f, indent=2, ensure_ascii=False)
+    if not supabase_url or not supabase_key:
+        print("Warning: Supabase credentials missing from environment. Saving to local files as fallback.")
+        # Fallback to saving date-specific files locally (pre-existing behavior)
+        today_json_path = os.path.join(data_dir, f"{date_str}.json")
+        today_js_path = os.path.join(data_dir, f"{date_str}.js")
         
-    with open(today_js_path, "w", encoding="utf-8") as f:
-        f.write(f"window.scrapedJobs = {json.dumps(jobs_list, indent=2, ensure_ascii=False)};")
-        
-    # Update dates registry
-    dates_js_path = os.path.join(data_dir, "dates.js")
-    available_dates = [date_str]
-    if os.path.exists(dates_js_path):
-        try:
-            with open(dates_js_path, "r", encoding="utf-8") as f:
-                content = f.read()
-                match = re.search(r"window\.availableDates\s*=\s*(\[.*?\]);", content, re.DOTALL)
-                if match:
-                    existing_dates = json.loads(match.group(1))
-                    if isinstance(existing_dates, list):
-                        available_dates = sorted(list(set(existing_dates + [date_str])), reverse=True)
-        except Exception as e:
-            print(f"Warning: Failed to parse dates.js: {e}")
+        with open(today_json_path, "w", encoding="utf-8") as f:
+            json.dump(jobs_list, f, indent=2, ensure_ascii=False)
             
-    with open(dates_js_path, "w", encoding="utf-8") as f:
-        f.write(f"window.availableDates = {json.dumps(available_dates, indent=2, ensure_ascii=False)};")
-        
-    # Update seen_jobs.json with all processed jobs as a fallback database update
-    try:
-        seen_data = {"seen": {}}
-        if os.path.exists(SEEN_JOBS_PATH):
-            with open(SEEN_JOBS_PATH, "r", encoding="utf-8") as f:
-                seen_data = json.load(f)
-                if "seen" not in seen_data:
-                    seen_data["seen"] = {}
-        
-        for job in jobs_list:
-            key = job["key"]
-            if key not in seen_data["seen"]:
-                seen_data["seen"][key] = {
-                    "title": job["title"],
-                    "company": job["company"],
-                    "url": job["url"],
-                    "first_seen": date_str,
-                    "fit": job["fit"],
-                    "status": job["status"]
-                }
-            else:
-                # Update status and fit
-                seen_data["seen"][key]["status"] = job["status"]
-                seen_data["seen"][key]["fit"] = job["fit"]
+        with open(today_js_path, "w", encoding="utf-8") as f:
+            f.write(f"window.scrapedJobs = {json.dumps(jobs_list, indent=2, ensure_ascii=False)};")
+            
+        # Update dates registry
+        dates_js_path = os.path.join(data_dir, "dates.js")
+        available_dates = [date_str]
+        if os.path.exists(dates_js_path):
+            try:
+                with open(dates_js_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+                    match = re.search(r"window\.availableDates\s*=\s*(\[.*?\]);", content, re.DOTALL)
+                    if match:
+                        existing_dates = json.loads(match.group(1))
+                        if isinstance(existing_dates, list):
+                            available_dates = sorted(list(set(existing_dates + [date_str])), reverse=True)
+            except Exception as e:
+                print(f"Warning: Failed to parse dates.js: {e}")
                 
-        with open(SEEN_JOBS_PATH, "w", encoding="utf-8") as f:
-            json.dump(seen_data, f, indent=2, ensure_ascii=False)
-        print(f"Updated seen database at {SEEN_JOBS_PATH}")
-    except Exception as e:
-        print(f"Warning: Failed to update seen_jobs.json: {e}")
+        with open(dates_js_path, "w", encoding="utf-8") as f:
+            f.write(f"window.availableDates = {json.dumps(available_dates, indent=2, ensure_ascii=False)};")
+            
+        # Update seen_jobs.json with all processed jobs as a fallback database update
+        try:
+            seen_data = {"seen": {}}
+            if os.path.exists(SEEN_JOBS_PATH):
+                with open(SEEN_JOBS_PATH, "r", encoding="utf-8") as f:
+                    seen_data = json.load(f)
+                    if "seen" not in seen_data:
+                        seen_data["seen"] = {}
+            
+            for job in jobs_list:
+                key = job["key"]
+                if key not in seen_data["seen"]:
+                    seen_data["seen"][key] = {
+                        "title": job["title"],
+                        "company": job["company"],
+                        "url": job["url"],
+                        "first_seen": date_str,
+                        "fit": job["fit"],
+                        "status": job["status"]
+                    }
+                else:
+                    # Update status and fit
+                    seen_data["seen"][key]["status"] = job["status"]
+                    seen_data["seen"][key]["fit"] = job["fit"]
+                    
+            with open(SEEN_JOBS_PATH, "w", encoding="utf-8") as f:
+                json.dump(seen_data, f, indent=2, ensure_ascii=False)
+            print(f"Updated seen database at {SEEN_JOBS_PATH}")
+        except Exception as e:
+            print(f"Warning: Failed to update seen_jobs.json: {e}")
+            
+        print(f"Successfully exported {len(jobs_list)} unique jobs for {date_str}")
+        print(f"Updated dates registry at {dates_js_path}")
+        return
         
-    print(f"Successfully exported {len(jobs_list)} unique jobs for {date_str}")
-    print(f"Updated dates registry at {dates_js_path}")
+    payload = []
+    for job in jobs_list:
+        payload.append({
+            "id": job["key"],
+            "title": job["title"],
+            "company": job["company"],
+            "location": job["location"],
+            "url": job["url"],
+            "fit": job["fit"],
+            "status": job["status"],
+            "last_seen": date_str,
+            "posted_date": job["date"] if job["date"] != "Recent" else None,
+            "description": job["description"],
+            "source": job["source"]
+        })
+        
+    url = f"{supabase_url}/rest/v1/jobs"
+    headers = {
+        "apikey": supabase_key,
+        "Authorization": f"Bearer {supabase_key}",
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates"
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        if response.status_code in [200, 201]:
+            print(f"Successfully upserted {len(payload)} active jobs to Supabase.")
+        else:
+            print(f"Error publishing to Supabase: {response.status_code} - {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Network error publishing to Supabase: {e}")
 
 if __name__ == "__main__":
     main()
