@@ -365,15 +365,11 @@
         let SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co';
         let SUPABASE_ANON_KEY = 'your-anon-key';
         
-        const isUrlPlaceholder = !SUPABASE_URL || SUPABASE_URL === 'https://your-project.supabase.co';
-        const isKeyPlaceholder = !SUPABASE_ANON_KEY || SUPABASE_ANON_KEY === 'your-anon-key';
-        
-        if (isUrlPlaceholder || isKeyPlaceholder) {
-            const storedUrl = safeStorage.getItem('supabase_url');
-            const storedKey = safeStorage.getItem('supabase_anon_key');
-            if (storedUrl) SUPABASE_URL = storedUrl;
-            if (storedKey) SUPABASE_ANON_KEY = storedKey;
-        }
+        // Always try to load stored credentials first to allow manual user override
+        const storedUrl = safeStorage.getItem('supabase_url');
+        const storedKey = safeStorage.getItem('supabase_anon_key');
+        if (storedUrl) SUPABASE_URL = storedUrl;
+        if (storedKey) SUPABASE_ANON_KEY = storedKey;
 
         const credentialsFound = (
             SUPABASE_URL && 
@@ -446,7 +442,8 @@
             const urlInput = document.getElementById('supabaseUrlInput');
             const keyInput = document.getElementById('supabaseKeyInput');
             
-            if (!credentialsFound) {
+            // Show fields if credentials are not configured or if client failed to initialize
+            if (!credentialsFound || !sbClient) {
                 if (supabaseFields) {
                     supabaseFields.style.display = 'block';
                     if (urlInput) urlInput.required = true;
@@ -502,10 +499,10 @@
                 loginSubmitBtn.querySelector('span').textContent = 'Decrypting Database...';
                 
                 setTimeout(() => {
-                    if (!credentialsFound) {
+                    if (!credentialsFound || !sbClient) {
                         const urlInputVal = document.getElementById('supabaseUrlInput');
                         const keyInputVal = document.getElementById('supabaseKeyInput');
-                        if (urlInputVal && keyInputVal) {
+                        if (urlInputVal && keyInputVal && urlInputVal.value.trim() && keyInputVal.value.trim()) {
                             safeStorage.setItem('supabase_url', urlInputVal.value.trim());
                             safeStorage.setItem('supabase_anon_key', keyInputVal.value.trim());
                         }
