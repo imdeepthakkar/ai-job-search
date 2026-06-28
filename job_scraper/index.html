@@ -426,28 +426,16 @@
         const shortcutsPanel = document.getElementById('shortcutsPanel');
         const closeShortcutsBtn = document.getElementById('closeShortcutsBtn');
 
-        // Security check
-        function checkAuth() {
-            const supabaseFields = document.getElementById('supabaseCredentialsFields');
-            const urlInput = document.getElementById('supabaseUrlInput');
-            const keyInput = document.getElementById('supabaseKeyInput');
-            
-            // Show fields if credentials are not configured or if client failed to initialize
-            if (!credentialsFound || !sbClient) {
-                if (supabaseFields) {
-                    supabaseFields.style.display = 'block';
-                    if (urlInput) urlInput.required = true;
-                    if (keyInput) keyInput.required = true;
-                }
-            } else {
-                if (supabaseFields) {
-                    supabaseFields.style.display = 'none';
-                    if (urlInput) urlInput.required = false;
-                    if (keyInput) keyInput.required = false;
-                }
+        // Security check — uses Supabase Auth session
+        async function checkAuth() {
+            if (!sbClient) {
+                // No DB connection yet — show login form
+                authOverlay.style.display = 'flex';
+                appContainer.style.display = 'none';
+                return;
             }
 
-            const session = safeStorage.getItem('deep_job_session');
+            const { data: { session } } = await sbClient.auth.getSession();
             if (session) {
                 authOverlay.style.display = 'none';
                 appContainer.style.display = 'flex';
@@ -477,47 +465,47 @@
             shortcutsPanel.classList.remove('active');
         });
 
-        // Handle submission of Auth Form
-        authForm.addEventListener('submit', (e) => {
+        // Handle submission of Auth Form — uses Supabase Auth
+        authForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = emailInput.value.trim();
             const password = passwordInput.value;
 
-            // Simple developer credentials authentication
-            if (email.toLowerCase() === 'deep@jobsearch.ai' && password === 'Password123') {
-                loginSubmitBtn.disabled = true;
-                loginSubmitBtn.querySelector('span').textContent = 'Decrypting Database...';
-                
-                setTimeout(() => {
-                    if (!credentialsFound || !sbClient) {
-                        const urlInputVal = document.getElementById('supabaseUrlInput');
-                        const keyInputVal = document.getElementById('supabaseKeyInput');
-                        if (urlInputVal && keyInputVal && urlInputVal.value.trim() && keyInputVal.value.trim()) {
-                            safeStorage.setItem('supabase_url', urlInputVal.value.trim());
-                            safeStorage.setItem('supabase_anon_key', keyInputVal.value.trim());
-                        }
-                    }
-                    const mockToken = 'session_' + Math.random().toString(36).substr(2);
-                    safeStorage.setItem('deep_job_session', mockToken);
-                    showToast("Portal Unlocked. Welcome, Deep.");
-                    
-                    setTimeout(() => {
-                        loginSubmitBtn.disabled = false;
-                        loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
-                        window.location.reload();
-                    }, 500);
-                }, 1000);
+            loginSubmitBtn.disabled = true;
+            loginSubmitBtn.querySelector('span').textContent = 'Authenticating...';
+
+            if (!sbClient) {
+                showToast('Database not connected. Cannot authenticate.');
+                loginSubmitBtn.disabled = false;
+                loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
+                return;
+            }
+
+            const { data, error } = await sbClient.auth.signInWithPassword({ email, password });
+
+            if (error) {
+                showToast('Access Denied. Please verify account credentials.');
+                loginSubmitBtn.disabled = false;
+                loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
             } else {
-                showToast("Access Denied. Please verify account credentials.");
+                showToast('Portal Unlocked. Welcome, Deep.');
+                setTimeout(() => {
+                    loginSubmitBtn.disabled = false;
+                    loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
+                    authOverlay.style.display = 'none';
+                    appContainer.style.display = 'flex';
+                    initApp();
+                }, 600);
             }
         });
 
-        // Session logout
-        logoutBtn.addEventListener('click', () => {
-            safeStorage.removeItem('deep_job_session');
-            showToast("Session secured and logged out.");
+        // Session logout — uses Supabase Auth
+        logoutBtn.addEventListener('click', async () => {
+            if (sbClient) await sbClient.auth.signOut();
+            showToast('Session secured and logged out.');
             setTimeout(() => {
-                checkAuth();
+                authOverlay.style.display = 'flex';
+                appContainer.style.display = 'none';
             }, 600);
         });
 
