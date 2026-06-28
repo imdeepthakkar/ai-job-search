@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="index.css">
     <!-- Load scraper batch dates -->
     <script src="data/dates.js"></script>
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -306,8 +308,18 @@
 
     <!-- Core App Logic & Auth Functions -->
     <script>
+        // Supabase client initialization
+        const SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co'; // Fallback or injected
+        const SUPABASE_ANON_KEY = 'your-anon-key'; // Replace with public anon key
+        
+        let supabase = null;
+        if (window.supabase) {
+            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        }
+
         // State variables
         let jobs = [];
+        let allJobs = []; // Cache for all fetched active jobs
         let customAppliedKeys = new Set();
         let dismissedKeys = new Set();
         let activeSort = 'fit';
@@ -425,9 +437,38 @@
             return `background: linear-gradient(135deg, hsl(${h1}, 70%, 45%), hsl(${h2}, 80%, 25%));`;
         }
 
+        async function fetchSupabaseJobs() {
+            if (!supabase) {
+                throw new Error("Supabase client is not initialized.");
+            }
+            const { data, error } = await supabase
+                .from('jobs')
+                .select('*')
+                .gte('last_seen', new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // Active in last 14 days
+                
+            if (error) {
+                console.error("Error fetching jobs:", error);
+                throw error;
+            }
+            
+            // Map key and date
+            allJobs = data.map(j => ({
+                ...j,
+                key: j.id,
+                date: j.last_seen || j.posted_date || 'Recent'
+            }));
+            
+            // Populate dismissedKeys from database status
+            dismissedKeys = new Set(
+                allJobs.filter(j => j.status === 'ignored').map(j => j.key)
+            );
+            
+            jobs = allJobs;
+        }
+
         // Initialize dashboard app
         function initApp() {
-            // Load LocalStorage states
+            // Load LocalStorage states (only used as fallback if Supabase is offline)
             try {
                 const storedApplied = localStorage.getItem('deep_applied_jobs');
                 if (storedApplied) {
@@ -441,62 +482,80 @@
                 console.error("Failed to load local storage lists", e);
             }
 
-            // Load dates dynamically if availableDates defined
-            if (window.availableDates && window.availableDates.length > 0) {
+            // Fetch initial data from Supabase
+            loadJobData().then(() => {
+                // Populate dates dynamically from allJobs
+                const datesSet = new Set();
+                allJobs.forEach(job => {
+                    if (job.last_seen) {
+                        datesSet.add(job.last_seen);
+                    }
+                });
+                const sortedDates = Array.from(datesSet).sort().reverse();
+                
                 dateSelect.innerHTML = '';
-                window.availableDates.forEach((d, idx) => {
+                sortedDates.forEach((d, idx) => {
                     const opt = document.createElement('option');
                     opt.value = d;
                     opt.textContent = idx === 0 ? `${d} (Today)` : d;
                     dateSelect.appendChild(opt);
                 });
-            }
 
-            // Sync dropdown and fetch initial data
-            const date = dateSelect.value || '2026-06-24';
-            loadJobData(date).then(() => {
+                // Filter jobs for the latest date initially
+                if (sortedDates.length > 0) {
+                    dateSelect.value = sortedDates[0];
+                    jobs = allJobs.filter(j => j.last_seen === sortedDates[0]);
+                }
+
                 syncStatusAndFilters();
                 setupEventListeners();
                 showToast("Connected to live job feeds.");
             }).catch(err => {
-                jobs = getMockJobs();
+                console.error("Failed to load job data from Supabase, loading fallback", err);
+                jobs = getMockJobs().map(j => ({ ...j, key: j.key || j.id, last_seen: j.last_seen || '2026-06-24' }));
+                allJobs = jobs;
+                
+                // Populate fallback dates
+                const datesSet = new Set();
+                allJobs.forEach(job => {
+                    if (job.date) datesSet.add(job.date);
+                });
+                const sortedDates = Array.from(datesSet).sort().reverse();
+                dateSelect.innerHTML = '';
+                sortedDates.forEach((d, idx) => {
+                    const opt = document.createElement('option');
+                    opt.value = d;
+                    opt.textContent = idx === 0 ? `${d} (Today)` : d;
+                    dateSelect.appendChild(opt);
+                });
+
                 syncStatusAndFilters();
                 setupEventListeners();
                 showToast("Fallback: Loaded cached offline jobs.");
             });
         }
 
-        // Dynamic script loading for scrape batches
-        function loadJobData(date) {
-            return new Promise((resolve, reject) => {
-                const existingScript = document.getElementById('dynamic-job-data');
-                if (existingScript) existingScript.remove();
-
-                const script = document.createElement('script');
-                script.id = 'dynamic-job-data';
-                script.src = `data/${date}.js`;
-                script.onload = () => {
-                    if (window.scrapedJobs) {
-                        jobs = window.scrapedJobs;
-                        resolve();
-                    } else {
-                        reject(new Error("scrapedJobs not loaded correctly"));
-                    }
-                };
-                script.onerror = () => {
-                    reject(new Error(`Failed to load data for ${date}`));
-                };
-                document.body.appendChild(script);
-            });
+        // Query database rather than loading local JS files
+        async function loadJobData(date) {
+            if (allJobs.length === 0) {
+                await fetchSupabaseJobs();
+            }
+            if (date) {
+                jobs = allJobs.filter(j => j.last_seen === date);
+            } else {
+                jobs = allJobs;
+            }
         }
 
         function syncStatusAndFilters() {
-            // Restore status based on cached applied lists
-            jobs.forEach(job => {
-                if (customAppliedKeys.has(job.key)) {
-                    job.status = 'applied';
-                }
-            });
+            // Restore status based on cached applied lists (only if offline/supabase not initialized)
+            if (!supabase) {
+                jobs.forEach(job => {
+                    if (customAppliedKeys.has(job.key)) {
+                        job.status = 'applied';
+                    }
+                });
+            }
 
             // Populate location dropdown
             const locationsSet = new Set();
@@ -588,30 +647,70 @@
             }, 3000);
         }
 
-        window.toggleApplied = function(key) {
+        window.toggleApplied = async function(key) {
             const job = jobs.find(j => j.key === key);
             if (!job) return;
 
-            if (job.status === 'applied') {
-                job.status = 'new';
-                customAppliedKeys.delete(key);
-                showToast(`Marked "${job.title}" as new.`);
-            } else {
-                job.status = 'applied';
-                customAppliedKeys.add(key);
-                showToast(`Marked "${job.title}" as applied.`);
+            if (!supabase) {
+                // Offline fallback
+                if (job.status === 'applied') {
+                    job.status = 'new';
+                    customAppliedKeys.delete(key);
+                    showToast(`Marked "${job.title}" as new.`);
+                } else {
+                    job.status = 'applied';
+                    customAppliedKeys.add(key);
+                    showToast(`Marked "${job.title}" as applied.`);
+                }
+                localStorage.setItem('deep_applied_jobs', JSON.stringify(Array.from(customAppliedKeys)));
+                render();
+                return;
             }
 
-            localStorage.setItem('deep_applied_jobs', JSON.stringify(Array.from(customAppliedKeys)));
-            render();
+            const newStatus = job.status === 'applied' ? 'new' : 'applied';
+            const { error } = await supabase
+                .from('jobs')
+                .update({ status: newStatus })
+                .eq('id', key);
+                
+            if (!error) {
+                job.status = newStatus;
+                render();
+                showToast(newStatus === 'applied' ? `Marked "${job.title}" as applied.` : `Marked "${job.title}" as new.`);
+            } else {
+                console.error("Error updating application status:", error);
+                showToast("Failed to update status.");
+            }
         }
 
-        window.dismissJob = function(key) {
+        window.dismissJob = async function(key) {
             const job = jobs.find(j => j.key === key);
-            dismissedKeys.add(key);
-            localStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
-            showToast(`Dismissed "${job ? job.title : 'job listing'}".`);
-            render();
+            
+            if (!supabase) {
+                // Offline fallback
+                dismissedKeys.add(key);
+                localStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
+                showToast(`Dismissed "${job ? job.title : 'job listing'}".`);
+                render();
+                return;
+            }
+
+            if (!job) return;
+
+            const { error } = await supabase
+                .from('jobs')
+                .update({ status: 'ignored' })
+                .eq('id', key);
+                
+            if (!error) {
+                job.status = 'ignored';
+                dismissedKeys.add(key);
+                showToast(`Dismissed "${job.title}".`);
+                render();
+            } else {
+                console.error("Error dismissing job:", error);
+                showToast("Failed to dismiss job.");
+            }
         }
 
         window.showApplyModal = function(url) {
