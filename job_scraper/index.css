@@ -331,25 +331,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pill-checkbox:checked + .pill-label {
-    background: rgba(14, 165, 233, 0.1);
-    border-color: rgba(14, 165, 233, 0.4);
-    color: #38bdf8;
+    background: var(--accent-medium-glow);
+    border-color: rgba(51, 102, 187, 0.3);
+    color: var(--accent-medium);
     font-weight: 700;
 }
 
 /* Custom Priority Toggles */
 .pill-checkbox[value="high"] + .pill-label:hover { border-color: var(--accent-high); }
 .pill-checkbox[value="high"]:checked + .pill-label { 
-    background: rgba(16, 185, 129, 0.1); 
-    border-color: rgba(16, 185, 129, 0.4); 
+    background: var(--accent-high-glow); 
+    border-color: rgba(163, 53, 85, 0.3); 
     color: var(--accent-high); 
 }
 
 .pill-checkbox[value="medium"] + .pill-label:hover { border-color: var(--accent-medium); }
 .pill-checkbox[value="medium"]:checked + .pill-label { 
-    background: rgba(14, 165, 233, 0.1); 
-    border-color: rgba(14, 165, 233, 0.4); 
-    color: #38bdf8; 
+    background: var(--accent-medium-glow); 
+    border-color: rgba(51, 102, 187, 0.3); 
+    color: var(--accent-medium); 
 }
 
 .select-input {
@@ -569,9 +569,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sort-btn.active {
-    color: #38bdf8;
-    background: rgba(14, 165, 233, 0.08);
-    box-shadow: inset 0 0 0 1px rgba(14, 165, 233, 0.15);
+    color: var(--accent-medium);
+    background: var(--accent-medium-glow);
+    box-shadow: inset 0 0 0 1px rgba(51, 102, 187, 0.15);
 }
 
 /* Advanced Cards Layout */
@@ -635,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .job-title:hover {
-    color: #38bdf8;
+    color: var(--red);
 }
 
 .company-name {
@@ -657,7 +657,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.35rem 0.8rem;
     border-radius: 8px;
     font-size: 0.72rem;
-    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
     background: rgba(255, 255, 255, 0.02);
@@ -666,21 +667,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .badge-high {
-    background: rgba(16, 185, 129, 0.06);
-    border-color: rgba(16, 185, 129, 0.15);
+    background: var(--accent-high-glow);
+    border: 1px solid rgba(163, 53, 85, 0.2);
     color: var(--accent-high);
 }
 
 .badge-med {
-    background: rgba(14, 165, 233, 0.06);
-    border-color: rgba(14, 165, 233, 0.15);
-    color: #38bdf8;
+    background: var(--accent-medium-glow);
+    border: 1px solid rgba(51, 102, 187, 0.2);
+    color: var(--accent-medium);
+}
+
+.badge-low {
+    background: var(--accent-low-glow);
+    border: 1px solid rgba(99, 57, 153, 0.2);
+    color: var(--accent-low);
 }
 
 .badge-applied {
-    background: rgba(139, 92, 246, 0.06);
-    border-color: rgba(139, 92, 246, 0.15);
-    color: #c084fc;
+    background: var(--accent-applied-glow);
+    border: 1px solid rgba(129, 17, 119, 0.2);
+    color: var(--accent-applied);
 }
 
 .badge-source {
@@ -901,19 +908,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
 }
 
-.command-box {
-    background: rgba(3, 5, 10, 0.8);
-    border: 1px solid var(--border-medium);
-    border-radius: 16px;
-    padding: 1.5rem;
-}
 
-.command-box code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88rem;
-    color: #38bdf8;
-    word-break: break-all;
-}
 
 /* Toast Popups Layout */
 .toast-notification {
@@ -1194,7 +1189,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #modalCommandText {
-    color: #38bdf8;
+    color: var(--darkblue);
     font-weight: bold;
     overflow-wrap: anywhere;
 }
@@ -1252,7 +1247,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem;
 }
 
-.match-score-badge {
+.match-score-badge,
+.match-score-badge.high-match {
     display: flex;
     align-items: center;
     gap: 0.35rem;
@@ -1260,23 +1256,23 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
     padding: 0.35rem 0.75rem;
     border-radius: 8px;
-    background: rgba(16, 185, 129, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: var(--accent-high-glow);
+    border: 1px solid rgba(163, 53, 85, 0.2);
     color: var(--accent-high);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .match-score-badge.med-match {
-    background: rgba(14, 165, 233, 0.08);
-    border: 1px solid rgba(14, 165, 233, 0.2);
-    color: #38bdf8;
+    background: var(--accent-medium-glow);
+    border: 1px solid rgba(51, 102, 187, 0.2);
+    color: var(--accent-medium);
 }
 
 .match-score-badge.low-match {
-    background: rgba(148, 163, 184, 0.08);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    color: var(--text-secondary);
+    background: var(--accent-low-glow);
+    border: 1px solid rgba(99, 57, 153, 0.2);
+    color: var(--accent-low);
 }
 
 /* Metric Progress Meters */
