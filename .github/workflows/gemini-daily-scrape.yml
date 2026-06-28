@@ -167,6 +167,9 @@ jobs:
           fi
 
       - name: 'Compile Dashboard Data'
+        env:
+          SUPABASE_URL: '${{ secrets.SUPABASE_URL }}'
+          SUPABASE_SERVICE_KEY: '${{ secrets.SUPABASE_SERVICE_KEY }}'
         run: |-
           python job_scraper/export_all_jobs.py
 
@@ -177,9 +180,8 @@ jobs:
           if [ -f job_scraper/seen_jobs.json ]; then
             git add -f job_scraper/seen_jobs.json
           fi
-          if [ -d job_scraper/data ] && [ "$(ls -A job_scraper/data)" ]; then
-            git add job_scraper/data/*
-          fi
+          # Remove data folder addition
+          # git add job_scraper/data/*
           git add job_scraper/index.html job_scraper/dashboard.html || true
           git commit -m "chore: update scrape database [skip ci]" || echo "No changes to commit"
           git pull --rebase origin master
