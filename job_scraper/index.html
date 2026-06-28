@@ -6,7 +6,7 @@
     <title>Apex Career Portal - Principal Solution Architect Workspace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <!-- Supabase CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -162,7 +162,7 @@
             </div>
 
             <!-- Active Dashboard Action Reset -->
-            <button id="resetFiltersBtn" class="btn btn-secondary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+            <button id="resetFiltersBtn" class="btn btn-secondary">
                 Reset All Filters
             </button>
 
@@ -251,7 +251,7 @@
                 <h3>Tailor Application Workspace</h3>
                 <button class="modal-close" id="closeModalBtn">&times;</button>
             </div>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.2rem;">
+            <p class="modal-instruction">
                 Run the following executable slash command in your project terminal to initiate fit evaluation, CV customization, and cover letter tailoring:
             </p>
             
@@ -265,7 +265,7 @@
                 <div class="terminal-body">
                     <div class="terminal-command-line">
                         <span class="terminal-prompt">deep@solutions-architect:</span><span class="terminal-dir">~</span><span class="terminal-prompt">$</span>
-                        <code id="modalCommandText" style="color: #38bdf8; font-weight: bold; overflow-wrap: anywhere;">/apply [url]</code>
+                        <code id="modalCommandText">/apply [url]</code>
                     </div>
                     <div class="terminal-output-text">
                         # Running this will automatically sync job specs, tailor CV/Letter, and format PDF artifacts.
@@ -273,7 +273,7 @@
                 </div>
             </div>
             
-            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 0.5rem;">
+            <div class="modal-actions">
                 <button class="btn btn-secondary" id="closeModalBtn2">Cancel</button>
                 <button class="btn btn-primary" id="copyCodeBtn">Copy CLI Command</button>
             </div>
@@ -288,7 +288,7 @@
     <div class="shortcuts-panel" id="shortcutsPanel">
         <div class="shortcuts-header">
             <span>System Hotkeys</span>
-            <button class="modal-close" id="closeShortcutsBtn" style="font-size: 1rem;">&times;</button>
+            <button class="modal-close" id="closeShortcutsBtn">&times;</button>
         </div>
         <div class="shortcuts-list">
             <div class="shortcut-row">
@@ -924,7 +924,7 @@
                         <div class="job-card-main-info">
                             <span class="company-name">${escapeHtml(job.company)}</span>
                             <h3 class="job-title" onclick="toggleCardExpand('${job.key}')">${unreadDot}${escapeHtml(job.title)}</h3>
-                            <div class="badge-container" style="margin-top: 0.35rem;">
+                            <div class="badge-container">
                                 ${isApplied ? '<span class="badge badge-applied">Applied</span>' : ''}
                                 <span class="badge ${fitBadgeClass}">${job.fit} Fit</span>
                                 <span class="badge badge-source">${escapeHtml(job.source)}</span>
@@ -934,7 +934,7 @@
                             <div class="match-score-badge ${fitScoreClass}">
                                 <span>🎯</span> ${matchPct} Match
                             </div>
-                            <div class="card-meta" style="font-size: 0.72rem; color: var(--text-secondary);">
+                            <div class="card-meta">
                                 <div class="meta-item">📍 ${escapeHtml(job.location || 'Storkøbenhavn')}</div>
                                 <div class="meta-item">📅 Scraped: ${escapeHtml(job.date)}</div>
                             </div>
@@ -951,7 +951,7 @@
                             <button class="btn btn-primary" onclick="showApplyModal('${job.url}')">
                                 ⚡ Autopilot Tailor
                             </button>
-                            <a href="${job.url}" target="_blank" class="btn btn-secondary" style="text-decoration: none;">
+                            <a href="${job.url}" target="_blank" class="btn btn-secondary">
                                 Open Source ↗
                             </a>
                         </div>
