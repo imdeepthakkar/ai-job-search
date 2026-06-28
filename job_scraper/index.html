@@ -377,11 +377,12 @@
         if (storedUrl) SUPABASE_URL = storedUrl;
         if (storedKey) SUPABASE_ANON_KEY = storedKey;
 
+        // credentialsFound: true if URL looks like a real supabase URL and key is a JWT
         const credentialsFound = (
-            SUPABASE_URL && 
-            SUPABASE_URL !== 'REPLACE_SUPABASE_URL' && 
-            SUPABASE_ANON_KEY && 
-            SUPABASE_ANON_KEY !== 'REPLACE_SUPABASE_ANON_KEY'
+            SUPABASE_URL &&
+            SUPABASE_URL.includes('.supabase.co') &&
+            SUPABASE_ANON_KEY &&
+            SUPABASE_ANON_KEY.startsWith('eyJ')
         );
 
         console.log("Supabase Init Diagnostic:", {
