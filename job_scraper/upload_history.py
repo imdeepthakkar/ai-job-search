@@ -3,7 +3,6 @@ import glob
 import json
 import re
 import requests
-from datetime import datetime
 
 WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(WORKSPACE_DIR, "job_scraper", "data")
@@ -24,7 +23,7 @@ def upload():
             seen_data = raw.get("seen", {})
 
     # 2. Gather historical data from all json files
-    json_files = glob.glob(os.path.join(DATA_DIR, "2026-*.json"))
+    json_files = sorted(glob.glob(os.path.join(DATA_DIR, "2026-*.json")))
     
     all_jobs = {}
     for file_path in json_files:
@@ -35,8 +34,8 @@ def upload():
             continue
         file_date = match.group(1)
         
-        with open(file_path, "r", encoding="utf-8") as f:
-            try:
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
                 jobs_list = json.load(f)
                 for job in jobs_list:
                     key = job.get("key")
@@ -69,8 +68,8 @@ def upload():
                         # Update first_seen if this file is older
                         if file_date < all_jobs[key]["first_seen"]:
                             all_jobs[key]["first_seen"] = file_date
-            except Exception as e:
-                print(f"Skipping {filename} due to parse error: {e}")
+        except Exception as e:
+            print(f"Skipping {filename} due to error: {e}")
 
     # Apply seen_jobs overrides
     for key, job in all_jobs.items():
@@ -94,11 +93,14 @@ def upload():
     chunk_size = 100
     for i in range(0, len(payload), chunk_size):
         chunk = payload[i:i+chunk_size]
-        response = requests.post(url, headers=headers, json=chunk)
-        if response.status_code in [200, 201]:
-            print(f"Successfully uploaded chunk {i // chunk_size + 1}/{(len(payload) - 1) // chunk_size + 1}")
-        else:
-            print(f"Error uploading chunk {i // chunk_size + 1}: {response.status_code} - {response.text}")
+        try:
+            response = requests.post(url, headers=headers, json=chunk)
+            if response.status_code in [200, 201]:
+                print(f"Successfully uploaded chunk {i // chunk_size + 1}/{(len(payload) - 1) // chunk_size + 1}")
+            else:
+                print(f"Error uploading chunk {i // chunk_size + 1}: {response.status_code} - {response.text}")
+        except requests.exceptions.RequestException as e:
+            print(f"Network error uploading chunk {i // chunk_size + 1}: {e}")
 
 if __name__ == "__main__":
     upload()
