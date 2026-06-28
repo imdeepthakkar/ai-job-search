@@ -368,8 +368,8 @@
         };
 
         // Supabase client initialization
-        let SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co';
-        let SUPABASE_ANON_KEY = 'your-anon-key';
+        let SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'REPLACE_SUPABASE_URL';
+        let SUPABASE_ANON_KEY = 'REPLACE_SUPABASE_ANON_KEY';
         
         // Always try to load stored credentials first to allow manual user override
         const storedUrl = safeStorage.getItem('supabase_url');
@@ -379,9 +379,9 @@
 
         const credentialsFound = (
             SUPABASE_URL && 
-            SUPABASE_URL !== 'https://your-project.supabase.co' && 
+            SUPABASE_URL !== 'REPLACE_SUPABASE_URL' && 
             SUPABASE_ANON_KEY && 
-            SUPABASE_ANON_KEY !== 'your-anon-key'
+            SUPABASE_ANON_KEY !== 'REPLACE_SUPABASE_ANON_KEY'
         );
 
         console.log("Supabase Init Diagnostic:", {
