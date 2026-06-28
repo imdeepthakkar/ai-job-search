@@ -382,10 +382,10 @@
             SUPABASE_ANON_KEY !== 'your-anon-key'
         );
 
-        let supabase = null;
+        let sbClient = null;
         try {
             if (window.supabase && credentialsFound) {
-                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             }
         } catch (e) {
             console.error("Failed to initialize Supabase client:", e);
@@ -539,10 +539,10 @@
         }
 
         async function fetchSupabaseJobs() {
-            if (!supabase) {
+            if (!sbClient) {
                 throw new Error("Supabase client is not initialized.");
             }
-            const { data, error } = await supabase
+            const { data, error } = await sbClient
                 .from('jobs')
                 .select('*')
                 .gte('last_seen', new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // Active in last 14 days
@@ -650,7 +650,7 @@
 
         function syncStatusAndFilters() {
             // Restore status based on cached applied lists (only if offline/supabase not initialized)
-            if (!supabase) {
+            if (!sbClient) {
                 jobs.forEach(job => {
                     if (customAppliedKeys.has(job.key)) {
                         job.status = 'applied';
@@ -753,7 +753,7 @@
             const job = jobs.find(j => j.key === key);
             if (!job) return;
 
-            if (!supabase) {
+            if (!sbClient) {
                 // Offline fallback
                 if (job.status === 'applied') {
                     job.status = 'new';
@@ -770,7 +770,7 @@
             }
 
             const newStatus = job.status === 'applied' ? 'new' : 'applied';
-            const { error } = await supabase
+            const { error } = await sbClient
                 .from('jobs')
                 .update({ status: newStatus })
                 .eq('id', key);
@@ -788,7 +788,7 @@
         window.dismissJob = async function(key) {
             const job = jobs.find(j => j.key === key);
             
-            if (!supabase) {
+            if (!sbClient) {
                 // Offline fallback
                 dismissedKeys.add(key);
                 safeStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
@@ -799,7 +799,7 @@
 
             if (!job) return;
 
-            const { error } = await supabase
+            const { error } = await sbClient
                 .from('jobs')
                 .update({ status: 'ignored' })
                 .eq('id', key);
@@ -1023,8 +1023,8 @@
             render();
 
             if (expandedKeys.has(key) && wasUnread) {
-                if (supabase) {
-                    const { error } = await supabase
+                if (sbClient) {
+                    const { error } = await sbClient
                         .from('jobs')
                         .update({ is_read: true })
                         .eq('id', key);
