@@ -339,8 +339,8 @@
         let SUPABASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:54321' : 'https://your-project.supabase.co';
         let SUPABASE_ANON_KEY = 'your-anon-key';
         
-        const isUrlPlaceholder = SUPABASE_URL === 'https://your-project.supabase.co';
-        const isKeyPlaceholder = SUPABASE_ANON_KEY === 'your-anon-key';
+        const isUrlPlaceholder = !SUPABASE_URL || SUPABASE_URL === 'https://your-project.supabase.co';
+        const isKeyPlaceholder = !SUPABASE_ANON_KEY || SUPABASE_ANON_KEY === 'your-anon-key';
         
         if (isUrlPlaceholder || isKeyPlaceholder) {
             const storedUrl = localStorage.getItem('supabase_url');
@@ -349,7 +349,12 @@
             if (storedKey) SUPABASE_ANON_KEY = storedKey;
         }
 
-        const credentialsFound = (SUPABASE_URL !== 'https://your-project.supabase.co' && SUPABASE_ANON_KEY !== 'your-anon-key');
+        const credentialsFound = (
+            SUPABASE_URL && 
+            SUPABASE_URL !== 'https://your-project.supabase.co' && 
+            SUPABASE_ANON_KEY && 
+            SUPABASE_ANON_KEY !== 'your-anon-key'
+        );
 
         let supabase = null;
         if (window.supabase && credentialsFound) {
@@ -455,7 +460,7 @@
             const password = passwordInput.value;
 
             // Simple developer credentials authentication
-            if (email === 'deep@jobsearch.ai' && password === 'Password123') {
+            if (email.toLowerCase() === 'deep@jobsearch.ai' && password === 'Password123') {
                 loginSubmitBtn.disabled = true;
                 loginSubmitBtn.querySelector('span').textContent = 'Decrypting Database...';
                 
