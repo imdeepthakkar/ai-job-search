@@ -32,34 +32,17 @@
                 <div class="input-field">
                     <label for="emailInput">User Account</label>
                     <div class="input-wrapper">
-                        <input type="email" id="emailInput" required placeholder="">
+                        <input type="email" id="emailInput" autocomplete="username" required placeholder="">
                     </div>
                 </div>
                 
                 <div class="input-field">
                     <label for="passwordInput">Secret Key</label>
                     <div class="input-wrapper">
-                        <input type="password" id="passwordInput" required placeholder="">
+                        <input type="password" id="passwordInput" autocomplete="current-password" required placeholder="">
                         <button type="button" class="password-toggle-btn" id="passwordToggleBtn" aria-label="Toggle Password Visibility">
                             👁️
                         </button>
-                    </div>
-                </div>
-
-                <!-- Supabase URL and Anon Key inputs for new projects -->
-                <div id="supabaseCredentialsFields" style="display: none;">
-                    <div class="input-field">
-                        <label for="supabaseUrlInput">Supabase Project URL</label>
-                        <div class="input-wrapper">
-                            <input type="url" id="supabaseUrlInput" placeholder="https://your-project.supabase.co">
-                        </div>
-                    </div>
-                    
-                    <div class="input-field">
-                        <label for="supabaseKeyInput">Supabase Anon Key</label>
-                        <div class="input-wrapper">
-                            <input type="password" id="supabaseKeyInput" placeholder="your-anon-key">
-                        </div>
                     </div>
                 </div>
                 
@@ -605,19 +588,17 @@
                 });
                 const sortedDates = Array.from(datesSet).sort().reverse();
                 
-                dateSelect.innerHTML = '';
+                dateSelect.innerHTML = '<option value="all">All Active Jobs</option>';
                 sortedDates.forEach((d, idx) => {
                     const opt = document.createElement('option');
                     opt.value = d;
-                    opt.textContent = idx === 0 ? `${d} (Today)` : d;
+                    opt.textContent = idx === 0 ? `${d} (Latest)` : d;
                     dateSelect.appendChild(opt);
                 });
 
-                // Filter jobs for the latest date initially
-                if (sortedDates.length > 0) {
-                    dateSelect.value = sortedDates[0];
-                    jobs = allJobs.filter(j => j.last_seen === sortedDates[0]);
-                }
+                // Show all jobs by default
+                dateSelect.value = 'all';
+                jobs = allJobs;
 
                 syncStatusAndFilters();
                 setupEventListeners();
@@ -704,11 +685,12 @@
             // Scrape date select change
             dateSelect.addEventListener('change', (e) => {
                 keyboardFocusedIndex = -1;
-                loadJobData(e.target.value).then(() => {
+                const val = e.target.value;
+                loadJobData(val === 'all' ? null : val).then(() => {
                     syncStatusAndFilters();
-                    showToast(`Switched batch to ${e.target.value}`);
+                    showToast(val === 'all' ? 'Showing all active jobs.' : `Switched batch to ${val}`);
                 }).catch(err => {
-                    showToast(`Error: Scrape batch ${e.target.value} unavailable`);
+                    showToast(`Error loading batch ${val}`);
                 });
             });
 
