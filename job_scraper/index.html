@@ -27,27 +27,57 @@
                 <h2>Security Portal</h2>
                 <p>Authenticate with credentials to access your job recommendations and tailoring workspace.</p>
             </div>
-            
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="signinTab" type="button">Sign In</button>
+                <button class="auth-tab" id="signupTab" type="button">Create Account</button>
+            </div>
+
+            <!-- Sign In Form -->
             <form id="authForm" class="auth-form">
                 <div class="input-field">
-                    <label for="emailInput">User Account</label>
+                    <label for="emailInput">Email</label>
                     <div class="input-wrapper">
                         <input type="email" id="emailInput" autocomplete="username" required placeholder="">
                     </div>
                 </div>
-                
                 <div class="input-field">
-                    <label for="passwordInput">Secret Key</label>
+                    <label for="passwordInput">Password</label>
                     <div class="input-wrapper">
                         <input type="password" id="passwordInput" autocomplete="current-password" required placeholder="">
-                        <button type="button" class="password-toggle-btn" id="passwordToggleBtn" aria-label="Toggle Password Visibility">
-                            👁️
-                        </button>
+                        <button type="button" class="password-toggle-btn" id="passwordToggleBtn" aria-label="Toggle Password Visibility">👁️</button>
                     </div>
                 </div>
-                
                 <button type="submit" class="auth-btn" id="loginSubmitBtn">
                     <span>Unlock Portal</span>
+                </button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="auth-form" style="display:none;">
+                <div class="input-field">
+                    <label for="signupEmailInput">Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="signupEmailInput" autocomplete="username" required placeholder="">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="signupPasswordInput">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="signupPasswordInput" autocomplete="new-password" required placeholder="">
+                        <button type="button" class="password-toggle-btn" id="signupPasswordToggleBtn" aria-label="Toggle Password Visibility">👁️</button>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="signupConfirmInput">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="signupConfirmInput" autocomplete="new-password" required placeholder="">
+                        <button type="button" class="password-toggle-btn" id="signupConfirmToggleBtn" aria-label="Toggle Confirm Password Visibility">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="auth-btn" id="signupSubmitBtn">
+                    <span>Create Account</span>
                 </button>
             </form>
         </div>
@@ -421,10 +451,22 @@
         const passwordToggleBtn = document.getElementById('passwordToggleBtn');
         const logoutBtn = document.getElementById('logoutBtn');
         const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+        const signupForm = document.getElementById('signupForm');
+        const signupSubmitBtn = document.getElementById('signupSubmitBtn');
+        const signupEmailInput = document.getElementById('signupEmailInput');
+        const signupPasswordInput = document.getElementById('signupPasswordInput');
+        const signupConfirmInput = document.getElementById('signupConfirmInput');
+        const signinTab = document.getElementById('signinTab');
+        const signupTab = document.getElementById('signupTab');
         
         const shortcutsHelpBtn = document.getElementById('shortcutsHelpBtn');
         const shortcutsPanel = document.getElementById('shortcutsPanel');
         const closeShortcutsBtn = document.getElementById('closeShortcutsBtn');
+
+        // Handle Supabase email confirmation redirect (token in URL hash)
+        if (window.location.hash && window.location.hash.includes('access_token')) {
+            history.replaceState(null, '', window.location.pathname);
+        }
 
         // Security check — uses Supabase Auth session
         async function checkAuth() {
@@ -446,14 +488,74 @@
             }
         }
 
-        // Toggle password show/hide
-        passwordToggleBtn.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                passwordToggleBtn.textContent = '🙈';
+        // Helper: toggle password visibility for any input/button pair
+        function makePasswordToggle(input, btn) {
+            btn.addEventListener('click', () => {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    btn.textContent = '🙈';
+                } else {
+                    input.type = 'password';
+                    btn.textContent = '👁️';
+                }
+            });
+        }
+        makePasswordToggle(passwordInput, passwordToggleBtn);
+        makePasswordToggle(signupPasswordInput, document.getElementById('signupPasswordToggleBtn'));
+        makePasswordToggle(signupConfirmInput, document.getElementById('signupConfirmToggleBtn'));
+
+        // Tab switching: Sign In ↔ Create Account
+        function switchToSignIn() {
+            authForm.style.display = 'flex';
+            signupForm.style.display = 'none';
+            signinTab.classList.add('active');
+            signupTab.classList.remove('active');
+        }
+        function switchToSignUp() {
+            authForm.style.display = 'none';
+            signupForm.style.display = 'flex';
+            signupTab.classList.add('active');
+            signinTab.classList.remove('active');
+        }
+        signinTab.addEventListener('click', switchToSignIn);
+        signupTab.addEventListener('click', switchToSignUp);
+
+        // Sign Up form submit — creates account in Supabase Auth
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = signupEmailInput.value.trim();
+            const password = signupPasswordInput.value;
+            const confirm = signupConfirmInput.value;
+
+            if (password !== confirm) {
+                showToast('Passwords do not match. Please re-enter.');
+                return;
+            }
+            if (password.length < 6) {
+                showToast('Password must be at least 6 characters.');
+                return;
+            }
+            if (!sbClient) {
+                showToast('Database not connected. Cannot register.');
+                return;
+            }
+
+            signupSubmitBtn.disabled = true;
+            signupSubmitBtn.querySelector('span').textContent = 'Creating Account...';
+
+            const { error } = await sbClient.auth.signUp({ email, password });
+
+            signupSubmitBtn.disabled = false;
+            signupSubmitBtn.querySelector('span').textContent = 'Create Account';
+
+            if (error) {
+                showToast(error.message);
             } else {
-                passwordInput.type = 'password';
-                passwordToggleBtn.textContent = '👁️';
+                showToast('✅ Account created! Check your email to confirm, then sign in.');
+                signupEmailInput.value = '';
+                signupPasswordInput.value = '';
+                signupConfirmInput.value = '';
+                setTimeout(switchToSignIn, 1500);
             }
         });
 
