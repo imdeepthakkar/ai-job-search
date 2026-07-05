@@ -112,29 +112,67 @@ def assess_fit(title, company, description):
     desc_lower = (description or "").lower()
     comp_lower = (company or "").lower()
     
-    non_target_terms = ["junior", "student", "intern", "sales", "hr", "recruiter", "marketing", "pricing"]
+    # Expanded blacklist: non-IT disciplines and business roles
+    non_target_terms = [
+        "junior", "student", "intern", "sales", "recruiter", "pricing",
+        "hr ", "human resource", "marketing", "hydraulic", "subsea",
+        "mechanical", "civil", "clinical", "medical", "electrical",
+        "hardware", "nurse", "accountant", "chemical", "process engineer",
+        "pharma", "biostatistic", "laboratory", "geologist", "mining",
+        "naval", "marine engineer", "veterinary", "agronomist"
+    ]
     if any(t in title_lower for t in non_target_terms):
         return "low"
         
-    high_keywords = [
+    # Leadership and architect keywords (title match)
+    leadership_keywords = [
         "architect", "solution architect", "solutions architect", "technical lead", "tech lead", 
-        "devops lead", "platform architect", "infrastructure architect", "principal architect", "cloud architect"
+        "devops lead", "platform architect", "infrastructure architect", "principal architect",
+        "cloud architect", "director", "head of engineering", "engineering manager"
     ]
     
+    # Core software/platform engineering roles (title match)
+    core_engineering_roles = [
+        "software engineer", "software developer", "udvikler", "softwareudvikler",
+        "devops engineer", "platform engineer", "infrastructure engineer",
+        "site reliability", "sre engineer", "backend engineer", "backend developer",
+        "frontend engineer", "frontend developer", "full stack", "fullstack",
+        "java developer", "cloud engineer", "data engineer", "integration engineer",
+        "systems engineer", "database administrator", "test automation",
+        "program manager", "security engineer", "release engineer"
+    ]
+    
+    # Technology stack keywords (title or description match)
     tech_keywords = [
-        "azure", "terraform", "java", "spring", "kubernetes", "microservices", "devops", 
-        "payment", "mastercard", "fintech", "sre", "observability", "splunk", "dynatrace"
+        "azure", "aws", "terraform", "java", "spring", "kubernetes", "docker",
+        "microservices", "devops", "ci/cd", "payment", "mastercard", "fintech",
+        "sre", "observability", "splunk", "dynatrace", "cloud-native",
+        "python", "golang", "go ", "typescript", "react", "node.js",
+        "kafka", "rabbitmq", "postgresql", ".net", "c#"
     ]
     
-    is_architect_or_lead = any(k in title_lower for k in high_keywords)
+    is_leadership = any(k in title_lower for k in leadership_keywords)
+    is_core_engineering = any(r in title_lower for r in core_engineering_roles)
     has_tech_match = any(t in title_lower or t in desc_lower for t in tech_keywords)
+    has_seniority = any(s in title_lower for s in ["senior", "lead", "principal", "staff"])
     
-    fin_companies = ["mastercard", "nets", "danske bank", "nordea", "nykredit", "jyske bank", "simcorp", "saxo bank"]
+    fin_companies = ["mastercard", "nets", "danske bank", "nordea", "nykredit", "jyske bank", "simcorp", "saxo bank", "alm. brand", "codan", "tryg"]
     is_fin_match = any(fc in comp_lower for fc in fin_companies)
     
-    if is_architect_or_lead and (has_tech_match or is_fin_match):
+    # High: leadership/architect role with tech stack or fintech company match
+    if is_leadership and (has_tech_match or is_fin_match):
         return "high"
-    elif is_architect_or_lead or (("senior" in title_lower or "lead" in title_lower or "principal" in title_lower) and has_tech_match):
+    # High: senior core engineering role at a target fintech company
+    elif has_seniority and is_core_engineering and is_fin_match:
+        return "high"
+    # Medium: leadership/architect role (even without explicit tech match)
+    elif is_leadership:
+        return "medium"
+    # Medium: senior core engineering role with tech stack match
+    elif has_seniority and (is_core_engineering or has_tech_match):
+        return "medium"
+    # Medium: core engineering role with tech stack match (even without seniority keyword)
+    elif is_core_engineering and has_tech_match:
         return "medium"
     else:
         return "low"
@@ -158,7 +196,7 @@ def main():
     seen_jobs = load_seen_jobs()
     applied_jobs = load_applied_jobs()
     
-    target_roles = ["Senior Software Engineer", "Technical Lead", "Lead", "Solution Architect"]
+    target_roles = ['"Senior Software Engineer"', '"Technical Lead"', '"Solution Architect"', '"DevOps Engineer"']
     
     raw_results = []
     
