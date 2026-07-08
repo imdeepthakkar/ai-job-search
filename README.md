@@ -9,7 +9,7 @@ An AI-powered job application framework built on [Claude Code](https://claude.co
 > Note: This is an independent open-source project and is not affiliated with, endorsed by, sponsored by, or maintained by Anthropic. Anthropic and Claude Code are referenced only to describe the toolchain this workflow uses.
 
 <p align="center">
-  <a href="https://ko-fi.com/madslorentzen">
+  <a href="https://ko-fi.com/deepthakkar">
     <img src="https://storage.ko-fi.com/cdn/kofi3.png?v=6" alt="Buy me a coffee at ko-fi.com" height="40">
   </a>
 </p>
