@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS jobs (
     location TEXT,
     url TEXT NOT NULL,
     fit TEXT DEFAULT 'low' CHECK (fit IN ('high', 'medium', 'low')),
-    status TEXT DEFAULT 'new' CHECK (status IN ('new', 'applied', 'interviewing', 'rejected', 'ignored')),
+    status TEXT DEFAULT 'new' CHECK (status IN ('new', 'applied', 'interviewing', 'rejected', 'ignored', 'ranked', 'expired')),
     is_read BOOLEAN DEFAULT FALSE,
     first_seen DATE DEFAULT CURRENT_DATE,
     last_seen DATE DEFAULT CURRENT_DATE,
