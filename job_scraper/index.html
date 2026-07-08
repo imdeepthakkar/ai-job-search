@@ -247,7 +247,8 @@
             <div class="controls-row">
                 <div class="sort-info">Sort listings dynamically:</div>
                 <div class="sort-options">
-                    <button class="sort-btn active" data-sort="fit">Match Priority</button>
+                    <button class="sort-btn active" data-sort="rank">Rank Score</button>
+                    <button class="sort-btn" data-sort="fit">Match Priority</button>
                     <button class="sort-btn" data-sort="date">Date Scraped</button>
                     <button class="sort-btn" data-sort="company">Company A-Z</button>
                 </div>
@@ -420,7 +421,7 @@
         let customAppliedKeys = new Set();
         let dismissedKeys = new Set();
         let expandedKeys = new Set(); // Track expanded state across renders
-        let activeSort = 'fit';
+        let activeSort = 'rank';
         let keyboardFocusedIndex = -1;
         let visibleJobs = [];
 
@@ -937,7 +938,18 @@
 
             // Sorting sequences
             const fitPriority = {"high": 0, "medium": 1, "low": 2};
-            if (activeSort === 'fit') {
+            if (activeSort === 'rank') {
+                filteredJobs.sort((a, b) => {
+                    const scoreA = a.rank_score !== undefined && a.rank_score !== null ? parseFloat(a.rank_score) : -1;
+                    const scoreB = b.rank_score !== undefined && b.rank_score !== null ? parseFloat(b.rank_score) : -1;
+                    if (scoreA !== scoreB) {
+                        return scoreB - scoreA;
+                    }
+                    const diff = fitPriority[a.fit] - fitPriority[b.fit];
+                    if (diff !== 0) return diff;
+                    return new Date(b.date) - new Date(a.date);
+                });
+            } else if (activeSort === 'fit') {
                 filteredJobs.sort((a, b) => {
                     const diff = fitPriority[a.fit] - fitPriority[b.fit];
                     if (diff !== 0) return diff;
@@ -1028,11 +1040,34 @@
                     .join('')
                     .slice(0, 2);
 
-                const matchPct = job.fit === 'high' ? '92%' : (job.fit === 'medium' ? '78%' : '45%');
+                let matchPct = job.fit === 'high' ? '92%' : (job.fit === 'medium' ? '78%' : '45%');
+                let displayVerdict = `${job.fit} Fit`;
+                if (job.rank_score !== undefined && job.rank_score !== null) {
+                    matchPct = `${job.rank_score}%`;
+                }
+                if (job.rank_verdict) {
+                    displayVerdict = job.rank_verdict;
+                }
                 const fitScoreClass = job.fit === 'high' ? '' : (job.fit === 'medium' ? 'med-match' : 'low-match');
                 
                 // Unread dot indicator
                 const unreadDot = !job.is_read ? '<span class="unread-dot"></span>' : '';
+
+                let analysisHtml = '';
+                if (job.strengths && job.strengths.length > 0) {
+                    analysisHtml += `<div class="analysis-section strengths-section"><strong>Strengths:</strong><ul>`;
+                    job.strengths.forEach(s => {
+                        analysisHtml += `<li>${escapeHtml(s)}</li>`;
+                    });
+                    analysisHtml += `</ul></div>`;
+                }
+                if (job.gaps && job.gaps.length > 0) {
+                    analysisHtml += `<div class="analysis-section gaps-section"><strong>Gaps / Risks:</strong><ul>`;
+                    job.gaps.forEach(g => {
+                        analysisHtml += `<li>${escapeHtml(g)}</li>`;
+                    });
+                    analysisHtml += `</ul></div>`;
+                }
 
                 card.innerHTML = `
                     <div class="job-card-row">
@@ -1044,7 +1079,7 @@
                             <h3 class="job-title" onclick="toggleCardExpand('${job.key}')">${unreadDot}${escapeHtml(job.title)}</h3>
                             <div class="badge-container">
                                 ${isApplied ? '<span class="badge badge-applied">Applied</span>' : ''}
-                                <span class="badge ${fitBadgeClass}">${job.fit} Fit</span>
+                                <span class="badge ${fitBadgeClass}">${displayVerdict}</span>
                                 <span class="badge badge-source">${escapeHtml(job.source)}</span>
                             </div>
                         </div>
@@ -1060,7 +1095,8 @@
                     </div>
                     
                     <div class="card-description-wrapper" id="desc-${job.key}">
-                        <div class="description-header">Job Requirements Analysis</div>
+                        ${analysisHtml}
+                        <div class="description-header">Job Description</div>
                         <p>${escapeHtml(job.description)}</p>
                     </div>
                     

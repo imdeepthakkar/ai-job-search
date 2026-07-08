@@ -760,7 +760,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .job-card.expanded .card-description-wrapper {
-    max-height: 600px;
+    max-height: 2000px;
     border: 1px solid var(--border-light);
     padding: 1.5rem;
 }
@@ -779,6 +779,29 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.65;
     color: var(--text-secondary);
     white-space: pre-line;
+}
+
+.analysis-section {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.strengths-section {
+    background: rgba(46, 204, 113, 0.08);
+    border-left: 4px solid #2ecc71;
+}
+.gaps-section {
+    background: rgba(231, 76, 60, 0.08);
+    border-left: 4px solid #e74c3c;
+}
+.analysis-section ul {
+    margin: 0.5rem 0 0 1.25rem;
+    padding: 0;
+}
+.analysis-section li {
+    margin-bottom: 0.25rem;
+    color: var(--text-secondary);
 }
 
 /* Card Bottom Action Alignments */

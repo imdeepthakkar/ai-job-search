@@ -65,7 +65,15 @@ def load_seen_status():
                 data = json.load(f)
                 if "seen" in data:
                     for k, v in data["seen"].items():
-                        seen[k] = v.get("status", "new")
+                        seen[k] = {
+                            "status": v.get("status", "new"),
+                            "fit": v.get("fit", "low"),
+                            "rank_score": v.get("rank_score"),
+                            "rank_verdict": v.get("rank_verdict"),
+                            "rank_date": v.get("rank_date"),
+                            "strengths": v.get("strengths", []),
+                            "gaps": v.get("gaps", [])
+                        }
         except Exception as e:
             print(f"Warning: Failed to load seen_jobs.json: {e}")
     return seen
@@ -232,13 +240,14 @@ def main():
         description = job.get('description', '')
         
         tracker_key = f"{company.strip().lower()}|{title.strip().lower()}"
-        status = "applied" if tracker_key in applied_jobs else seen_status.get(key, "new")
+        seen_job_info = seen_status.get(key, {})
+        status = "applied" if tracker_key in applied_jobs else seen_job_info.get("status", "new")
         
         job_date = parse_date(date_str)
         if job_date and job_date < cutoff_date:
             continue
             
-        fit = assess_fit(title, company, description)
+        fit = seen_job_info.get("fit") if "fit" in seen_job_info else assess_fit(title, company, description)
         
         jobs_list.append({
             "key": key,
@@ -250,7 +259,12 @@ def main():
             "date": job_date.strftime("%Y-%m-%d") if job_date else "Recent",
             "description": description or "No description available.",
             "source": job.get('source_site', 'Unknown'),
-            "status": status
+            "status": status,
+            "rank_score": seen_job_info.get("rank_score"),
+            "rank_verdict": seen_job_info.get("rank_verdict"),
+            "rank_date": seen_job_info.get("rank_date"),
+            "strengths": seen_job_info.get("strengths", []),
+            "gaps": seen_job_info.get("gaps", [])
         })
         
     jobs_list.sort(key=lambda x: ({"high": 0, "medium": 1, "low": 2}.get(x['fit'], 2), x['date']), reverse=False)
@@ -350,7 +364,12 @@ def main():
             "last_seen": date_str,
             "posted_date": job["date"] if job["date"] != "Recent" else None,
             "description": job["description"],
-            "source": job["source"]
+            "source": job["source"],
+            "rank_score": job.get("rank_score"),
+            "rank_verdict": job.get("rank_verdict"),
+            "rank_date": job.get("rank_date"),
+            "strengths": job.get("strengths", []),
+            "gaps": job.get("gaps", [])
         })
         
     url = f"{supabase_url}/rest/v1/jobs"
