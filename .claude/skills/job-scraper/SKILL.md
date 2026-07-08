@@ -1,5 +1,5 @@
 ---
-name: job-scraper
+name: scrape
 description: >
   Finds new job postings matching your profile via installed portal-search CLIs
   (LinkedIn, local job boards, and any skills added with /add-portal). Deduplicates
