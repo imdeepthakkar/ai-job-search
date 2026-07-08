@@ -22,13 +22,25 @@ Python 3.10+ is required for the salary lookup tool. Check with:
 python --version
 ```
 
+On Windows, `py --version` is often the most reliable check if `python` is not on your PATH.
+
 ### Bun (for job search tools)
 
-The job portal CLIs (four Danish portals plus the country-agnostic LinkedIn tool) are written in TypeScript and run with Bun:
+The job portal CLIs (four Danish portals plus the country-agnostic LinkedIn tool) are written in TypeScript and run with Bun.
+
+- macOS/Linux:
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
 ```
+
+- Windows PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://bun.sh/install.ps1 | iex"
+```
+
+If you prefer a package manager, `winget install Oven-sh.Bun` also works on Windows.
 
 ### LaTeX (for compiling CVs and cover letters)
 
@@ -40,6 +52,16 @@ Install a LaTeX distribution to compile the generated `.tex` files to PDF:
 
 The CV compiles with `lualatex` (pdflatex often fails on modern MiKTeX installs with `fontawesome5` font-expansion errors). The cover letter compiles with `xelatex` because `cover.cls` requires `fontspec` for its custom Lato/Raleway fonts.
 
+### Optional: pdftotext (for the ATS check)
+
+`/apply` runs an ATS parseability check on the compiled CV: it extracts the PDF's text layer and verifies contact details, reading order, and keyword coverage the way an applicant-tracking system sees them. This uses `pdftotext` from [poppler](https://poppler.freedesktop.org/), which is not part of TeX distributions:
+
+- **macOS:** `brew install poppler`
+- **Debian/Ubuntu:** `sudo apt install poppler-utils`
+- **Windows:** `choco install poppler`
+
+If `pdftotext` is missing, `/apply` skips the mechanical check with a warning and falls back to a visual keyword review — everything else works normally.
+
 ## 2. Fork and clone
 
 ```bash
@@ -50,7 +72,20 @@ cd ai-job-search
 Or manually: fork on GitHub, then clone your fork.
 
 ## 3. Install job search CLI dependencies
+Run these from the repository root.
 
+- PowerShell:
+
+```powershell
+$tools = @("jobbank-search", "jobdanmark-search", "jobindex-search", "jobnet-search", "linkedin-search")
+foreach ($tool in $tools) {
+  Set-Location ".agents/skills/$tool/cli"
+  bun install
+  Set-Location "..\..\..\.."
+}
+```
+
+- Bash / zsh / Git Bash:
 ```bash
 for tool in jobbank-search jobdanmark-search jobindex-search jobnet-search linkedin-search; do
   cd .agents/skills/$tool/cli && bun install && cd ../../../..
@@ -58,6 +93,8 @@ done
 ```
 
 For `linkedin-search` the install is optional: it has zero runtime dependencies and runs with plain `bun`; `bun install` only pulls TypeScript dev types.
+
+If you're outside Denmark, you can generate an equivalent search skill for your local job board with `/add-portal` — it scaffolds the same CLI structure for any public portal and test-runs a live query before registering. See the "Job search tools" section in the README.
 
 ## 4. Run the setup interview
 
@@ -73,12 +110,13 @@ Then run the onboarding:
 /setup
 ```
 
-Claude will offer two paths:
+Claude will offer three paths:
 
-- **Path A (recommended):** Share your existing CV (mention the file with `@` or paste the text). Claude extracts your information and asks follow-up questions for anything missing.
-- **Path B:** Answer structured interview questions section by section.
+- **Path A (documents folder):** Add your CV, LinkedIn export, diplomas, references, or past applications under `documents/`. Claude reads and cross-references them before proposing profile updates. This is best when you have several source files.
+- **Path B (single CV import):** Share one CV/resume by mentioning the file with `@` or pasting the text. Claude extracts it and asks follow-up questions for anything missing.
+- **Path C (interview mode):** Answer structured interview questions section by section.
 
-Both paths produce the same result: fully populated profile files.
+All three paths produce the same result: fully populated profile files.
 
 ### What gets populated
 
@@ -144,12 +182,18 @@ Claude will:
 After `/apply` creates the LaTeX files:
 
 ```bash
-# Compile CV
+# Bash / zsh / Git Bash
 cd cv && lualatex main_<company>.tex && cd ..
-
-# Compile cover letter
 cd cover_letters && xelatex cover_<company>_<role>.tex && cd ..
 ```
+
+```powershell
+# PowerShell
+Set-Location cv; lualatex main_<company>.tex; Set-Location ..
+Set-Location cover_letters; xelatex cover_<company>_<role>.tex; Set-Location ..
+```
+
+These commands apply to the stock templates (moderncv CV, `cover.cls` cover letter). If you'd rather use your own LaTeX template, run `/add-template` — it captures the template's compile engine, fonts, style rules, and page limit, test-compiles it, and wires it into `/apply`. See the "LaTeX templates" section in the README.
 
 ## Troubleshooting
 

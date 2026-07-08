@@ -1,0 +1,83 @@
+Talentech - Senior AI Architect til Forsvarets AI Center
+Advarsel
+Din browser er forældet. Få den bedste brugeroplevelse med hurtigere hastighed, sikkerhed og privatliv ved at bruge den nyeste version af Chrome, Firefox, Microsoft Edge, Safari eller Opera.
+×
+Senior AI Architect til Forsvarets AI Center
+Vil du designe den arkitektur der afgør hvad Forsvaret kan med AI om fem år?
+-Så læs videre her!
+Om os
+AI er ved at omdefinere både kamppladsen og den måde, Forsvaret skaber og anvender kampkraft. AI forkorter vejen fra observation til beslutning og virkning og åbner for opgaveløsninger, der ikke tidligere var mulige. AI er ikke noget, der blot understøtter Forsvarets operationer — AI er med til at definere dem. Det er derfor, AI har en central plads i Forsvaret, og det er derfor, Forsvarets AI-Center er etableret som ny enhed i Forsvarskommandoen.
+Vi sætter retning for, hvordan Forsvaret anvender AI, så investeringer omsættes til reelt dansk og allieret forsvarsevne. Vi prioriterer operative behov på tværs af værn og kommandoer i tæt dialog med operatørerne, og vi opbygger partnerskaber med NATO, allierede, akademia og industri. Vores opgave er at sikre, at AI bliver til kampkraft — ikke teknologi for teknologiens skyld.
+Vi arbejder AI-først og innovativt nok til at ændre os, mens virkeligheden ændrer sig. Det betyder korte cyklusser, tæt på operatøren, og tempo og læring som operative krav. Vi udvikler i åbne miljøer for at få fart og indsigt, og vi tager løsninger i drift i klassificerede miljøer, hvor sikkerhed og operativ relevans er afgørende. Vi har adgang til noget af Nordens bedste compute, og vores infrastruktur er bygget til, at AI er en del af løsningen fra start.
+Forsvarets AI-Center er stedet, hvor Forsvarets AI-fremtid formes.
+Om stillingen
+Som Senior AI Architect i Forsvarets AI Center designer du den arkitektur der gør det muligt at bruge AI sammenhængende på tværs af Forsvarets operative domæner - fra situational awareness og command and control til beslutningsstøtte.
+Du udvikler og vedligeholder Forsvarets AI-referencearkitektur, sætter standarderne for modeller, dataformater og integrationsgrænseflader, og sikrer at det vi bygger kan tale sammen med både Forsvarets eksisterende systemer og allierede partneres - herunder NATO-standarder og Federated Mission Networking.
+Du udvikler strategier for AI-compute der balancerer centraliseret modeltræning med edge deployment til taktisk brug, og rådgiver Chief AI Officer og Deputy Chief AI Officer om teknologiske muligheder og begrænsninger. Du arbejder tæt sammen med AI Lab om at sikre at prototyper udvikles i overensstemmelse med arkitekturen, og koordinerer med Forsvarets digitaliseringsprogrammer.
+Rollen er for dig der trives i den lange tidshorisont - hvor de valg du træffer i dag former hvad Forsvaret kan med AI om fem år.
+Af vigtigste opgaver kan nævnes:
+Varetage design og udvikling af Forsvarets overordnede AI-arkitektur på tværs af operative domæner.
+Udvikle og vedligeholde en samlet AI-referencearkitektur, der understøtter use cases inden for situational awareness, command and control og beslutningsstøtte.
+Definere standarder for AI-modeller, data, API'er og integrationsgrænseflader, der sikrer interoperabilitet internt og med allierede systemer.
+Sikre interoperabilitet med NATO-standarder, herunder Federated Mission Networking (FMN), samt sikre at AI-arkitekturen kan operere på tværs af alle Forsvarets klassifikationsniveauer med passende sikkerhedsforanstaltninger.
+Evaluere og anbefale teknologiske platforme, frameworks og værktøjer til AI-udvikling.
+Udvikle strategier for AI-compute, der balancerer mellem centraliseret træning af store modeller og edge computing til taktisk deployment.
+Definere arkitekturmæssige krav til compute-infrastruktur, herunder krav til latens, tilgængelighed og robusthed.
+Rådgive om valg af modelstørrelser og deploymentstrategier tilpasset operative behov og infrastrukturmæssige begrænsninger.
+Rådgive Deputy Chief AI Officer (DCAIO) og Chief AI Officer (CAIO) om teknologiske muligheder og begrænsninger inden for AI og machine learning.
+Følge den internationale udvikling inden for militær AI-arkitektur, herunder NATO-standarder og allierede tilgange.
+Koordinere med leveranceansvarlige fra Forsvarets digitaliseringsprogrammer om sikkerhedsarkitektur.
+Vi tilbyder dig
+En mulighed for at sætte fundamentet for hvordan Forsvaret bruger AI om fem år. Du arbejder med moderne AI-arkitektur, sovereign cloud-strategier og NATO-interoperabilitet i en organisation der er ny nok til at fundamentet stadig er åbent for dig at forme.
+Om dig
+Vi forestiller os, at du har en videregående uddannelse inden for datalogi, software engineering, AI/ML eller tilsvarende teknisk retning.
+Du har en dyb teknisk forståelse for moderne AI-teknologier, herunder large language models, computer vision, agent strukturer, MLOps, cloud-native arkitekturer, klassificerede miljøer, Sovereign Cloud og edge computing.
+Erfaring med design af AI/ML-systemarkitekturer i komplekse organisationer, herunder skalering af AI-løsninger fra prototype til produktion er en styrke i denne stilling.
+Derudover forestiller vi os, at du har erfaring med afvejning mellem centraliseret compute og edge deployment, samt at du har forståelse for virtualisering og Kubernetes samt forståelse for at oversætte AI/ML workflows og krav til underliggende behov til infrastruktur.
+Du evner at kommunikere arkitekturmæssige beslutninger til både tekniske og ikke-tekniske interessenter.
+Det vil desuden være en fordel, hvis du har erfaring med NATO-standarder, Federated Mission Networking (FMN) eller international systeminteroperabilitet.
+Erfaring i arbejdet med sikkerhedsfølsomme miljøer og forståelse for krav til AI-systemer i militær kontekst kombineret med erfaring fra forsvarsteknologimiljøer eller militære systemer, vil være at foretrække.
+Derudover forventer vi, at du behersker både dansk og engelsk på et professionelt niveau.
+Ansættelsesvilkår
+Du ansættes i henhold til den til enhver tid gældende overenskomst.
+Ved lønfastsættelsen vil der blive lagt vægt på erfaring, kompetencer og stillingens indhold. Der er til stillingen knyttet en arbejdsgiverfinansieret pensionsordning.
+Arbejdsstedet er i Storkøbenhavn.
+Som ansat under Forsvarsministeriets område er du omfattet af nogle særlige vilkår. Du skal bl.a. kunne sikkerhedsgodkendes og opretholde sikkerhedsgodkendelsen under hele ansættelsesforholdet.
+Du har som ansat pligt til at forrette tjeneste uden for landets grænser, herunder ved enheder i internationale operationer med henblik på deltagelse i konfliktforebyggende, fredsbevarende, fredsskabende, humanitære og andre lignende operationer.
+Kontakt og ansøgning
+Hvis du vil høre mere om stillingen, er du velkommen til at kontakte Næstkommanderende for Forsvarets AI Center, Major Rasmus Kilmose på telefon 2960 0486.
+Har du spørgsmål til løn- og ansættelsesvilkår er du velkommen til at kontakte Personelkommandoen, HR-konsulent Julie Cramer-Palmquist på telefon 3266 5848.
+Ansøgningsfristen er den 29. juni 2026. Samtaler forventes afholde løbende. Stillingen er til besættelse snarest muligt eller efter aftale.
+Du søger stillingen via linket og vi beder dig vedhæfte ansøgning, CV og kopi af uddannelsesbevis. Vær opmærksom på, at bilag skal tilføjes i PDF-format.
+I Forsvarsministeriets organisation tror vi på, at mangfoldighed optimerer opgaveløsningen. Derfor opfordrer vi alle interesserede uanset baggrund til at søge stillingen.
+Om Forsvarets AI Center
+AI er ved at omdefinere både kamppladsen og den måde, Forsvaret skaber og anvender kampkraft. AI forkorter vejen fra observation til beslutning og virkning og åbner for opgaveløsninger, der ikke tidligere var mulige. AI er ikke noget, der blot understøtter Forsvarets operationer — AI er med til at definere dem. Det er derfor, AI har en central plads i Forsvaret, og det er derfor, Forsvarets AI-Center (FAIC) er etableret som ny enhed i Forsvarskommandoen.
+FAIC sætter retning for, hvordan Forsvaret anvender AI, så investeringer omsættes til reelt dansk og allieret forsvarsevne. Vi prioriterer operative behov på tværs af værn og kommandoer i tæt dialog med operatørerne, og vi opbygger partnerskaber med NATO, allierede, akademia og industri. Vores opgave er at sikre, at AI bliver til kampkraft — ikke teknologi for teknologiens skyld.
+Vi arbejder AI-først og innovativt nok til at ændre os, mens virkeligheden ændrer sig. Det betyder korte cyklusser, tæt på operatøren, og tempo og læring som operative krav. Vi udvikler i åbne miljøer for at få fart og indsigt, og vi tager løsninger i drift i klassificerede miljøer, hvor sikkerhed og operativ relevans er afgørende. Vi har adgang til noget af Nordens bedste compute, og vores infrastruktur er bygget til, at AI er en del af løsningen fra start.
+Forsvarets AI-Center er stedet, hvor Forsvarets AI-fremtid formes.
+Fakta
+Application due29-06-2026
+Start dateStart hurtigst muligt
+Work hours
+Position category
+Position typeSystemudvikling og ProgrammeringIT-projektledelseTværgående it-arbejde
+WorkplaceKøbenhavns omegn
+Workplace
+Contact
+Rasmus Kildemose
+MJ
+E-mail
+Julie Manthey Cramer-Palmquist
+HR-konsulent
+E-mail
+32665848
+E-mail
+E-mail
+Homepagehttps://www.forsvaret.dk/da/organisation/forsvarskommandoen/
+Share/Print
+I Forsvaret kæmper vi for Danmarks sikkerhed. Vi har modet, evnen og viljen til at kæmpe for fællesskabet og for de centrale værdier, vores samfund hviler på.
+Vi løser opgaver for Danmark, som ingen andre kan. Vi gør det til hverdag, og når der kræves noget ekstraordinært.
+Vi er stolte af at passe på Kongeriget Danmark. Vi gør det sammen. Og vi gør det nogle gange med livet som indsats.
+Vi gør det, fordi det er en del af vores militære identitet.
+Vi gør det, fordi noget er værd at kæmpe for.
+Tilgængelighedserklæring
