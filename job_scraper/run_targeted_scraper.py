@@ -14,6 +14,7 @@ TARGET_REPORT_PATH = os.path.join(WORKSPACE_DIR, "targeted_scrape_report.md")
 
 JOBINDEX_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobindex-search", "cli")
 JOBBANK_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobbank-search", "cli")
+LINKEDIN_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "linkedin-search", "cli")
 
 def load_seen_jobs():
     if os.path.exists(SEEN_JOBS_PATH):
@@ -72,6 +73,18 @@ def run_jobbank_search(query):
     except Exception as e:
         print(f"Error running Jobbank search for '{query}': {e}")
         return []
+
+def run_linkedin_search(query):
+    print(f"Running LinkedIn search for query: '{query}'...")
+    try:
+        cmd = ["bun", "run", "src/cli.ts", "search", "--query", query, "--location", "Copenhagen, Denmark", "--jobage", "14", "--format", "json"]
+        result = subprocess.run(cmd, cwd=LINKEDIN_CLI_DIR, capture_output=True, text=True, check=True, encoding="utf-8")
+        data = json.loads(result.stdout)
+        return data.get("results", [])
+    except Exception as e:
+        print(f"Error running LinkedIn search for '{query}': {e}")
+        return []
+
 
 def parse_date(date_str):
     if not date_str:
@@ -212,6 +225,12 @@ def main():
         jobbank_res = run_jobbank_search(role)
         for r in jobbank_res:
             r['source_site'] = 'jobbank.dk'
+            raw_results.append(r)
+            
+        # Run LinkedIn
+        linkedin_res = run_linkedin_search(role)
+        for r in linkedin_res:
+            r['source_site'] = 'linkedin.com'
             raw_results.append(r)
             
     print(f"\nFetched {len(raw_results)} raw postings before filtering.")

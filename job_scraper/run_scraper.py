@@ -18,6 +18,7 @@ REPORT_PATH = os.path.join(WORKSPACE_DIR, "scrape_report.md")
 
 JOBINDEX_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobindex-search", "cli")
 JOBBANK_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "jobbank-search", "cli")
+LINKEDIN_CLI_DIR = os.path.join(WORKSPACE_DIR, ".agents", "skills", "linkedin-search", "cli")
 
 CONFIG = {}
 
@@ -180,6 +181,18 @@ def run_jobbank_search(query):
         print(f"Error running Jobbank search for '{query}': {e}")
         return []
 
+def run_linkedin_search(query):
+    print(f"Running LinkedIn search for query: '{query}'...")
+    try:
+        cmd = ["bun", "run", "src/cli.ts", "search", "--query", query, "--location", "Copenhagen, Denmark", "--jobage", "14", "--format", "json"]
+        result = subprocess.run(cmd, cwd=LINKEDIN_CLI_DIR, capture_output=True, text=True, check=True, encoding="utf-8")
+        data = json.loads(result.stdout)
+        return data.get("results", [])
+    except Exception as e:
+        print(f"Error running LinkedIn search for '{query}': {e}")
+        return []
+
+
 def parse_date(date_str):
     if not date_str:
         return None
@@ -334,6 +347,7 @@ def main():
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         jobindex_futures = {executor.submit(run_jobindex_search, q): q for q in search_queries}
         jobbank_futures = {executor.submit(run_jobbank_search, q): q for q in search_queries}
+        linkedin_futures = {executor.submit(run_linkedin_search, q): q for q in search_queries}
         
         # Gather Jobindex results
         for future in concurrent.futures.as_completed(jobindex_futures):
@@ -356,6 +370,17 @@ def main():
                     raw_results.append(r)
             except Exception as e:
                 print(f"Error gathering Jobbank search results for '{q}': {e}")
+
+        # Gather LinkedIn results
+        for future in concurrent.futures.as_completed(linkedin_futures):
+            q = linkedin_futures[future]
+            try:
+                res = future.result()
+                for r in res:
+                    r['source_site'] = 'linkedin.com'
+                    raw_results.append(r)
+            except Exception as e:
+                print(f"Error gathering LinkedIn search results for '{q}': {e}")
             
     print(f"\nFetched {len(raw_results)} raw postings before filtering.")
     
