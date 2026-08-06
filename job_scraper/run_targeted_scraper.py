@@ -141,7 +141,8 @@ def assess_fit(title, company, description):
     leadership_keywords = [
         "architect", "solution architect", "solutions architect", "technical lead", "tech lead", 
         "devops lead", "platform architect", "infrastructure architect", "principal architect",
-        "cloud architect", "director", "head of engineering", "engineering manager"
+        "cloud architect", "director", "head of engineering", "engineering manager",
+        "scrum master", "agile coach"
     ]
     
     # Core software/platform engineering roles (title match)
@@ -198,7 +199,9 @@ def slugify(text):
     return text.strip('-')
 
 def make_key(company, title):
-    comp_slug = slugify(company or 'unknown')
+    comp = (company or 'unknown').lower()
+    comp = re.sub(r'\b(a/s|as|aps|inc|ltd|llc|gmbh)\b', '', comp)
+    comp_slug = slugify(comp)
     title_slug = slugify(title or 'unknown')
     return f"{comp_slug}-{title_slug}"[:60]
 
@@ -209,7 +212,7 @@ def main():
     seen_jobs = load_seen_jobs()
     applied_jobs = load_applied_jobs()
     
-    target_roles = ['"Senior Software Engineer"', '"Technical Lead"', '"Solution Architect"', '"DevOps Engineer"']
+    target_roles = ['"Senior Software Engineer"', '"Technical Lead"', '"Solution Architect"', '"DevOps Engineer"', '"Scrum Master"', '"Agile Coach"']
     
     raw_results = []
     
@@ -249,7 +252,7 @@ def main():
             
         # Filter: Title must align with requested technical/engineering roles
         title_lower = title.lower()
-        valid_title = any(term.lower() in title_lower for term in ["software", "developer", "architect", "lead", "engineer", "udvikler"])
+        valid_title = any(term.lower() in title_lower for term in ["software", "developer", "architect", "lead", "engineer", "udvikler", "scrum", "agile"])
         if not valid_title:
             continue
             

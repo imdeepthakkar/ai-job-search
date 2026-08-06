@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Job Search Dashboard</title>
+<style>
+:root {
+    --c-active: #3b82f6;
+    --c-interview: #f59e0b;
+    --c-offer: #8b5cf6;
+    --c-hired: #22c55e;
+    --c-rejected: #ef4444;
+}
+body { font-family: system-ui, sans-serif; background: #f9fafb; color: #111827; margin: 0; padding: 20px; }
+.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.stat-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #e5e7eb; }
+.stat-card.c-active { border-color: var(--c-active); }
+.stat-card.c-interview { border-color: var(--c-interview); }
+.stat-card.c-offer { border-color: var(--c-offer); }
+.stat-card.c-hired { border-color: var(--c-hired); }
+.stat-card.c-rejected { border-color: var(--c-rejected); }
+.stat-num { font-size: 24px; font-weight: bold; }
+.stat-lbl { font-size: 14px; color: #6b7280; }
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+@media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
+.chart-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.circular-chart { display: block; margin: 0 auto; max-width: 150px; max-height: 150px; }
+table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+th { background: #f3f4f6; font-weight: 600; }
+tr:nth-child(even) { background: #f9fafb; }
+.status-pill { padding: 4px 8px; border-radius: 9999px; font-size: 12px; font-weight: bold; color: white; }
+.footer { margin-top: 30px; text-align: center; color: #9ca3af; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="header">
+    <h2>🔍 Job Search Dashboard</h2>
+    <span>Generated: 2026-07-22</span>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-num">10</div>
+        <div class="stat-lbl">Total</div>
+    </div>
+    <div class="stat-card c-active">
+        <div class="stat-num">10</div>
+        <div class="stat-lbl">Active</div>
+    </div>
+    <div class="stat-card c-interview">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">Interview</div>
+    </div>
+    <div class="stat-card c-offer">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">Offer</div>
+    </div>
+    <div class="stat-card c-rejected">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">Rejected/Closed</div>
+    </div>
+</div>
+
+<div class="charts-grid">
+    <div class="chart-card">
+        <h3>Status breakdown</h3>
+        <svg viewBox="0 0 36 36" class="circular-chart"><circle class="circle" stroke="#3b82f6" stroke-width="3" stroke-dasharray="100.0 0.0" stroke-dashoffset="0" fill="none" cx="18" cy="18" r="15.91549431" /></svg>
+    </div>
+    <div class="chart-card">
+        <h3>By sector</h3>
+        <svg width="100%" height="150"><rect x="0" y="10" width="80.0%" height="20" fill="#3b82f6" /><text x="82.0%" y="25" font-size="12">Defense / Public (2)</text><rect x="0" y="40" width="80.0%" height="20" fill="#3b82f6" /><text x="82.0%" y="55" font-size="12">Consulting / Tech Services (2)</text><rect x="0" y="70" width="80.0%" height="20" fill="#3b82f6" /><text x="82.0%" y="85" font-size="12">IT / Public Sector Integrator (2)</text><rect x="0" y="100" width="40.0%" height="20" fill="#3b82f6" /><text x="42.0%" y="115" font-size="12">Telecom / Professional Services (1)</text><rect x="0" y="130" width="40.0%" height="20" fill="#3b82f6" /><text x="42.0%" y="145" font-size="12">Retail SaaS / Loyalty (1)</text><rect x="0" y="160" width="40.0%" height="20" fill="#3b82f6" /><text x="42.0%" y="175" font-size="12">Medical Devices / MedTech (1)</text><rect x="0" y="190" width="40.0%" height="20" fill="#3b82f6" /><text x="42.0%" y="205" font-size="12">Digital Engineering (1)</text></svg>
+    </div>
+    <div class="chart-card">
+        <h3>By channel</h3>
+        <svg width="100%" height="150"><rect x="0" y="10" width="80.0%" height="20" fill="#3b82f6" /><text x="82.0%" y="25" font-size="12">Jobbank (6)</text><rect x="0" y="40" width="26.666666666666664%" height="20" fill="#3b82f6" /><text x="28.666666666666664%" y="55" font-size="12">Jobindex (2)</text><rect x="0" y="70" width="13.333333333333332%" height="20" fill="#3b82f6" /><text x="15.333333333333332%" y="85" font-size="12">KMD Career Site (1)</text><rect x="0" y="100" width="13.333333333333332%" height="20" fill="#3b82f6" /><text x="15.333333333333332%" y="115" font-size="12">Twoday Career Site (1)</text></svg>
+    </div>
+    <div class="chart-card">
+        <h3>Application funnel</h3>
+        <svg width="100%" height="150"><rect x="0" y="10" width="80.0%" height="20" fill="#3b82f6" /><text x="82.0%" y="25" font-size="12">Applied (10)</text><rect x="0" y="40" width="0.0%" height="20" fill="#3b82f6" /><text x="2.0%" y="55" font-size="12">Interview (0)</text><rect x="0" y="70" width="0.0%" height="20" fill="#3b82f6" /><text x="2.0%" y="85" font-size="12">Offer (0)</text><rect x="0" y="100" width="0.0%" height="20" fill="#3b82f6" /><text x="2.0%" y="115" font-size="12">Hired (0)</text></svg>
+    </div>
+</div>
+
+<div style="margin-bottom: 10px;">
+    <input type="text" id="searchInput" placeholder="Search..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+</div>
+
+<table id="appTable">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Sector</th>
+            <th>Channel</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th>Source</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>2026-07-18</td>
+            <td>Twoday Denmark</td>
+            <td>Java Developer</td>
+            <td>Digital Engineering</td>
+            <td>Twoday Career Site</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Java/Spring/Cloud-Native match. Actively learning Danish.">Java/Spring/Cloud-Native match. Actively learning Danish.</td>
+            <td><a href="https://twodaydenmark.teamtailor.com/jobs/8083653-java-developer-java-spring-cloud-native-development" target="_blank">Link</a></td>
+        </tr>
+    
+        <tr>
+            <td>2026-07-08</td>
+            <td>KMD A/S</td>
+            <td>Senior Java Developer</td>
+            <td>IT / Public Sector Integrator</td>
+            <td>KMD Career Site</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Java/WebLogic/Kafka/CI-CD/API design. Consultancy team within KMD Operation. Same hiring manager as previous Solution Architect application.">Java/WebLogic/Kafka/CI-CD/API design. Consultancy team within KMD Operation. Sam...</td>
+            <td><a href="https://jobs.kmd.net/job/Ballerup-Senior-Java-Developer-2750/1412141033/" target="_blank">Link</a></td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>Lobyco (Coop Danmark)</td>
+            <td>Senior DevOps Engineer</td>
+            <td>Retail SaaS / Loyalty</td>
+            <td>Jobbank</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via Lobyco/Coop portal. Azure AKS">Applied via Lobyco/Coop portal. Azure AKS</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>KMD A/S</td>
+            <td>Senior Solution Architect</td>
+            <td>IT / Public Sector Integrator</td>
+            <td>Jobindex</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via it-jobbank. Java">Applied via it-jobbank. Java</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>Forsvaret</td>
+            <td>Senior AI Architect</td>
+            <td>Defense / Public</td>
+            <td>Jobindex</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via Forsvaret portal. AI reference architecture">Applied via Forsvaret portal. AI reference architecture</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>Forsvaret</td>
+            <td>Senior DevSecOps Lead</td>
+            <td>Defense / Public</td>
+            <td>Jobbank</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via Forsvaret portal. Cybersecurity">Applied via Forsvaret portal. Cybersecurity</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>Capgemini Denmark</td>
+            <td>Microsoft AI Solution Architect</td>
+            <td>Consulting / Tech Services</td>
+            <td>Jobbank</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via Capgemini portal. Microsoft AI stack">Applied via Capgemini portal. Microsoft AI stack</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>Capgemini Denmark</td>
+            <td>AI Data Architect</td>
+            <td>Consulting / Tech Services</td>
+            <td>Jobbank</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via Capgemini portal. Lakehouses">Applied via Capgemini portal. Lakehouses</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-27</td>
+            <td>Ambu A/S</td>
+            <td>Senior Cloud Architect</td>
+            <td>Medical Devices / MedTech</td>
+            <td>Jobbank</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Already applied previously. Azure solutions architect">Already applied previously. Azure solutions architect</td>
+            <td>—</td>
+        </tr>
+    
+        <tr>
+            <td>2026-06-21</td>
+            <td>TDC Erhverv (Nuuday)</td>
+            <td>Splunk Consultant / Architect</td>
+            <td>Telecom / Professional Services</td>
+            <td>Jobbank</td>
+            <td><span class="status-pill" style="background-color: #3b82f6">Active</span></td>
+            <td title="Applied via TDC Erhverv portal. Strong Splunk and Observability match.">Applied via TDC Erhverv portal. Strong Splunk and Observability match.</td>
+            <td><a href="https://jobbank.dk/job/3061601/nuuday/splunk-consultant-architect" target="_blank">Link</a></td>
+        </tr>
+    
+    </tbody>
+</table>
+
+<div class="footer">Generated by Claude Code · ai-job-search · 2026-07-22</div>
+
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll('#appTable tbody tr');
+    rows.forEach(row => {
+        let text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+    });
+});
+</script>
+</body>
+</html>
