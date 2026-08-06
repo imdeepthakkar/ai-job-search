@@ -69,6 +69,21 @@ categories:
       - "Greater Copenhagen"
       - "Denmark"
 
+  - name: "Agile & Delivery Leadership"
+    priority: 4
+    titles:
+      - "Scrum Master"
+      - "Agile Coach"
+    keywords:
+      - "Scrum"
+      - "Agile"
+      - "SAFe"
+    locations:
+      - "Copenhagen"
+      - "København"
+      - "Greater Copenhagen"
+      - "Denmark"
+
 location_tiers:
   ideal:
     - "copenhagen"
