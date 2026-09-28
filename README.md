@@ -288,5 +288,4 @@ To get the most from this, invest time during `/setup` in describing not just yo
 - Built with [Claude Code](https://claude.com/claude-code) by [Anthropic](https://anthropic.com)
 
 ## License
-
 MIT
