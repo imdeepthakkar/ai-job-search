@@ -1,6 +1,6 @@
 # Job Evaluation Framework
 
-This framework helps Claude evaluate how well a job posting matches Deep Thakkar's profile and career goals.
+This framework helps Antigravity evaluate how well a job posting matches Deep Thakkar's profile and career goals.
 
 ## Language Gate — run before scoring
 

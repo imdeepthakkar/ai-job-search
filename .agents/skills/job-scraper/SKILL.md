@@ -104,9 +104,9 @@ looks identical to a job never seen, and the recorded status is what makes a lat
 ghost report self-triaging. `isActive: true` is only the absence of that banner, not
 proof the posting is open; deadlines and dead URLs remain `/rank`'s job.
 
-**From WebSearch results:** Use `WebFetch` on the posting URL and extract the same
+**From WebSearch results:** Use `read_url_content` (or WebFetch) on the posting URL and extract the same
 fields manually. If it returns HTTP 403, retry with browser headers via curl per
-`.claude/skills/job-application-assistant/09-web-research.md` before giving up — most
+`.agents/skills/job-application-assistant/09-web-research.md` before giving up — most
 bank and corporate sites reject WebFetch's user agent while serving browsers normally.
 
 **Store a URL that actually resolves to the posting.** A listing-page URL with a
@@ -137,7 +137,7 @@ For each new job, do a rapid fit check (NOT the full evaluation from `04-job-eva
 - **Medium match**: Role is adjacent to your experience
 - **Low match**: Role requires significant skills you lack
 
-**Language override:** before assigning a match level, check the posting against `04-job-evaluation.md`'s Language Gate (a required language you haven't declared at all in your CLAUDE.md Languages table). A required language that's entirely undeclared overrides skill fit: mark it **Low** regardless of how well the skills align, and name it in the highlight bullets so it isn't buried under an otherwise-good-looking match. A **declared** language at a requirement that reads higher than your declared level is *not* an override — score fit normally, but add a red-flag bullet under that job's highlights (Step 5) quoting the posting's requirement next to your declared level, so the gap is visible without being auto-downgraded.
+**Language override:** before assigning a match level, check the posting against `04-job-evaluation.md`'s Language Gate (a required language you haven't declared at all in your `01-candidate-profile.md` Languages table). A required language that's entirely undeclared overrides skill fit: mark it **Low** regardless of how well the skills align, and name it in the highlight bullets so it isn't buried under an otherwise-good-looking match. A **declared** language at a requirement that reads higher than your declared level is *not* an override — score fit normally, but add a red-flag bullet under that job's highlights (Step 5) quoting the posting's requirement next to your declared level, so the gap is visible without being auto-downgraded.
 
 ### Step 4: Deduplicate & Store
 
