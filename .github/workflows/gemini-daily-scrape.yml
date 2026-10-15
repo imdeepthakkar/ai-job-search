@@ -184,6 +184,8 @@ jobs:
           # git add job_scraper/data/*
           git add job_scraper/index.html job_scraper/dashboard.html || true
           git commit -m "chore: update scrape database [skip ci]" || echo "No changes to commit"
+          # Stash or discard remaining untracked/unstaged files (like temp files/reports) so rebase succeeds
+          git stash --include-untracked || true
           git pull --rebase origin master
           git push
 

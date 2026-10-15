@@ -58,8 +58,8 @@
     },
     "velux-as-cybersecurity-architect": {
       "title": "Cybersecurity Architect",
-      "company": "VELUX A/S",
-      "url": "https://www.jobindex.dk/jobannonce/r13860566",
+      "company": "VELUX",
+      "url": "https://dk.linkedin.com/jobs/view/cybersecurity-architect-at-velux-4445662032",
       "first_seen": "2026-06-25",
       "fit": "medium",
       "status": "new"
@@ -507,7 +507,7 @@
     "udviklings-og-forenklingsstyrelsen-azure-platforms-udvikler-": {
       "title": "Azure platforms-udvikler til drift af Skatteforvaltningens fremtidige Analytics platform",
       "company": "Udviklings- og Forenklingsstyrelsen",
-      "url": "https://jobbank.dk/job/3064526/udviklings-og-foren/azure-platforms-udvikler-til-d",
+      "url": "https://jobbank.dk/job/3099521/udviklings-og-foren/azure-platforms-udvikler-til-d",
       "first_seen": "2026-06-27",
       "fit": "medium",
       "status": "new"
@@ -1010,8 +1010,8 @@
     },
     "jn-data-as-domain-architect-mainframe": {
       "title": "Domain Architect - Mainframe",
-      "company": "JN Data A/S",
-      "url": "https://www.jobindex.dk/jobannonce/h1676496",
+      "company": "JN Data",
+      "url": "https://dk.linkedin.com/jobs/view/domain-architect-mainframe-at-jn-data-4428968441",
       "first_seen": "2026-06-27",
       "fit": "medium",
       "status": "new"
@@ -1417,9 +1417,9 @@
       "status": "new"
     },
     "3shape-senior-software-developer-cloud-security": {
-      "title": "Senior Software Developer - Cloud Security",
+      "title": "Senior Software Developer – Cloud Security",
       "company": "3Shape",
-      "url": "https://jobbank.dk/job/3065844/3shape/senior-software-developer-cl",
+      "url": "https://jobbank.dk/job/3105028/3shape/senior-software-developer-cl",
       "first_seen": "2026-06-27",
       "fit": "medium",
       "status": "new"
@@ -2530,8 +2530,8 @@
     },
     "simcorp-as-full-stack-developer": {
       "title": "Full Stack Developer",
-      "company": "SimCorp A/S",
-      "url": "https://jobbank.dk/job/3043215/simcorp-as/full-stack-developer",
+      "company": "SimCorp",
+      "url": "https://dk.linkedin.com/jobs/view/full-stack-developer-at-simcorp-4414267514",
       "first_seen": "2026-06-27",
       "fit": "low",
       "status": "new"
@@ -4074,8 +4074,8 @@
     },
     "simcorp-as-software-engineer": {
       "title": "Software Engineer",
-      "company": "SimCorp A/S",
-      "url": "https://www.jobindex.dk/jobannonce/r13888823",
+      "company": "SimCorp",
+      "url": "https://dk.linkedin.com/jobs/view/software-engineer-at-simcorp-4454058100",
       "first_seen": "2026-06-27",
       "fit": "low",
       "status": "new"
@@ -4705,9 +4705,9 @@
       "status": "new"
     },
     "capgemini-denmark-senior-domain-solution-architect-nce-pharm": {
-      "title": "Senior Domain Solution Architect NCE - Pharma Technical Operations (Senior Director/VP)",
+      "title": "Senior Domain Solution Architect NCE - Pharma Marketing, Sales & Launch Excellence (Senior Director/",
       "company": "Capgemini Denmark",
-      "url": "https://jobbank.dk/job/3054934/capgemini-denmark/senior-domain-solution-archite",
+      "url": "https://jobbank.dk/job/3054933/capgemini-denmark/senior-domain-solution-archite",
       "first_seen": "2026-08-06",
       "fit": "low",
       "status": "new"
@@ -6347,7 +6347,7 @@
     "unity-technologies-aps-senior-software-engineer": {
       "title": "Senior Software Engineer",
       "company": "UNITY TECHNOLOGIES ApS",
-      "url": "https://jobbank.dk/job/3074636/unity-technologies-a/senior-software-engineer",
+      "url": "https://jobbank.dk/job/3099872/unity-technologies-a/senior-software-engineer",
       "first_seen": "2026-08-06",
       "fit": "medium",
       "status": "new"
@@ -6386,8 +6386,8 @@
     },
     "nets-as-nordic-sales-opportunities-shape-the-future-of-payme": {
       "title": "Nordic Sales Opportunities - Shape the Future of Payments with Nexi in 2026",
-      "company": "Nets A/S",
-      "url": "https://jobbank.dk/job/2968977/nets-as/nordic-sales-opportunities-s",
+      "company": "Nets",
+      "url": "https://dk.linkedin.com/jobs/view/nordic-sales-opportunities-shape-the-future-of-payments-with-nexi-in-2026-at-nets-4366365457",
       "first_seen": "2026-07-04",
       "fit": "low",
       "status": "new"
@@ -6593,10 +6593,7 @@
       "url": "https://jobbank.dk/job/3077723/netic-as/secops-konsulent-med-fokus-pa",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 65.5,
-      "rank_verdict": "Good Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "lego-system-as-senior-software-engineer-ccpython": {
       "title": "Senior Software Engineer (C++/C/Python)",
@@ -6637,10 +6634,7 @@
       "url": "https://jobbank.dk/job/3077884/nnit-as/sre-platform-engineer",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 82.0,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "dansk-flygtningehjaelp-humanitarian-mine-action-explosive-or": {
       "title": "Humanitarian Mine Action (Explosive Ordnance Victim Assistance) Specialist",
@@ -6681,10 +6675,7 @@
       "url": "https://jobbank.dk/job/3058874/european-search-comp/digital-manufacturing-infras",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 73.8,
-      "rank_verdict": "Good Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "ramboell-gruppen-as-senior-software-engineer": {
       "title": "Senior Software Engineer",
@@ -6724,10 +6715,7 @@
       "url": "https://jobbank.dk/job/2787551/iheadhunt/join-cellpoint-digital-redef",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 82.2,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "formalize-aps-senior-software-engineer-integrations": {
       "title": "Senior Software Engineer (Integrations)",
@@ -6835,10 +6823,7 @@
       "url": "https://jobbank.dk/job/2663108/accobat-as/bliv-en-senior-bi-consultant-i",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 49.0,
-      "rank_verdict": "Moderate Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "twoday-as-enterprise-architect-bid-solution-architecture": {
       "title": "Enterprise Architect – Bid & Solution Architecture",
@@ -6854,10 +6839,7 @@
       "url": "https://jobbank.dk/job/2611702/work-supply/terraform-udvikler",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 57.8,
-      "rank_verdict": "Moderate Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "venzo-as-cloud-consultant": {
       "title": "Cloud Consultant",
@@ -6865,10 +6847,7 @@
       "url": "https://jobbank.dk/job/2925385/venzo-as/cloud-consultant",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 90.8,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "recruit-it-senior-platform-engineer-for-circle-gas": {
       "title": "Senior Platform Engineer for Circle Gas",
@@ -6876,10 +6855,7 @@
       "url": "https://jobbank.dk/job/2998033/recruit-it/senior-platform-engineer-for-c",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 87.9,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "venzo-as-senior-cloud-consultant": {
       "title": "Senior Cloud Consultant",
@@ -6887,10 +6863,7 @@
       "url": "https://jobbank.dk/job/2925384/venzo-as/senior-cloud-consultant",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 95.0,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "randstad-database-engineer-i-koebenhavnfrb": {
       "title": "Database Engineer i København/Frb.",
@@ -6898,10 +6871,7 @@
       "url": "https://jobbank.dk/job/2924415/randstad/database-engineer-i-kobenhavn",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 64.0,
-      "rank_verdict": "Good Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "european-search-company-platform-engineer-ida": {
       "title": "Platform Engineer - IDA",
@@ -6909,10 +6879,7 @@
       "url": "https://jobbank.dk/job/3043972/european-search-comp/platform-engineer-ida",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 79.2,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "recruit-it-mid-level-data-engineer-for-circle-gas": {
       "title": "Mid-level Data Engineer for Circle Gas",
@@ -6920,10 +6887,7 @@
       "url": "https://jobbank.dk/job/2998032/recruit-it/mid-level-data-engineer-for-ci",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 49.2,
-      "rank_verdict": "Moderate Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "jppolitikens-hus-as-udvikler-til-integrations-team-i-jppolit": {
       "title": "Udvikler til integrations team i JP/Politikens Hus",
@@ -6942,10 +6906,7 @@
       "url": "https://jobbank.dk/job/2977737/aeven-as/senior-network-advisor-aci",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 48.0,
-      "rank_verdict": "Moderate Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "dwarf-as-devops-lead": {
       "title": "DevOps Lead",
@@ -6953,10 +6914,7 @@
       "url": "https://jobbank.dk/job/2987367/dwarf-as/devops-lead",
       "first_seen": "2026-07-08",
       "fit": "high",
-      "status": "ranked",
-      "rank_score": 86.3,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "famly-aps-devops-engineer": {
       "title": "DevOps Engineer",
@@ -6975,10 +6933,7 @@
       "url": "https://jobbank.dk/job/3052365/skandinavisk-compute/open-source-seniorkonsulent",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 75.2,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "solteq-denmark-as-ai-driven-cloud-architect": {
       "title": "AI-Driven Cloud Architect",
@@ -6986,21 +6941,15 @@
       "url": "https://jobbank.dk/job/3034175/solteq-denmark-as/ai-driven-cloud-architect",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 93.3,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "twoday-as-devops-cloud-engineer-ai-platform-kubernetes": {
       "title": "DevOps / Cloud Engineer – AI Platform & Kubernetes",
-      "company": "Twoday A/S",
-      "url": "https://jobbank.dk/job/3042121/twoday-as/devops-cloud-engineer-ai-p",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/devops-cloud-engineer-%E2%80%93-ai-platform-kubernetes-at-twoday-4399519748",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 81.8,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "amazon-web-services-enterprise-solutions-architect": {
       "title": "Enterprise Solutions Architect",
@@ -7008,10 +6957,7 @@
       "url": "https://jobbank.dk/job/3009216/amazon-web-services/enterprise-solutions-architect",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 94.4,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "moving-talent-juridisk-servicebureau-platform-engineer-for-h": {
       "title": "Platform Engineer for H3D",
@@ -7030,21 +6976,15 @@
       "url": "https://jobbank.dk/job/3078119/drc-dansk-flygtnin/full-stack-developer",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 39.5,
-      "rank_verdict": "Weak Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "veo-technologies-senior-platform-engineer": {
       "title": "Senior Platform Engineer",
       "company": "Veo Technologies",
-      "url": "https://jobbank.dk/job/3004365/veo-technologies/senior-platform-engineer",
+      "url": "https://dk.linkedin.com/jobs/view/senior-platform-engineer-at-veo-technologies-4388346174",
       "first_seen": "2026-07-08",
       "fit": "medium",
-      "status": "ranked",
-      "rank_score": 77.4,
-      "rank_verdict": "Strong Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "netic-as-cloud-implementerings-og-driftskonsulent-til-vores-": {
       "title": "Cloud implementerings- og driftskonsulent til vores team i København",
@@ -7052,10 +6992,7 @@
       "url": "https://jobbank.dk/job/2966338/netic-as/cloud-implementerings-og-drif",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 71.5,
-      "rank_verdict": "Good Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "hakio-aps-data-engineer-backend-developer": {
       "title": "Data Engineer (Backend developer)",
@@ -7085,10 +7022,7 @@
       "url": "https://jobbank.dk/job/3008400/netic-as/it-infrastruktur-implementerin",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 64.2,
-      "rank_verdict": "Good Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "netic-as-virtualisering-storage-specialist-til-forretningskr": {
       "title": "Virtualisering & Storage Specialist til forretningskritisk drift",
@@ -7096,10 +7030,7 @@
       "url": "https://jobbank.dk/job/2992101/netic-as/virtualisering-storage-speci",
       "first_seen": "2026-07-08",
       "fit": "low",
-      "status": "ranked",
-      "rank_score": 57.8,
-      "rank_verdict": "Moderate Fit",
-      "rank_date": "2026-07-08"
+      "status": "ranked"
     },
     "unity-technologies-aps-senior-devops-engineer": {
       "title": "Senior DevOps Engineer",
@@ -7199,9 +7130,9 @@
       "status": "new"
     },
     "simcorp-as-seniorlead-software-engineer-c-apl-valuation-prod": {
-      "title": "Senior/Lead Software Engineer- (C#, APL) Valuation Product Area",
+      "title": "Senior Software Engineer- (C#, APL) Valuation Product Area",
       "company": "SimCorp A/S",
-      "url": "https://jobbank.dk/job/3093144/simcorp-as/seniorlead-software-engineer",
+      "url": "https://jobbank.dk/job/3093144/simcorp-as/senior-software-engineer-c",
       "first_seen": "2026-08-06",
       "fit": "high",
       "status": "new"
@@ -7265,7 +7196,7 @@
     "zeta-global-senior-software-engineer": {
       "title": "Senior Software Engineer",
       "company": "Zeta Global",
-      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-zeta-global-4449103958",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-zeta-global-4475990634",
       "first_seen": "2026-08-06",
       "fit": "medium",
       "status": "new"
@@ -7537,7 +7468,7 @@
     "cvation-part-of-skaylink-cloud-architect": {
       "title": "Cloud Architect",
       "company": "cVation - Part of Skaylink",
-      "url": "https://dk.linkedin.com/jobs/view/cloud-architect-at-cvation-part-of-skaylink-4448816793",
+      "url": "https://dk.linkedin.com/jobs/view/cloud-architect-at-cvation-part-of-skaylink-4475532973",
       "first_seen": "2026-08-06",
       "fit": "medium",
       "status": "new"
@@ -7600,8 +7531,8 @@
     },
     "edora-as-devops-engineer": {
       "title": "DevOps Engineer",
-      "company": "EDORA A/S",
-      "url": "https://jobbank.dk/job/3077808/edora-as/devops-engineer",
+      "company": "Edora",
+      "url": "https://dk.linkedin.com/jobs/view/devops-engineer-at-edora-4451399949",
       "first_seen": "2026-08-06",
       "fit": "medium",
       "status": "new"
@@ -7681,7 +7612,7 @@
     "unity-senior-devops-engineer": {
       "title": "Senior DevOps Engineer",
       "company": "Unity",
-      "url": "https://dk.linkedin.com/jobs/view/senior-devops-engineer-at-unity-4436201826",
+      "url": "https://dk.linkedin.com/jobs/view/senior-devops-engineer-at-unity-4457164164",
       "first_seen": "2026-08-06",
       "fit": "medium",
       "status": "new"
@@ -8063,9 +7994,9 @@
       "status": "new"
     },
     "gn-group-ai-track-lead-global-operations": {
-      "title": "AI Track Lead, Global Operations",
+      "title": "AI Track Lead, Global Operations, GN",
       "company": "GN Group",
-      "url": "https://dk.linkedin.com/jobs/view/ai-track-lead-global-operations-at-gn-group-4439115405",
+      "url": "https://dk.linkedin.com/jobs/view/ai-track-lead-global-operations-gn-at-gn-group-4476176900",
       "first_seen": "2026-08-06",
       "fit": "low",
       "status": "new"
@@ -8099,7 +8030,7 @@
       "company": "Ambu A/S",
       "url": "https://jobbank.dk/job/3078156/ambu-as/experienced-scrum-master-for-s",
       "first_seen": "2026-08-06",
-      "fit": "medium",
+      "fit": "low",
       "status": "new"
     },
     "work-supply-senior-it-projektleder-med-teknisk-ekspertise-og": {
@@ -8111,11 +8042,11 @@
       "status": "new"
     },
     "sweco-scrum-master-med-passion-for-teamudvikling-og-performa": {
-      "title": "Scrum Master med passion for teamudvikling og performance",
-      "company": "Sweco",
-      "url": "https://dk.linkedin.com/jobs/view/scrum-master-med-passion-for-teamudvikling-og-performance-at-sweco-4436739337",
+      "title": "Scrum Master med passion for teamudvikling og performance – Sweco Denmark",
+      "company": "Sweco Danmark A/S",
+      "url": "https://jobbank.dk/job/3076234/sweco-danmark-as/scrum-master-med-passion-for-t",
       "first_seen": "2026-08-06",
-      "fit": "medium",
+      "fit": "low",
       "status": "new"
     },
     "pandora-scrum-master": {
@@ -8131,6 +8062,2795 @@
       "company": "Forsvaret",
       "url": "https://dk.linkedin.com/jobs/view/scrummaster-til-digital-transformation-at-forsvaret-4447564483",
       "first_seen": "2026-08-06",
+      "fit": "low",
+      "status": "new"
+    },
+    "eurowind-energy-as-bogholder-til-kreditorafdeling-barselsvik": {
+      "title": "Bogholder til kreditorafdeling, barselsvikariat",
+      "company": "Eurowind Energy A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1689159",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "jysk-senior-software-engineer-react": {
+      "title": "Senior Software Engineer, React",
+      "company": "JYSK",
+      "url": "https://www.jobindex.dk/jobannonce/h1688284",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "simcorp-as-senior-software-engineer-portfolio-analysis": {
+      "title": "Senior Software Engineer - Portfolio Analysis",
+      "company": "SimCorp A/S",
+      "url": "https://jobbank.dk/job/3097102/simcorp-as/senior-software-engineer-por",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "if-skadeforsikring-security-architect": {
+      "title": "Security Architect",
+      "company": "If Skadeforsikring",
+      "url": "https://www.jobindex.dk/jobannonce/h1688461",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "saxo-bank-as-security-architect-for-application-security": {
+      "title": "Security Architect for Application Security",
+      "company": "Saxo Bank A/S",
+      "url": "https://jobbank.dk/job/3098750/saxo-bank-as/security-architect-for-applica",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "hotel-dangleterre-lead-the-engineering-excellence-behind-an-": {
+      "title": "Lead the engineering excellence behind an exceptional guest experience",
+      "company": "Hotel d'Angleterre",
+      "url": "https://www.jobindex.dk/jobannonce/h1687072",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "dansk-flygtningehjaelp-partnership-officer": {
+      "title": "Partnership Officer",
+      "company": "Dansk Flygtningehjælp",
+      "url": "https://www.jobindex.dk/jobannonce/r13948375",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "neurons-inc-ai-engineer": {
+      "title": "AI Engineer",
+      "company": "NEURONS INC. ApS",
+      "url": "https://jobbank.dk/job/3094689/neurons-inc-aps/ai-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "eurowind-energy-as-software-development-team-lead": {
+      "title": "Software Development Team Lead",
+      "company": "Eurowind Energy A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1689911",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "eurowind-energy-as-product-owner": {
+      "title": "Product Owner",
+      "company": "Eurowind Energy A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1689885",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "cgi-danmark-as-erfaren-product-owner-til-sundhedsloesninger": {
+      "title": "Erfaren Product Owner til sundhedsløsninger",
+      "company": "CGI Danmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1684559",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "jysk-it-delivery-lead": {
+      "title": "IT Delivery Lead",
+      "company": "JYSK",
+      "url": "https://www.jobindex.dk/jobannonce/h1691123",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "danske-spil-as-agil-tester-med-blik-for-kvalitet-koordinerin": {
+      "title": "Agil Tester med blik for kvalitet, koordinering og automatisering",
+      "company": "Danske Spil A/S",
+      "url": "https://jobbank.dk/job/3096707/danske-spil-as/agil-tester-med-blik-for-kvali",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "nordic-rcc-it-delivery-manager-leading-it-development-delive": {
+      "title": "IT Delivery Manager – Leading IT Development Delivery in a Mission-Critical Environment",
+      "company": "Nordic RCC",
+      "url": "https://www.jobindex.dk/jobannonce/r13951000",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-senior-solution-architect-digital-health": {
+      "title": "Senior Solution Architect - Digital Health",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1688204",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "dsb-sap-fico-solution-architect-design-solutions-that-enable": {
+      "title": "SAP FICO Solution Architect - Design Solutions that Enable DSB's Strategic Transformation",
+      "company": "DSB",
+      "url": "https://www.jobindex.dk/jobannonce/h1688213",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "arla-foods-amba-experienced-fullstack-developer-with-salesfo": {
+      "title": "Experienced Fullstack Developer with Salesforce Focus, Aarhus or Gdansk",
+      "company": "Arla Foods amba",
+      "url": "https://www.jobindex.dk/jobannonce/h1688166",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "edora-as-kundesupportmedarbejder": {
+      "title": "Kundesupportmedarbejder",
+      "company": "Edora A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1690549",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-senior-backend-net-developer-digital-health": {
+      "title": "Senior Backend .NET Developer – Digital Health",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1689706",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "simcorp-as-consulting-solution-architect-data-management": {
+      "title": "Consulting Solution Architect - Data Management",
+      "company": "SimCorp A/S",
+      "url": "https://jobbank.dk/job/3100867/simcorp-as/consulting-solution-architect",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "bella-intelligence-aps-product-portfolio-manager": {
+      "title": "Product Portfolio Manager",
+      "company": "BELLA Intelligence ApS",
+      "url": "https://www.jobindex.dk/jobannonce/r13953017",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "arla-foods-amba-experienced-data-engineer-innovation-and-con": {
+      "title": "Experienced Data Engineer - Innovation and Consumers, Aarhus or Gdansk",
+      "company": "Arla Foods amba",
+      "url": "https://www.jobindex.dk/jobannonce/h1688127",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "velliv-udvikler-til-camundaaws": {
+      "title": "Udvikler til Camunda/AWS",
+      "company": "Velliv",
+      "url": "https://www.jobindex.dk/jobannonce/h1690934",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "terma-as-advanced-platform-engineer": {
+      "title": "Advanced Platform Engineer",
+      "company": "Terma A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1690410",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "riskpoint-as-riskpoint-solutions-limited-senior-developer": {
+      "title": "Senior Developer",
+      "company": "Riskpoint A/S (Riskpoint Solutions Limited)",
+      "url": "https://www.jobindex.dk/jobannonce/h1689727",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "spirii-aps-data-engineer": {
+      "title": "Data Engineer",
+      "company": "Spirii Aps",
+      "url": "https://www.jobindex.dk/jobannonce/r13946075",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "spar-data-engineer-til-dagrofa-it-vaer-med-til-at-bygge-frem": {
+      "title": "Data Engineer til Dagrofa IT – vær med til at bygge fremtidens dataplatform",
+      "company": "SPAR",
+      "url": "https://www.jobindex.dk/jobannonce/r13941237",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "shine-formerly-ageras-staff-platform-engineer": {
+      "title": "Staff Platform Engineer",
+      "company": "Shine (formerly Ageras)",
+      "url": "https://www.jobindex.dk/jobannonce/r13937779",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "lunar-as-senior-data-platform-engineer": {
+      "title": "Senior Data Platform Engineer - Lunar",
+      "company": "Lunar ApS",
+      "url": "https://jobbank.dk/job/3093665/lunar-aps/senior-data-platform-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "reel-software-engineer-infrastructure": {
+      "title": "Software Engineer, Infrastructure",
+      "company": "Reel",
+      "url": "https://www.jobindex.dk/jobannonce/r13946064",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "demant-as-software-engineer": {
+      "title": "Software Engineer",
+      "company": "Demant A/S",
+      "url": "https://jobbank.dk/job/3094507/demant-as/software-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "mastercard-payment-services-denmark-as-manager-business-deve": {
+      "title": "Manager, Business Development and Account Management – Acquiring & PSP (Denmark)",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3090856/mastercard-payment-s/manager-business-development",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "mastercard-payment-services-denmark-as-senior-analyst-analyt": {
+      "title": "Senior Analyst, Analytics & Metrics",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3096676/mastercard-payment-s/senior-analyst-analytics-me",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "mastercard-payment-services-denmark-as-senior-data-engineer": {
+      "title": "Senior Data Engineer",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3101345/mastercard-payment-s/senior-data-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "mastercard-payment-services-denmark-as-director-people-busin": {
+      "title": "Director, People Business Partner",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3099291/mastercard-payment-s/director-people-business-part",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "mastercard-payment-services-denmark-as-software-engineer-ii": {
+      "title": "Software Engineer II",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3100616/mastercard-payment-s/software-engineer-ii",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "crediwire-student-finance-business-partner-reporting-strateg": {
+      "title": "Student, Finance Business Partner – Reporting & Strategic Insight",
+      "company": "CrediWire",
+      "url": "https://jobbank.dk/job/3088934/crediwire/student-finance-business-part",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "edora-as-freelance-it-konsulenter": {
+      "title": "Freelance IT-konsulenter",
+      "company": "EDORA A/S",
+      "url": "https://jobbank.dk/job/2645546/edora-as/freelance-it-konsulenter",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "magasindk-projektleder-med-staerk-it-faglig-profil-til-magas": {
+      "title": "Projektleder med stærk IT-faglig profil til Magasins PMO",
+      "company": "Magasin.dk",
+      "url": "https://jobbank.dk/job/3048943/magasindk/projektleder-med-staerk-it-fagl",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "valcon-as-delivery-management-consultant-with-proven-experie": {
+      "title": "Delivery Management Consultant with proven experience, Aarhus",
+      "company": "Valcon A/S",
+      "url": "https://jobbank.dk/job/2988415/valcon-as/delivery-management-consultant",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "if-forsikring-security-architect": {
+      "title": "Security Architect",
+      "company": "If Forsikring",
+      "url": "https://jobbank.dk/job/3095353/if-forsikring/security-architect",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "ifu-dynamics-365-fo-developer": {
+      "title": "Dynamics 365 F&O Developer",
+      "company": "IFU",
+      "url": "https://jobbank.dk/job/3101945/ifu/dynamics-365-fo-developer",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "nuuday-lead-product-manager-network-security": {
+      "title": "Lead Product Manager – Network & Security",
+      "company": "Nuuday",
+      "url": "https://jobbank.dk/job/3036074/nuuday/lead-product-manager-network",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "tech-data-denmark-aps-solution-archietct-ibm-sw": {
+      "title": "Solution Archietct - IBM SW",
+      "company": "Tech Data Denmark ApS",
+      "url": "https://jobbank.dk/job/3083382/tech-data-denmark-ap/solution-archietct-ibm-sw",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "omada-as-senior-product-owner-system-integration": {
+      "title": "Senior Product Owner - System Integration",
+      "company": "Omada A/S",
+      "url": "https://jobbank.dk/job/3094054/omada-as/senior-product-owner-system",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "zeronorth-as-senior-software-engineer-net": {
+      "title": "Senior Software Engineer (.NET)",
+      "company": "ZeroNorth A/S",
+      "url": "https://jobbank.dk/job/3101943/zeronorth-as/senior-software-engineer-net",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "signifly-aps-senior-software-engineer-full-stack": {
+      "title": "Senior Software Engineer (Full Stack)",
+      "company": "Signifly ApS",
+      "url": "https://jobbank.dk/job/3095084/signifly-aps/senior-software-engineer-full",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "trackman-as-senior-software-engineer-systemsplatform": {
+      "title": "Senior Software Engineer (Systems/Platform)",
+      "company": "TRACKMAN A/S",
+      "url": "https://jobbank.dk/job/3098423/trackman-as/senior-software-engineer-syst",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "dr-danmarks-radio-servicenow-platform-manager": {
+      "title": "ServiceNow Platform Manager",
+      "company": "DR - Danmarks Radio",
+      "url": "https://jobbank.dk/job/3089440/dr-danmarks-radio/servicenow-platform-manager",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "trackman-as-senior-radio-frequency-engineer": {
+      "title": "Senior Radio Frequency Engineer",
+      "company": "TRACKMAN A/S",
+      "url": "https://jobbank.dk/job/3098428/trackman-as/senior-radio-frequency-enginee",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "microsoft-danmark-aps-principal-software-engineering-manager": {
+      "title": "Principal Software Engineering Manager",
+      "company": "Microsoft Danmark ApS",
+      "url": "https://jobbank.dk/job/3100425/microsoft-danmark-ap/principal-software-engineering",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "venzo-as-senior-data-consultant": {
+      "title": "Senior Data Consultant",
+      "company": "VENZO A/S",
+      "url": "https://jobbank.dk/job/3083985/venzo-as/senior-data-consultant",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "gn-store-nord-as-antenna-engineer-to-gn-hearing": {
+      "title": "Antenna Engineer to GN Hearing",
+      "company": "GN Store Nord A/S",
+      "url": "https://jobbank.dk/job/3076164/gn-store-nord-as/antenna-engineer-to-gn-hearing",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "nuuday-senior-network-engineer": {
+      "title": "Senior Network Engineer",
+      "company": "Nuuday",
+      "url": "https://jobbank.dk/job/3100707/nuuday/senior-network-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "banking-circle-cloud-engineer": {
+      "title": "Cloud Engineer",
+      "company": "Banking Circle",
+      "url": "https://jobbank.dk/job/3088915/banking-circle/cloud-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "whatever-as-make-an-impact-through-data-join-riskpoint-as-a-": {
+      "title": "Make an impact through Data - join RiskPoint as a BI Developer…",
+      "company": "Whatever A/S",
+      "url": "https://jobbank.dk/job/3098585/whatever-as/make-an-impact-through-data",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "sund-baelt-senior-data-engineer": {
+      "title": "Senior Data Engineer",
+      "company": "Sund & Bælt",
+      "url": "https://jobbank.dk/job/3100535/sund-baelt/senior-data-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "sund-baelt-netvaerksspecialist-til-sund-baelt": {
+      "title": "Netværksspecialist til Sund & Bælt",
+      "company": "Sund & Bælt",
+      "url": "https://jobbank.dk/job/3099812/sund-baelt/netvaerksspecialist-til-sund",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "zeronorth-as-senior-security-engineer": {
+      "title": "Senior Security Engineer",
+      "company": "ZeroNorth A/S",
+      "url": "https://jobbank.dk/job/3096549/zeronorth-as/senior-security-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "coresearch-vision-as-senior-platform-engineer": {
+      "title": "Senior Platform Engineer",
+      "company": "CoreSearch Vision A/S",
+      "url": "https://jobbank.dk/job/3081162/coresearch-vision-a/senior-platform-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "unity-technologies-aps-staff-engineer-data-platform": {
+      "title": "Staff Engineer, Data Platform",
+      "company": "UNITY TECHNOLOGIES ApS",
+      "url": "https://jobbank.dk/job/3102173/unity-technologies-a/staff-engineer-data-platform",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "trackman-as-cloud-devops-engineer": {
+      "title": "Cloud DevOps Engineer",
+      "company": "TRACKMAN A/S",
+      "url": "https://jobbank.dk/job/3098420/trackman-as/cloud-devops-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "nuuday-lead-f5-application-delivery-security-consultant": {
+      "title": "Lead F5 Application Delivery & Security Consultant",
+      "company": "Nuuday",
+      "url": "https://jobbank.dk/job/3096100/nuuday/lead-f5-application-delivery",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "nuuday-senior-network-architect-cisco-enterprise-networking": {
+      "title": "Senior Network Architect – Cisco Enterprise Networking",
+      "company": "Nuuday",
+      "url": "https://jobbank.dk/job/3082468/nuuday/senior-network-architect-cis",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "boozt-fashion-aps-midsenior-php-developer-warehouse-manageme": {
+      "title": "Mid/Senior PHP Developer | Warehouse Management System (WMS)",
+      "company": "Boozt Fashion ApS",
+      "url": "https://jobbank.dk/job/3097739/boozt-fashion-aps/midsenior-php-developer-war",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "veo-technologies-senior-infrastructure-and-cloud-security-en": {
+      "title": "Senior Infrastructure and Cloud Security Engineer",
+      "company": "Veo Technologies",
+      "url": "https://jobbank.dk/job/3099375/veo-technologies/senior-infrastructure-and-clou",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "veo-technologies-staff-security-engineer": {
+      "title": "Staff Security Engineer",
+      "company": "Veo Technologies",
+      "url": "https://jobbank.dk/job/3099376/veo-technologies/staff-security-engineer",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "siteimprove-as-senior-engineering-manager-search-insights": {
+      "title": "Senior Engineering Manager, Search Insights",
+      "company": "Siteimprove A/S",
+      "url": "https://jobbank.dk/job/2995182/siteimprove-as/senior-engineering-manager-se",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "ubsend-it-product-owner": {
+      "title": "IT Product Owner",
+      "company": "UBsend",
+      "url": "https://dk.linkedin.com/jobs/view/it-product-owner-at-ubsend-4454504252",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "flatpay-senior-backend-engineer-point-of-sale": {
+      "title": "Senior Backend Engineer, Point-of-Sale",
+      "company": "Flatpay",
+      "url": "https://dk.linkedin.com/jobs/view/senior-backend-engineer-point-of-sale-at-flatpay-4453327397",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "sopra-steria-uopfordret-ansoegning-til-software-engineering-": {
+      "title": "Uopfordret ansøgning til Software Engineering, Tech. Management & Data Intelligence",
+      "company": "Sopra Steria",
+      "url": "https://dk.linkedin.com/jobs/view/uopfordret-ans%C3%B8gning-til-software-engineering-tech-management-data-intelligence-at-sopra-steria-4452460859",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-cloud-platforms-security-senior-backend-java-develope": {
+      "title": "Senior Backend Java Developer – Digital Health",
+      "company": "twoday Cloud Platforms & Security",
+      "url": "https://dk.linkedin.com/jobs/view/senior-backend-java-developer-%E2%80%93-digital-health-at-twoday-cloud-platforms-security-4454540593",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "sopra-steria-senior-fullstack-java-udvikler-til-afdeling-i-v": {
+      "title": "Senior Fullstack Java udvikler til afdeling i vækst",
+      "company": "Sopra Steria",
+      "url": "https://dk.linkedin.com/jobs/view/senior-fullstack-java-udvikler-til-afdeling-i-v%C3%A6kst-at-sopra-steria-4383739715",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "festina-finance-senior-ai-engineer": {
+      "title": "Senior AI Engineer",
+      "company": "Festina Finance",
+      "url": "https://dk.linkedin.com/jobs/view/senior-ai-engineer-at-festina-finance-4454250916",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-full-stack-developer-java-modern-frontend": {
+      "title": "Full Stack Developer – Java & Modern Frontend",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/full-stack-developer-%E2%80%93-java-modern-frontend-at-twoday-4449842227",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "twoday-cloud-platforms-security-full-stack-developer-java-am": {
+      "title": "Full Stack Developer – Java &amp; Modern Frontend",
+      "company": "twoday Cloud Platforms & Security",
+      "url": "https://dk.linkedin.com/jobs/view/full-stack-developer-%E2%80%93-java-amp-modern-frontend-at-twoday-cloud-platforms-security-4451548669",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "unity-staff-infrastructure-engineer": {
+      "title": "Staff Infrastructure Engineer",
+      "company": "Unity",
+      "url": "https://dk.linkedin.com/jobs/view/staff-infrastructure-engineer-at-unity-4437903566",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "coresearch-as-senior-engineer": {
+      "title": "Senior Engineer",
+      "company": "CoreSearch A/S",
+      "url": "https://dk.linkedin.com/jobs/view/senior-engineer-at-coresearch-a-s-4451526284",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "emagine-solution-architect": {
+      "title": "Solution Architect",
+      "company": "emagine",
+      "url": "https://dk.linkedin.com/jobs/view/solution-architect-at-emagine-4454269492",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "lenovo-technical-consultant-infrastructure-solutions": {
+      "title": "Technical Consultant - Infrastructure Solutions",
+      "company": "Lenovo",
+      "url": "https://dk.linkedin.com/jobs/view/technical-consultant-infrastructure-solutions-at-lenovo-4440218330",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "laravel-senior-infrastructure-engineer-postgresql": {
+      "title": "Senior Infrastructure Engineer, PostgreSQL",
+      "company": "Laravel",
+      "url": "https://dk.linkedin.com/jobs/view/senior-infrastructure-engineer-postgresql-at-laravel-4452428263",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "dalux-experienced-cloud-engineer": {
+      "title": "Experienced Cloud Engineer",
+      "company": "Dalux",
+      "url": "https://dk.linkedin.com/jobs/view/experienced-cloud-engineer-at-dalux-4366367022",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "netcompany-senior-system-consultant-system-services-netcompa": {
+      "title": "Senior System Consultant, System Services, Netcompany Banking services",
+      "company": "Netcompany",
+      "url": "https://dk.linkedin.com/jobs/view/senior-system-consultant-system-services-netcompany-banking-services-at-netcompany-4439607959",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "banking-circle-development-engineer": {
+      "title": "Development Engineer",
+      "company": "Banking Circle",
+      "url": "https://dk.linkedin.com/jobs/view/development-engineer-at-banking-circle-4450106895",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "mastercard-software-engineer-ii": {
+      "title": "Software Engineer II",
+      "company": "Mastercard",
+      "url": "https://dk.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4452836374",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "farpay-product-owner-til-farpay": {
+      "title": "Product Owner til FarPay",
+      "company": "FarPay",
+      "url": "https://dk.linkedin.com/jobs/view/product-owner-til-farpay-at-farpay-4451397757",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "nordea-pega-lead-architect-with-clm-expertise": {
+      "title": "Pega Lead Architect (with CLM Expertise)",
+      "company": "Nordea",
+      "url": "https://dk.linkedin.com/jobs/view/pega-lead-architect-with-clm-expertise-at-nordea-4443381008",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "monta-mid-level-backend-engineer-financial-services": {
+      "title": "Mid Level Backend Engineer - Financial Services",
+      "company": "Monta",
+      "url": "https://dk.linkedin.com/jobs/view/mid-level-backend-engineer-financial-services-at-monta-4423137312",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "the-riskpoint-group-senior-developer": {
+      "title": "Senior Developer",
+      "company": "The RiskPoint Group",
+      "url": "https://dk.linkedin.com/jobs/view/senior-developer-at-the-riskpoint-group-4442820311",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "rib-software-sr-devops-engineer": {
+      "title": "Sr. DevOps Engineer",
+      "company": "RIB Software",
+      "url": "https://dk.linkedin.com/jobs/view/sr-devops-engineer-at-rib-software-4425606711",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "twoday-devops-engineer-business-critical-platforms": {
+      "title": "DevOps Engineer – Business-Critical Platforms",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/devops-engineer-%E2%80%93-business-critical-platforms-at-twoday-4434884028",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "twoday-cloud-platforms-security-devops-engineer-business-cri": {
+      "title": "DevOps Engineer – Business-Critical Platforms",
+      "company": "twoday Cloud Platforms & Security",
+      "url": "https://dk.linkedin.com/jobs/view/devops-engineer-%E2%80%93-business-critical-platforms-at-twoday-cloud-platforms-security-4451560184",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "dalux-devops-specialist": {
+      "title": "DevOps Specialist",
+      "company": "Dalux",
+      "url": "https://dk.linkedin.com/jobs/view/devops-specialist-at-dalux-4346787624",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "map-devops-engineer": {
+      "title": "DevOps Engineer",
+      "company": "MAP",
+      "url": "https://dk.linkedin.com/jobs/view/devops-engineer-at-map-4456721820",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "keepit-senior-site-reliability-engineer": {
+      "title": "Senior Site Reliability Engineer",
+      "company": "Keepit",
+      "url": "https://dk.linkedin.com/jobs/view/senior-site-reliability-engineer-at-keepit-4435193661",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "nordea-chief-expert-information-architect-in-lci": {
+      "title": "Chief Expert / Information Architect in LC&I",
+      "company": "Nordea",
+      "url": "https://dk.linkedin.com/jobs/view/chief-expert-information-architect-in-lc-i-at-nordea-4456725297",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "accenture-nordics-erp-functional-solution-architect-d365-fin": {
+      "title": "ERP Functional Solution Architect – D365 Finance & Project Operations",
+      "company": "Accenture Nordics",
+      "url": "https://dk.linkedin.com/jobs/view/erp-functional-solution-architect-%E2%80%93-d365-finance-project-operations-at-accenture-nordics-4453241899",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "accenture-nordics-erp-technical-architect-d365-finance-opera": {
+      "title": "ERP Technical Architect – D365 Finance & Operations",
+      "company": "Accenture Nordics",
+      "url": "https://dk.linkedin.com/jobs/view/erp-technical-architect-%E2%80%93-d365-finance-operations-at-accenture-nordics-4477282723",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "saxo-bank-principal-it-developer-for-data-reporting": {
+      "title": "Principal IT Developer for Data & Reporting",
+      "company": "Saxo Bank",
+      "url": "https://dk.linkedin.com/jobs/view/principal-it-developer-for-data-reporting-at-saxo-bank-4434626197",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "coloplast-senior-software-systems-architect": {
+      "title": "Senior Software Systems Architect",
+      "company": "Coloplast",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-systems-architect-at-coloplast-4407379047",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "twoday-cloud-platforms-security-solution-architect-digital-h": {
+      "title": "Solution Architect – Digital Health",
+      "company": "twoday Cloud Platforms & Security",
+      "url": "https://dk.linkedin.com/jobs/view/solution-architect-%E2%80%93-digital-health-at-twoday-cloud-platforms-security-4451546927",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "edora-solutions-architect": {
+      "title": "Solutions Architect",
+      "company": "Edora",
+      "url": "https://dk.linkedin.com/jobs/view/solutions-architect-at-edora-4451505669",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "resolute-bio-platform-engineer": {
+      "title": "Platform Engineer",
+      "company": "Resolute Bio",
+      "url": "https://dk.linkedin.com/jobs/view/platform-engineer-at-resolute-bio-4451182832",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "unity-staff-engineer-data-platform": {
+      "title": "Staff Engineer, Data Platform",
+      "company": "Unity",
+      "url": "https://dk.linkedin.com/jobs/view/staff-engineer-data-platform-at-unity-4456044631",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "ap-moller-maersk-software-engineer": {
+      "title": "Software Engineer",
+      "company": "A.P. Moller - Maersk",
+      "url": "https://dk.linkedin.com/jobs/view/software-engineer-at-a-p-moller-maersk-4456701654",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-senior-devsecops-cloud-security-engineer-ai-platform-": {
+      "title": "Senior DevSecOps / Cloud Security Engineer – AI Platform Security",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/senior-devsecops-cloud-security-engineer-%E2%80%93-ai-platform-security-at-twoday-4399503859",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "pandora-lead-engineer-security-operations-platform": {
+      "title": "Lead Engineer, Security Operations Platform",
+      "company": "Pandora",
+      "url": "https://dk.linkedin.com/jobs/view/lead-engineer-security-operations-platform-at-pandora-4451667090",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "pleo-senior-application-security-manager": {
+      "title": "Senior Application Security Manager",
+      "company": "Pleo",
+      "url": "https://dk.linkedin.com/jobs/view/senior-application-security-manager-at-pleo-4454006656",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "unity-senior-infrastructure-security-engineer": {
+      "title": "Senior Infrastructure Security Engineer",
+      "company": "Unity",
+      "url": "https://dk.linkedin.com/jobs/view/senior-infrastructure-security-engineer-at-unity-4455685909",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "unity-south-apac-sea-anz-ind-subcont-senior-infrastructure-s": {
+      "title": "Senior Infrastructure Security Engineer",
+      "company": "Unity South APAC (SEA, ANZ, IND Subcont.)",
+      "url": "https://dk.linkedin.com/jobs/view/senior-infrastructure-security-engineer-at-unity-south-apac-sea-anz-ind-subcont-4454191066",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "veo-technologies-senior-product-security-engineer": {
+      "title": "Senior Product Security Engineer",
+      "company": "Veo Technologies",
+      "url": "https://dk.linkedin.com/jobs/view/senior-product-security-engineer-at-veo-technologies-4417713810",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "factbird-senior-security-compliance-engineer": {
+      "title": "Senior Security & Compliance Engineer",
+      "company": "Factbird",
+      "url": "https://dk.linkedin.com/jobs/view/senior-security-compliance-engineer-at-factbird-4452482833",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "politiets-efterretningstjeneste-pet-fullstack-softwareudvikl": {
+      "title": "Fullstack softwareudvikler i PET",
+      "company": "Politiets Efterretningstjeneste (PET)",
+      "url": "https://dk.linkedin.com/jobs/view/fullstack-softwareudvikler-i-pet-at-politiets-efterretningstjeneste-pet-4444129797",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "pa-consulting-senior-management-consultants-with-organisatio": {
+      "title": "Senior Management Consultants with Organisational Agility Expertise",
+      "company": "PA Consulting",
+      "url": "https://dk.linkedin.com/jobs/view/senior-management-consultants-with-organisational-agility-expertise-at-pa-consulting-4454296341",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "hk-teamleder": {
+      "title": "Teamleder",
+      "company": "HK",
+      "url": "https://dk.linkedin.com/jobs/view/teamleder-at-hk-4450120798",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "forsvaret-sektionschef-til-tvaergaaende-opgaver-og-projektle": {
+      "title": "Sektionschef til tværgående opgaver og projektledelse i Program for Digital og Operativ Transformation",
+      "company": "Forsvaret",
+      "url": "https://dk.linkedin.com/jobs/view/sektionschef-til-tv%C3%A6rg%C3%A5ende-opgaver-og-projektledelse-i-program-for-digital-og-operativ-transformation-at-forsvaret-4450625117",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "save-the-children-denmark-digital-projektleder-til-red-barne": {
+      "title": "Digital Projektleder til Red Barnets IT-team",
+      "company": "Save the Children Denmark",
+      "url": "https://dk.linkedin.com/jobs/view/digital-projektleder-til-red-barnets-it-team-at-save-the-children-denmark-4449824529",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "simcorp-lead-full-stack-software-engineer-netangular": {
+      "title": "Senior Full-Stack Software Engineer (.Net/Angular)",
+      "company": "SimCorp",
+      "url": "https://dk.linkedin.com/jobs/view/senior-full-stack-software-engineer-net-angular-at-simcorp-4443336360",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "planday-team-lead-engineering": {
+      "title": "Team Lead (Engineering)",
+      "company": "Planday",
+      "url": "https://dk.linkedin.com/jobs/view/team-lead-engineering-at-planday-4452273683",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "herlev-og-gentofte-hospital-erfaren-innovations-og-implement": {
+      "title": "Erfaren innovations- og implementeringskonsulent til Enheden for Forskning, Innovation og Digitalisering på Herlev og Gentofte Hospital.",
+      "company": "Herlev og Gentofte Hospital",
+      "url": "https://dk.linkedin.com/jobs/view/erfaren-innovations-og-implementeringskonsulent-til-enheden-for-forskning-innovation-og-digitalisering-p%C3%A5-herlev-og-gentofte-hospital-at-herlev-og-gentofte-hospital-4451750828",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "mastercard-senior-data-engineer": {
+      "title": "Senior Data Engineer",
+      "company": "Mastercard",
+      "url": "https://dk.linkedin.com/jobs/view/senior-data-engineer-at-mastercard-4453477199",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "mastercard-director-people-business-partner": {
+      "title": "Director, People Business Partner",
+      "company": "Mastercard",
+      "url": "https://dk.linkedin.com/jobs/view/director-people-business-partner-at-mastercard-4451267415",
+      "first_seen": "2026-08-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "mastercard-senior-analyst-analytics-metrics": {
+      "title": "Senior Analyst, Analytics & Metrics",
+      "company": "Mastercard",
+      "url": "https://dk.linkedin.com/jobs/view/senior-analyst-analytics-metrics-at-mastercard-4450166409",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "miro-staff-design-engineer": {
+      "title": "Staff Design Engineer",
+      "company": "Miro",
+      "url": "https://dk.linkedin.com/jobs/view/staff-design-engineer-at-miro-4426837976",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "microsoft-associate-energy-program-manager": {
+      "title": "Associate Energy Program Manager",
+      "company": "Microsoft",
+      "url": "https://dk.linkedin.com/jobs/view/associate-energy-program-manager-at-microsoft-4455123058",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "flatpay-senior-android-engineer-point-of-sale": {
+      "title": "Senior Android Engineer, Point-of-Sale",
+      "company": "Flatpay",
+      "url": "https://dk.linkedin.com/jobs/view/senior-android-engineer-point-of-sale-at-flatpay-4453357282",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "miro-senior-network-site-reliability-engineer": {
+      "title": "Senior Network Site Reliability Engineer",
+      "company": "Miro",
+      "url": "https://dk.linkedin.com/jobs/view/senior-network-site-reliability-engineer-at-miro-4424888836",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "markit-client-support-specialist": {
+      "title": "Client Support Specialist",
+      "company": "Markit",
+      "url": "https://dk.linkedin.com/jobs/view/client-support-specialist-at-markit-4454379589",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "portchain-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Portchain",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-portchain-4454398697",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "akamai-technologies-senior-ii-software-engineer-api-for-clou": {
+      "title": "Senior II Software Engineer (API for Cloud Networking)",
+      "company": "Akamai Technologies",
+      "url": "https://dk.linkedin.com/jobs/view/senior-ii-software-engineer-api-for-cloud-networking-at-akamai-technologies-4442708864",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "flatpay-senior-software-engineer-internal-tools": {
+      "title": "Senior Software Engineer, Internal Tools",
+      "company": "Flatpay",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-internal-tools-at-flatpay-4453356339",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "flatpay-senior-software-engineer-accounting-bookkeeping": {
+      "title": "Senior Software Engineer, Accounting & Bookkeeping",
+      "company": "Flatpay",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-accounting-bookkeeping-at-flatpay-4453356367",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "factbird-senior-full-stack-cloud-engineer": {
+      "title": "Senior Full Stack Cloud Engineer",
+      "company": "Factbird",
+      "url": "https://dk.linkedin.com/jobs/view/senior-full-stack-cloud-engineer-at-factbird-4451510700",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "if-insurance-security-architect": {
+      "title": "Security Architect",
+      "company": "If Insurance",
+      "url": "https://dk.linkedin.com/jobs/view/security-architect-at-if-insurance-4456737094",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "truesec-senior-iam-architect-sailpoint": {
+      "title": "Senior IAM Architect - SailPoint",
+      "company": "Truesec",
+      "url": "https://dk.linkedin.com/jobs/view/senior-iam-architect-sailpoint-at-truesec-4409042111",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "dnv-iga-architect": {
+      "title": "IGA Architect",
+      "company": "DNV",
+      "url": "https://dk.linkedin.com/jobs/view/iga-architect-at-dnv-4414357776",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "recruit-it-rekruttering-af-it-specialister-senior-cyber-secu": {
+      "title": "Senior Cyber Security Consultant",
+      "company": "Recruit IT - Rekruttering af IT specialister",
+      "url": "https://dk.linkedin.com/jobs/view/senior-cyber-security-consultant-at-recruit-it-rekruttering-af-it-specialister-4431692097",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "tdc-erhverv-lead-f5-application-delivery-security-consultant": {
+      "title": "Lead F5 Application Delivery & Security Consultant",
+      "company": "TDC Erhverv",
+      "url": "https://dk.linkedin.com/jobs/view/lead-f5-application-delivery-security-consultant-at-tdc-erhverv-4452497085",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "aeven-senior-network-advisory-adc-consultant-security": {
+      "title": "Senior Network Advisory ADC Consultant – Security",
+      "company": "Aeven",
+      "url": "https://dk.linkedin.com/jobs/view/senior-network-advisory-adc-consultant-%E2%80%93-security-at-aeven-4445147514",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-senior-it-security-advisor-api-production": {
+      "title": "Senior IT Security Advisor - API Production",
+      "company": "Novo Nordisk",
+      "url": "https://dk.linkedin.com/jobs/view/senior-it-security-advisor-api-production-at-novo-nordisk-4452594691",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "microsoft-senior-solution-engineer-digital-natives": {
+      "title": "Senior Solution Engineer - Digital Natives",
+      "company": "Microsoft",
+      "url": "https://dk.linkedin.com/jobs/view/senior-solution-engineer-digital-natives-at-microsoft-4456720327",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "bcg-platinion-ai-tech-architect-copenhagen-bcg-platinion": {
+      "title": "AI Tech Architect - Copenhagen | BCG Platinion",
+      "company": "BCG Platinion",
+      "url": "https://dk.linkedin.com/jobs/view/ai-tech-architect-copenhagen-bcg-platinion-at-bcg-platinion-4434653131",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "everec-technical-support-engineer-e-mobility": {
+      "title": "Technical Support Engineer - E-mobility",
+      "company": "EVEREC",
+      "url": "https://dk.linkedin.com/jobs/view/technical-support-engineer-e-mobility-at-everec-4456171444",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "airtame-tech-lead-embedded-platform": {
+      "title": "Tech Lead, Embedded Platform",
+      "company": "Airtame",
+      "url": "https://dk.linkedin.com/jobs/view/tech-lead-embedded-platform-at-airtame-4443936049",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "airtame-tech-lead-video-conferencing-screen-sharing": {
+      "title": "Tech Lead, Video Conferencing & Screen Sharing",
+      "company": "Airtame",
+      "url": "https://dk.linkedin.com/jobs/view/tech-lead-video-conferencing-screen-sharing-at-airtame-4443791157",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "planday-lead-engineer-data": {
+      "title": "Lead Engineer- Data",
+      "company": "Planday",
+      "url": "https://dk.linkedin.com/jobs/view/lead-engineer-data-at-planday-4452816776",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "ambu-qms-technical-workstream-lead-1": {
+      "title": "QMS Technical Workstream Lead 1",
+      "company": "Ambu",
+      "url": "https://dk.linkedin.com/jobs/view/qms-technical-workstream-lead-1-at-ambu-4444876996",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "dalux-cloud-engineer": {
+      "title": "Cloud Engineer",
+      "company": "Dalux",
+      "url": "https://dk.linkedin.com/jobs/view/cloud-engineer-at-dalux-4366622663",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "dhi-azure-cloud-engineer": {
+      "title": "Azure Cloud Engineer",
+      "company": "DHI",
+      "url": "https://dk.linkedin.com/jobs/view/azure-cloud-engineer-at-dhi-4427011101",
+      "first_seen": "2026-08-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "too-good-to-go-cloud-systems-administrator": {
+      "title": "Cloud Systems Administrator",
+      "company": "Too Good To Go",
+      "url": "https://dk.linkedin.com/jobs/view/cloud-systems-administrator-at-too-good-to-go-4443874439",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "relesys-platform-engineer": {
+      "title": "Platform Engineer",
+      "company": "Relesys",
+      "url": "https://dk.linkedin.com/jobs/view/platform-engineer-at-relesys-4428861340",
+      "first_seen": "2026-08-21",
+      "fit": "low",
+      "status": "new"
+    },
+    "https://systematic.com/careers/sitaware-insight-agentic-ai-architect": {
+      "title": "Software Engineer - Agentic AI & Java, SitaWare Insight",
+      "company": "Systematic",
+      "url": "https://dk.linkedin.com/jobs/view/software-engineer-agentic-ai-java-sitaware-insight-at-systematic-4440527218",
+      "first_seen": "2026-09-21",
+      "fit": "medium",
+      "status": "new"
+    },
+    "https://www.linkedin.com/jobs/view/4465040469": {
+      "title": "Cloud Solution Architect - Data & AI",
+      "company": "Microsoft",
+      "url": "https://www.linkedin.com/jobs/view/4465040469",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "https://www.linkedin.com/jobs/view/4467728940": {
+      "title": "Senior Azure Solution Architect",
+      "company": "Sentia",
+      "url": "https://www.linkedin.com/jobs/view/4467728940",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "https://www.linkedin.com/jobs/view/4464192596": {
+      "title": "Senior AI Architect",
+      "company": "T-Systems Nordic",
+      "url": "https://www.linkedin.com/jobs/view/4464192596",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "https://www.linkedin.com/jobs/view/4464858618": {
+      "title": "Lead Solutions Architect - Cloud",
+      "company": "T-Systems Nordic",
+      "url": "https://www.linkedin.com/jobs/view/4464858618",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "https://nykredit.com/careers/lead-ai-architect": {
+      "title": "Lead AI Architect i AI Center of Excellence",
+      "company": "Nykredit",
+      "url": "https://jobbank.dk/job/3094052/nykredit/bliv-lead-ai-architect-i-ai-center-of-excellence",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "https://www.jobindex.dk/jobannonce/h1698237": {
+      "title": "Senior Key Resource & Technical Lead – Digital Health",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1698237",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "https://www.linkedin.com/jobs/view/4469824086": {
+      "title": "Solutions Architect, AWS Denmark & Iceland",
+      "company": "Amazon Web Services (AWS)",
+      "url": "https://dk.linkedin.com/jobs/view/solutions-architect-aws-denmark-iceland-at-amazon-web-services-aws-4469824086",
+      "first_seen": "2026-09-21",
+      "fit": "high",
+      "status": "new"
+    },
+    "foss-solution-architect-rd-digital-solutions": {
+      "title": "Solution Architect - R&D Digital Solutions",
+      "company": "FOSS",
+      "url": "https://www.jobindex.dk/jobannonce/h1707237",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "stibo-dx-director-platform-engineering": {
+      "title": "Director, Platform Engineering",
+      "company": "Stibo DX",
+      "url": "https://www.jobindex.dk/jobannonce/h1706323",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 62,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "career-financial-administrator": {
+      "title": "Financial Administrator",
+      "company": "Career",
+      "url": "https://www.jobindex.dk/jobannonce/h1707258",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "flexfunding-as-full-stack-product-engineer-fintech-ai-first-": {
+      "title": "Full Stack Product Engineer – Fintech (AI-first, high ownership)",
+      "company": "FlexFunding A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14046551",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "ku-fa-kbh-k-regnskabsmedarbejder-til-koebenhavns-universitet": {
+      "title": "Regnskabsmedarbejder til Københavns Universitet",
+      "company": "KU - FA - Kbh K",
+      "url": "https://www.jobindex.dk/jobannonce/r14033825",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "paychex-europe-seniorudvikler-til-danloen": {
+      "title": "Seniorudvikler til Danløn",
+      "company": "Paychex Europe",
+      "url": "https://www.jobindex.dk/jobannonce/h1698526",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 52,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "lb-forsikring-product-owner-produktudvikling": {
+      "title": "Product Owner - Produktudvikling",
+      "company": "LB Forsikring A/S",
+      "url": "https://jobbank.dk/job/3132613/lb-forsikring-as/product-owner-produktudvikli",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "ballerup-kommune-datakonsulent-til-centralt-datateam": {
+      "title": "Datakonsulent til centralt datateam",
+      "company": "Ballerup Kommune",
+      "url": "https://jobbank.dk/job/3132662/ballerup-kommune/datakonsulent-til-centralt-dat",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "lego-system-as-capacity-capability-manager-lego-design": {
+      "title": "Capacity & Capability Manager - LEGO® DESiGN",
+      "company": "LEGO System A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14035651",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "devoteam-as-gcp-looker-practice-lead-nordics-permanent-contr": {
+      "title": "GCP Looker Practice Lead - Nordics, Permanent contract",
+      "company": "Devoteam A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14030451",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "devoteam-as-part-time-data-engineer-consultant-apprenticeshi": {
+      "title": "Part-time Data Engineer Consultant, Apprenticeship / Working students",
+      "company": "Devoteam A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14029937",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "cbre-gws-technical-lead-med-ansvar-i-jylland": {
+      "title": "Technical Lead med ansvar i Jylland",
+      "company": "CBRE GWS",
+      "url": "https://www.jobindex.dk/jobannonce/h1706716",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 66,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "krber-supply-chain-dk-as-lead-mechanical-engineer": {
+      "title": "Lead Mechanical Engineer",
+      "company": "Körber Supply Chain DK A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1698850",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "daikin-denmark-as-project-management-assistant": {
+      "title": "Project Management Assistant",
+      "company": "Daikin Denmark A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1704052",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "syntegon-technology-as-automation-team-lead": {
+      "title": "Automation Team Lead",
+      "company": "Syntegon Technology A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1695580",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-as-technical-solution-architect": {
+      "title": "Technical Solution Architect",
+      "company": "twoday A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1703878",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 68,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "hive-robots-aps-physical-ai-senior-manipulation-drive-our-au": {
+      "title": "Physical AI Senior - Manipulation: Drive our autonomous manipulation effort end to end: policy stack, data, evaluation discip...",
+      "company": "Hive Robots ApS",
+      "url": "https://www.jobindex.dk/jobannonce/r14047573",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "fujifilm-biotechnologies-senior-labware-it-systems-specialis": {
+      "title": "Senior Labware IT Systems Specialist, QC Applications",
+      "company": "FUJIFILM Biotechnologies",
+      "url": "https://www.jobindex.dk/jobannonce/r14050648",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "lego-system-as-staff-engineer-identity": {
+      "title": "Staff Engineer - Identity",
+      "company": "LEGO System A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14029781",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "lego-system-as-senior-manager-specialist": {
+      "title": "Senior Manager Specialist",
+      "company": "LEGO System A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14035652",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "eltronic-as-solution-architect": {
+      "title": "Solution Architect",
+      "company": "Eltronic A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1707088",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 68,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "atp-senior-solution-architect-til-loesninger-med-samfundsmae": {
+      "title": "Senior Solution Architect til løsninger med samfundsmæssig betydning",
+      "company": "ATP",
+      "url": "https://www.jobindex.dk/jobannonce/h1703654",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 68,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "bunker-holding-as-ai-lead": {
+      "title": "AI Lead",
+      "company": "Bunker Holding A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1707777",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "envidan-as-praktikant-software": {
+      "title": "Praktikant Software",
+      "company": "EnviDan A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1704956",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "comm2ig-as-it-supporter-med-passion-for-teknologi-og-service": {
+      "title": "It-supporter med passion for teknologi og service",
+      "company": "Comm2ig A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1704128",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "coop-danmark-as-senior-solution-architect-business-applicati": {
+      "title": "Senior Solution Architect - Business Applications",
+      "company": "Coop Danmark",
+      "url": "https://jobbank.dk/job/3136504/coop-danmark/senior-solution-architect-bu",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 78,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "novo-manufacturing-data-architect": {
+      "title": "Manufacturing Data Architect",
+      "company": "Novo",
+      "url": "https://www.jobindex.dk/jobannonce/r14038663",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 54,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "bella-intelligence-aps-join-bella-intelligence-as-a-software": {
+      "title": "Join BELLA Intelligence as a Software Developer",
+      "company": "BELLA Intelligence ApS",
+      "url": "https://www.jobindex.dk/jobannonce/r14037842",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "anker-andersen-as-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Anker Andersen A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1706839",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 59,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "lb-forsikring-senior-software-engineer-digital-enablement": {
+      "title": "Senior Software Engineer - Digital Enablement",
+      "company": "LB Forsikring A/S",
+      "url": "https://jobbank.dk/job/3132612/lb-forsikring-as/senior-software-engineer-dig",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 72,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "simplerqms-as-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "SimplerQMS A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14042857",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 59,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "verifi-finance-senior-software-engineer-ai-ocridp-automation": {
+      "title": "Senior Software Engineer (AI, OCR/IDP & Automation)",
+      "company": "Verifi Finance",
+      "url": "https://www.jobindex.dk/jobannonce/r14049083",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 64,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "flexecharge-senior-software-engineer-iot-platform-load-and-e": {
+      "title": "Senior Software Engineer – IoT Platform, Load and Energy Management",
+      "company": "FLEXECHARGE",
+      "url": "https://www.jobindex.dk/jobannonce/r14033540",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "monsalta-aps-full-stack-udvikler": {
+      "title": "Full stack-udvikler",
+      "company": "Monsalta ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1706998",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "arla-foods-amba-experienced-data-platform-engineer-data-foun": {
+      "title": "Experienced Data Platform Engineer - Data Foundation",
+      "company": "Arla Foods amba",
+      "url": "https://www.jobindex.dk/jobannonce/h1707368",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "flatpay-aps-senior-devops-engineer": {
+      "title": "Senior DevOps Engineer",
+      "company": "Flatpay ApS",
+      "url": "https://www.jobindex.dk/jobannonce/h1706612",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 71,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "nykredit-bliv-senior-platform-engineer-og-saet-den-tekniske-": {
+      "title": "Bliv Senior Platform Engineer og sæt den tekniske retning for intelligent automatisering",
+      "company": "Nykredit",
+      "url": "https://jobbank.dk/job/3136256/nykredit/bliv-senior-platform-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 76,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "twoday-as-senior-devsecops-engineer-kubernetes-software-supp": {
+      "title": "Senior DevSecOps Engineer – Kubernetes & Software Supply Chain Security",
+      "company": "Twoday A/S",
+      "url": "https://jobbank.dk/job/3136463/twoday-as/senior-devsecops-engineer-ku",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 60,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "alm-brand-group-platform-engineer-iac-azure-github": {
+      "title": "Platform Engineer – IaC, Azure & GitHub",
+      "company": "Alm. Brand Group",
+      "url": "https://jobbank.dk/job/3135098/alm-brand-group/platform-engineer-iac-azure",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 74,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "domstolsstyrelsen-devops-engineer-platformsansvarlig-til-mod": {
+      "title": "DevOps engineer (platformsansvarlig) til moderne drift- og udviklingsplatform",
+      "company": "Domstolsstyrelsen",
+      "url": "https://www.jobindex.dk/jobannonce/h1706046",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 58,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "netic-as-tech-lead-til-ai-delivery-teamet-byg-loesninger-der": {
+      "title": "Tech Lead til AI delivery-teamet – byg løsninger, der gør en målbar forskel",
+      "company": "Netic A/S",
+      "url": "https://jobbank.dk/job/3134770/netic-as/tech-lead-til-ai-delivery-team",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 85,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "netic-as-software-platformingenioer-til-ai-delivery-teamet-f": {
+      "title": "Software-/platformingeniør til AI delivery-teamet – få AI-løsninger sikkert i drift",
+      "company": "Netic A/S",
+      "url": "https://jobbank.dk/job/3134768/netic-as/software-platformingenior-til",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "norlys-infrastruktur-specialist-vaer-med-til-at-forme-norlys": {
+      "title": "Infrastruktur Specialist - vær med til at forme Norlys' private cloud",
+      "company": "Norlys",
+      "url": "https://www.jobindex.dk/jobannonce/h1706328",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "vestas-wind-systems-as-senior-specialist-platform-engineerin": {
+      "title": "Senior Specialist Platform Engineering",
+      "company": "Vestas Wind Systems A/S",
+      "url": "https://www.jobindex.dk/jobannonce/h1705518",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 59,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "politi-linux-specialist-til-samfundskritisk-infrastruktur": {
+      "title": "Linux-specialist til samfundskritisk infrastruktur",
+      "company": "Politi",
+      "url": "https://www.jobindex.dk/jobannonce/h1703781",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "politi-junior-linux-specialist-til-samfundskritisk-it-infras": {
+      "title": "Junior Linux-specialist til samfundskritisk it-infrastruktur",
+      "company": "Politi",
+      "url": "https://www.jobindex.dk/jobannonce/h1703745",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-senior-machine-learning-engineer": {
+      "title": "Senior Machine Learning Engineer",
+      "company": "Novo",
+      "url": "https://www.jobindex.dk/jobannonce/r14041109",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "terma-as-experienced-platform-engineer-devsecops": {
+      "title": "Experienced Platform Engineer, DevSecOps",
+      "company": "Terma A/S",
+      "url": "https://www.jobindex.dk/jobannonce/r14032270",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "mastercard-payment-services-denmark-as-senior-specialist-pro": {
+      "title": "Senior Specialist, Product Development",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3118534/mastercard-payment-s/senior-specialist-product-dev",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 60,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "mastercard-payment-services-denmark-as-manager-specialist-sa": {
+      "title": "Manager, Specialist Sales, SME Solutions Northern Europe",
+      "company": "Mastercard Payment Services Denmark A/S",
+      "url": "https://jobbank.dk/job/3118532/mastercard-payment-s/manager-specialist-sales-sme",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "nordea-ai-gateway-product-owner-data-mesh-and-ai-platforms-t": {
+      "title": "AI Gateway Product Owner, Data Mesh and AI Platforms team",
+      "company": "Nordea",
+      "url": "https://jobbank.dk/job/3111798/nordea/ai-gateway-product-owner-data",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "terma-as-advanced-java-software-engineer-effectors-engagemen": {
+      "title": "Advanced Java Software Engineer, Effectors & Engagement team, Søborg",
+      "company": "Terma A/S",
+      "url": "https://jobbank.dk/job/3134081/terma-as/advanced-java-software-enginee",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 67,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "bloom-senior-software-engineer-ai-ocridp-automation": {
+      "title": "Senior Software Engineer (AI, OCR/IDP & Automation)",
+      "company": "Bloom",
+      "url": "https://jobbank.dk/job/3139314/bloom/senior-software-engineer-ai",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 72,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "microsoft-danmark-aps-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Microsoft Danmark ApS",
+      "url": "https://jobbank.dk/job/3139869/microsoft-danmark-ap/senior-software-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "new"
+    },
+    "microsoft-danmark-aps-solution-architect": {
+      "title": "Solution Architect",
+      "company": "Microsoft Danmark ApS",
+      "url": "https://jobbank.dk/job/3130615/microsoft-danmark-ap/solution-architect",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "new"
+    },
+    "siemens-gamesa-renewable-energy-customer-solution-architect": {
+      "title": "Customer Solution Architect",
+      "company": "Siemens Gamesa Renewable Energy",
+      "url": "https://jobbank.dk/job/3138314/siemens-gamesa-renew/customer-solution-architect",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 73,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "demant-as-solution-architect-erp-solutions": {
+      "title": "Solution Architect - ERP Solutions",
+      "company": "Demant A/S",
+      "url": "https://jobbank.dk/job/3135279/demant-as/solution-architect-erp-solut",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 80,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "h-lundbeck-as-veeva-platform-specialist-solution-architect": {
+      "title": "Veeva Platform Specialist / Solution Architect",
+      "company": "H. Lundbeck A/S",
+      "url": "https://jobbank.dk/job/3134849/h-lundbeck-as/veeva-platform-specialist-so",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "ws-audiology-denmark-as-solution-architect-for-enterprise-en": {
+      "title": "Solution Architect for Enterprise Enablement",
+      "company": "WS Audiology Denmark A/S",
+      "url": "https://jobbank.dk/job/3130123/ws-audiology-denmark/solution-architect-for-enterpr",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 80,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "microsoft-danmark-aps-senior-cloud-solution-architecture-dat": {
+      "title": "Senior Cloud Solution Architecture - Data Security",
+      "company": "Microsoft Danmark ApS",
+      "url": "https://jobbank.dk/job/3125689/microsoft-danmark-ap/senior-cloud-solution-architec",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "new"
+    },
+    "norriq-senior-backend-developer-til-commerce": {
+      "title": "Senior Backend Developer til Commerce",
+      "company": "NORRIQ",
+      "url": "https://jobbank.dk/job/3103573/norriq/senior-backend-developer-til-c",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 64,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "cbrain-as-solution-architectfuldtidsolutionsnordhavn-koebenh": {
+      "title": "Solution ArchitectFuldtidSolutionsNordhavn, København Ø, Danmark",
+      "company": "cBrain A/S",
+      "url": "https://jobbank.dk/job/3110938/cbrain-as/solution-architectfuldtidsolut",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "microsoft-danmark-aps-cloud-solution-architect-ai-copilot-st": {
+      "title": "Cloud Solution Architect - AI Copilot Studio / Co-work",
+      "company": "Microsoft Danmark ApS",
+      "url": "https://jobbank.dk/job/3140345/microsoft-danmark-ap/cloud-solution-architect-ai",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "new"
+    },
+    "novonesis-novozymes-senior-scientist-baking-applied-rd-lyngb": {
+      "title": "Senior Scientist, Baking Applied R&D, Lyngby - Novonesis",
+      "company": "Novonesis (Novozymes)",
+      "url": "https://jobbank.dk/job/3140337/novonesis-novozymes/senior-scientist-baking-appli",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 54,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "koldpartners-senior-ai-engineer": {
+      "title": "Senior AI Engineer",
+      "company": "Kold+Partners",
+      "url": "https://jobbank.dk/job/3135900/koldpartners/senior-ai-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "pandora-as-lead-engineer-ai-platform": {
+      "title": "Lead Engineer, AI Platform",
+      "company": "Pandora A/S",
+      "url": "https://jobbank.dk/job/3133328/pandora-as/lead-engineer-ai-platform",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "ifu-senior-power-apps-web-application-developer-dynamics-365": {
+      "title": "(Senior) Power Apps & Web Application Developer (Dynamics 365 & Dataverse)",
+      "company": "IFU",
+      "url": "https://jobbank.dk/job/3133616/ifu/senior-power-apps-web-appl",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "intempus-aps-devops-engineer-at-intempus": {
+      "title": "DevOps Engineer at Intempus",
+      "company": "INTEMPUS ApS",
+      "url": "https://jobbank.dk/job/3136697/intempus-aps/devops-engineer-at-intempus",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 64,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "trackunit-as-site-reliability-engineer-trackunit": {
+      "title": "Site Reliability Engineer - Trackunit",
+      "company": "Trackunit A/S",
+      "url": "https://jobbank.dk/job/3116186/trackunit-as/site-reliability-engineer-tr",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "valcon-as-hands-on-data-engineer-or-architect-databricks-aws": {
+      "title": "Hands-on Data Engineer or Architect | Databricks & AWS, Copenhagen",
+      "company": "Valcon A/S",
+      "url": "https://jobbank.dk/job/3136458/valcon-as/hands-on-data-engineer-or-arch",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "h-lundbeck-as-dataml-engineer": {
+      "title": "Data/ML Engineer",
+      "company": "H. Lundbeck A/S",
+      "url": "https://jobbank.dk/job/3135819/h-lundbeck-as/dataml-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-as-senior-full-stack-developer-denmark-ballerup": {
+      "title": "Senior Full-stack Developer (Denmark, Ballerup)",
+      "company": "Novo Nordisk A/S",
+      "url": "https://jobbank.dk/job/3118941/novo-nordisk-as/senior-full-stack-developer-d",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "accenture-ai-data-engineer": {
+      "title": "AI & Data Engineer",
+      "company": "Accenture",
+      "url": "https://jobbank.dk/job/3132709/accenture/ai-data-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "bang-olufsen-as-senior-devops-developer-productivity-enginee": {
+      "title": "Senior DevOps & Developer Productivity Engineer",
+      "company": "Bang & Olufsen A/S",
+      "url": "https://jobbank.dk/job/3139499/bang-olufsen-as/senior-devops-developer-prod",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 68,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "lunar-aps-data-platform-engineer": {
+      "title": "Data Platform Engineer",
+      "company": "Lunar ApS",
+      "url": "https://jobbank.dk/job/3115689/lunar-aps/data-platform-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "rigspolitiet-junior-linux-specialist-til-samfundskritisk-it-": {
+      "title": "Junior Linux-specialist til samfundskritisk it-infrastruktur",
+      "company": "Rigspolitiet",
+      "url": "https://jobbank.dk/job/3131099/rigspolitiet/junior-linux-specialist-til-sa",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "rigspolitiet-linux-specialist-til-samfundskritisk-infrastruk": {
+      "title": "Linux-specialist til samfundskritisk infrastruktur",
+      "company": "Rigspolitiet",
+      "url": "https://jobbank.dk/job/3131741/rigspolitiet/linux-specialist-til-samfundsk",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "novo-nordisk-as-senior-machine-learning-engineer-denmark-maa": {
+      "title": "Senior Machine Learning Engineer (Denmark, Måløv)",
+      "company": "Novo Nordisk A/S",
+      "url": "https://jobbank.dk/job/3135461/novo-nordisk-as/senior-machine-learning-engine",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 71,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "nordea-data-engineer": {
+      "title": "Data Engineer",
+      "company": "Nordea",
+      "url": "https://jobbank.dk/job/3139666/nordea/data-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "unity-technologies-aps-staff-infrastructure-engineer": {
+      "title": "Staff Infrastructure Engineer",
+      "company": "UNITY TECHNOLOGIES ApS",
+      "url": "https://jobbank.dk/job/3134919/unity-technologies-a/staff-infrastructure-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 69,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "nordea-ai-engineer": {
+      "title": "AI Engineer",
+      "company": "Nordea",
+      "url": "https://jobbank.dk/job/3123169/nordea/ai-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "tdc-net-as-solution-engineer-specialized-in-pam": {
+      "title": "Solution Engineer specialized in PAM",
+      "company": "TDC NET A/S",
+      "url": "https://jobbank.dk/job/3139693/tdc-net-as/solution-engineer-specialized",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "terma-as-experienced-platform-engineer-with-a-passion-for-li": {
+      "title": "Experienced Platform Engineer with a passion for Linux, Søborg",
+      "company": "Terma A/S",
+      "url": "https://jobbank.dk/job/3131481/terma-as/experienced-platform-engineer",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-senior-backend-java-developer-digital-health": {
+      "title": "Senior Backend Java Developer – Digital Health",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/senior-backend-java-developer-%E2%80%93-digital-health-at-twoday-4434880097",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "new"
+    },
+    "politiets-efterretningstjeneste-pet-java-udvikler-med-et-hoe": {
+      "title": "Java-udvikler med et højere formål: Hjælp PET med at passe på Danmark",
+      "company": "Politiets Efterretningstjeneste (PET)",
+      "url": "https://dk.linkedin.com/jobs/view/java-udvikler-med-et-h%C3%B8jere-form%C3%A5l-hj%C3%A6lp-pet-med-at-passe-p%C3%A5-danmark-at-politiets-efterretningstjeneste-pet-4470292692",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 60,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "ubsend-experienced-software-developer": {
+      "title": "Experienced Software Developer",
+      "company": "UBsend",
+      "url": "https://dk.linkedin.com/jobs/view/experienced-software-developer-at-ubsend-4475584027",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "politiets-efterretningstjeneste-pet-softwareudvikler-til-pet": {
+      "title": "Softwareudvikler til PET: Vil du bygge løsninger, der holder til virkeligheden?",
+      "company": "Politiets Efterretningstjeneste (PET)",
+      "url": "https://dk.linkedin.com/jobs/view/softwareudvikler-til-pet-vil-du-bygge-l%C3%B8sninger-der-holder-til-virkeligheden%3F-at-politiets-efterretningstjeneste-pet-4475786292",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "politi-softwareudvikler-til-pet-vil-du-bygge-loesninger-der-": {
+      "title": "Softwareudvikler til PET: Vil du bygge løsninger, der holder til virkeligheden?",
+      "company": "Politi",
+      "url": "https://dk.linkedin.com/jobs/view/softwareudvikler-til-pet-vil-du-bygge-l%C3%B8sninger-der-holder-til-virkeligheden%3F-at-politi-4477148137",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "dxc-technology-infrastructure-architect": {
+      "title": "Infrastructure Architect",
+      "company": "DXC Technology",
+      "url": "https://dk.linkedin.com/jobs/view/infrastructure-architect-at-dxc-technology-4469914621",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 67,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "tieto-senior-ai-cloud-architect-public-360-tieto-indtech-mfd": {
+      "title": "Senior AI Cloud Architect Public 360°- Tieto Indtech (m/f/d)",
+      "company": "Tieto",
+      "url": "https://dk.linkedin.com/jobs/view/senior-ai-cloud-architect-public-360%C2%B0-tieto-indtech-m-f-d-at-tieto-4430473544",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 87,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "novo-nordisk-senior-it-windows-server-architect": {
+      "title": "Senior IT Windows Server Architect",
+      "company": "Novo Nordisk",
+      "url": "https://dk.linkedin.com/jobs/view/senior-it-windows-server-architect-at-novo-nordisk-4474809801",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "red-global-cloud-architect": {
+      "title": "Cloud Architect",
+      "company": "RED Global",
+      "url": "https://dk.linkedin.com/jobs/view/cloud-architect-at-red-global-4474033904",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 81,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "t-systems-nordic-lead-solution-architect-cloud": {
+      "title": "Lead Solution Architect - Cloud",
+      "company": "T-Systems Nordic",
+      "url": "https://dk.linkedin.com/jobs/view/lead-solution-architect-cloud-at-t-systems-nordic-4478837878",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 73,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "emagine-cloud-architect-azure-devops-iac": {
+      "title": "Cloud Architect (Azure / DevOps / IaC)",
+      "company": "emagine",
+      "url": "https://dk.linkedin.com/jobs/view/cloud-architect-azure-devops-iac-at-emagine-4477583139",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 78,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "cisco-customer-delivery-architect": {
+      "title": "Customer Delivery Architect",
+      "company": "Cisco",
+      "url": "https://dk.linkedin.com/jobs/view/customer-delivery-architect-at-cisco-4475790402",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 71,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "tryg-it-finance-domaine-architect": {
+      "title": "IT Finance Domaine Architect",
+      "company": "Tryg",
+      "url": "https://dk.linkedin.com/jobs/view/it-finance-domaine-architect-at-tryg-4470914130",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 64,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "pfa-applikations-arkitekt-saet-retningen-for-pfas-digitale-k": {
+      "title": "Applikations arkitekt - sæt retningen for PFA's digitale kundeplatforme",
+      "company": "PFA",
+      "url": "https://dk.linkedin.com/jobs/view/applikations-arkitekt-s%C3%A6t-retningen-for-pfa-s-digitale-kundeplatforme-at-pfa-4475428904",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "lunar-senior-finance-systems-data-engineer": {
+      "title": "Senior Finance Systems & Data Engineer",
+      "company": "Lunar",
+      "url": "https://dk.linkedin.com/jobs/view/senior-finance-systems-data-engineer-at-lunar-4474432997",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 62,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "columbus-d365-finance-functional-architect-or-sr-business-fi": {
+      "title": "D365 Finance Functional Architect or Sr. Business Finance Consultant",
+      "company": "Columbus",
+      "url": "https://dk.linkedin.com/jobs/view/d365-finance-functional-architect-or-sr-business-finance-consultant-at-columbus-4458176811",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 58,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "ntt-data-business-solutions-loesningsarkitekt-sap-finance-cl": {
+      "title": "Løsningsarkitekt - SAP Finance, Cloud ERP",
+      "company": "NTT DATA Business Solutions",
+      "url": "https://dk.linkedin.com/jobs/view/l%C3%B8sningsarkitekt-sap-finance-cloud-erp-at-ntt-data-business-solutions-4474274792",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "ingvardsen-partners-fintech-tech-lead": {
+      "title": "Fintech, Tech Lead",
+      "company": "Ingvardsen Partners",
+      "url": "https://dk.linkedin.com/jobs/view/fintech-tech-lead-at-ingvardsen-partners-4479507210",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 84,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "simcorp-lead-software-engineer-financial-risk-integration": {
+      "title": "Lead Software Engineer - Financial Risk Integration",
+      "company": "SimCorp",
+      "url": "https://dk.linkedin.com/jobs/view/lead-software-engineer-financial-risk-integration-at-simcorp-4467194519",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 66,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "cellpoint-digital-platform-engineering-team-lead": {
+      "title": "Platform Engineering Team Lead",
+      "company": "CellPoint Digital",
+      "url": "https://dk.linkedin.com/jobs/view/platform-engineering-team-lead-at-cellpoint-digital-4473166084",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 78,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "nordea-expert-ai-specialist-to-service-fulfilment-operations": {
+      "title": "Expert AI Specialist to Service Fulfilment & Operations",
+      "company": "Nordea",
+      "url": "https://dk.linkedin.com/jobs/view/expert-ai-specialist-to-service-fulfilment-operations-at-nordea-4477161832",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "keepit-senior-devops-engineer": {
+      "title": "Senior DevOps Engineer",
+      "company": "Keepit",
+      "url": "https://dk.linkedin.com/jobs/view/senior-devops-engineer-at-keepit-4475862206",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 68,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "wpp-lead-software-engineer": {
+      "title": "Lead Software Engineer",
+      "company": "WPP",
+      "url": "https://dk.linkedin.com/jobs/view/lead-software-engineer-at-wpp-4466547246",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 81,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "sopra-steria-senior-fullstack-udvikler-net-eller-java-med-st": {
+      "title": "Senior fullstack udvikler (.NET eller Java) med stærke konsulentkompetencer",
+      "company": "Sopra Steria",
+      "url": "https://dk.linkedin.com/jobs/view/senior-fullstack-udvikler-net-eller-java-med-st%C3%A6rke-konsulentkompetencer-at-sopra-steria-4478540453",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "kmd-senior-software-architect": {
+      "title": "Senior Software Architect",
+      "company": "KMD",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-architect-at-kmd-4475511283",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 73,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "the-lego-group-staff-engineer-identity": {
+      "title": "Staff Engineer - Identity",
+      "company": "the LEGO Group",
+      "url": "https://dk.linkedin.com/jobs/view/staff-engineer-identity-at-the-lego-group-4472989573",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "anthill-senior-cloud-platform-engineer-aws": {
+      "title": "Senior Cloud Platform Engineer (AWS)",
+      "company": "Anthill",
+      "url": "https://dk.linkedin.com/jobs/view/senior-cloud-platform-engineer-aws-at-anthill-4475502727",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "pandora-manager-delivery-enablement": {
+      "title": "Manager, Delivery Enablement",
+      "company": "Pandora",
+      "url": "https://dk.linkedin.com/jobs/view/manager-delivery-enablement-at-pandora-4463597456",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "matas-group-technical-business-lead": {
+      "title": "Technical Business Lead",
+      "company": "Matas Group",
+      "url": "https://dk.linkedin.com/jobs/view/technical-business-lead-at-matas-group-4476830744",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "twoday-delivery-lead-senior-technical-consultant-digital-hea": {
+      "title": "Delivery Lead & Senior Technical Consultant – Digital Health",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/delivery-lead-senior-technical-consultant-%E2%80%93-digital-health-at-twoday-4464795370",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "accuro-aps-senior-delivery-manager-cloud-data-analytics-12-m": {
+      "title": "Senior Delivery Manager – Cloud, Data & Analytics, 12+ months in Copenhagen",
+      "company": "Accuro ApS",
+      "url": "https://dk.linkedin.com/jobs/view/senior-delivery-manager-%E2%80%93-cloud-data-analytics-12%2B-months-in-copenhagen-at-accuro-aps-4479808287",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "dalux-development-team-lead-with-people-management-responsib": {
+      "title": "Development Team Lead with People Management responsibility",
+      "company": "Dalux",
+      "url": "https://dk.linkedin.com/jobs/view/development-team-lead-with-people-management-responsibility-at-dalux-4379953053",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "airbus-regional-perfo-transformation-manager": {
+      "title": "Regional Perfo & Transformation Manager",
+      "company": "Airbus",
+      "url": "https://dk.linkedin.com/jobs/view/regional-perfo-transformation-manager-at-airbus-4475853143",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "mastercard-manager-specialist-sales-sme-solutions-northern-e": {
+      "title": "Manager, Specialist Sales, SME Solutions Northern Europe",
+      "company": "Mastercard",
+      "url": "https://dk.linkedin.com/jobs/view/manager-specialist-sales-sme-solutions-northern-europe-at-mastercard-4465211897",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "mastercard-senior-specialist-product-development": {
+      "title": "Senior Specialist, Product Development",
+      "company": "Mastercard",
+      "url": "https://dk.linkedin.com/jobs/view/senior-specialist-product-development-at-mastercard-4465218801",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "market-pay-onboarding-specialist": {
+      "title": "Onboarding Specialist",
+      "company": "Market Pay",
+      "url": "https://dk.linkedin.com/jobs/view/onboarding-specialist-at-market-pay-4476195649",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "mobilepay-crm-martech-engineer": {
+      "title": "CRM & Martech Engineer",
+      "company": "MobilePay",
+      "url": "https://dk.linkedin.com/jobs/view/crm-martech-engineer-at-mobilepay-4476296721",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "microsoft-data-security-solutions-engineer": {
+      "title": "Data Security Solutions Engineer",
+      "company": "Microsoft",
+      "url": "https://dk.linkedin.com/jobs/view/data-security-solutions-engineer-at-microsoft-4470940222",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "flatpay-affiliate-partnerships-manager": {
+      "title": "Affiliate & Partnerships Manager",
+      "company": "Flatpay",
+      "url": "https://dk.linkedin.com/jobs/view/affiliate-partnerships-manager-at-flatpay-4477828732",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "lunar-backend-engineer": {
+      "title": "Backend Engineer",
+      "company": "Lunar",
+      "url": "https://dk.linkedin.com/jobs/view/backend-engineer-at-lunar-4475763782",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "flatpay-senior-product-manager-pos": {
+      "title": "Senior Product Manager, POS",
+      "company": "Flatpay",
+      "url": "https://dk.linkedin.com/jobs/view/senior-product-manager-pos-at-flatpay-4468207285",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "playback-cph-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Playback CPH",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-playback-cph-4477692975",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 66,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "spirii-senior-backend-software-engineer": {
+      "title": "Senior Backend Software Engineer",
+      "company": "Spirii",
+      "url": "https://dk.linkedin.com/jobs/view/senior-backend-software-engineer-at-spirii-4476311179",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 84,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "siemens-energy-technical-project-manager": {
+      "title": "Technical Project Manager",
+      "company": "Siemens Energy",
+      "url": "https://dk.linkedin.com/jobs/view/technical-project-manager-at-siemens-energy-4457919297",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "acubiz-agile-project-manager-maternity-leave-cover": {
+      "title": "Agile Project Manager - Maternity leave cover",
+      "company": "Acubiz",
+      "url": "https://dk.linkedin.com/jobs/view/agile-project-manager-maternity-leave-cover-at-acubiz-4474709869",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "productlife-group-associate-digital-consultant": {
+      "title": "Associate Digital Consultant",
+      "company": "ProductLife Group",
+      "url": "https://dk.linkedin.com/jobs/view/associate-digital-consultant-at-productlife-group-4474080496",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "trackman-senior-full-stack-sdet": {
+      "title": "Senior Full Stack SDET",
+      "company": "Trackman",
+      "url": "https://dk.linkedin.com/jobs/view/senior-full-stack-sdet-at-trackman-4449660928",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 58,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "laeger-uden-graenser-msf-business-technology-manager-til-lae": {
+      "title": "Business Technology Manager til Læger uden Grænser (Fundraising)",
+      "company": "Læger uden Grænser (MSF)",
+      "url": "https://dk.linkedin.com/jobs/view/business-technology-manager-til-l%C3%A6ger-uden-gr%C3%A6nser-fundraising-at-l%C3%A6ger-uden-gr%C3%A6nser-msf-4474741310",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "politiets-efterretningstjeneste-pet-it-sikkerhedsarkitekt-i-": {
+      "title": "IT Sikkerhedsarkitekt i PET",
+      "company": "Politiets Efterretningstjeneste (PET)",
+      "url": "https://dk.linkedin.com/jobs/view/it-sikkerhedsarkitekt-i-pet-at-politiets-efterretningstjeneste-pet-4470298202",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "if-insurance-cloud-security-architect": {
+      "title": "Cloud Security Architect",
+      "company": "If Insurance",
+      "url": "https://dk.linkedin.com/jobs/view/cloud-security-architect-at-if-insurance-4474673810",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 72,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "danaher-principal-architect-manufacturing-security": {
+      "title": "Principal Architect, Manufacturing Security",
+      "company": "Danaher",
+      "url": "https://dk.linkedin.com/jobs/view/%C2%A0principal-architect-%C2%A0manufacturing-security-at-danaher-4454638366",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "hitachi-rail-network-and-cybersecurity-architect": {
+      "title": "Network and Cybersecurity Architect",
+      "company": "Hitachi Rail",
+      "url": "https://dk.linkedin.com/jobs/view/network-and-cybersecurity-architect-at-hitachi-rail-4476093399",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 57,
+      "rank_verdict": "Moderate Fit",
+      "rank_date": "2026-10-15"
+    },
+    "joe-the-juice-security-architect": {
+      "title": "Security Architect",
+      "company": "JOE & THE JUICE",
+      "url": "https://dk.linkedin.com/jobs/view/security-architect-at-joe-the-juice-4389092838",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "3-sverige-security-architect-identity-access-management-iam": {
+      "title": "Security Architect, Identity & Access Management (IAM)",
+      "company": "3 Sverige",
+      "url": "https://dk.linkedin.com/jobs/view/security-architect-identity-access-management-iam-at-3-sverige-4477074247",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "twoday-senior-consultant-modern-work-security": {
+      "title": "Senior Consultant – Modern Work & Security",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/senior-consultant-%E2%80%93-modern-work-security-at-twoday-4448052349",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "kantar-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Kantar",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-kantar-4478431318",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "connected-cars-senior-backend-developer": {
+      "title": "Senior Backend Developer",
+      "company": "Connected Cars",
+      "url": "https://dk.linkedin.com/jobs/view/senior-backend-developer-at-connected-cars-4474685223",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 66,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "albert-bow-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Albert Bow",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-albert-bow-4476047353",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 62,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "danske-bank-senior-software-engineer-with-solid-microsoft-dy": {
+      "title": "Senior Software Engineer with solid Microsoft Dynamics 365 CE Experience",
+      "company": "Danske Bank",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-with-solid-microsoft-dynamics-365-ce-experience-at-danske-bank-4424195173",
+      "first_seen": "2026-10-15",
+      "fit": "high",
+      "status": "ranked",
+      "rank_score": 80,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "veo-technologies-senior-full-stack-software-engineer": {
+      "title": "Senior Full-Stack Software Engineer",
+      "company": "Veo Technologies",
+      "url": "https://dk.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-veo-technologies-4477649610",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 69,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "apylon-senior-software-engineer": {
+      "title": "Senior Software Engineer",
+      "company": "Apylon",
+      "url": "https://dk.linkedin.com/jobs/view/senior-software-engineer-at-apylon-4474896906",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 73,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "factbird-lead-architect": {
+      "title": "Lead Architect",
+      "company": "Factbird",
+      "url": "https://dk.linkedin.com/jobs/view/lead-architect-at-factbird-4476573534",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 63,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "basware-portfolio-architect": {
+      "title": "Portfolio Architect",
+      "company": "Basware",
+      "url": "https://dk.linkedin.com/jobs/view/portfolio-architect-at-basware-4429346001",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "3-sverige-technology-architect-integration-api-event-platfor": {
+      "title": "Technology Architect, Integration, API & Event Platforms",
+      "company": "3 Sverige",
+      "url": "https://dk.linkedin.com/jobs/view/technology-architect-integration-api-event-platforms-at-3-sverige-4477065622",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 62,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "pa-consulting-lead-ai-architect-build-pas-ai-capability": {
+      "title": "Lead AI Architect - Build PA's AI Capability",
+      "company": "PA Consulting",
+      "url": "https://dk.linkedin.com/jobs/view/lead-ai-architect-build-pa-s-ai-capability-at-pa-consulting-4474252962",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 72,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "twoday-senior-solution-architect-digital-health-technical-tr": {
+      "title": "Senior Solution Architect – Digital Health & Technical Transition",
+      "company": "Twoday",
+      "url": "https://dk.linkedin.com/jobs/view/senior-solution-architect-%E2%80%93-digital-health-technical-transition-at-twoday-4449843172",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 87,
+      "rank_verdict": "Strong Fit",
+      "rank_date": "2026-10-15"
+    },
+    "udviklings-og-forenklingsstyrelsen-ai-loesningsarkitekt-vil-": {
+      "title": "AI-Løsningsarkitekt - vil du bruge dine kompetencer til noget, der giver værdi for hele Danmark?",
+      "company": "Udviklings- og Forenklingsstyrelsen",
+      "url": "https://dk.linkedin.com/jobs/view/ai-l%C3%B8sningsarkitekt-vil-du-bruge-dine-kompetencer-til-noget-der-giver-v%C3%A6rdi-for-hele-danmark%3F-at-udviklings-og-forenklingsstyrelsen-4478530557",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "ntt-data-business-solutions-sap-transformation-architect-pre": {
+      "title": "SAP Transformation Architect - Presales & Advisory",
+      "company": "NTT DATA Business Solutions",
+      "url": "https://dk.linkedin.com/jobs/view/sap-transformation-architect-presales-advisory-at-ntt-data-business-solutions-4474273756",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "aras-corporation-senior-solution-architect-mfd": {
+      "title": "Senior Solution Architect (m/f/d)",
+      "company": "Aras Corporation",
+      "url": "https://dk.linkedin.com/jobs/view/senior-solution-architect-m-f-d-at-aras-corporation-4478581007",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 74,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "corteva-agriscience-erp-commercial-solution-engineerarchitec": {
+      "title": "ERP Commercial Solution Engineer/Architect",
+      "company": "Corteva Agriscience",
+      "url": "https://dk.linkedin.com/jobs/view/erp-commercial-solution-engineer-architect-at-corteva-agriscience-4458008479",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 60,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "westernacher-consulting-sap-tm-solution-architect": {
+      "title": "SAP TM Solution Architect",
+      "company": "Westernacher Consulting",
+      "url": "https://dk.linkedin.com/jobs/view/sap-tm-solution-architect-at-westernacher-consulting-4478014905",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 70,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "lantmnnen-unibake-integration-architect-team-lead": {
+      "title": "Integration Architect & Team Lead",
+      "company": "Lantmännen Unibake",
+      "url": "https://dk.linkedin.com/jobs/view/integration-architect-team-lead-at-lantm%C3%A4nnen-unibake-4459817333",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "ranked",
+      "rank_score": 66,
+      "rank_verdict": "Good Fit",
+      "rank_date": "2026-10-15"
+    },
+    "wpp-data-scientist-team-lead": {
+      "title": "Data Scientist Team Lead",
+      "company": "WPP",
+      "url": "https://dk.linkedin.com/jobs/view/data-scientist-team-lead-at-wpp-4454108631",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "epam-systems-team-lead-data-engineering-snowflake-aws": {
+      "title": "Team Lead Data Engineering - Snowflake / AWS",
+      "company": "EPAM Systems",
+      "url": "https://dk.linkedin.com/jobs/view/team-lead-data-engineering-snowflake-aws-at-epam-systems-4477280662",
+      "first_seen": "2026-10-15",
+      "fit": "medium",
+      "status": "expired"
+    },
+    "forsvaret-team-lead-for-udvikling-og-support-til-afdelingen-": {
+      "title": "Team Lead for Udvikling og Support til afdelingen for Electronic Warfare ved Forsvarets Materiel- og Indkøbsstyrelse",
+      "company": "Forsvaret",
+      "url": "https://dk.linkedin.com/jobs/view/team-lead-for-udvikling-og-support-til-afdelingen-for-electronic-warfare-ved-forsvarets-materiel-og-indk%C3%B8bsstyrelse-at-forsvaret-4477856045",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "accenture-nordics-ai-data-engineer": {
+      "title": "AI & Data Engineer",
+      "company": "Accenture Nordics",
+      "url": "https://dk.linkedin.com/jobs/view/ai-data-engineer-at-accenture-nordics-4477296289",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "aura-recruit-ltd-platform-engineer": {
+      "title": "Platform Engineer",
+      "company": "Aura Recruit Ltd.",
+      "url": "https://dk.linkedin.com/jobs/view/platform-engineer-at-aura-recruit-ltd-4476655254",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "lundbeck-dataml-engineer": {
+      "title": "Data/ML Engineer",
+      "company": "Lundbeck",
+      "url": "https://dk.linkedin.com/jobs/view/data-ml-engineer-at-lundbeck-4477198386",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "dalux-experienced-platform-engineer": {
+      "title": "Experienced Platform Engineer",
+      "company": "Dalux",
+      "url": "https://dk.linkedin.com/jobs/view/experienced-platform-engineer-at-dalux-4366367022",
+      "first_seen": "2026-10-15",
+      "fit": "low",
+      "status": "new"
+    },
+    "gjensidige-to-udviklere-til-privatforsikringsomraadet": {
+      "title": "To udviklere til privatforsikringsområdet",
+      "company": "Gjensidige",
+      "url": "https://dk.linkedin.com/jobs/view/to-udviklere-til-privatforsikringsomr%C3%A5det-at-gjensidige-4476641111",
+      "first_seen": "2026-10-15",
       "fit": "low",
       "status": "new"
     }

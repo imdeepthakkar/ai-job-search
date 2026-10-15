@@ -201,6 +201,13 @@ def parse_date(date_str):
         return datetime.strptime(date_str, "%Y-%m-%d")
     except ValueError:
         pass
+
+    # ISO format: YYYY-MM-DDTHH:MM:SS...
+    try:
+        clean_iso = date_str.split("T")[0]
+        return datetime.strptime(clean_iso, "%Y-%m-%d")
+    except (ValueError, IndexError):
+        pass
     
     # Jobbank format: Thu, 18 Jun 2026 00:00:00 +0200 or similar
     try:

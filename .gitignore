@@ -54,6 +54,7 @@ cover_letters/Cover_*.tex
 
 # documents/ subfolder contents are personal — only README and folder structure are tracked
 documents/cv/**
+documents/cover_letters/**
 documents/linkedin/**
 documents/diplomas/**
 documents/references/**
@@ -87,3 +88,6 @@ CLAUDE.md
 .claude/skills/job-scraper/search-queries.md
 .vercel
 .env
+**/job_scraper/notion_sync.json
+scrape_report.md
+.temp/
