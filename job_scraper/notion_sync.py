@@ -14,7 +14,28 @@ import urllib.request
 import urllib.error
 from datetime import datetime
 
-NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
+def load_env_token():
+    token = os.environ.get("NOTION_TOKEN") or os.environ.get("NOTION_API_KEY") or os.environ.get("NOTION_KEY")
+    if token:
+        return token
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env_file = os.path.join(root_dir, ".env")
+    if os.path.isfile(env_file):
+        try:
+            with open(env_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    if "=" in line:
+                        k, v = line.split("=", 1)
+                        if k.strip() in ("NOTION_TOKEN", "NOTION_API_KEY", "NOTION_KEY", "NOTION_SECRET"):
+                            return v.strip().strip('"').strip("'")
+        except Exception:
+            pass
+    return None
+
+NOTION_TOKEN = load_env_token()
 NOTION_VERSION = "2022-06-28"
 NOTION_SYNC_FILE = os.path.join(os.path.dirname(__file__), "notion_sync.json")
 SEEN_JOBS_FILE = os.path.join(os.path.dirname(__file__), "seen_jobs.json")
@@ -22,7 +43,7 @@ TRACKER_CSV_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "job
 
 def notion_api(endpoint, method="GET", payload=None):
     if not NOTION_TOKEN:
-        print("Error: NOTION_TOKEN environment variable is not set.", file=sys.stderr)
+        print("Error: NOTION_TOKEN not found in environment or .env file.", file=sys.stderr)
         sys.exit(1)
     url = f"https://api.notion.com/v1/{endpoint}"
     data = json.dumps(payload).encode() if payload else None
