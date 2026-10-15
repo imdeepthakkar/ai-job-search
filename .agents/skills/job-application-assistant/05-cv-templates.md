@@ -45,7 +45,7 @@ Expected output: `Output written on CV_Deep_Thakkar_<Company>.pdf (2 pages, ...)
     pdftitle={[YOUR_NAME] - CV},
     pdfpagemode=FullScreen,
 }
-\usepackage[scale=0.77]{geometry}
+\usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % Personal data

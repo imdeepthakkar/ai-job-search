@@ -1,7 +1,8 @@
 import { defineCommand, option } from "@bunli/core"
 import { z } from "zod"
 import { parse } from "node-html-parser"
-import { BASE_URL, writeError } from "../helpers.js"
+import { BASE_URL, htmlFetch, normalizeSlug, writeError } from "../helpers.js"
+import { extractCity, toContractDate } from "./search.js"
 
 interface JsonLdJobPosting {
   "@context"?: string
@@ -51,8 +52,33 @@ interface DetailResult {
   applyUrl: string | null
 }
 
+// A malformed closing tag that reached the text layer. node-html-parser
+// consumes well-formed markup (`<strong>`, `<br/>`, `</li >`) but does not
+// recognise a closing tag with a space after the `<` or the slash, so `</ li >`
+// survives as text; a live jobdanmark page emitted
+// `employmentType: ["Fuldtid </ li >"]` that way. Only the closing shape is
+// stripped: the parser decodes entities before this runs, so author text the
+// page encoded as `&lt;div&gt;` or `&lt;T&gt;` arrives here as a literal
+// `<div>` / `<T>` and must stay.
+const STRAY_CLOSING_TAG = /<\s*\/\s*[a-z][a-z0-9-]*\s*>/gi
+
 function cleanText(text: string): string {
-  return text.replace(/\s+/g, " ").trim()
+  return text.replace(STRAY_CLOSING_TAG, " ").replace(/\s+/g, " ").trim()
+}
+
+/**
+ * JSON-LD descriptions arrive as HTML (schema.org allows it, jobdanmark uses
+ * it). Render them to the same newline-separated plain text the rendered-HTML
+ * branch produces, so `detail` emits one description shape whichever page
+ * layout it hit: tags gone, entities decoded, one line per block element.
+ */
+function descriptionToText(html: string | undefined): string {
+  if (!html) return ""
+  return parse(html)
+    .structuredText.split("\n")
+    .map(cleanText)
+    .filter(Boolean)
+    .join("\n")
 }
 
 function normalizeUrl(value: string | null | undefined): string | null {
@@ -114,9 +140,24 @@ function fromJsonLd(jobPosting: JsonLdJobPosting, slug: string, url: string): De
       postalCode: address?.postalCode ?? null,
       addressCountry: address?.addressCountry ?? null,
     },
-    description: jobPosting.description ?? "",
+    description: descriptionToText(jobPosting.description),
     applyUrl: null,
   }
+}
+
+/**
+ * Normalize a date read from the rendered page's overview list. The page
+ * writes DD-MM-YYYY (sometimes with a trailing time, "02-08-2026 23.59"),
+ * and the deadline can be the free-text "Løbende" (rolling) - jobbank maps
+ * its equivalent to null, and every consumer does date arithmetic on the
+ * value. The JSON-LD branch gets schema.org ISO dates and needs none of this.
+ */
+function normalizeOverviewDate(value: string | null): string | null {
+  if (!value) return null
+  const trimmed = value.trim()
+  if (/^løbende$/iu.test(trimmed)) return null
+  const match = trimmed.match(/^(\d{2})-(\d{2})-(\d{4})/)
+  return match ? `${match[3]}-${match[2]}-${match[1]}` : toContractDate(trimmed)
 }
 
 function overviewValue(root: ReturnType<typeof parse>, label: string): string | null {
@@ -134,7 +175,14 @@ function overviewValue(root: ReturnType<typeof parse>, label: string): string | 
 
 function fromRenderedHtml(root: ReturnType<typeof parse>, slug: string, url: string): DetailResult {
   const pageTitle = cleanText(root.querySelector("title")?.text ?? "")
-  if (pageTitle.toLowerCase().includes("404") || root.text.toLowerCase().includes("siden blev ikke fundet")) {
+  const titleLower = pageTitle.toLowerCase()
+  const bodyText = root.text.toLowerCase()
+  if (
+    bodyText.includes("siden blev ikke fundet") ||
+    titleLower.startsWith("404") ||
+    titleLower.includes("page not found") ||
+    titleLower.includes("siden blev ikke fundet")
+  ) {
     throw new Error("NOT_FOUND")
   }
 
@@ -167,8 +215,8 @@ function fromRenderedHtml(root: ReturnType<typeof parse>, slug: string, url: str
     slug,
     url,
     title,
-    datePosted: overviewValue(root, "Udgivet") ?? "",
-    validThrough: overviewValue(root, "Ansøgningsfrist"),
+    datePosted: normalizeOverviewDate(overviewValue(root, "Udgivet")) ?? "",
+    validThrough: normalizeOverviewDate(overviewValue(root, "Ansøgningsfrist")),
     employmentType: employmentType ? [employmentType] : [],
     hiringOrganization: {
       name: companyName,
@@ -176,7 +224,7 @@ function fromRenderedHtml(root: ReturnType<typeof parse>, slug: string, url: str
     },
     jobLocation: {
       streetAddress: workplace,
-      addressLocality: null,
+      addressLocality: extractCity(workplace),
       addressRegion: null,
       postalCode: null,
       addressCountry: "DK",
@@ -203,33 +251,29 @@ export const detail = defineCommand({
   handler: async ({ flags, positional, signal }) => {
     if (signal.aborted) return
 
-    const slug = positional[0]
-    if (!slug) {
+    const rawSlug = positional[0]
+    if (!rawSlug) {
       writeError("slug argument is required", "MISSING_REQUIRED")
+      process.exit(1)
+    }
+
+    const slug = normalizeSlug(rawSlug)
+    if (!slug) {
+      writeError(`Could not extract slug from "${rawSlug}"`, "BAD_ID")
       process.exit(1)
     }
 
     const url = `${BASE_URL}/job/${slug}`
 
     try {
-      const response = await fetch(url, {
-        headers: {
-          "Accept": "text/html,application/xhtml+xml",
-          "User-Agent": "Mozilla/5.0",
-        },
-      })
+      // htmlFetch carries the portal contract's 429/5xx backoff, the request
+      // timeout, and the shared User-Agent; a bare fetch() here had none.
+      const html = await htmlFetch(url)
 
-      if (response.status === 404) {
+      if (html === null) {
         writeError("Job not found", "NOT_FOUND")
         process.exit(1)
       }
-
-      if (!response.ok) {
-        writeError(`API request failed: ${response.status} ${response.statusText}`, "API_ERROR")
-        process.exit(1)
-      }
-
-      const html = await response.text()
 
       if (signal.aborted) return
 
