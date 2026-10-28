@@ -140,3 +140,9 @@ CLAUDE.md
 .vercel
 scrape_report.md
 .temp/
+job_search_tracker.csv
+credentials/
+*service_account*.json
+clean_posting*.txt
+jobindex_page.html
+scratch_deduped.json

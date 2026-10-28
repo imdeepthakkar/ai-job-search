@@ -37,3 +37,10 @@ See `.claude/commands/apply.md` for the complete step-by-step instructions. Read
 - `AskUserQuestion` → `ask_question`
 
 The skill reference files live in `.agents/skills/job-application-assistant/` (Antigravity) — use those paths instead of `.claude/skills/job-application-assistant/`.
+
+**Google Drive Backup:**
+At the end of Step 6, run:
+```bash
+python tools/upload_to_gdrive.py --latest --optional
+```
+to automatically upload the newly compiled CV and cover letter PDFs to Google Drive if credentials are configured.
