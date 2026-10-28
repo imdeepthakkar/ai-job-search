@@ -23,7 +23,20 @@
         "GitHub.copilot",
         "ms-python.python",
         "James-Yu.latex-workshop"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "agy",
+        "terminal.integrated.profiles.linux": {
+          "agy": {
+            "path": "/usr/local/bin/agy",
+            "icon": "sparkle"
+          },
+          "bash": {
+            "path": "/bin/bash",
+            "icon": "terminal-bash"
+          }
+        }
+      }
     }
   },
   "remoteEnv": {
