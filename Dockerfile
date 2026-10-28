@@ -1,9 +1,9 @@
 FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV TZ=UTC
+ENV TZ=Etc/UTC
 
-# Install essential system tools, LaTeX engine, fonts, poppler-utils
+# Install essential system dependencies, TeX engines & Poppler
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
@@ -17,17 +17,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     texlive-latex-extra \
     texlive-fonts-recommended \
     texlive-fonts-extra \
-    fonts-lato \
-    fonts-raleway \
     poppler-utils \
-    ttyd \
     && rm -rf /var/lib/apt/lists/*
 
-# If ttyd wasn't installed from apt, grab the official binary
-RUN if ! command -v ttyd >/dev/null; then \
-      curl -fsSL https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -o /usr/local/bin/ttyd && \
-      chmod +x /usr/local/bin/ttyd; \
-    fi
+# Install ttyd from official GitHub release binary
+RUN curl -fsSL https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -o /usr/local/bin/ttyd && \
+    chmod +x /usr/local/bin/ttyd
 
 # Install Bun
 ENV BUN_INSTALL=/root/.bun
@@ -41,16 +36,16 @@ RUN ln -sf /root/.local/bin/agy /usr/local/bin/agy || true
 WORKDIR /app
 COPY . /app
 
-# Install python packages
+# Install python dependencies
 RUN pip install --no-cache-dir --break-system-packages \
     google-api-python-client \
     google-auth \
     pypdf
 
-# Install portal CLIs
+# Install portal search CLIs
 RUN python3 tools/install_portal_clis.py || true
 
-# Setup superpowers plugin
+# Setup superpowers plugin configuration
 RUN mkdir -p /root/.gemini/config/plugins && \
     git clone https://github.com/obra/superpowers.git /root/.gemini/config/plugins/superpowers 2>/dev/null || true && \
     echo '{"plugins":{"superpowers":{"enabled":true}}}' > /root/.gemini/config/config.json
