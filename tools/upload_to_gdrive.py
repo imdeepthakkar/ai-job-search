@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Upload generated CV and Cover Letter files to Google Drive using a Service Account.
+"""Upload generated CV and Cover Letter files to Google Drive.
 
-Authentication options (checked in order):
-  1. Environment variable GDRIVE_SERVICE_ACCOUNT_KEY (raw JSON or base64 encoded string)
-  2. Environment variable GDRIVE_SERVICE_ACCOUNT_FILE (path to JSON key file)
-  3. Local file credentials/google_service_account.json
+Supported Authentication & Upload Methods:
+  1. Google Apps Script Webhook (Recommended - No GCP or Org Policy required):
+     - Set GDRIVE_WEBHOOK_URL (e.g. https://script.google.com/macros/s/.../exec)
+     - Set GDRIVE_FOLDER_ID
+     - Set GDRIVE_WEBHOOK_SECRET (optional, default: "DeepJobSearch2026")
 
-Target Folder (checked in order):
-  1. Command line flag: --folder-id <ID>
-  2. Environment variable: GDRIVE_FOLDER_ID
+  2. Google Service Account (if permitted by org):
+     - Set GDRIVE_SERVICE_ACCOUNT_KEY or credentials/google_service_account.json
+     - Set GDRIVE_FOLDER_ID
 
 Usage examples:
   # Upload specific files
@@ -27,59 +28,86 @@ import json
 import mimetypes
 import os
 import sys
+import urllib.request
+import urllib.error
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Tuple
 
-SCOPES = [
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive",
-]
-
+DEFAULT_SECRET = "DeepJobSearch2026"
 DEFAULT_CREDS_PATH = Path("credentials/google_service_account.json")
 
 
-def get_credentials():
-    """Retrieve Google Service Account credentials from env var or file."""
+def upload_via_webhook(file_path: Path, folder_id: str, webhook_url: str, secret: str) -> Tuple[bool, str, str]:
+    """Upload a file using a Google Apps Script Web App endpoint."""
+    file_name = file_path.name
+    mime_type, _ = mimetypes.guess_type(str(file_path))
+    if not mime_type:
+        mime_type = "application/pdf"
+
+    try:
+        with open(file_path, "rb") as f:
+            encoded_content = base64.b64encode(f.read()).decode("utf-8")
+
+        payload = {
+            "name": file_name,
+            "mimeType": mime_type,
+            "folderId": folder_id,
+            "secret": secret,
+            "content": encoded_content,
+        }
+
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            raw_response = resp.read().decode("utf-8")
+            res = json.loads(raw_response)
+
+        if res.get("status") == "success":
+            return True, res.get("url", ""), res.get("fileId", "")
+        else:
+            return False, res.get("message", "Unknown error from Apps Script"), ""
+
+    except Exception as e:
+        return False, str(e), ""
+
+
+def get_service_account_credentials():
+    """Retrieve Google Service Account credentials from env var or file if available."""
     try:
         from google.oauth2 import service_account
     except ImportError:
-        print("ERROR: Google client libraries not installed.", file=sys.stderr)
-        print("Install with: pip install google-api-python-client google-auth", file=sys.stderr)
         return None
 
-    # 1. Inline JSON / Base64 in environment variable (Ideal for Codespaces / CI)
+    scopes = [
+        "https://www.googleapis.com/auth/drive.file",
+        "https://www.googleapis.com/auth/drive",
+    ]
+
     key_env = os.environ.get("GDRIVE_SERVICE_ACCOUNT_KEY")
     if key_env:
         try:
-            # Check if base64 encoded
             if not key_env.strip().startswith("{"):
                 decoded = base64.b64decode(key_env).decode("utf-8")
             else:
                 decoded = key_env
             info = json.loads(decoded)
-            return service_account.Credentials.from_service_account_info(info, scopes=SCOPES)
-        except Exception as e:
-            print(f"ERROR: Failed to parse GDRIVE_SERVICE_ACCOUNT_KEY: {e}", file=sys.stderr)
-            return None
+            return service_account.Credentials.from_service_account_info(info, scopes=scopes)
+        except Exception:
+            pass
 
-    # 2. File path from environment variable
     file_env = os.environ.get("GDRIVE_SERVICE_ACCOUNT_FILE")
     if file_env and Path(file_env).is_file():
-        return service_account.Credentials.from_service_account_file(file_env, scopes=SCOPES)
+        return service_account.Credentials.from_service_account_file(file_env, scopes=scopes)
 
-    # 3. Default local credentials file
     if DEFAULT_CREDS_PATH.is_file():
-        return service_account.Credentials.from_service_account_file(
-            str(DEFAULT_CREDS_PATH), scopes=SCOPES
-        )
+        return service_account.Credentials.from_service_account_file(str(DEFAULT_CREDS_PATH), scopes=scopes)
 
     return None
-
-
-def get_drive_service(creds):
-    """Build and return the Google Drive API service client."""
-    from googleapiclient.discovery import build
-    return build("drive", "v3", credentials=creds)
 
 
 def find_latest_file(directory: Path, pattern: str) -> Optional[Path]:
@@ -92,110 +120,50 @@ def find_latest_file(directory: Path, pattern: str) -> Optional[Path]:
     return max(candidates, key=lambda f: f.stat().st_mtime)
 
 
-def get_or_create_subfolder(service, parent_folder_id: Optional[str], folder_name: str) -> Optional[str]:
-    """Retrieve or create a subfolder inside parent_folder_id."""
-    query = f"name = '{folder_name}' and mimeType = 'application/vnd.google-apps.folder' and trashed = false"
-    if parent_folder_id:
-        query += f" and '{parent_folder_id}' in parents"
-
-    results = service.files().list(q=query, fields="files(id, name)").execute()
-    files = results.get("files", [])
-    if files:
-        return files[0]["id"]
-
-    metadata = {
-        "name": folder_name,
-        "mimeType": "application/vnd.google-apps.folder",
-    }
-    if parent_folder_id:
-        metadata["parents"] = [parent_folder_id]
-
-    folder = service.files().create(body=metadata, fields="id").execute()
-    return folder.get("id")
-
-
-def upload_file(service, file_path: Path, folder_id: Optional[str] = None):
-    """Upload or update a file in Google Drive."""
-    from googleapiclient.http import MediaFileUpload
-
-    file_name = file_path.name
-    mime_type, _ = mimetypes.guess_type(str(file_path))
-    if not mime_type:
-        mime_type = "application/octet-stream"
-
-    # Check if a file with this name already exists in target folder
-    query = f"name = '{file_name}' and trashed = false"
-    if folder_id:
-        query += f" and '{folder_id}' in parents"
-
-    results = service.files().list(q=query, fields="files(id, name, webViewLink)").execute()
-    existing_files = results.get("files", [])
-
-    media = MediaFileUpload(str(file_path), mimetype=mime_type, resumable=True)
-
-    if existing_files:
-        # Update existing file
-        file_id = existing_files[0]["id"]
-        updated = service.files().update(
-            fileId=file_id,
-            media_body=media,
-            fields="id, name, webViewLink",
-        ).execute()
-        return updated, "updated"
-    else:
-        # Create new file
-        body = {"name": file_name}
-        if folder_id:
-            body["parents"] = [folder_id]
-        created = service.files().create(
-            body=body,
-            media_body=media,
-            fields="id, name, webViewLink",
-        ).execute()
-        return created, "uploaded"
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("files", nargs="*", help="File path(s) to upload")
     parser.add_argument("--latest", action="store_true", help="Auto-detect latest CV and Cover Letter PDFs")
     parser.add_argument("--folder-id", default=os.environ.get("GDRIVE_FOLDER_ID"), help="Target Google Drive Folder ID")
-    parser.add_argument("--subfolder", help="Optional subfolder name inside target folder (e.g. company name)")
+    parser.add_argument("--webhook-url", default=os.environ.get("GDRIVE_WEBHOOK_URL"), help="Google Apps Script Web App URL")
+    parser.add_argument("--secret", default=os.environ.get("GDRIVE_WEBHOOK_SECRET", DEFAULT_SECRET), help="Shared secret for Apps Script")
     parser.add_argument("--check", action="store_true", help="Verify credentials and connection")
     parser.add_argument("--optional", action="store_true", help="Do not exit with error if credentials not configured")
     args = parser.parse_args()
 
-    creds = get_credentials()
-    if not creds:
+    webhook_url = args.webhook_url
+    folder_id = args.folder_id
+    sa_creds = get_service_account_credentials()
+
+    has_webhook = bool(webhook_url and folder_id)
+    has_sa = bool(sa_creds and folder_id)
+
+    if not has_webhook and not has_sa:
         if args.optional:
             print("INFO: Google Drive credentials not configured. Skipping Drive upload.")
             sys.exit(0)
-        print("ERROR: Google Drive credentials not found.", file=sys.stderr)
-        print("Set GDRIVE_SERVICE_ACCOUNT_KEY or place credentials/google_service_account.json", file=sys.stderr)
-        sys.exit(1)
-
-    try:
-        service = get_drive_service(creds)
-    except Exception as e:
-        print(f"ERROR: Failed to connect to Google Drive API: {e}", file=sys.stderr)
+        print("ERROR: Google Drive configuration not found.", file=sys.stderr)
+        print("Set either:", file=sys.stderr)
+        print("  1. GDRIVE_WEBHOOK_URL + GDRIVE_FOLDER_ID (Google Apps Script Webhook)", file=sys.stderr)
+        print("  2. GDRIVE_SERVICE_ACCOUNT_KEY / credentials file + GDRIVE_FOLDER_ID", file=sys.stderr)
         sys.exit(1)
 
     if args.check:
-        print("SUCCESS: Google Drive API credentials verified successfully!")
-        if args.folder_id:
-            try:
-                folder = service.files().get(fileId=args.folder_id, fields="id, name").execute()
-                print(f"Target folder verified: '{folder.get('name')}' (ID: {folder.get('id')})")
-            except Exception as e:
-                print(f"WARNING: Could not access target folder {args.folder_id}: {e}", file=sys.stderr)
-                print("Make sure you shared the Google Drive folder with the Service Account email address!")
+        if has_webhook:
+            print("Google Apps Script Webhook configured:")
+            print(f"  URL: {webhook_url[:40]}...")
+            print(f"  Target Folder ID: {folder_id}")
+            print("SUCCESS: Webhook configuration verified.")
+        elif has_sa:
+            print("Google Service Account configured:")
+            print(f"  Target Folder ID: {folder_id}")
+            print("SUCCESS: Service Account configuration verified.")
         sys.exit(0)
 
     # Determine files to upload
     files_to_upload = [Path(f) for f in args.files]
 
     if args.latest or not files_to_upload:
-        # Check cv/ and cover_letters/
         latest_cv = find_latest_file(Path("cv"), "*.pdf")
         latest_cl = find_latest_file(Path("cover_letters"), "*.pdf")
         if latest_cv:
@@ -207,32 +175,37 @@ def main():
         print("No files found to upload.", file=sys.stderr)
         sys.exit(0)
 
-    # Target folder resolution
-    target_folder_id = args.folder_id
-    if target_folder_id and args.subfolder:
-        try:
-            target_folder_id = get_or_create_subfolder(service, target_folder_id, args.subfolder)
-        except Exception as e:
-            print(f"WARNING: Could not create subfolder '{args.subfolder}': {e}", file=sys.stderr)
-
-    uploaded_count = 0
     print(f"\nUploading {len(files_to_upload)} file(s) to Google Drive...")
+    uploaded_count = 0
+
     for f in files_to_upload:
         if not f.exists():
             print(f"  [MISSING] {f}", file=sys.stderr)
             continue
-        try:
-            res, action = upload_file(service, f, target_folder_id)
-            link = res.get("webViewLink", "")
-            print(f"  [{action.upper()}] {res.get('name')} -> {link or res.get('id')}")
-            uploaded_count += 1
-        except Exception as e:
-            print(f"  [FAILED] {f.name}: {e}", file=sys.stderr)
-            if "notFound" in str(e) or "access" in str(e).lower():
-                print("    Hint: Ensure the Google Drive folder is shared with your Service Account email with 'Editor' permissions.", file=sys.stderr)
+
+        if has_webhook:
+            success, url_or_err, file_id = upload_via_webhook(f, folder_id, webhook_url, args.secret)
+            if success:
+                print(f"  [UPLOADED] {f.name} -> {url_or_err or file_id}")
+                uploaded_count += 1
+            else:
+                print(f"  [FAILED] {f.name}: {url_or_err}", file=sys.stderr)
+        elif has_sa:
+            # Fallback to Service Account upload if configured
+            from googleapiclient.discovery import build
+            from googleapiclient.http import MediaFileUpload
+            service = build("drive", "v3", credentials=sa_creds)
+            mime_type, _ = mimetypes.guess_type(str(f))
+            media = MediaFileUpload(str(f), mimetype=mime_type or "application/pdf")
+            try:
+                res = service.files().create(body={"name": f.name, "parents": [folder_id]}, media_body=media, fields="id, name, webViewLink").execute()
+                print(f"  [UPLOADED] {res.get('name')} -> {res.get('webViewLink')}")
+                uploaded_count += 1
+            except Exception as e:
+                print(f"  [FAILED] {f.name}: {e}", file=sys.stderr)
 
     if uploaded_count > 0:
-        print(f"\nDone! Successfully {action} {uploaded_count} file(s) to Google Drive.\n")
+        print(f"\nDone! Successfully uploaded {uploaded_count} file(s) to Google Drive.\n")
     else:
         print("\nFailed to upload files to Google Drive.\n", file=sys.stderr)
         sys.exit(1)
