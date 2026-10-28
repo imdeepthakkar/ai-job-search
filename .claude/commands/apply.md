@@ -74,10 +74,11 @@ Present the evaluation to the user with:
 5. **Salary benchmark** - salary index for the company (if available)
 6. **Overall fit score** and recommendation (strong fit / moderate fit / weak fit)
 
-After presenting the evaluation, ask the user:
-> "Should I proceed with drafting the CV and cover letter for this role?"
-
-**If the user says no, stop here.** If yes, continue to Step 2.
+Evaluate whether the role is a match:
+- **Match (Auto-Proceed):** If the fit is **Strong Fit** (80–100) or **Moderate Fit** (60–79) with **no hard dealbreaker vetoes** (location, authorization, language), **do not pause or prompt for user confirmation**. Output the evaluation summary and immediately proceed to Step 2: DRAFTER - Draft CV + Cover Letter.
+- **Mismatch / Veto (Prompt for Confirmation):** If the fit is **Weak Fit** (< 60) OR trips a hard veto, present the reasons and ask:
+  > "This posting appears to be a mismatch (Score: <score>/100, Reason: <reasons>). Would you like me to proceed with drafting the CV and cover letter anyway?"
+  If the user says no, stop here. If yes, continue to Step 2.
 
 ---
 

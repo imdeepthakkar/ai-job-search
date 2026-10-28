@@ -38,6 +38,10 @@ See `.claude/commands/apply.md` for the complete step-by-step instructions. Read
 
 The skill reference files live in `.agents/skills/job-application-assistant/` (Antigravity) — use those paths instead of `.claude/skills/job-application-assistant/`.
 
+**Autonomous Progression (Auto-Proceed on Match):**
+- When the job evaluation (Step 1) indicates a **match** (score >= 60, no hard vetoes), **do NOT pause or wait for user confirmation**. Proceed directly through drafting, review, LaTeX compilation, and Google Drive upload.
+- **Only stop and prompt the user** if the posting is a **mismatch** (score < 60) or triggers a hard dealbreaker veto (location, authorization, language).
+
 **Google Drive Backup:**
 At the end of Step 6, run:
 ```bash
