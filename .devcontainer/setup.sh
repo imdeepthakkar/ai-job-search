@@ -53,6 +53,8 @@ echo "=== 4. Installing Antigravity CLI (agy) ==="
 if ! command -v agy &> /dev/null; then
   curl -fsSL https://antigravity.google/cli/install.sh | bash || true
 fi
+# Symlink to /usr/local/bin so agy is immediately available in all shells and terminals
+sudo ln -sf "$HOME/.local/bin/agy" /usr/local/bin/agy || true
 export PATH="$HOME/.local/bin:$HOME/.gemini/antigravity-cli/bin:$PATH"
 
 echo "=== 5. Setting up Global AGY Config & Superpowers Plugin ==="
