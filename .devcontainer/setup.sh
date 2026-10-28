@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-echo "=== 1. Installing System Packages (TeX Live, Fonts, Poppler) ==="
+echo "=== 1. Installing System Packages (TeX Live, Fonts, Poppler, ttyd) ==="
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   texlive-xetex \
@@ -15,7 +15,14 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   poppler-utils \
   curl \
   unzip \
-  git
+  git \
+  ttyd || true
+
+if ! command -v ttyd &> /dev/null; then
+  echo "Installing ttyd binary..."
+  sudo curl -fsSL https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -o /usr/local/bin/ttyd
+  sudo chmod +x /usr/local/bin/ttyd
+fi
 
 echo "=== 2. Installing Python Packages (Google Drive, Salary & Automation) ==="
 pip install --no-cache-dir google-api-python-client google-auth pypdf || true
@@ -27,13 +34,19 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Persist environment variables in ~/.bashrc and ~/.zshrc
-echo 'export BUN_INSTALL="$HOME/.bun"' >> "$HOME/.bashrc"
-echo 'export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$HOME/.gemini/antigravity-cli/bin:$PATH"' >> "$HOME/.bashrc"
+# Persist environment variables and aliases in ~/.bashrc and ~/.zshrc
+cat >> "$HOME/.bashrc" << 'EOF'
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$HOME/.gemini/antigravity-cli/bin:$PATH"
+alias web-terminal='bash tools/start_web_terminal.sh'
+EOF
 
 if [ -f "$HOME/.zshrc" ]; then
-  echo 'export BUN_INSTALL="$HOME/.bun"' >> "$HOME/.zshrc"
-  echo 'export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$HOME/.gemini/antigravity-cli/bin:$PATH"' >> "$HOME/.zshrc"
+cat >> "$HOME/.zshrc" << 'EOF'
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$HOME/.gemini/antigravity-cli/bin:$PATH"
+alias web-terminal='bash tools/start_web_terminal.sh'
+EOF
 fi
 
 echo "=== 4. Installing Antigravity CLI (agy) ==="
@@ -78,7 +91,8 @@ EOF
 echo "=== 6. Installing Portal Search CLIs ==="
 python3 tools/install_portal_clis.py || python tools/install_portal_clis.py
 
-echo "=== 7. Git Safe Directory ==="
+echo "=== 7. Git Safe Directory & Helper Permissions ==="
 git config --global --add safe.directory /workspaces/ai-job-search || true
+chmod +x tools/start_web_terminal.sh || true
 
-echo "=== Setup complete! Type 'agy' to launch Antigravity. ==="
+echo "=== Setup complete! Type 'agy' to launch, or 'web-terminal' to start the browser terminal. ==="

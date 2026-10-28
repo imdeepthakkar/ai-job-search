@@ -9,6 +9,13 @@
       "version": "22"
     }
   },
+  "forwardPorts": [7681],
+  "portsAttributes": {
+    "7681": {
+      "label": "AGY Web Terminal",
+      "onAutoForward": "notify"
+    }
+  },
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
@@ -24,6 +31,7 @@
     "NOTION_TOKEN": "${localEnv:NOTION_TOKEN}",
     "GDRIVE_WEBHOOK_URL": "${localEnv:GDRIVE_WEBHOOK_URL}",
     "GDRIVE_FOLDER_ID": "${localEnv:GDRIVE_FOLDER_ID}",
-    "GDRIVE_WEBHOOK_SECRET": "${localEnv:GDRIVE_WEBHOOK_SECRET}"
+    "GDRIVE_WEBHOOK_SECRET": "${localEnv:GDRIVE_WEBHOOK_SECRET}",
+    "WEB_TERMINAL_PASSWORD": "${localEnv:WEB_TERMINAL_PASSWORD}"
   }
 }
