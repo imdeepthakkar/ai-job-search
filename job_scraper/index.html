@@ -630,7 +630,8 @@
             const { data, error } = await sbClient
                 .from('jobs')
                 .select('*')
-                .gte('last_seen', new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // Active in last 14 days
+                .order('last_seen', { ascending: false })
+                .limit(1000);
                 
             if (error) {
                 console.error("Error fetching jobs:", error);
@@ -638,7 +639,7 @@
             }
             
             // Map key and date
-            allJobs = data.map(j => ({
+            allJobs = (data || []).map(j => ({
                 ...j,
                 key: j.id,
                 date: j.last_seen || j.posted_date || 'Recent'

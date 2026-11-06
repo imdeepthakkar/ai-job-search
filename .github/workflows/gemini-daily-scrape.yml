@@ -189,16 +189,23 @@ jobs:
           git pull --rebase origin master
           git push
 
-      - name: 'Deploy to Vercel'
+      - name: 'Prepare GitHub Pages Artifacts'
         env:
-          VERCEL_TOKEN: '${{ secrets.VERCEL_TOKEN }}'
-          VERCEL_ORG_ID: 'team_8MsHpgWHhC0zsZt1uxS26SBo'
-          VERCEL_PROJECT_ID: 'prj_r3TQqoyxRCzN2OZyFp0agbgjIEL7'
+          SUPABASE_URL: '${{ secrets.SUPABASE_URL }}'
+          SUPABASE_ANON_KEY: '${{ secrets.SUPABASE_ANON_KEY }}'
         run: |-
-          sed -i "s|REPLACE_SUPABASE_URL|${{ secrets.SUPABASE_URL }}|g" job_scraper/index.html
-          sed -i "s|REPLACE_SUPABASE_ANON_KEY|${{ secrets.SUPABASE_ANON_KEY }}|g" job_scraper/index.html
-          cd job_scraper
-          npm install -g vercel
-          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
-          vercel build --prod --token=$VERCEL_TOKEN
-          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+          if [ -n "$SUPABASE_URL" ]; then
+            sed -i "s|REPLACE_SUPABASE_URL|$SUPABASE_URL|g" job_scraper/index.html
+          fi
+          if [ -n "$SUPABASE_ANON_KEY" ]; then
+            sed -i "s|REPLACE_SUPABASE_ANON_KEY|$SUPABASE_ANON_KEY|g" job_scraper/index.html
+          fi
+          touch job_scraper/.nojekyll
+
+      - name: 'Deploy to GitHub Pages'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./job_scraper
+          publish_branch: gh-pages
+          force_orphan: true
