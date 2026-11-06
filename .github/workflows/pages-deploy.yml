@@ -1,0 +1,36 @@
+name: '🚀 Deploy to GitHub Pages'
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'job_scraper/**'
+      - '.github/workflows/pages-deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Inject Supabase Credentials
+        run: |-
+          sed -i "s|REPLACE_SUPABASE_URL|${{ secrets.SUPABASE_URL }}|g" job_scraper/index.html
+          sed -i "s|REPLACE_SUPABASE_ANON_KEY|${{ secrets.SUPABASE_ANON_KEY }}|g" job_scraper/index.html
+          touch job_scraper/.nojekyll
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./job_scraper
+          publish_branch: gh-pages
+          force_orphan: true
