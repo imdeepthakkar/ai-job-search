@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Career Portal - Principal Solution Architect Workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- Load scraper batch dates -->
+    <script src="data/dates.js"></script>
+</head>
+<body>
+
+    <!-- Authentication Overlay Screen -->
+    <div id="authOverlay" class="auth-wrapper" style="display: flex;">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">Apex Career Suite</div>
+                <h2>Security Portal</h2>
+                <p>Authenticate with credentials to access your job recommendations and tailoring workspace.</p>
+            </div>
+            
+            <form id="authForm" class="auth-form">
+                <div class="input-field">
+                    <label for="emailInput">User Account</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="emailInput" required placeholder="">
+                    </div>
+                </div>
+                
+                <div class="input-field">
+                    <label for="passwordInput">Secret Key</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="passwordInput" required placeholder="">
+                        <button type="button" class="password-toggle-btn" id="passwordToggleBtn" aria-label="Toggle Password Visibility">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="auth-btn" id="loginSubmitBtn">
+                    <span>Unlock Portal</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <div id="appContainer" class="app-container" style="display: none;">
+        
+        <!-- Sidebar Navigation & Filters -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <h1>Apex Career Suite</h1>
+                <p>Technical Lead & Architect Hub</p>
+            </div>
+
+            <!-- Date Select -->
+            <div class="filter-group">
+                <label class="filter-label" for="dateSelect">Select Scrape Batch</label>
+                <div class="select-wrapper">
+                    <select id="dateSelect" class="select-input">
+                        <!-- Dates loaded dynamically -->
+                        <option value="2026-06-24">2026-06-24 (Today)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="filter-group">
+                <label class="filter-label" for="searchBar">Search Keywords</label>
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchBar" class="search-input" placeholder="Press '/' to search...">
+                </div>
+            </div>
+
+            <!-- Profile Fit Filter -->
+            <div class="filter-group">
+                <label class="filter-label">Profile Fit Level</label>
+                <div class="pill-group">
+                    <input type="checkbox" id="fitHigh" class="fit-filter pill-checkbox" value="high" checked>
+                    <label for="fitHigh" class="pill-label">High Match</label>
+
+                    <input type="checkbox" id="fitMed" class="fit-filter pill-checkbox" value="medium" checked>
+                    <label for="fitMed" class="pill-label">Medium Match</label>
+
+                    <input type="checkbox" id="fitLow" class="fit-filter pill-checkbox" value="low" checked>
+                    <label for="fitLow" class="pill-label">Low Match</label>
+                </div>
+            </div>
+
+            <!-- Location Filter -->
+            <div class="filter-group">
+                <label class="filter-label" for="locationSelect">Location Region</label>
+                <div class="select-wrapper">
+                    <select id="locationSelect" class="select-input">
+                        <option value="all">All Locations</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Status Filter -->
+            <div class="filter-group">
+                <label class="filter-label">Application Status</label>
+                <div class="pill-group">
+                    <input type="checkbox" id="statusNew" class="status-filter pill-checkbox" value="new" checked>
+                    <label for="statusNew" class="pill-label">New</label>
+
+                    <input type="checkbox" id="statusApplied" class="status-filter pill-checkbox" value="applied" checked>
+                    <label for="statusApplied" class="pill-label">Applied</label>
+                </div>
+            </div>
+
+            <!-- Source Portal Filter -->
+            <div class="filter-group">
+                <label class="filter-label">Source Channels</label>
+                <div class="pill-group">
+                    <input type="checkbox" id="srcJobindex" class="source-filter pill-checkbox" value="jobindex.dk" checked>
+                    <label for="srcJobindex" class="pill-label">jobindex.dk</label>
+
+                    <input type="checkbox" id="srcJobbank" class="source-filter pill-checkbox" value="jobbank.dk" checked>
+                    <label for="srcJobbank" class="pill-label">jobbank.dk</label>
+
+                    <input type="checkbox" id="srcJobnet" class="source-filter pill-checkbox" value="jobnet.dk" checked>
+                    <label for="srcJobnet" class="pill-label">jobnet.dk</label>
+
+                    <input type="checkbox" id="srcJobdanmark" class="source-filter pill-checkbox" value="jobdanmark.dk" checked>
+                    <label for="srcJobdanmark" class="pill-label">jobdanmark.dk</label>
+                </div>
+            </div>
+
+            <!-- Active Dashboard Action Reset -->
+            <button id="resetFiltersBtn" class="btn btn-secondary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                Reset All Filters
+            </button>
+
+            <!-- User Session Details -->
+            <div class="user-profile-section">
+                <div class="avatar">DT</div>
+                <div class="user-info">
+                    <span class="user-name">Deep Thakkar</span>
+                    <span class="user-role">Solutions Architect</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn" title="Lock Dashboard Session">
+                    🚪
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard View Panel -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h2>Job Opportunities Portal</h2>
+                    <p id="showingCountLabel">Showing 0 of 0 active listings</p>
+                </div>
+            </header>
+
+            <!-- Analytics Cards Panel (Enhanced Progress Meters) -->
+            <section class="stats-grid">
+                <div class="stat-card total-stat">
+                    <span class="value" id="statsTotal">0</span>
+                    <span class="label">Active Scraped</span>
+                    <div class="stat-progress-bar">
+                        <div class="stat-progress-fill" id="progressTotal" style="width: 100%;"></div>
+                    </div>
+                    <span class="stat-subtext">Total database jobs index</span>
+                </div>
+                <div class="stat-card high-stat">
+                    <span class="value" id="statsHigh">0</span>
+                    <span class="label">High Matches</span>
+                    <div class="stat-progress-bar">
+                        <div class="stat-progress-fill" id="progressHigh" style="width: 0%;"></div>
+                    </div>
+                    <span class="stat-subtext" id="subtextHigh">0% of total listings</span>
+                </div>
+                <div class="stat-card med-stat">
+                    <span class="value" id="statsMed">0</span>
+                    <span class="label">Medium Matches</span>
+                    <div class="stat-progress-bar">
+                        <div class="stat-progress-fill" id="progressMed" style="width: 0%;"></div>
+                    </div>
+                    <span class="stat-subtext" id="subtextMed">0% of total listings</span>
+                </div>
+                <div class="stat-card applied-stat">
+                    <span class="value" id="statsApplied">0</span>
+                    <span class="label">Jobs Applied</span>
+                    <div class="stat-progress-bar">
+                        <div class="stat-progress-fill" id="progressApplied" style="width: 0%;"></div>
+                    </div>
+                    <span class="stat-subtext" id="subtextApplied">0% target conversion</span>
+                </div>
+            </section>
+
+            <!-- Sort Controls Row -->
+            <div class="controls-row">
+                <div class="sort-info">Sort listings dynamically:</div>
+                <div class="sort-options">
+                    <button class="sort-btn active" data-sort="fit">Match Priority</button>
+                    <button class="sort-btn" data-sort="date">Date Scraped</button>
+                    <button class="sort-btn" data-sort="company">Company A-Z</button>
+                </div>
+            </div>
+
+            <!-- Jobs List Container -->
+            <section class="jobs-list" id="jobsListContainer">
+                <div class="empty-state">
+                    <h3>Loading application dashboard...</h3>
+                    <p>Connecting data feeds and security parameters.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Tailoring Action Code Overlay Modal (Simulated Terminal) -->
+    <div id="applyModalOverlay" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Tailor Application Workspace</h3>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.2rem;">
+                Run the following executable slash command in your project terminal to initiate fit evaluation, CV customization, and cover letter tailoring:
+            </p>
+            
+            <div class="terminal-window">
+                <div class="terminal-bar">
+                    <span class="terminal-dot terminal-dot-close"></span>
+                    <span class="terminal-dot terminal-dot-minimize"></span>
+                    <span class="terminal-dot terminal-dot-expand"></span>
+                    <span class="terminal-title">bash - deep@solutions-architect:~</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-command-line">
+                        <span class="terminal-prompt">deep@solutions-architect:</span><span class="terminal-dir">~</span><span class="terminal-prompt">$</span>
+                        <code id="modalCommandText" style="color: #38bdf8; font-weight: bold; overflow-wrap: anywhere;">/apply [url]</code>
+                    </div>
+                    <div class="terminal-output-text">
+                        # Running this will automatically sync job specs, tailor CV/Letter, and format PDF artifacts.
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 0.5rem;">
+                <button class="btn btn-secondary" id="closeModalBtn2">Cancel</button>
+                <button class="btn btn-primary" id="copyCodeBtn">Copy CLI Command</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Keyboard Shortcuts Panel -->
+    <button class="shortcuts-help-btn" id="shortcutsHelpBtn">
+        <span>⌨️</span> Shortcuts (H)
+    </button>
+    
+    <div class="shortcuts-panel" id="shortcutsPanel">
+        <div class="shortcuts-header">
+            <span>System Hotkeys</span>
+            <button class="modal-close" id="closeShortcutsBtn" style="font-size: 1rem;">&times;</button>
+        </div>
+        <div class="shortcuts-list">
+            <div class="shortcut-row">
+                <span>Focus Search bar</span>
+                <span class="shortcut-key">/</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Toggle Hotkeys Help</span>
+                <span class="shortcut-key">h</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Next Job Card</span>
+                <span class="shortcut-key">↓ / j</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Previous Job Card</span>
+                <span class="shortcut-key">↑ / k</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Toggle Detail Drawer</span>
+                <span class="shortcut-key">Enter / o</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Tailor CV & Letter</span>
+                <span class="shortcut-key">t</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Toggle Applied Status</span>
+                <span class="shortcut-key">a</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Archive/Dismiss Card</span>
+                <span class="shortcut-key">d</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Clear / Close Modal</span>
+                <span class="shortcut-key">Esc</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Popup Toast Notifications -->
+    <div id="toastNotification" class="toast-notification">Notification message</div>
+
+    <!-- Core App Logic & Auth Functions -->
+    <script>
+        // State variables
+        let jobs = [];
+        let customAppliedKeys = new Set();
+        let dismissedKeys = new Set();
+        let activeSort = 'fit';
+        let keyboardFocusedIndex = -1;
+        let visibleJobs = [];
+
+        const searchBar = document.getElementById('searchBar');
+        const locationSelect = document.getElementById('locationSelect');
+        const dateSelect = document.getElementById('dateSelect');
+        const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+        const showingCountLabel = document.getElementById('showingCountLabel');
+
+        const statsTotal = document.getElementById('statsTotal');
+        const statsHigh = document.getElementById('statsHigh');
+        const statsMed = document.getElementById('statsMed');
+        const statsApplied = document.getElementById('statsApplied');
+
+        const jobsListContainer = document.getElementById('jobsListContainer');
+        const applyModalOverlay = document.getElementById('applyModalOverlay');
+        const modalCommandText = document.getElementById('modalCommandText');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const closeModalBtn2 = document.getElementById('closeModalBtn2');
+        const copyCodeBtn = document.getElementById('copyCodeBtn');
+        const toastNotification = document.getElementById('toastNotification');
+
+        const authOverlay = document.getElementById('authOverlay');
+        const appContainer = document.getElementById('appContainer');
+        const authForm = document.getElementById('authForm');
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordToggleBtn = document.getElementById('passwordToggleBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+        
+        const shortcutsHelpBtn = document.getElementById('shortcutsHelpBtn');
+        const shortcutsPanel = document.getElementById('shortcutsPanel');
+        const closeShortcutsBtn = document.getElementById('closeShortcutsBtn');
+
+        // Security check
+        function checkAuth() {
+            const session = localStorage.getItem('deep_job_session');
+            if (session) {
+                authOverlay.style.display = 'none';
+                appContainer.style.display = 'flex';
+                initApp();
+            } else {
+                authOverlay.style.display = 'flex';
+                appContainer.style.display = 'none';
+            }
+        }
+
+        // Toggle password show/hide
+        passwordToggleBtn.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggleBtn.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                passwordToggleBtn.textContent = '👁️';
+            }
+        });
+
+        // Toggle shortcuts panel
+        shortcutsHelpBtn.addEventListener('click', () => {
+            shortcutsPanel.classList.toggle('active');
+        });
+        closeShortcutsBtn.addEventListener('click', () => {
+            shortcutsPanel.classList.remove('active');
+        });
+
+        // Handle submission of Auth Form
+        authForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+
+            // Simple developer credentials authentication
+            if (email === 'deep@jobsearch.ai' && password === 'Password123') {
+                loginSubmitBtn.disabled = true;
+                loginSubmitBtn.querySelector('span').textContent = 'Decrypting Database...';
+                
+                setTimeout(() => {
+                    const mockToken = 'session_' + Math.random().toString(36).substr(2);
+                    localStorage.setItem('deep_job_session', mockToken);
+                    showToast("Portal Unlocked. Welcome, Deep.");
+                    
+                    setTimeout(() => {
+                        loginSubmitBtn.disabled = false;
+                        loginSubmitBtn.querySelector('span').textContent = 'Unlock Portal';
+                        checkAuth();
+                    }, 500);
+                }, 1000);
+            } else {
+                showToast("Access Denied. Please verify account credentials.");
+            }
+        });
+
+        // Session logout
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('deep_job_session');
+            showToast("Session secured and logged out.");
+            setTimeout(() => {
+                checkAuth();
+            }, 600);
+        });
+
+        // Get linear gradient from hashing string (creates unique color theme for each company)
+        function getGradientStyle(name) {
+            let hash = 0;
+            for (let i = 0; i < name.length; i++) {
+                hash = name.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            const h1 = Math.abs(hash % 360);
+            const h2 = (h1 + 60) % 360;
+            return `background: linear-gradient(135deg, hsl(${h1}, 70%, 45%), hsl(${h2}, 80%, 25%));`;
+        }
+
+        // Initialize dashboard app
+        function initApp() {
+            // Load LocalStorage states
+            try {
+                const storedApplied = localStorage.getItem('deep_applied_jobs');
+                if (storedApplied) {
+                    customAppliedKeys = new Set(JSON.parse(storedApplied));
+                }
+                const storedDismissed = localStorage.getItem('deep_dismissed_jobs');
+                if (storedDismissed) {
+                    dismissedKeys = new Set(JSON.parse(storedDismissed));
+                }
+            } catch (e) {
+                console.error("Failed to load local storage lists", e);
+            }
+
+            // Load dates dynamically if availableDates defined
+            if (window.availableDates && window.availableDates.length > 0) {
+                dateSelect.innerHTML = '';
+                window.availableDates.forEach((d, idx) => {
+                    const opt = document.createElement('option');
+                    opt.value = d;
+                    opt.textContent = idx === 0 ? `${d} (Today)` : d;
+                    dateSelect.appendChild(opt);
+                });
+            }
+
+            // Sync dropdown and fetch initial data
+            const date = dateSelect.value || '2026-06-24';
+            loadJobData(date).then(() => {
+                syncStatusAndFilters();
+                setupEventListeners();
+                showToast("Connected to live job feeds.");
+            }).catch(err => {
+                jobs = getMockJobs();
+                syncStatusAndFilters();
+                setupEventListeners();
+                showToast("Fallback: Loaded cached offline jobs.");
+            });
+        }
+
+        // Dynamic script loading for scrape batches
+        function loadJobData(date) {
+            return new Promise((resolve, reject) => {
+                const existingScript = document.getElementById('dynamic-job-data');
+                if (existingScript) existingScript.remove();
+
+                const script = document.createElement('script');
+                script.id = 'dynamic-job-data';
+                script.src = `data/${date}.js`;
+                script.onload = () => {
+                    if (window.scrapedJobs) {
+                        jobs = window.scrapedJobs;
+                        resolve();
+                    } else {
+                        reject(new Error("scrapedJobs not loaded correctly"));
+                    }
+                };
+                script.onerror = () => {
+                    reject(new Error(`Failed to load data for ${date}`));
+                };
+                document.body.appendChild(script);
+            });
+        }
+
+        function syncStatusAndFilters() {
+            // Restore status based on cached applied lists
+            jobs.forEach(job => {
+                if (customAppliedKeys.has(job.key)) {
+                    job.status = 'applied';
+                }
+            });
+
+            // Populate location dropdown
+            const locationsSet = new Set();
+            jobs.forEach(job => {
+                if (job.location) {
+                    const primaryLocation = job.location.split(',')[0].trim();
+                    if (primaryLocation) locationsSet.add(primaryLocation);
+                }
+            });
+
+            // Clear previous except "All"
+            locationSelect.innerHTML = '<option value="all">All Locations</option>';
+            const sortedLocations = Array.from(locationsSet).sort();
+            sortedLocations.forEach(loc => {
+                const opt = document.createElement('option');
+                opt.value = loc;
+                opt.textContent = loc;
+                locationSelect.appendChild(opt);
+            });
+
+            render();
+        }
+
+        function setupEventListeners() {
+            // Real-time filters inputs
+            searchBar.addEventListener('input', () => { keyboardFocusedIndex = -1; render(); });
+            locationSelect.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); });
+            
+            document.querySelectorAll('.fit-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
+            document.querySelectorAll('.status-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
+            document.querySelectorAll('.source-filter').forEach(cb => cb.addEventListener('change', () => { keyboardFocusedIndex = -1; render(); }));
+
+            // Scrape date select change
+            dateSelect.addEventListener('change', (e) => {
+                keyboardFocusedIndex = -1;
+                loadJobData(e.target.value).then(() => {
+                    syncStatusAndFilters();
+                    showToast(`Switched batch to ${e.target.value}`);
+                }).catch(err => {
+                    showToast(`Error: Scrape batch ${e.target.value} unavailable`);
+                });
+            });
+
+            // Re-render based on sort options
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    activeSort = e.target.dataset.sort;
+                    keyboardFocusedIndex = -1;
+                    render();
+                });
+            });
+
+            // Reset filters
+            resetFiltersBtn.addEventListener('click', () => {
+                searchBar.value = '';
+                locationSelect.value = 'all';
+                document.querySelectorAll('.fit-filter, .status-filter, .source-filter').forEach(cb => cb.checked = true);
+                keyboardFocusedIndex = -1;
+                render();
+                showToast("Cleared active search criteria.");
+            });
+
+            // Modal overlay exits
+            closeModalBtn.addEventListener('click', () => applyModalOverlay.classList.remove('active'));
+            closeModalBtn2.addEventListener('click', () => applyModalOverlay.classList.remove('active'));
+            applyModalOverlay.addEventListener('click', (e) => {
+                if (e.target === applyModalOverlay) applyModalOverlay.classList.remove('active');
+            });
+
+            // Copy to clipboard function
+            copyCodeBtn.addEventListener('click', () => {
+                const text = modalCommandText.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast("Command copied to clipboard!");
+                    applyModalOverlay.classList.remove('active');
+                }).catch(e => {
+                    showToast("Failed to auto-copy. Copy manually.");
+                });
+            });
+        }
+
+        function showToast(msg) {
+            toastNotification.textContent = msg;
+            toastNotification.classList.add('show');
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, 3000);
+        }
+
+        window.toggleApplied = function(key) {
+            const job = jobs.find(j => j.key === key);
+            if (!job) return;
+
+            if (job.status === 'applied') {
+                job.status = 'new';
+                customAppliedKeys.delete(key);
+                showToast(`Marked "${job.title}" as new.`);
+            } else {
+                job.status = 'applied';
+                customAppliedKeys.add(key);
+                showToast(`Marked "${job.title}" as applied.`);
+            }
+
+            localStorage.setItem('deep_applied_jobs', JSON.stringify(Array.from(customAppliedKeys)));
+            render();
+        }
+
+        window.dismissJob = function(key) {
+            const job = jobs.find(j => j.key === key);
+            dismissedKeys.add(key);
+            localStorage.setItem('deep_dismissed_jobs', JSON.stringify(Array.from(dismissedKeys)));
+            showToast(`Dismissed "${job ? job.title : 'job listing'}".`);
+            render();
+        }
+
+        window.showApplyModal = function(url) {
+            const cmd = `/apply ${url}`;
+            modalCommandText.textContent = cmd;
+            applyModalOverlay.classList.add('active');
+        }
+
+        // Render card layouts
+        function render() {
+            const searchVal = searchBar.value.toLowerCase();
+            const locationVal = locationSelect.value;
+            
+            const allowedFits = Array.from(document.querySelectorAll('.fit-filter:checked')).map(cb => cb.value);
+            const allowedStatuses = Array.from(document.querySelectorAll('.status-filter:checked')).map(cb => cb.value);
+            const allowedSources = Array.from(document.querySelectorAll('.source-filter:checked')).map(cb => cb.value);
+
+            let filteredJobs = jobs.filter(job => {
+                if (dismissedKeys.has(job.key)) return false;
+
+                const matchesSearch = !searchVal || 
+                    job.title.toLowerCase().includes(searchVal) ||
+                    job.company.toLowerCase().includes(searchVal) ||
+                    (job.description && job.description.toLowerCase().includes(searchVal));
+
+                const matchesFit = allowedFits.includes(job.fit);
+                const matchesStatus = allowedStatuses.includes(job.status);
+                const matchesSource = allowedSources.includes(job.source);
+
+                const matchesLocation = locationVal === 'all' || 
+                    (job.location && job.location.split(',')[0].trim() === locationVal);
+
+                return matchesSearch && matchesFit && matchesStatus && matchesSource && matchesLocation;
+            });
+
+            // Sorting sequences
+            const fitPriority = {"high": 0, "medium": 1, "low": 2};
+            if (activeSort === 'fit') {
+                filteredJobs.sort((a, b) => {
+                    const diff = fitPriority[a.fit] - fitPriority[b.fit];
+                    if (diff !== 0) return diff;
+                    return new Date(b.date) - new Date(a.date);
+                });
+            } else if (activeSort === 'date') {
+                filteredJobs.sort((a, b) => new Date(b.date) - new Date(a.date));
+            } else if (activeSort === 'company') {
+                filteredJobs.sort((a, b) => a.company.localeCompare(b.company));
+            }
+
+            visibleJobs = filteredJobs;
+
+            // Stats Update
+            const totalActive = jobs.filter(j => !dismissedKeys.has(j.key));
+            const totalVal = totalActive.length;
+            statsTotal.textContent = totalVal;
+            
+            const highCount = totalActive.filter(j => j.fit === 'high').length;
+            const medCount = totalActive.filter(j => j.fit === 'medium').length;
+            const appliedCount = totalActive.filter(j => j.status === 'applied').length;
+            
+            statsHigh.textContent = highCount;
+            statsMed.textContent = medCount;
+            statsApplied.textContent = appliedCount;
+
+            // Update stats progress lines
+            if (totalVal > 0) {
+                const highPct = Math.round((highCount / totalVal) * 100);
+                const medPct = Math.round((medCount / totalVal) * 100);
+                const appliedPct = Math.round((appliedCount / totalVal) * 100);
+                
+                document.getElementById('progressHigh').style.width = `${highPct}%`;
+                document.getElementById('subtextHigh').textContent = `${highPct}% of total listings`;
+                
+                document.getElementById('progressMed').style.width = `${medPct}%`;
+                document.getElementById('subtextMed').textContent = `${medPct}% of total listings`;
+                
+                document.getElementById('progressApplied').style.width = `${appliedPct}%`;
+                document.getElementById('subtextApplied').textContent = `${appliedPct}% conversion rate`;
+            } else {
+                document.getElementById('progressHigh').style.width = '0%';
+                document.getElementById('subtextHigh').textContent = '0% of total listings';
+                document.getElementById('progressMed').style.width = '0%';
+                document.getElementById('subtextMed').textContent = '0% of total listings';
+                document.getElementById('progressApplied').style.width = '0%';
+                document.getElementById('subtextApplied').textContent = '0% conversion rate';
+            }
+
+            showingCountLabel.textContent = `Showing ${filteredJobs.length} of ${totalActive.length} active jobs`;
+
+            jobsListContainer.innerHTML = '';
+            
+            if (filteredJobs.length === 0) {
+                jobsListContainer.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No job openings match your filters</h3>
+                        <p>Try refining your search keyword or relaxing filter constraints in the sidebar.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Restore the focus class if valid
+            if (keyboardFocusedIndex >= visibleJobs.length) {
+                keyboardFocusedIndex = visibleJobs.length - 1;
+            }
+
+            filteredJobs.forEach((job, idx) => {
+                const card = document.createElement('article');
+                card.className = `job-card fit-${job.fit}`;
+                if (idx === keyboardFocusedIndex) {
+                    card.classList.add('keyboard-focus');
+                }
+                card.id = `card-${job.key}`;
+
+                const fitBadgeClass = job.fit === 'high' ? 'badge-high' : (job.fit === 'medium' ? 'badge-med' : 'badge-low');
+                const isApplied = job.status === 'applied';
+                
+                // Logo gradient style & initials
+                const logoGradient = getGradientStyle(job.company);
+                const initials = job.company
+                    .split(/\s+/)
+                    .map(w => w[0])
+                    .join('')
+                    .slice(0, 2);
+
+                const matchPct = job.fit === 'high' ? '92%' : (job.fit === 'medium' ? '78%' : '45%');
+                const fitScoreClass = job.fit === 'high' ? '' : (job.fit === 'medium' ? 'med-match' : 'low-match');
+
+                card.innerHTML = `
+                    <div class="job-card-row">
+                        <div class="company-logo-placeholder" style="${logoGradient}">
+                            ${initials}
+                        </div>
+                        <div class="job-card-main-info">
+                            <span class="company-name">${escapeHtml(job.company)}</span>
+                            <h3 class="job-title" onclick="toggleCardExpand('${job.key}')">${escapeHtml(job.title)}</h3>
+                            <div class="badge-container" style="margin-top: 0.35rem;">
+                                ${isApplied ? '<span class="badge badge-applied">Applied</span>' : ''}
+                                <span class="badge ${fitBadgeClass}">${job.fit} Fit</span>
+                                <span class="badge badge-source">${escapeHtml(job.source)}</span>
+                            </div>
+                        </div>
+                        <div class="job-card-meta-right">
+                            <div class="match-score-badge ${fitScoreClass}">
+                                <span>🎯</span> ${matchPct} Match
+                            </div>
+                            <div class="card-meta" style="font-size: 0.72rem; color: var(--text-secondary);">
+                                <div class="meta-item">📍 ${escapeHtml(job.location || 'Storkøbenhavn')}</div>
+                                <div class="meta-item">📅 Scraped: ${escapeHtml(job.date)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-description-wrapper" id="desc-${job.key}">
+                        <div class="description-header">Job Requirements Analysis</div>
+                        <p>${escapeHtml(job.description)}</p>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <div class="action-group">
+                            <button class="btn btn-primary" onclick="showApplyModal('${job.url}')">
+                                ⚡ Autopilot Tailor
+                            </button>
+                            <a href="${job.url}" target="_blank" class="btn btn-secondary" style="text-decoration: none;">
+                                Open Source ↗
+                            </a>
+                        </div>
+                        <div class="action-group">
+                            <button class="btn ${isApplied ? 'btn-secondary' : 'btn-success'}" onclick="toggleApplied('${job.key}')">
+                                ${isApplied ? '✓ Applied' : 'Mark Applied'}
+                            </button>
+                            <button class="btn btn-danger" onclick="dismissJob('${job.key}')" title="Archive Posting">
+                                Dismiss
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                jobsListContainer.appendChild(card);
+            });
+        }
+
+        window.toggleCardExpand = function(key) {
+            const card = document.getElementById(`card-${key}`);
+            if (card) {
+                card.classList.toggle('expanded');
+            }
+        }
+
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe
+                 .replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#039;");
+        }
+
+        function getMockJobs() {
+            return [
+                {
+                    "key": "netcompany-senior-architect",
+                    "title": "Senior Architect, Payments & Cards",
+                    "company": "Netcompany A/S",
+                    "location": "Storkøbenhavn",
+                    "url": "https://jobbank.dk/job/2989475/",
+                    "fit": "high",
+                    "date": "2026-06-18",
+                    "description": "Fallback mock record: Active job listings offline. Verify network sync.",
+                    "source": "jobbank.dk",
+                    "status": "new"
+                }
+            ];
+        }
+
+        // Keyboard navigation and actions mapping
+        document.addEventListener('keydown', (e) => {
+            const activeTag = document.activeElement.tagName.toLowerCase();
+            if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') {
+                if (e.key === 'Escape') {
+                    document.activeElement.blur();
+                    e.preventDefault();
+                }
+                return;
+            }
+
+            if (e.key === '/') {
+                e.preventDefault();
+                searchBar.focus();
+                searchBar.select();
+                showToast("Shortcuts: Search input focused.");
+            } else if (e.key.toLowerCase() === 'h') {
+                e.preventDefault();
+                shortcutsPanel.classList.toggle('active');
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                applyModalOverlay.classList.remove('active');
+                shortcutsPanel.classList.remove('active');
+                searchBar.value = '';
+                keyboardFocusedIndex = -1;
+                render();
+            } else if (e.key === 'ArrowDown' || e.key === 'j' || e.key === 'J') {
+                e.preventDefault();
+                navigateKeyboardFocus(1);
+            } else if (e.key === 'ArrowUp' || e.key === 'k' || e.key === 'K') {
+                e.preventDefault();
+                navigateKeyboardFocus(-1);
+            } else if (e.key === 'Enter' || e.key === 'o' || e.key === 'O') {
+                if (keyboardFocusedIndex >= 0 && keyboardFocusedIndex < visibleJobs.length) {
+                    e.preventDefault();
+                    toggleCardExpand(visibleJobs[keyboardFocusedIndex].key);
+                }
+            } else if (e.key === 't' || e.key === 'T') {
+                if (keyboardFocusedIndex >= 0 && keyboardFocusedIndex < visibleJobs.length) {
+                    e.preventDefault();
+                    showApplyModal(visibleJobs[keyboardFocusedIndex].url);
+                }
+            } else if (e.key === 'a' || e.key === 'A') {
+                if (keyboardFocusedIndex >= 0 && keyboardFocusedIndex < visibleJobs.length) {
+                    e.preventDefault();
+                    toggleApplied(visibleJobs[keyboardFocusedIndex].key);
+                }
+            } else if (e.key === 'd' || e.key === 'D') {
+                if (keyboardFocusedIndex >= 0 && keyboardFocusedIndex < visibleJobs.length) {
+                    e.preventDefault();
+                    dismissJob(visibleJobs[keyboardFocusedIndex].key);
+                }
+            }
+        });
+
+        function navigateKeyboardFocus(direction) {
+            if (visibleJobs.length === 0) return;
+            
+            // Remove old focus class
+            if (keyboardFocusedIndex >= 0 && keyboardFocusedIndex < visibleJobs.length) {
+                const oldCard = document.getElementById(`card-${visibleJobs[keyboardFocusedIndex].key}`);
+                if (oldCard) oldCard.classList.remove('keyboard-focus');
+            }
+
+            keyboardFocusedIndex += direction;
+            if (keyboardFocusedIndex < 0) keyboardFocusedIndex = 0;
+            if (keyboardFocusedIndex >= visibleJobs.length) keyboardFocusedIndex = visibleJobs.length - 1;
+
+            const newCard = document.getElementById(`card-${visibleJobs[keyboardFocusedIndex].key}`);
+            if (newCard) {
+                newCard.classList.add('keyboard-focus');
+                newCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Check authentication state on page load
+        window.addEventListener('DOMContentLoaded', checkAuth);
+    </script>
+</body>
+</html>
